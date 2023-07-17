@@ -6,7 +6,7 @@
 #cs ##################################################################################
 
 	SetupS Project Core (Common Declarations & Functions) v#CoreVersion#
-	Copyright © #cYear#, #cHolder#
+	Copyright ï¿½ #cYear#, #cHolder#
 	All rights reserved.
 
 	This file is part of the SetupS SendTo Suite.
@@ -80,7 +80,7 @@ Global $ProgramFilesDir32 = Not Not FileExists(EnvGet('ProgramFiles(x86)')) ;32-
 ;Global $SystemDir = @SystemDir ;@WindowsDir & '\System32'
 Global $SystemDir32 = Not Not FileExists(@WindowsDir & '\SYSWOW64') ;32-bit System directory
 Global $SetupS_CoreVer = '#CoreVersion#', $AbortDL, $AltDistr[1][2], $AltDistrOrder
-Global $AboutLink1 = 'http://#WebLink1#', $AboutLink2 = 'http://#WebLink2#', $AboutLink3 = 'http://#WebLink3#'
+Global $AboutLink1 = 'http://#WebLink1#', $AboutLink2 = 'http://#WebLink2#', $AboutLink3 = 'http://#WebLink3#', $AboutLink6 = 'http://#WebLink6#'
 Global $CopyFromLive, $ppInstall, $AllUsersProfile = EnvGet('ALLUSERSPROFILE')
 Global $LinuxHome = 'z:\home\' & @UserName, $OS_Linux = Not Not FileExists($LinuxHome), $WINEVersion = _GetWINEVersion() ; Linux via Wine handling
 ;~ Global $App_Title_SetupS, $App_BuildType_SetupS, $App_Version_SetupS, $App_InstallPath_SetupS
@@ -260,7 +260,7 @@ EndFunc
 ;                  Machine      - [optional] Sets the variable in the machine environment.
 ; Return values .: Success      - None
 ;                  Failure      - Sets @error to 1.
-; Author ........: João Carlos (jscript)
+; Author ........: Joï¿½o Carlos (jscript)
 ; Support .......: trancexx, PsaltyDS, KaFu
 ; Modified.......:
 ; Remarks .......: Replaces built-in EnvUpdate()
@@ -6254,12 +6254,13 @@ EndFunc
 	#AutoIt3Wrapper_Outfile=Tools\SetupS.Core.exe
 	#AutoIt3Wrapper_Res_Description=SetupS Project Core (Common Declarations & Functions)
 	#AutoIt3Wrapper_Res_Fileversion=#ProjectVersion#
-	#AutoIt3Wrapper_Res_LegalCopyright=© #cYear# #cHolder#
+	#AutoIt3Wrapper_Res_LegalCopyright=ï¿½ #cYear# #cHolder#
 	#AutoIt3Wrapper_Res_Language=1033
 	#AutoIt3Wrapper_Res_Field=Release Date|#ProjectDate#
 	#AutoIt3Wrapper_Res_Field=#WebSite1#|http://#WebLink1#
 	#AutoIt3Wrapper_Res_Field=#WebSite2#|http://#WebLink2#
 	#AutoIt3Wrapper_Res_Field=#WebSite3#|http://#WebLink3#
+		#AutoIt3Wrapper_Res_Field=#WebSite6#|http://#WebLink6#
 	#AutoIt3Wrapper_Res_Field=Original Concept|Glenn L. Chugg (ReturnOfNights)
 	#AutoIt3Wrapper_Compression=4
 	#AutoIt3Wrapper_AU3Check_Stop_OnWarning=y

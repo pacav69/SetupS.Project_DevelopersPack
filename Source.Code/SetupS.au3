@@ -5,12 +5,13 @@
 #AutoIt3Wrapper_Compression=4
 #AutoIt3Wrapper_Res_Description=SetupS(ilently) Installer
 #AutoIt3Wrapper_Res_Fileversion=#ProjectVersion#
-#AutoIt3Wrapper_Res_LegalCopyright=©#cYear#, #cHolder#
+#AutoIt3Wrapper_Res_LegalCopyright=ï¿½#cYear#, #cHolder#
 #AutoIt3Wrapper_Res_Language=1033
 #AutoIt3Wrapper_Res_Field=Release Date|#ProjectDate#
 #AutoIt3Wrapper_Res_Field=#WebSite1#|http://#WebLink1#
 #AutoIt3Wrapper_Res_Field=#WebSite2#|http://#WebLink2#
 #AutoIt3Wrapper_Res_Field=#WebSite3#|http://#WebLink3#
+#AutoIt3Wrapper_Res_Field=#WebSite6#|http://#WebLink6#
 #AutoIt3Wrapper_Res_Field=Original Concept|Glenn L. Chugg (ReturnOfNights)
 #AutoIt3Wrapper_AU3Check_Stop_OnWarning=y
 #AutoIt3Wrapper_Run_Tidy=y
@@ -21,7 +22,7 @@
 #cs ##################################################################################
 
 	SetupS SendTo Extension v#ProjectVersion#
-	Copyright © #cYear#, #cHolder#
+	Copyright ï¿½ #cYear#, #cHolder#
 	All rights reserved.
 
 	This file is part of the SetupS SendTo Suite.

@@ -12,6 +12,7 @@ Use the examples in this template to help you get started.
 <URL>
 	http://#WebLink1#
 	http://#WebLink2#
+	http://#WebLink6#
 
 <Category>
 	Other
