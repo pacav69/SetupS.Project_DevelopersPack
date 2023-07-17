@@ -1,0 +1,1921 @@
+Note: The goal is to have any additions/changes/options to NOT affect the original default
+      behavior if not used or implemented (for backwards compatibility); but sometimes this is
+      not always possible especially when adding new features. 
+
+---------------------------------------------
+v23.07.17.0 (July 17, 2023)
+---------------------------------------------
+set ProjectVersion=v23.07.17.0
+set ProjectDate=2023-07-17
+
+Add:	updated helpfile created more examples
+Change:	corrected spelling and grammer errors
+		
+---------------------------------------------
+v20.03.17.0 (March 17, 2020)
+---------------------------------------------
+ADD: [ssCore] A new variable %Resources% which resolves to/from "C:\Windows\Resources".
+CHANGE: [ssEditor] The option "Activate Sendto Autobuild" now creates two shortcuts for
+        autobuilding: one for Archive (.apz/.pgz) deployment package(s) and the other for Folder
+        deployment package(s).
+CHANGE: [ssCore] Shortcut definitions "Flags" can also recognize "#Is_x86#"/"#Is_x64#"
+        (DualArch useage). This is in addition to "Is_x86"/"Is_x64" or "Is_86"/"Is_64".
+FIX: [ssCore] Enabling the "Refresh Explorer" Shortcut Option would also select the
+     "Desktop" Shortcut Location.
+
+---------------------------------------------
+v20.02.13.0 (Febuary 13, 2020)
+---------------------------------------------
+CHANGE: [SetupS] Removed functions not needed when using -Regen features. Speeds up LivePE
+        usage.
+     
+---------------------------------------------
+v17.12.3.0 (December 3, 2017)
+---------------------------------------------
+FIX: [SetupS] Shortcut definitions "Start In" (Working folder) getting set to the 
+     "Install-to Path" unnecessarily.
+FIX: [SetupS] Various bugs involving DualArch shortcut definitions. This bug mostly 
+     affected only shortcut creation on an x86 ArchOS.
+CHANGE: [ssCore] Shortcut definitions "Flags" now uses "Is_x86"/"Is_x64" (DualArch useage)
+        for consistency and less confusion -- previously, had been "Is_86"/"Is_64" instead.
+
+---------------------------------------------
+v17.3.25.0 (March 25, 2017)
+---------------------------------------------
+ADD: [SetupS] New components for Windows unattended manipulation: %ClickMe%, %CloseMe%,
+     %SelectMe%, %SendMe%, %WaitForMe%
+ADD: [ssCore] New Shortcut definitions flag "AssemblyNoWait" to change the default behavor
+     of Process Assembly so that assembly won't wait until a program or an installer 
+     finishes running or closes. This affects the new components above as well as 
+     %ProcessKill% and %WaitForIt%.
+ADD: [ssEditor] AutoIt Window Information tool to ssEditor (Ctrl+I). Look for it in the 
+     menubar under Tools. Should be really handy for getting those Control-ID triad's 
+     for %ClickMe%.
+ADD: [ssEditor] Windows Task Manager (Ctrl+T) to ssEditor's tool menu. Will be useful for 
+     both %ProcessKill% and %WaitForIt%. 
+
+---------------------------------------------
+v17.3.20.0 (March 20, 2017)
+---------------------------------------------
+CHANGE: %WaitForIt% will additionally force SetupS to pause until a specific process is 
+        created.
+
+---------------------------------------------
+v17.3.9.0 (March 9, 2017)
+---------------------------------------------
+CHANGE: Updated 7-Zip to v16.04
+CHANGE: Updated Inno Setup Unpacker (Innounp) to v0.46
+CHANGE: Updated TrID's Definitions DB to March 06, 2017
+
+---------------------------------------------
+v16.10.2.0 (October 1, 2016)
+---------------------------------------------
+FIX: SetupS ppApp DualArch version failing to launch into x64
+FIX: Excessive ToolTip delay with Windows 10 (and maybe Windows 8)
+CHANGE: Updated 7-Zip to v16.03
+CHANGE: Updated Inno Setup development tool to v5.5.9
+
+---------------------------------------------
+v16.9.18.0 (September 18, 2016)
+---------------------------------------------
+CHANGE: [ssCore] Revert DualArch "Wait" parameter back to defaulting to "on" or
+        "Wait".
+
+---------------------------------------------
+v16.7.23.0 (July 23, 2016)
+---------------------------------------------
+CHANGE: [SetupS] Some tweaks to improve the self-queuing.
+FIX: [SetupS] Issue in which the self-queuing could get "stuck".
+
+---------------------------------------------
+v16.7.20.0 (July 20, 2016)
+---------------------------------------------
+ADD: [SetupS] Function to force SetupS to wait until all other occurrences of SetupS 
+     complete.
+CHANGE: [ssCore] DualArch "Wait" parameter now defaults to "off" or "NoWait".
+FIX: [ssPreinstaller] Using older/broken EnvUpdate() which was causing intermittent hangs.
+FIX: [SetupS] During registry imports/merges, OSArch-gates (#Is_x86#/#Is_x64#) were being 
+     ignored with x86 ssApp-architectures, such as being installed to %ProgramFiles(x86)%.
+
+---------------------------------------------
+v16.6.10.0 (June 10, 2016)
+---------------------------------------------
+CHANGE: [ssEditor] Improvements to the Auto Silent Switch Finder (ASSF).
+ADD: [ssEditor] New ASSF handler for installers using UPX (Ultimate Packer for eXecutables).
+
+---------------------------------------------
+v16.6.1.0 (June 1, 2016)
+---------------------------------------------
+FIX: [ssEditor] Removed debug code that was preventing proper silent switch detection.
+ADD: [ssEditor] Universal Silent Switch Finder (USSF) to the Auto Silent Switch Finder (ASSF).
+
+---------------------------------------------
+v16.5.22.0 (May 22, 2016)
+---------------------------------------------
+FIX: [ssEditor] Path/filename filter removing leading or trailing dots, dashes, or underscores.
+
+---------------------------------------------
+v16.5.21.0 (May 21, 2016)
+---------------------------------------------
+CHANGE: Updated 7-Zip to v16.02
+CHANGE: [ssEditor] Expanded the improved illegal characters/symbols filter for: Install-to 
+        Path (%AppPath%), Default Menu (%SourcePath%), and any paths/filenames used 
+        with the Shortcut Defs.
+FIX: [ssEditor] Blank/empty lines removed from "URL(s)" field.
+
+---------------------------------------------
+v16.5.12.0 (May 12, 2016)
+---------------------------------------------
+CHANGE: Updated 7-Zip to v16.00
+FIX: Shortcut for ssClean Startmenu-only to skip "Dud Install-to paths" & "Deep scan".
+
+---------------------------------------------
+v16.5.8.0 (May 8, 2016)
+---------------------------------------------
+CHANGE: [ssEditor] Improved deployment package filename filter for common illegal 
+        characters/symbols: \/:*?"<>|
+CHANGE: [ssEditor] Calculated extracted install-size (for ppApps/ppGames) gets updated if 
+        size changes (only during builds or autobuilds -- not saves).
+
+---------------------------------------------
+v16.4.7.0 (April 7, 2016)
+---------------------------------------------
+FIX: [ssEditor] Calculated extracted install-size (for ppApps/ppGames) was being saved *after*
+     the md5 file-hash calculations -- as a consequence the .app/.ppg file-hash would be off.
+
+---------------------------------------------
+v16.4.1.1 (April 1, 2016)
+---------------------------------------------
+FIX: [ssEditor] Problems caused by edge-case filenames being used with deployment packages. 
+     For example, a file named "Patch.job" would not get processed correctly because it 
+     matches one of the SetupS-file specs: "Patch.*" 
+FIX: [ssEditor] Logic errors involving various presence (or lack) of Patch folder-name usage.  
+     i.e. "ppApp\" vs. "Patch\" and if one or the other (or both) are used.
+
+---------------------------------------------
+v16.1.20.0 (January 20, 2016)
+---------------------------------------------
+ADD: Ability to reset tools' settings back to defaults (ssConfig, ssEditor, ssXFormer, ssCleaner).
+CHANGE: Updated 7-Zip to v15.14
+CHANGE: Improvements to the Auto Silent Switch Finder (ASSF).
+FIX: Bugs involving the .app/.ppg file version info.
+FIX: Line-endings with AddToHosts -- <Assembly>(internal) tool. v15.03.22.0 had only fixed the
+     line-endings with the external tool.
+
+---------------------------------------------
+v15.12.21.0 (December 21, 2015)
+---------------------------------------------
+ADD: [ssEditor] Launch link(s) by clicking on "URL(s)" label/hotspot.
+ADD: [ssEditor] Option(s) for filename tags usage during (archive) builds.
+ADD: [ssEditor] Option to view .app/.ppg file version info.
+CHANGE: Improved handling for tools' settings & defaults.
+CHANGE: Updated "ssUpdate.ini" (info used for downloading & installing updates).
+CHANGE: Update info is now gathered only when invoked (via clicking a link or autoupdate).
+        Previously this had been done during the tool's initial startup.
+CHANGE: Updated ssTek help file.
+CHANGE: Updated Inno Setup development tool to v5.5.6.
+CHANGE: Updated cURL development tool to v7.46.0.
+CHANGE: Updated md5sum development tool to v1.3.0.
+CHANGE: Updated UPX development tool to v3.91.
+CHANGE: Updated Innounp ssEditor tool to v0.44.
+CHANGE: SetupS File Spec "App-File Format" renamed to "App-File Version".
+FIX: [ssEditor] Build enable/disable depending on app build-type (ssApp, ppApp/ppGame) and 
+     deployment package (Archive or Folder).
+FIX: Some minor cosmetic issues.
+
+---------------------------------------------
+v15.12.7.0 (December 7, 2015)
+---------------------------------------------
+ADD: Better support for Windows 10.
+ADD: [ssControlPanel] Option to disable sorting/organizing the Default Startmenu shortcuts.
+CHANGE: Update the tools (SetupS, ssEditor, etc.) to use the new revised SetupS File Spec to
+        accommodate new OS (binary) flags that are still backwards compatible with current
+        app & ppg files.
+FIX: [ssEditor] The 7-Zip compression progress percentage quit working due to a change in
+     the "add to archive" read-out format of the latest 7-Zip (v15.12).
+
+---------------------------------------------
+v15.11.30.0 (November 30, 2015)
+---------------------------------------------
+FIX: [SetupS, ssEditor, & Core] Several bugs involving the new Hotkey support for shortcut
+     definitions.  
+
+---------------------------------------------
+v15.11.29.1 (November 29, 2015)
+---------------------------------------------
+FIX: [ssEditor] Import Size function for Installed Size Meta-data was incorrectly reporting
+     filesizes due to a change in the listing format of the latest 7-Zip (v15.12).
+ADD: [ssEditor] Filesizes for SetupS Aux-files are also now included in the Installed Size
+     Meta-data. 
+
+---------------------------------------------
+v15.11.23.0 (November 23, 2015)
+---------------------------------------------
+ADD: Hotkey support for shortcut definitions. (Check Help-file for proper codes and syntax)
+FIX: Shortcuts Start-in folder getting blanked when same as Install-to folder. Alternatively, 
+     the special path "." is also the same as the Install-to folder.
+CHANGE: With the exception of filenames using the build-type scheme or the Install-to 
+        folder-name, ssEditor no longer automatically renames files to the filename scheme. 
+        This must be done manually now with the "Force Assign" function from the Graphics-tab. 
+CHANGE: ssEditor no longer automatically deletes identical files (with different file names).
+        This must be done manually now (from Explorer).
+CHANGE: Updated 7-Zip to v15.12
+
+---------------------------------------------
+v15.03.22.0 (March 22, 2015)
+---------------------------------------------
+FIX: Line-endings with AddToHosts (external tool).
+FIX: Problem with ssEditor not resetting Flags in-between builds.
+CHANGE: ssEditor now displays (and accepts) ppApp/ppGame "Installed Size" data with filesize
+        byte-prefixes. For example, 50069604 Bytes becomes 47.75 MB (and vice versa).
+
+---------------------------------------------
+v15.03.15.0 (March 15, 2015)
+---------------------------------------------
+FIX: Fadertainer stalling on certain archives.
+FIX: Legacy archives (using "SetupS.ini") not working.
+FIX: Changed or missing Startup folder icon(s).
+
+---------------------------------------------
+v15.01.26.0 (January 26, 2015) - Glenn L. Chugg 
+---------------------------------------------
+FIX: A bug with RunWait86 where regen stops on apps with no shortcuts specified. Caused by an
+     empty/null $TempDir. Changed to the use of @TempDir instead which is never null.
+
+---------------------------------------------
+v14.11.6.0 (November 6, 2014) - Glenn L. Chugg
+---------------------------------------------
+FIX: A bug involving INIWrite that was creating random files in "C:\Windows".
+
+---------------------------------------------
+v14.5.0.0 (May 1, 2014)
+---------------------------------------------
+FIX: A bug extracting from .apz/.pgz files preventing ssEditor from opening them.
+CHANGE: Uninstaller skips disabling ssUninstall if the feature is already disabled.
+CHANGE: Updated help-file to reflect some of the recent changes.
+
+---------------------------------------------
+v14.4.0.0 (April 8, 2014)
+---------------------------------------------
+ADD: New feature/option, called "ssUninstall", for automatic ssCleaning after uninstalling an 
+     App or Game that was installed with SetupS.
+FIX: Use of wild cards to extract from .apz/.pgz files were missing the subfolders contained 
+     in the archive.
+FIX: Updating the PATH environment variable was causing intermittent hangs.
+CHANGE: Improved uninstall data gathering.
+CHANGE: Other minor improvements and bug fixes.
+
+---------------------------------------------
+v14.2.0.0 (February 2, 2014)
+---------------------------------------------
+ADD: New command/switch for ssControlPanel that permanently adds (or removes) the SetupS path
+     to/from the environment path variable. Syntax:
+         -Path=Add|Del
+FIX: Broken v14.1.31.0 -- was no longer locating the "Tools" folder.
+
+---------------------------------------------
+v14.1.27.0 (January 27, 2014)
+---------------------------------------------
+
+---------------------------------------------
+v14.1.17.0 (January 17, 2014)
+---------------------------------------------
+FIX: Minor bug involving any removable-media drive such as a card-reader or a usb one that 
+     happens to have the same drive-letter as might be used for the Linux home drive (z:).
+
+---------------------------------------------
+v14.1.14.0 (January 14, 2014)
+---------------------------------------------
+ADD: New functions to facilitate getting updates for the external ppApp SetupS tools such as 
+     ssCleaner, ssXFormer, ssGooey, and ssFATSorter.
+
+---------------------------------------------
+v14.1.0.0 (January 4, 2014)
+---------------------------------------------
+ADD: Ability to change the order of where to get updates from the list of alternate 
+     distribution sites.
+ADD: SetupS (ssApp-version only) added to the Path environment variable for 
+     Run-dialogs/Command-windows.
+ADD: New ssCleaner switches (DudInstallPaths|NotDudInstallPaths, or DeepScan|NoDeepScan) for 
+     the folder removal functions. Multiple settings are comma-separated, like so: 
+         -ssClean=StartMenuOnly,NoDeepScan
+CHANGE: The check for removed Startmenu items is now a separate option from the type of 
+        ssClean (for either StartmenuOnly or AllShortcuts). This option simply allows for 
+        automatic ssCleaning whenever shortcuts are removed such as during Startmenu Style 
+        changes.
+
+---------------------------------------------
+v13.12.1.0 (December 1, 2013)
+---------------------------------------------
+CHANGE: Some minor improvements.
+
+---------------------------------------------
+v13.11.27.1 (November 27, 2013)
+---------------------------------------------
+ADD: New ssTek option & switch to install (and retain) the full selected Advanced Startmenu
+     including empty folders. Set via the SetupS ControlPanel or through a command-line switch
+     for SetupS, ssRegenerator, ssControlPanel, or ssCleaner. CLI Syntax:
+         -KeepStartmenuFolders[=Yes|No]: Default=No
+
+---------------------------------------------
+v13.11.15.0 (November 15, 2013)
+---------------------------------------------
+ADD: ssEditor includes multi-screenshots (if present) to deployment packages.
+
+---------------------------------------------
+v13.11.11.0 (November 11, 2013)
+---------------------------------------------
+FIX: Bug with the comparative gates involving "equal to" or "not equal to" comparisons.
+
+---------------------------------------------
+v13.11.9.2 (November 10, 2013)
+---------------------------------------------
+FIX: Minor bug with the "#Is_Metro#" gate.
+ADD: #Is_NT..# alias for the #Is_OS..# gates.
+
+---------------------------------------------
+v13.11.9.1 (November 9, 2013)
+---------------------------------------------
+ADD: New comparative gates for Windows OS versions. For example, "#Is_OS>=5##Is_OS<6#" is
+     exactly the equivalent of "#Is_NT5#".
+ADD: New gate for Windows OS versions using StartScreen (Metro): #Is_Metro#.
+CHANGE: ssEditor Shortcut(s) options now references "StartScreen-friendly" rather than 
+        "Metro-friendly".
+
+---------------------------------------------
+v13.11.5.0 (November 5, 2013)
+---------------------------------------------
+FIX: ssEditor was not saving changes to the "Metro-friendly" shortcut flag.
+FIX: A minor bug with ssEditor and certain changes it makes to the external script/registry
+     files but not showing those changes in the built-in edit-boxes.
+CHANGE: ssEditor's View "Source in Notepad" now saves any edits done there.
+
+---------------------------------------------
+v13.10.28.0 (October 28, 2013)
+---------------------------------------------
+FIX: Legacy ppApps/ppGames, if Architecture=0 (any), would install as 
+     Architecture=1 (x86) regardless if it truely was x86-only.
+
+---------------------------------------------
+v13.10.24.0 (October 24, 2013)
+---------------------------------------------
+FIX: Disabled icon extraction in ssEditor for WINE versions older than 1.7.5.
+
+---------------------------------------------
+v13.10.22.1 (October 22, 2013)
+---------------------------------------------
+CHANGE: Re-enabled MD5 checksum calculations for WINE versions 1.7 or better (due to the
+        recent fix in WINE for the crypto functions).
+FIX: Bug that was introduced with the context-menu help additions to ssControlPanel.
+
+---------------------------------------------
+v13.10.17.1 (October 19, 2013)
+---------------------------------------------
+CHANGE: Linux (via WINE) support reintroduced. So far only the Fadertainer is disabled if 
+        running SetupS from such an environment. Also there's some issues remaining with ssEditor.
+CHANGE: Combined help files into a single resource which will be much easier to maintain. 
+        Plus, there were many duplicated references before.
+
+---------------------------------------------
+v13.9.30.0 (September 30, 2013)
+---------------------------------------------
+CHANGE: Minor improvements and bug fixes.
+
+---------------------------------------------
+v13.9.17.0 (September 17, 2013)
+---------------------------------------------
+FIX: x64 bug causing SetupS-related files for x86 apps to endup in the x64 one.
+CHANGE: Revised help files. Still incomplete, but making some progress.
+
+---------------------------------------------
+v13.7.19.13 (September 6, 2013)
+---------------------------------------------
+FIX: x64 bug causing multiple instances of SetupS to spawn.
+FIX: Bugs caused by the debugging code.
+ADD: Options for Install-to folder deleting.
+FIX: Under certain conditions the patch folder (named "Patch") would get copied to the 
+     installed-to path as well as its contents.
+FIX: Deleting items was defaulting to the Recycle-Bin.
+CHANGE: Reverted back to the old method of seeking SetupS files (.app/ppg, .apz/.ppg, etc.).
+CHANGE: Re-enabled logging/debugging options.
+FIX: An extra check added to validate shortcuts listed in the keep list.
+FIX: SetupS Temp files get deleted instead of sent to the recycle bin.
+
+---------------------------------------------
+v13.7.17 (July 17, 2013)
+---------------------------------------------
+FIX: Gate filters are applied only to external registry files listed in Assembly. External
+     scripts listed in Assembly are run "as is" without any modification (variable 
+     substitutions, gate directives, etc.)
+
+---------------------------------------------
+v13.7.16 (July 16, 2013)
+---------------------------------------------
+ADD: Uninstall section for ssEditor.
+CHANGE: Some tweaks involving the new "uninstall data" cleaning method.
+
+---------------------------------------------
+v13.7.14 (July 14, 2013)
+---------------------------------------------
+ADD: Assembly now accepts gate filtering for external script & registry files.
+CHANGE: Improved detection of installed architecture version (for ssApps only).
+CHANGE: Improvements to the x64 version of SetupS in the handling of Registry entries with
+        regards to what type of architecture an app or game is (or could be). For example,
+        whether it is x86, x64, DualArch, or "Any" with or without the use of OSArch gates.
+
+---------------------------------------------
+v13.7.10 (July 10, 2013)
+---------------------------------------------
+FIX: Bugs involving new uninstall data.
+
+---------------------------------------------
+v13.7.7 (July 7, 2013)
+---------------------------------------------
+CHANGE: A new and much improved method of cleaning remnant SetupS files after an application
+        or game has been uninstalled. (SetupS/ssCleaner)
+FIX: Issue(s) with SetupS not working properly with applications that write-protect their 
+     installed-to folders.
+FIX: Problem(s) adding tags using ssEditor.
+FIX: Issue with SetupS & ssCleaner incorrectly detecting which applications or games have been
+     uninstalled and the undesired possibility that they'll get deleted.
+
+---------------------------------------------
+v13.6.29 (June 29, 2013)
+---------------------------------------------
+ADD: Ability to download updates from alternate distribution sites.
+CHANGE: Resurrected categories: Puzzle, Arcade, Card, Board, Dice, Music, Physics.
+CHANGE: Reinstated rule of using the first shortcut def listed if none are listed in the
+        Shortcuts-keep list.
+FIX: A bug where SetupS no longer checked Install-to path for external script/registry files
+     (when in Install-mode).
+FIX: Minor issues involving ssEditor. For example, editing ShortcutS definitions, changing
+     built-types, etc.
+
+---------------------------------------------
+v13.5.9 (May 9, 2013)
+---------------------------------------------
+CHANGE: Some weeding done with the category, catalog, and tag lists.
+CHANGE: Fadertainer's selection of default fader (if app/game is missing one)
+CHANGE: Only the ShortcutS-keep list will be used to determine which shortcut(s) get set if
+        the KeepAll flag is not set. If that list is empty, then it will be set from the
+        first shortcut def listed (default). As before, for specialized shortcut locations
+        the first one listed in the ShortcutS-keep list will be created.
+FIX: Minor issue involving the order of the shortcut defs when using the new INI-file format.
+
+---------------------------------------------
+v13.4.30 (April 30, 2013)
+---------------------------------------------
+ADD: Tags for apps.
+CHANGE: Tags enabled for apps (ssEditor).
+FIX: Minor bug involving batch autobuilds with ssEditor.
+
+---------------------------------------------
+v13.4.25 (April 25, 2013)
+---------------------------------------------
+ADD: New feature to better support the cleaning of remnant SetupS files after an application
+     or game has been uninstalled. (SetupS/ssCleaner)
+FIX: Minor ssEditor bug with trying to set an Install-to path that was outside one of either
+     "%ProgramFiles%" (for ssApps), "%ppAppsDrive%\ppApps", or "%ppGamesDrive%\ppGames".
+
+---------------------------------------------
+v13.4.16 (April 16, 2013)
+---------------------------------------------
+ADD: Multiple screen-shots support.
+ADD: 2 new switches/parameters to ssEditor:
+         -SaveFormat=Legacy|INI|Dual|UpdateOnly : Which app-file format to save to. Over-rides
+          the default.
+         -Save|SaveAs|SaveTo[=Legacy|INI|Dual|UpdateOnly] : Only perform a save operation. If
+          no value is specified then it will use the default or the SaveFormat switch to
+          determine the file format.
+
+---------------------------------------------
+v13.4.12 (April 12, 2013)
+---------------------------------------------
+ADD: New meta-data field, "ReleaseVersion".
+FIX: An ssEditor bug when setting a new ppTweak.
+FIX: ssEditor radio buttons needed realigned.
+
+---------------------------------------------
+v13.4.11 (April 11, 2013)
+---------------------------------------------
+ADD: Ability to forward/redirect Category entries (similarly to how it's done with the
+     Startmenu Catalog).
+ADD: Default fader listing for the Category entries for apps/games that don't include one.
+CHANGE: If game is selected, then ssEditor hides the "Game" prefixes from Category and
+        Startmenu-catalog combos & input/edit boxes. Does not affect the internal data --
+        .app/.ppg files will still show the "Game" prefixes.
+FIX: SetupS not copying .reg/.cmd files to the Install-path from archive packages (.apz/.pgz).
+FIX: An infinite-recursion bug with the startmenu destination validation functions.
+
+---------------------------------------------
+v13.4.2 (April 2, 2013)
+---------------------------------------------
+ADD: A new Metro-friendly app-variable that if Windows 8 is detected will over-ride the 'Keep
+     in folder' and 'Keep all' flags to instead place shortcuts from the 'Shortcut names to
+     keep' list or if that's empty, then to use the first ShortcutS definition listed.
+ADD: A new section called [Meta] (or <Meta>) for both the legacy and INI file formats with the
+     following new keys: Tags, Publisher, Language, Releaser, Additional, Rating, RequiredDX,
+     ReleaseDate, LicenseType, InstalledSize.
+ADD: A new ssEditor function to calculate InstalledSize info based on the ppInstall-archives
+    (which must be present). Only works reliably with ppGames or Dual-arch ppApps.
+CHANGE: A new way of installing fonts using FontReg by code.kliu.org instead.
+CHANGE: DualArch now has an extra option (set via SetupS Control Panel preferences-tab) to
+        force those installs as Type 2a (only the system arch is installed and present) or
+        Type 2b (both arches are installed and present).
+CHANGE: <Script> & <Registry> sections are now handled as external-files.
+CHANGE: .app/.ppg files will now be defaulting to the new INI-file format.
+FIX: ssEditor not saving to Legacy file-format even when that option is selected.
+FIX: Fadertainer not working with Windows 8.
+FIX: ssEditor not updating the ssWPI option "Always Show" and "Priority Order".
+FIX: ssEditor Statusbar not updating if a template load is aborted.
+FIX: ssEditor Category Combobox was not in sync with the Inputbox when items were manually
+     removed (or added).
+FIX: ssEditor Menu Catalog Combobox was not in sync with the Inputbox when items were manually
+     removed (or added).
+FIX: ssEditor Tags Combobox was not in sync with the Inputbox when items were manually removed
+     (or added).
+FIX: An issue with Catalog entries not listed in (or missing from) the "official" Startmenu
+     definitions. It'll attempt to create new (local) entries based on any legacy startmenu
+     items (<StartmenuDestPath>) if present in the .app-file.
+
+---------------------------------------------
+v8.13.4.30 (April 30, 2013)
+---------------------------------------------
+ADD: New feature to better support the cleaning of remnant SetupS files after an application
+     or game has been uninstalled. (SetupS/ssCleaner)
+FIX: Minor ssEditor bug with trying to set an Install-to path that was outside one of either
+     "%ProgramFiles%" (for ssApps), "%ppAppsDrive%\ppApps", or "%ppGamesDrive%\ppGames".
+FIX: Minor bug involving batch autobuilds with ssEditor.
+CHANGE: If game is selected, then ssEditor hides the "Game" prefixes from Category and
+        Startmenu-catalog combos and input/edit boxes. Does not affect the internal data --
+        .app/.ppg files will still show the "Game" prefixes.
+
+---------------------------------------------
+v8.13.4.11 (April 11, 2013)
+---------------------------------------------
+ADD: Ability to forward/redirect Category entries (similarly to how it's done with the
+     Startmenu Catalog).
+ADD: Default fader listing for the Category entries for apps/games that don't include one.
+FIX: An infinite-recursion bug with the startmenu destination validation functions.
+
+---------------------------------------------
+v8.13.4.2 (April 2, 2013)
+---------------------------------------------
+CHANGE: The default handling of special location shortcuts automatic removal by SetupS are now
+        user-changeable options via ssControlPanel.
+FIX: SetupS not copying .reg/.cmd files to Install-path from archive packages (.apz/.pgz).
+FIX: A missing shortcut def for the the new ssTek help-file was causing a bug with it not
+     getting sorted properly in the startmenu.
+FIX: Problems with some of the default Startmenu shortcut defs.
+FIX: Fadertainer not working with Windows 8.
+FIX: ssEditor not updating the ssWPI option "Always Show" and "Priority Order".
+FIX: ssEditor Statusbar not updating if a template load is aborted.
+FIX: ssEditor Category Combobox was not in sync with the Inputbox when items were manually
+     removed (or added).
+FIX: ssEditor Menu Catalog Combobox was not in sync with the Inputbox when items were manually
+     removed (or added).
+FIX: An issue with Catalog entries not listed in (or missing from) the "official" Startmenu
+     definitions. It'll attempt to create new (local) entries based on any legacy startmenu
+     items (<StartmenuDestPath>) if present in the .app-file.
+
+---------------------------------------------
+v8.13.2.24 (February 24, 2013)
+---------------------------------------------
+FIX: A crash with the pinning function if the shortcut's target does not exist or is not found.
+FIX: A bug in the OS/CPU detection causing SetupS to not function with machines running a
+     32-bit OS on a 64-bit capable CPU.
+
+---------------------------------------------
+v8.13.2.16 (February 16, 2013)
+---------------------------------------------
+ADD: General help file for the SetupS Project (ssTek.chm). This will also replace the
+     individual .hlp-files that were used previously with the various tools.
+CHANGE: Reorganized/cleaned-up the various distribution packages.
+CHANGE: SetupScp is now called ssControlPanel. Also recognizes the following aliases: SetupScp
+        or ssCP. This was done mainly to accommodate the tools used with the ssWPI update
+        package.
+CHANGE: Regenerator is now called ssRegenerator. Also recognizes the following aliases:
+        Regenerator or ssRegen. This was done mainly to accommodate the tools used with the
+        ssWPI update package.
+CHANGE: Disabled the Windows 8 default Startmenu shortcut for "Windows Store".
+FIX: A bug with the filters used by default Startmenu regen/sorting.
+
+---------------------------------------------
+v8.13.2.10 (February 10, 2013)
+---------------------------------------------
+ADD: "Update check" to ssEditor -- the same one that SetupScp uses. Look for it under the Help
+     menubar.
+ADD: Windows 8 default Startmenu shortcuts.
+FIX: Startmenu regen/sorting to standard was not working properly if the legacy startmenu
+     destinations information was missing from the .app-file.
+CHANGE: Use of @CPUArch instead of @OSArch for checking between x86 versus x64 machines.
+
+---------------------------------------------
+v8.13.2.2 (February 2, 2013)
+---------------------------------------------
+ADD: Abort key (esc) to stop the download of an update via SetupS.Control.Panel (SetupScp).
+FIX: UAC preventing SetupS from getting installed properly.
+
+---------------------------------------------
+v8.13.1.29 (January 29, 2013)
+---------------------------------------------
+ADD: New <Flag> called UpdateAppFile (default = Yes). When set to "No", will force SetupS to
+     NOT update an .app/.pgz-file even if changes are found or detected.
+FIX: ssEditor bugs with saving New (and with SaveAs) files from a template.
+CHANGE: Windows 8 is unsupported at the moment; so expect many features to either be
+        non-functional or buggy.
+
+---------------------------------------------
+v8.12.12.4 (January 22, 2013) Preview
+---------------------------------------------
+ADD: SetupS/ssEditor shortcut locations: TaskbarPin & StartmenuPin. Pinning only works with
+     NT6 or greater.
+ADD: New "templates" folder for ssEditor with some examples to choose from: ssApp, ppApp, or
+     ppGame.
+ADD: ssEditor option to make "URL-friendly" filenames with ExpressInstall packages (.apz/pgz).
+FIX: ssEditor bug with saving new files from a template.
+FIX: ssEditor bug with saving (and editing) archive/.apz files.
+FIX: Problems with attempting to save to the ssEditor templates folder.
+FIX: ssEditor bug setting initial working folder when using Sendto on an EXE-file or any
+     folder without an .app or .ppg-file.
+FIX: During batch processing with SetupS, if it encounters a "Nonething" <AppPath> it would
+     incorrectly set all the following apps <AppPath> entries to "Nonething" as well.
+FIX: A patch for the previous bug fix (below) for the ssCleaner function that would cause some
+     Installed-to paths to be ignored and not get deleted when they should be.
+FIX: A bug with the ssCleaner function where if it found any shortcut without a target that
+     entire app got deleted. For example, a shortcut to a missing help file.
+CHANGE: Linux support dropped. Temporary for now until there is more progress on better
+        cross-platform connectivity (such as with WINE). 
+
+---------------------------------------------
+v8.12.11.0 (October 26, 2012) RC11
+---------------------------------------------
+FIX: ssEditor bug when cancelling from a Build then the form didn't unlock the other
+     functions/buttons. 
+FIX: ssEditor bug with the "Activate Sendto Autobuild" menubar option that it wasn't showing
+     if it was activated. 
+FIX: SetupS (x64 version) could incorrectly process <Registry> entries with certain x86 ppApps
+     or ppGames.  
+FIX: With Windows 7, SetupS would incorrectly only process the last entry in a list of fonts
+     in <InstallFonts>.
+FIX: A problem with SetupS installing itself with a pre-set Advanced Startmenu would
+     erroneously change its default Startmenu (<StartMenuSourcePath>) in the .app-file
+     resulting in bogus Startmenus during a regen or re-sort.
+
+---------------------------------------------
+v8.12.10.0 (October 10, 2012) RC10
+---------------------------------------------
+ADD: New function for ssEditor to save current file/package in another location. Now any
+     SetupS package can serve as a template for a new one. (See "File, Save As" from the
+     menu-bar.)
+CHANGE: Creating a new .app-file  with ssEditor -- menubar "File, New" or Ctrl+N -- now asks
+        for new folder locations and/or overwrite confirmations if there are any conflicts.
+        For example, file already exists or working folder is the %AppPath%, etc.
+CHANGE: Updated innounp.exe from v0.17 to v0.37 for ssEditor.
+FIX: Bug when browsing for SetupS aux-files (icons, faders, or screen-shots) and assigning
+     them to the package, it didn't copy the files to the working folder.
+
+---------------------------------------------
+v8.12.9.0 (September 26, 2012) RC9
+---------------------------------------------
+ADD: A new .app-file definition for <Architecture>: "3 (DualArch)". This will only apply to
+     ppApps/ppGames, because of their unique capabilities. The default behavior for
+     ppApps/ppGames with "DualArch-Installers" will now be exactly the same as that of ssApps
+     -- they'll simply install the single-OSArch package of the target  system. The default
+     behavior is whenever <Architecture> is either omitted or set to "0 (Any)". Note: This 
+     will not greatly impact any existing ppApps. Those that are full dualArch only need to
+     add "3 (DualArch)" under <Architecture> to maintain the original behavior; otherwise, the
+     new default will be used instead.
+
+---------------------------------------------
+v8.12.8.9 (August 9, 2012) RC8
+---------------------------------------------
+FIX: Various bugs causing ssEditor to crash.
+FIX: Missing files from the Distribution packages (SourceCode and DevelopersPack).
+
+---------------------------------------------
+v8.12.7.17 (July 17, 2012) RC7
+---------------------------------------------
+FIX: Bug in detecting files using the Archive Filename Standard.
+CHANGE: Dropped the MakeLists tool from ssEditor.
+
+---------------------------------------------
+v8.12.6.29 (June 29, 2012) RC6d
+---------------------------------------------
+ADD: Cross-references to the primary Advanced Startmenu for any of the following names:
+     "LastXP", "LastOS", or "ssTek". Ditto with "Kazz" now cross-references as the
+     secondary Advanced Startmenu. [SetupS.Control.Panel]
+CHANGE: Esc-hotkey for Fadertainer only active if a fader is being displayed.
+CHANGE: Primary Advanced Startmenu renamed to "LastOS".
+FIX: Undefined function error(s). [SetupS.Uninstaller]
+FIX: Bug with switch/parameter detection.
+FIX: AutoUpdate was no longer self-bootstrapping [SetupS.Control.Panel]
+FIX: Bug with the new method for seeking SetupS files (.app/ppg, .apz/.ppg, etc.) if only
+     one folder is found. 
+
+---------------------------------------------
+v8.12.5.29 (May 29, 2012) RC5
+---------------------------------------------
+CHANGE: A new method for seeking SetupS files (.app/ppg, .apz/.ppg, etc.).
+ADD: New %Variable%'s: %OpticalDrive%, %ThisDrive%, %ThisFolder%, and %ThisPath% = 
+     (%ThisDrive%+%ThisFolder%).
+ADD: %Variable% substitutions allowed with ppAppDrive.ini and ppGameDrive.ini 
+     (ie, %SystemDrive%).
+ADD: %Variable% substitutions allowed with command-line parameters/arguments.
+ADD: Integrated ssClean into SetupS.Control.Panel for easier access. (See new tab titled,
+     "ssClean").
+ADD: ssClean can also be invoked via command-line with SetupScp:
+         -ssClean[=Never|StartmenuOnly|AllShortcuts]: Perform Shortcut cleaning and 
+         whether to limit the cleaning to never, or only the StartMenu dud shortcuts or to
+         include all shortcut locations such as Desktop, Sendto, & Quicklaunch.
+FIX: Problem with LastXP environment variable %Path% non-functioning with spawned direct
+     DOS-type processes orginating from AutoIt.
+
+---------------------------------------------
+v8.12.3.29 (March 29, 2012) RC4
+---------------------------------------------
+FIX: A bug where files were not found because "_x64" was used for filename instead (.ico,
+     .hlp, etc.)
+FIX: Startmenu folder icon for Shooter was named incorrectly.
+FIX: Reporting/Debugging Logs could not be activated from SetupS.Control.Panel (SetupScp).
+FIX: Online updates could not be completed due to incorrect download folder-path.
+FIX: A couple bugs were accidentally introduced that breaks installing .apz/.pgz archives and
+     batch processing.
+
+---------------------------------------------
+v8.12.3.12 (March 12, 2012) RC2
+---------------------------------------------
+FIX: Some bugs introduced by upgrading to the latest AutoIt release (specifically the includes
+     library).
+ADD: Ability to forwarding/redirect entries in the Startmenu Catalog.
+CHANGE: To some of the CATS (Catalog/Categories).
+FIX: ssEditor "Build" (F5) and "SetupS Test" (F8) are disabled when editing archives.
+
+---------------------------------------------
+v8.12.2.12 (February 12, 2012) RC1
+---------------------------------------------
+ADD: New option/switch for SetupScp to (re)scan and set for the ppDrives. Command-line usage:
+         -ppDrivesScan[=Backwards|Forwards]: Scan and set for ppDrives. Scan direction can
+          also be specified. 
+ADD: New option/switch for SetupScp GUI to run Regenerator after setting the ppDrive(s).
+     Command-line usage:
+         -ppDrivesRegen: Runs Regenerator on ppDrives.
+ADD: New ssConfig option for setting the (re)scan direction for ppDrives (Backwards or
+     Forwards).
+ADD: ssEditor Assembly tab now accepts installers needing relative paths from the Source-Path.
+FIX: ssEditor tab order for shortcut definitions.
+FIX: Some of the problems of aborting the creating of archive(s) with ssEditor.
+ADD: Games filter to Catalog dropbox with ppGames build-types (similar to the Categories
+     dropbox).
+
+---------------------------------------------
+v8.12.1.9 (January 9, 2012) Surveyor
+---------------------------------------------
+UPDATE: Copyright year notices.
+UPDATE: ssEditor.chm & .hlp help files with some of the recent changes.
+FIX: ssEditor RAR usage/bugs.
+
+---------------------------------------------
+v8.12.1.6 (January 6, 2012) Epiphany
+---------------------------------------------
+CHANGE: ssEditor ASSF (Automatic Silent Switch Finder) now using "/qn" instead of "/qb" for
+        .msi-files.
+FIX: SetupS mis-detecting ".msi" installer-files and not installing them.
+
+---------------------------------------------
+v8.12.1.0 (January 2012) Zeugma
+---------------------------------------------
+ADD: Primary/backup links for updates added to the Preference tab for SetupS.Control.Panel.
+UPDATE: SetupScp.hlp file.
+CHANGE: <Switch> parameters/settings affect the defaults for both SetupS & Regenerator as well
+        as for SetupS.Control.Panel.
+FIX: Some switches/parameters for SetupS.Control.Panel that were broken or not working at all.
+FIX: Some remaining minor (but annoying) bugs with the GUI for SetupS.Control.Panel.
+FIX: SetupS erroneously detecting a ".reg" sub-string as a registry-file in <Script> -- or the
+     external equivalent(s). Ditto with an ".msi" sub-string being detected as an
+     installer-file.
+
+---------------------------------------------
+v8.11.12.20 (December 2011) Mysterium
+---------------------------------------------
+ADD: Option(s) for activity/reporting logs and debugging logs. SetupS/Regenerator via
+     SetupS.Control.Panel (SetupScp) Preferences. SetupS.Editor (ssEditor) via Options 
+     Menu-bar.
+ADD: An Option (via SetupScp Preferences) for SetupS/Regenerator to process or skip apps/games
+     based on the <Architecture> and/or <OS> information in an .app/.ppg file (Default = On). 
+ADD: New variables %LocalAppData% and %Public% -- mainly for NT5 since they are already
+     "built-in" for NT6.
+ADD: New variables %LocalAppData% and %Public% to ssEditor.
+ADD: Allow Gate Directives to work with: <FileTypes>, <RegisterDLLs>, <InstallFonts>, and
+     <ShortcutS>. Note, for shortcut definitions, placement of the gate(s) is via the "Flags="
+     field (with or without the "#" delimiters).
+ADD: Support for an alternative or backup download location for updates [via
+     SetupS.Control.Panel]
+CHANGE: ssEditor (Shortcuts tab) has Flags field enabled.
+CHANGE: ssEditor use of "md5sum.exe" dropped in favor of internal functions.
+CHANGE: ssEditor updates MD5 checksums inside edited archives.
+CHANGE: SetupScp use of "md5sum.exe" dropped in favor of internal functions.
+UPDATE: ssEditor help-file to reflect some of the recent changes.
+FIX: ssEditor ShortcutS display name enumeration for multiple shortcuts with the same name
+     (ie, for x86 versus x64).
+FIX: AutoUpdate option (SetupS.Control.Panel).
+FIX: ssEditor truncating intermediate path info which was causing the creation of an erroneous
+     or incomplete <AppPath>.
+FIX: <Catagory> alias was inadvertently dropped.
+
+---------------------------------------------
+v8.11.11.11 (November 2011) Eleventy-Eleven
+---------------------------------------------
+ADD: A new %Variables%-list to clipboard "popup" for ssEditor.
+ADD: More Toolbar buttons for the various tools, etc.
+CHANGE: Toolbar located to the right of tabs.
+CHANGE: Different icons for the Toolbar.
+FIX: Mostly Windows 2000 fixes: Default Startmenu shortcuts, and all dropboxes (SetupSCP,
+     ssEditor).
+FIX: ssEditor editboxes limit of 30,000 characters changed to unlimited.
+CHANGE: Statusbar for ssEditor now indicates reading or writing files. Helpful for really
+        large .app-files.
+
+---------------------------------------------
+v8.11.10.0 (October 2011) Thaumaturgy
+---------------------------------------------
+CHANGE: ssEditor "SetupS Test" to F8.
+
+---------------------------------------------
+v8.11.9.39 (October 15, 2011) 
+---------------------------------------------
+ADD: ssEditor can run SetupS on the working folder. Select "SetupS Test" under the "Tools"
+     menu (or by pressing F6).
+ADD: Manual selection of a screenshot, icon, or fader -- use ssEditor's Preview Tab, "Force
+     Assign" button(s).
+ADD: ssEditor has more file type filter groups (Documents, Pictures, and All) to the shortcut
+     file target browser. Current groups are now:
+         Executables (*.exe;*.msi;*.cmd;*.bat)
+         Documents (*.doc;*.txt;*.pdf;*.chm;*.hlp;*.mht;*.lit)
+         Pictures (*.jpg;*.png;*.gif)
+         All (*.*)
+CHANGE: ssEditor can also "View Current working folder" by pressing F2.
+CHANGE: When picking an executable with ssEditor, will use the shortcut's display name for
+        Title and/or StartMenu Default folder if such are empty.
+CHANGE: Selecting a Game Startmenu Catalog with ssEditor automatically selects Category.
+CHANGE: Selecting a Game Startmenu Catalog with ssEditor automatically toggles ppGame 
+        Buildtype.
+CHANGE: Improvements to ssEditor's StartMenu Target Search such that it's not so limited to
+        the original shortcut's location.
+
+---------------------------------------------
+v8.11.9.37 (October 10, 2011) 
+---------------------------------------------
+ADD: ssEditor now supports creating archives and files using RAR. Simply select the option
+     under "Builds". Note: Because of licensing, RAR.exe is not, nor will be, included in the
+     Tools folder -- one must add it on their own recognizance.
+ADD: SetupS now recognizes patch folders called ... "Patch\" that work identical to their
+     {Buildtype} counterparts, ie. "ssApp\", "ppApp\", "ppGame\", & "SetupS\"
+FIX: Miscellaneous ssEditor fixes related to "Patch" folders/archives.
+
+---------------------------------------------
+v8.11.9.31 (October 9, 2011) 
+---------------------------------------------
+CHANGE: ssUninstaller improvements and maybe some fixes.
+CHANGE: Updated LinuxSendTo to now include ssEditor.
+FIX: LinuxSendTo to use the new folder "SetupS.SendTo" (instead of the outdated "SetupSetupS").
+
+---------------------------------------------
+v8.11.9.19 (September 29, 2011) 
+---------------------------------------------
+ADD: "Win_8" to the recognized filters list for "MenuDefaults.ini"
+CHANGE: Icon-file check for defaults listed in "MenuDefaults.ini"
+
+---------------------------------------------
+v8.11.9.16 (September 23, 2011) 
+---------------------------------------------
+FIX: (Corrected) Fadertainer "During Installs only"
+
+---------------------------------------------
+v8.11.9.11 (September 17, 2011) Illuminati
+---------------------------------------------
+ADD: Right-click closes Fadertainer (just like pressing "ESC" currently does)
+ADD: Fadertainer "During Installs only" now also for SetupS -- used to be a Regenerator only
+     flag.
+FIX: Using incorrect or undesired faders from .apz/.pgz packages.
+FIX: A folder or batch of ppGame-ExpressInstall (.pgz) not being processed during Install-mode.
+
+---------------------------------------------
+v8.11.9.3 (September 3, 2011) Binaural
+---------------------------------------------
+CHANGE: TimeDate stamp of the AppPath .app-file synchronized with the Source-path one.
+FIX: A folder or batch of ExpressInstall files (.apz/.pgz) not being processed during
+     Install-mode.
+
+---------------------------------------------
+v8.11.9.0 (September 2011) Serendipity
+---------------------------------------------
+FIX: Empty <StartMenuSourcePath> folders that get created are now removed.
+CHANGE: ssEditor to prefer shortcut target paths for <AppPath> first.
+
+---------------------------------------------
+v8.11.8.17 (August 17, 2011) Prestidigitation
+---------------------------------------------
+ADD: Gate directives (#Is_x64#, #Is_NT6#, etc.) work with <Script> and <Registry>.
+CHANGE: Tweaked Autocomplete to use the source <AppPath> if it can't come up with an adequate
+        one.
+FIX: ssEditor Installer/Switches input boxes to Assembly list.
+
+---------------------------------------------
+v8.11.8.11 (August 11, 2011) Balanced
+---------------------------------------------
+FIX: Autocomplete for <AppPath> to remove invalid path characters from <Title>.
+FIX: Read-only, Hidden, or System folder & file attributes for %ssTekResources% are cleared
+     during write operations.
+FIX: Autocompletes for <AppPath> & <StartMenuSourcePath> are only done during install-time to
+     speed up such processes as Regenerator or Startmenu resorting.
+
+---------------------------------------------
+v8.11.8.8 (August 8, 2011) Skynet
+---------------------------------------------
+ADD: Autocomplete for <AppPath>. In addition to shortcut searching, SetupS also uses the
+     Uninstall section of the Registry to determine where the App is actually installed.
+     Failing all these, if it cannot determine the actual install folder then it will attempt
+     to derive one from the other information in the .app-file.
+ADD: Autocomplete for <StartMenuSourcePath> -- not very refined at this time.
+ADD: GPL licensing information/notification for the SetupS Control Panel and ssEditor.
+CHANGE: "Safe Install" enabled by default.
+
+---------------------------------------------
+v8.11.7.31 (July 31, 2011) Transcendental
+---------------------------------------------
+ADD: New SetupS Control Panel shortcuts for resorting the Startmenu.
+FIX: Items missing from the Developers' Pack.
+
+---------------------------------------------
+v8.11.7.29 (July 29, 2011) Transatlantic
+---------------------------------------------
+CHANGE: Now creates the <AppPath> folder specified in the .app-file but only after exhausting
+        all the other attempts to find the true <AppPath>.
+
+---------------------------------------------
+v8.11.7.27 (July 27, 2011) Tangential
+---------------------------------------------
+ADD: Self-update (via SetupS Control Panel). Can also issue "-AutoUpdate=Yes".
+FIX: The (SFX) installer was leaving behind temp files.
+FIX: Reporting/Notifications not being immediately set.
+
+---------------------------------------------
+v8.11.7.20 (July 20, 2011) Transgenic
+---------------------------------------------
+FIX: Bug when disabling the Fadertainer option "Always On Top".
+
+---------------------------------------------
+v8.11.7.17 (July 17, 2011) Lunar
+---------------------------------------------
+ADD: A preview indicator of the Startmenu path for shortcuts. Reflects the the current
+     Starmenu style (Standard or Advanced) and also the "KeepInFolder" flag. [ssEditor]
+FIX: A glitch between the <Catalog> to <StartmenuDestPath> conversion.
+
+---------------------------------------------
+v8.11.7.11 (July 11, 2011) Equilibrium
+---------------------------------------------
+FIX: A minor bug in which more than one install archive is being utilized for ppApps or ppGames.
+FIX: A possible problem where ssEditor erroneously renames a program's archive into the
+     Buildtype one.
+CHANGE: Improvements to the GetToolsFolder function -- more robust dual-arch capabilities (and
+        less buggy).
+
+---------------------------------------------
+v8.11.7.7 (July 7, 2011) Final Redux
+---------------------------------------------
+FIX: Annoying bug where the current Startmenu style is set to standard/default but the
+     advanced Startmenu support files are still being used which caused a crash whenever those
+     files were missing or not present (such as in an SFX-archive).
+
+---------------------------------------------
+v8.11.7.1 (July 1, 2011) Final 1
+---------------------------------------------
+ADD: Instituted GNU General Public License (GPLv3) licensing for the entire SetupS SendTo Suite.
+ADD: New Startmenu Catalog called "Installing" (alias is also "System Installing").
+ADD: Folder icon for "All Users" Startup.
+CHANGE: The Startmenu Catalog for SetupS SendTo Suite is now "System Installing" (previously
+        it was "Development Setup & Installing")
+CHANGE: The Install-to (AppPath) for SetupS SendTo Suite is now "%ProgramFiles%\SetupS.SendTo"
+        (previously it was "%ProgramFiles%\SetupSetupS").
+FIX: Minor bug where current advanced menu style was ignored if both <Catalog> and
+     <StartMenuDestPath> are missing.
+FIX: A potential bug where the DualArch function cannot find the x64 version.
+FIX: Vertical scrolling for ssEditor's Shortcut Definitions Display Name dropbox when there is
+     more than 30 or so shortcuts defined.
+
+---------------------------------------------
+v8.11.6.7 (June 7, 2011) RC8
+---------------------------------------------
+CHANGE: Process sequence for ssInstall always occurs before the directives #CMD# (or #DOS#).
+        As with the other #Directives#, this is to allow the use of the install-to path (or
+        <AppPath>) as it is often not created nor determined until after ssInstall has been
+        run.
+CHANGE: Improved the automatic silent switch detection for ssEditor.
+CHANGE: Integrated the tools for ssEditor.
+FIX: Checkboxes not working properly with ssEditor's context-sensitive F1-help.
+
+---------------------------------------------
+v8.11.5.30 (May 30, 2011) RC7
+---------------------------------------------
+ADD: Implemented context-sensitive F1-help for ssEditor.
+FIX: (Corrected) Prevent extraction of archives already located at the <AppPath>. (ie, with
+      the "-Regen" switch)
+CHANGE: ssEditor GUI cosmetics.
+CHANGE: To help with the problems of undesired archive extraction(s), a filenaming "standard"
+        will be enforced for install-archives -- similarly to how the faders and screenshots
+        are already handled, like so:
+            {BuildType}.7z|.rar|.zip|.cab (ie, ssApp.7z, ppApp.rar, etc.)
+            {SourceFolderName}.7z|.rar|.zip|.cab (ie, CCleaner_v3_x86_ppApp.7z,
+                 CCleaner_v3_x86_ppApp.rar, etc.)
+            {InstallPath}.7z|.rar|.zip|.cab (ie, CCleaner.7z, CCleaner.rar, etc.)
+        The exception to this will be with "legacy" ppGames which are detected by their lack
+        of <BuildType> tags.
+
+---------------------------------------------
+v8.11.5.22 (May 22, 2011) RC6
+---------------------------------------------
+FIX: Fadertainer disabled for Linux.
+FIX: Network error(s) with network cardless systems such as a LivePE or Linux.
+
+---------------------------------------------
+v8.11.5.18 (May 18, 2011) RC5
+---------------------------------------------
+ADD: Preferences/Options now persistent between re-installs/updates.
+     [SetupS/ssEditor]
+
+---------------------------------------------
+v8.11.5.12 (May 12, 2011) RC4
+---------------------------------------------
+ADD: New <Flag> called 'NoneThing' to prevent (or remove) SetupS related files. Basically,
+     this prevents creation of the Aux files (screenshot, fader, etc.), advanced startmenu
+     shortcuts, folder icons, and the .app-file. 
+     This also means that the app will be rendered invisible or nonexistent to SetupS and 
+     ssWPI. [SetupS/ssEditor (Post-processing options)]
+FIX: "Vanishing" ssEditor Sendto shortcut.
+FIX: (Corrected) Linux via WINE "Type needs to be an Object" error.
+
+---------------------------------------------
+v8.11.5.8 (May 8, 2011) RC3
+---------------------------------------------
+ADD: SetupS Option for "Safe Installs" (incomplete). Default is "off". Related switch:
+     "--SafeInstall=On"
+ADD: New directive for the <Assembly> section:
+        #ApplyPatch# : Apply patch archives/folders.
+
+---------------------------------------------
+v8.11.5.2 (May 2, 2011) RC2
+---------------------------------------------
+ADD: SendTo shortcuts of SetupS apps/games to ssEditor to edit their respective .app/.ppg file 
+     (for example, a Desktop shortcut).
+ADD: Option to ssEditor for adding Autobuild to the Sendto menu.
+CHANGE: Windows Media Player (advanced) StartMenu now cataloged as "Video" instead of
+        "Multimedia"
+ADD: New directives for the <Assembly> section:
+        #Is_NT5# : Process this line for NT5.x OS's only (Windows 2000/XP/2003).
+        #Is_NT6# : Process this line for NT6.x OS's only (Windows Vista/7/2008).
+     Note: These can be at the beginning or at the end of each line. For example:
+         <Install>
+             "7z920.msi" /qb #Is_NT6#
+             "7z920.exe" /S #Is_NT5#
+
+---------------------------------------------
+v8.11.4.16 (April 16, 2011) RC1
+---------------------------------------------
+ADD: 'View Source in Notepad' for ssEditor (F4).
+CHANGE: Button Wingding fonts to graphic icons for ssEditor.
+CHANGE: The troublesome environment variables %USERNAME% and %COMPUTERNAME% substitutions are
+        re-instated with some limitations. Conversions of %variable% to real-world data are
+        unhindered as before but real-world data to %variable% has been reigned-in by
+        delimiting them with either double quote characters (") or slash characters (\). So
+        with these two environment variables, be aware that there may still be some incomplete 
+        conversions from real-world data to their %variable% equivalents when using ssEditor.
+FIX: 'Cancel' aborts exiting ssEditor for non-saved .app's.
+
+---------------------------------------------
+v8.11.3.33 (April 3, 2011)
+---------------------------------------------
+ADD: New <Flag> called 'AllUsers' to create shortcut(s) for "AllUsers" instead of "Current
+     User" using the other location flags such as StartMenu, Desktop, SendTo, etc. NOTE: This
+     flag defaults to 'Yes' when not in use.
+ADD: Option for ssEditor to "Get Version from Title". Default = off. 
+CHANGE: 'MakeInRoot' <Flag> to create shortcut(s) for "Start Menu" root rather than
+        "Programs". Instead, use 'MakeInPrograms' to create shortcut(s) for "Start
+        Menu\Programs". 
+CHANGE: Optimized the scanning routine for ssApp, ppApps, and ppGames. Tools like Regenerator
+        will have improved speeds for folders with large number of files & folders such as
+        "C:\Windows".
+CHANGE: Lines with first-character-semi-colons in .app-files are no longer ignored.
+FIX: 'MakeInStartMenu' erroneously getting set to 'Yes' instead of 'No' during .app-file
+     writes/saves.
+FIX: %Username% and %ComputerName% variable substitutions DROPPED. Instead, use %UserProfile%
+     or %HomePath%.
+FIX: Shortcut moving/removing from the (Standard/Advanced) Startmenu from both "AllUsers" or
+     "Current User".
+FIX: ssEditor always incorrectly setting 'AllUsers' to 'Yes'.
+FIX: ssEditor not capturing shortcut info when using sendto on executable .exe's or shortcut
+     .lnk's.
+FIX: ssEditor crash on Exit & Save.
+FIX: For the unattended self-installing ssApp package, SetupS is now run post-install in
+     Regen-mode. Hopefully this will correct the occasional failures to install SetupS itself.
+
+---------------------------------------------
+v8.11.3.21 (March 21, 2011)
+---------------------------------------------
+ADD: New switch called "-Regenerate" (or just "-Regen") that will force that function on any
+     folder/file passed to SetupS. For example:
+        SetupS x:\ppAppsLive -Regen 
+ADD: New directives/variables for the <Assembly> section:
+        #RegisterDLL# : Process the <RegisterDLL> section. Skips it during Post-processing.
+        #InstallFonts# : Process the <InstallFonts> section. Skips it during Post-processing.
+        #CMD# : Process this line as a command-line using the DOS console (aka, the
+                Command-line Interpreter). Note: This can be at the beginning or at the end of
+                each line. For example:
+                    <Install>
+                        md "%ProgramFiles%\Something" #CMD#
+ADD: Fadertainer uses category faders for apps/games without faders.
+ADD: OSARCH filters to "MenuDefaults.ini" for Default StartMenu sorting (Standard/Advanced).
+ADD: The ability to insert the directives and components into ssEditor's assembly order box.
+CHANGE: Use of "Yes|No" instead of "True|False" in writing the <Flags> sections to the
+        .app-files.
+CHANGE: External .cmd/.bat & .reg files are no longer (automatically) integrated into their
+        respective sections (ie, <Script> or <Registry>) when said sections are empty.
+CHANGE: Re-writing of the .app file is no longer performed during "regenerate-type" operations.
+CHANGE: No re-created folder-icons for startmenu & install-to folders if they exist already.
+CHANGE: No re-writing if desktop.ini (folder icons) is Read-only.
+CHANGE: No re-writing if .app-file is Read-only.
+CHANGE: Capped the maximum size of faders for the Fadertainer to 256 (on either axis).
+CHANGE: WorkingDir/StartIn folder for shortcuts set to target folder.
+FIX: ssApp "self-install" package crashed during fresh installs.
+FIX: Standard (default) menu was using ssTek style & structures.
+FIX: Corrupted .app files at the install-to <AppPath> locations.
+FIX: ssEditor crashed when StartMenu style was set to Standard/default.
+FIX: Install-to path was not being checked before post-install processes.
+FIX: If the KeepInFolder flag was turned off then all defined shortcuts always got created
+     regardless what the KeepAll flag was set to.
+FIX: Advanced menu not completely removed when StartMenu style was set to Standard/default.
+FIX: An issue with AlwaysSort flag forcing ALL subsequent apps installed or regenerated into
+     using the ssTek advanced startmenu style.
+FIX: 'MenuDefaults.ini' missing an entry for the 32-bit Internet Explorer shortcut on x64
+     systems.
+FIX: Several issues caused by apps or games without a Category "declared".
+FIX: Legacy to Catalog based advanced startmenus made "smarter"
+FIX: Crash when no selection is made with the file-open dialog.
+FIX: Update "Install-to Path" and "Default Menu" mirror-labels with changes to their
+     respective inputboxes.
+
+---------------------------------------------
+v8.11.2.21 (February 21, 2011)
+---------------------------------------------
+ADD: ssWPI Option "AlwaysHide" flag.
+CHANGE: Regenerator Option for scanning all drives defaults to "off". This was far too risky
+        to default "on" because of the possible existence of portable and mapped network
+        drives. So exercise caution when enabling this!
+FIX: Error box no longer shows when folders such as ppApps, ppGames, ssAppsInstalls, etc. were
+     actually empty of any files or folders.
+FIX: More Startmenu "Definitions.ini" problems.
+
+---------------------------------------------
+v8.11.2.19 (February 19, 2011)
+---------------------------------------------
+FIXED: "Desktop.ini" for Startup folder gets copied to the StartMenu during Advanced menu
+        installs.
+FIXED: "Definitions.ini" for both Kazz & ssTek as follows:
+    Changed:
+        ssTek:
+            "Graphics Designing = - Graphics\- CAD & Vector" --> "Graphics Designing = -Graphics\- Tools & Design"
+            "- Internet\- Network and Bandwidth Software" --> "- Internet\- Network & Bandwidth Software"
+    Added:
+        ssTek:
+            Graphics Tools = - Graphics\- Tools & Design
+            Security Cracking = - Development\- Hacking & Hex\- Cracks
+            Security Workarounds = - Development\- Hacking & Hex\- Workarounds
+        Kazz:
+            Graphics Tools =  6 Graphics\6 CAD & Advanced Design
+            Security Cracking = 9 Other\2 Hacking & Workarounds\1 Cracks
+            Security Workarounds = 9 Other\2 Hacking & Workarounds
+
+---------------------------------------------
+v8.11.2.17 (February 17, 2011)
+---------------------------------------------
+FIX: ssApp Installer package to better handle the special case where SetupS is updating or installing itself.
+FIX: Removed the empty "ssTek" tools\menu folder from the ssWPI Update Package.
+CHANGE: A few minor cosmetics.
+
+---------------------------------------------
+v8.11.2.15 (February 15, 2011)
+---------------------------------------------
+ADD: SetupS Control Panel has Regenerator Option for scanning all drives. Caution: this enables scans of portable
+     and mapped network drives! Alternatively, use the switch:
+        -AllDrives=Yes|No : Default=No 
+
+ADD: New variables/directives:
+        %ssTekResources% : for "%WinDir%\ssTek" (ie, "C:\Windows\ssTek").
+    
+        %AddToHosts% {IP address} {host name} : Sets mappings of IP addresses to host names. 
+            For example: 
+            %AddToHosts% "127.0.0.1 secure.example.com"
+
+        %Extract% {archive} -o{destination path} : Extract an archive to a specified destination path. Exactly
+            equivalent to: '7z x -y -aoa {archive} -o{destination path}'
+                For example: 
+                %Extract% "Extras.rar" -o"%SystemRoot%\ssTek"
+                    becomes...
+                7z.exe x -y -aoa "Extras.rar" -o"C:Windows\ssTek"
+
+ADD: New directives for the <Assembly> section:
+        #Is_x86# : Process this line for 32-bit OS-Architectures (x86) only.
+        #Is_x64# : Process this line for 64-bit OS-Architectures (x64) only.
+     Note: These can be at the beginning or at the end of each line. For example:
+         <Install>
+             "7z920-x64.msi" /qb #Is_x64#
+             "7z920.exe" /S #Is_x86#
+    
+CHANGE: Create StartMenus on the fly only from its Definitions.ini file -- independent of the Layout SFX or archive.
+
+---------------------------------------------
+v8.11.2.12 (February 12, 2011)
+---------------------------------------------
+ADD: Fadertainer Option for use "During Installs Only" (Regenerator-only option). Use the switch:
+        -FaderInstallsOnly=Yes|No : Default=Yes 
+ADD: Esc-key aborts Fadertainer.
+CHANGE: Fadertainer active (if enabled) during .apz/.pgz file extractions.
+CHANGE: Prevent Fadertainer (and installers) from stealing focus.
+FIX: Shortcut definitions "StartIn" path omitted if it's merely a duplicate of <AppPath>.
+
+---------------------------------------------
+v8.11.2.10 (February 10, 2011)
+---------------------------------------------
+ADD: Fadertainer Option for use "Always On Top". Use the switch:
+        -FaderOnTop=Yes|No : Default=Yes 
+ADD: Support for Fadertainer-Modules.
+CHANGE: Use "default.png" for those without one. 
+CHANGE: Filename from "SetupS.Shortcuts.Generator.exe" to just "Regenerator.exe".
+FIX: Miscellaneous minor (and rare) bugs. I.e., Truncated paths with Shortcut definitions, <AppPath> obtained from
+     temp folders, etc.
+
+---------------------------------------------
+v8.11.2.9 (February 9, 2011)
+---------------------------------------------
+[All]
+ADD: More Options for Fadertainer such as Speed and Location on screen. Switches to use:
+        -Fadertainer=On|Off : Default = Off
+        -FaderSpeed={seconds} : Number of seconds to Fade in or fade out. Default=.5. IE, -FaderSpeed=.3
+        -FaderLocation=TL|TC|TR|ML|MC|MR|BL|BC|BR : T=Top, L=Left, R=Right, C=Center, M=Middle, B=Bottom
+
+ADD: 'Always On Top' option for Splash Text Reporting/Notifications
+        -SplashOnTop=Yes|No : Default = No
+
+---------------------------------------------
+v8.11.2.7 (February 7, 2011)
+---------------------------------------------
+[SetupS]
+CHANGE: More checks to find a valid or complete install-to path <AppPath> especially for x64 ones.
+FIX: Use the system temp folder if ssApp does not have a valid or complete install-to path <AppPath>.
+
+---------------------------------------------
+v8.11.2.5 (February 5, 2011)
+---------------------------------------------
+[All]
+CHANGE: Reorganized Core to better facilitate "SetupS Control Panel" and "SetupS Regenerator" into becoming
+        standalone utilities by themselves at a later date.
+
+[SetupS Regenerator / SetupS Editor]
+FIX: Some problems with the GUI's (SetupS Control Panel & ssEditor) 
+
+---------------------------------------------
+v8.11.2.4 (February 4, 2011)
+---------------------------------------------
+[SetupS]
+ADD: New option for activating the Fadertainer to the "Reporting/Notifications" preferences.
+CHANGE: Attributes of any temp-files/folders are toggled-off from Readonly/System/Hidden; and set working folder to
+        the SetupS working folder before deleting temp-files/folders.
+
+[SetupS.Shortcuts.Generator/SetupS Regenerator]
+Rechristened the "Shortcuts Generator" to "Regenerator" because it is much more than that now.
+
+[SetupS.Control.Panel]
+CHANGE: Added checkbox for above mentioned Fadertainer option.
+
+---------------------------------------------
+v8.11.1.31 (February 2, 2011)
+---------------------------------------------
+[SetupS/SetupS.Shortcuts.Generator/SetupS Control Panel]
+ADD: New option(s) to process ssApps, ppApps, or ppGames without creating shortcuts.
+CHANGE: Internal archive with parent-folder name (legacy) is not copied to the Install-path folder.
+FIX: Bug where <Architecture> is set to x64 if Runx64 flag is present regardless of its setting.
+
+[SetupS.Control.Panel]
+CHANGE: An overhaul of the SetupS.Control.Panel GUI (converting it to a Koda form).
+
+[SetupS Editor]
+CHANGE: If Install-path is incomplete, then an attempt is made to determine it based on Build-type.
+
+---------------------------------------------
+v8.11.1.30 (January 30, 2011)
+---------------------------------------------
+[SetupS/Core]
+CHANGE: %CDROM% / %CDDrive% is searched for only when either of those variables are used and the priority is to
+        first search for those drives with ssWPIcd.ini file and then failing that to search for any system optical
+        drives.
+
+CHANGE: Substitution of the 'Regsrv /s' command instead of the API-calls for <RegistryDLL> items.
+
+ADD: Tools Subfolders for OSArch specific tools such as 7-Zip, AddonInstaller, etc.
+
+CHANGE: Scripts (.cmd/.bat files) listed in <Install> now accept the .reg file name alone by itself. It is no 
+        longer necessary to use "regedit /s", "regedit.exe /s" and "reg import" in front of it; but still okay to 
+        use such if so desired. Also works for the <Script> section and any external "BuildType.cmd|bat" files as 
+        well.
+
+CHANGE: When reading in .app/.ppg files, a reverse lookup of string values into variables is performed. For 
+        example: "C:\Program Files" becomes --> "%ProgramFiles%". This should take care of those cases where 
+        value(s) are "hard-coded" into the .app-file rather than using the %Variables% and in some case where those 
+        values are not found.
+
+CHANGE: Extra check for the possibility of the install folder being located elsewhere than that listed in <AppPath> 
+        independent of the actual architecture. A shortcut scan will occur only when <AppPath> is either blank or 
+        bogus and only if there any shortcuts created by the installer and <StartMenuSourcePath> is valid.
+
+FIX: Path and working folder issues with the various kinds of script handling SetupS is now capable of.
+
+[SetupS.Control.Panel]
+Removal of the Optical drive selection as it is no longer needed. See above.
+
+[SetupS/SetupS.Shortcuts.Generator/SetupS Control Panel]
+ADD: Switch -ppGamesShortcutsSkip to force SetupS to skip ppGame Shortcut processing. 
+
+[SetupS Editor]
+CHANGE: Break/abort for creating archives is now <Ctrl>+<Alt>+<ESC>, instead of simply <ESC>. 
+        This should help prevent the abort of a build inadvertently if ssEditor is running in 
+        the background while some other application or task is simultaneously in use.
+
+---------------------------------------------
+v8.11.1.22 (January 22, 2011)
+---------------------------------------------
+[SetupS/Core]
+ADD: New directives/variables for the <Assembly> section:
+        #ApplyRegistry# : Apply the <Registry> section. Skips it during Post-processing.
+        #RunScript# : Run the <Script> section with the Source folder as the 'Start In' or 
+        working folder. Skips it during Post-processing.
+        %AddonInstaller% [path\filename] : Process Addons such as ones from Kel or RyanVM.
+        %WaitForIt% [path\filename] : Force SetupS to pause until a specific file is created 
+        or copied to that location. Shortcut files (.lnk) are recommended because they are 
+        often created last by installers.
+        %ProcessKill% [filename] : To force a process/task to close from a given filename. 
+            For example:
+               %ProcessKill% "Notepad.exe"
+               %TaskKill% [filename] : Same as %ProcessKill% above.
+
+CHANGE: Process registry files (.reg) listed within <Assembly> sections just like is done in 
+        the <Registry> sections. For example, environment (ie, %SystemRoot%) and SetupS 
+        (ie, %ppApps%) variable substitutions are now handled the same way. Simply list the 
+        file only. It will be the equivalent of "reg import [file.reg]" or "regedit /s [file.reg]". 
+        For example:
+            <Install>
+                ImportTest.reg
+
+CHANGE: For the dual architecture function, the 32-bit version now attempts to search for its 64-bit 
+        counterpart(_x64).
+
+FIX: Rewrote the patch folder/archive handling to work correctly and be more robust now.
+
+FIX: Miscellaneous other bugs.
+
+[SetupS Editor]
+CHANGE: Enable editing of <Preprocessing> for ppApps/ppGames.
+
+---------------------------------------------
+v8.11.1.20 (January 20, 2011)
+---------------------------------------------
+[SetupS/Core]
+FIX: SetupS archive handling to fallback on ANY archive(s) if none of the standard ones were found (applies to 
+     ppApps or ppGames only).
+
+[SetupS Editor]
+ADD: Option for 7z process priority during Build(s). Set using the Build Options menu or use the switch:
+    -7zProcessPriority=0|1|2|3|4|5 : 0=Idle/Low, 1=Below Normal, 2=Normal, 3=Above Normal, 4=High, 5=Realtime.
+
+---------------------------------------------
+v8.11.1.19 (January 19, 2011)
+---------------------------------------------
+[SetupS/Core]
+FIX: Archive handling to specifically handle ALL Setups-related (source only) archives such that any other archives 
+     will get ignored. The previous attempt only handled the first one it encountered.
+
+---------------------------------------------
+v8.11.1.18 (January 18, 2011)
+---------------------------------------------
+[SetupS]
+CHANGE: Archive handling to specifically handle only Setups-related (source only) archives such that any other 
+        archives will get ignored.
+FIX: Non-detection of .msi files.
+
+[SetupS Editor]
+ADD: Option to Delete Source folders/files for Express Installer Builds only (.apz/.pgz). Set using the Build 
+     Options menu or use the switch:
+         -DeleteSource=off|on
+ADD: Editbox for Shortcut definitions 'Start In' folder.
+CHANGE: No Previews if -Autobuild is used.
+CHANGE: Removed selectable output folder. Too problematic and buggy at this time.
+
+---------------------------------------------
+v8.11.1.17 (January 17, 2011)
+---------------------------------------------
+[SetupS Core]
+CHANGE: Improved dynamic array redimensioning.
+
+[SetupS]
+CHANGE: Improved handling of Patch folders and archives to be more useful by moving their operations to just after 
+        the install operations but immediately before the shortcut handling ones.
+CHANGE: Process scripts (.cmd/.bat) listed within <Assembly> sections just like is done in the 
+        <Script> sections. For example, environment (ie, %SystemRoot%) and SetupS (ie, %ppApps%) variable 
+        substitutions are now handled the same way.
+
+---------------------------------------------
+v8.11.1.15 (January 15, 2011)
+---------------------------------------------
+[SetupS]
+CHANGE: Internal archives (ie, ppApp.7z, Patch.7z, etc.) do not get copied to the install folder.
+CHANGE: Checks first to see if the font files are already present in the install folder and install them. 
+        Otherwise, installs from the source folder.
+FIX: Bug/typo where the wrong array was being used for <RegisterDLL>. 
+
+---------------------------------------------
+v8.11.1.14 (January 14, 2011)
+---------------------------------------------
+[Project]
+CHANGED: Updated Inno Setup to v5.4.0 to compile the installer.
+
+[SetupS]
+CHANGED: Added a check at the install path to make sure the files listed under <RegisterDLL> are actually present. 
+         If not, then copies them from the source folder.
+
+[SetupS Core/ALL]
+CHANGE: Moved functions only being used with one app (SetupS, SetupS.Shortcuts.Generator, SetupS.Control.Panel, and 
+        SetupS.Editor) to that app using it. This is to combat the bloat creep that was occurring.
+
+---------------------------------------------
+v8.11.1.13 (January 13, 2011)
+---------------------------------------------
+[SetupS Editor]
+ADD: Embedded previews for folder icons and faders (similar to screenshot).
+CHANGED: Improved popups for screenshot, faders, and icons (ie, quicker).
+
+[SetupS Core/ALL]
+CHANGE: Removed functions no longer being used -- mostly for the changes to picture support (see above).
+
+---------------------------------------------
+v8.11.1.12 (January 12, 2011)
+---------------------------------------------
+[SetupS Core/ALL]
+CHANGE: Permanently delete rather than Recycle the install files used with ppApps/ppGames, such as archives, 
+        checksums, and patch folders.
+FIX: Miscellaneous bugs.
+
+---------------------------------------------
+v8.11.1.11 (January 11, 2011)
+---------------------------------------------
+[SetupS Core/ALL]
+ADD: <RegisterDLL> section. List any DLL/OCX to Register post-install. Equivalent to:
+    >REGSVR32 /s "%AppPath%\This.DLL"
+ADD: <Preprocessing> section for ppApps & ppGames. Identical to <Install> for ssApps but this section is processed 
+     just before "installing" a ppApp/ppGame. 
+CHANGE: <InstallFonts> section is now implemented.
+CHANGE: <Category> section now accepts multiple categories. Simply separate each with a pipe (|). For ppGames, only 
+        the first category is used for StartMenu sub-folders.
+FIX: Minor bug with Patch folder/archive processing.
+
+[SetupS Editor]
+CHANGED: Layout to use Tabsheets. 
+ADD: Support for the new <RegisterDLL> section
+ADD: Support for the <InstallFonts> section.
+CHANGE: Support for multiple categories with <Category> section.
+CHANGE: Updated to Filenaming Standard for <OS>.
+
+---------------------------------------------
+v8.10.12.31 (December 31, 2010)
+---------------------------------------------
+[SetupS Editor]
+FIX: Bugs related to ppTweaks. Ie, the handling of empty ppApp.7z archives.
+FIX: Logic error for scanning folders/files for .apz/.pgz files (they need to be excluded during autobuild).
+
+---------------------------------------------
+v8.10.12.23 (December 23, 2010)
+---------------------------------------------
+[SetupS Editor]
+ADD: Option to archive the Patch folder. Use:
+     -PatchCompress=off|on :Whether or not you want to use archives for the Patch-folders.
+CHANGE: Better compression filters for the .apz/.pgz archives.
+FIX: Minor bugs.
+
+---------------------------------------------
+v8.10.12.19 (December 19, 2010)
+---------------------------------------------
+[SetupS Editor]
+CHANGE: Substituted YumeYao’s optimized VC7 recompiled 7-Zip v9.20
+CHANGE: Cosmetics on message box(es)
+
+---------------------------------------------
+v8.10.12.18 (December 18, 2010)
+---------------------------------------------
+[SetupS Editor]
+ADD: Autobuild capability. Merely right-click Sendto "ssEditor(Autobuild)" and it will build your deployment 
+     package based on your ssEditor default settings. It even will scan through folders for SetupS recognized 
+     files or folders to do batch or "mass"-building. NOTE: Remember to change your defaults before using Sendto by 
+     opening ssEditor first and set 'Options' & 'Build'.
+
+---------------------------------------------
+v8.10.12.17 (December 17, 2010)
+---------------------------------------------
+[SetupS Editor]
+ADD: Filter out bad characters from ExpressInstaller(.apz/.pgz) filenames.
+FIX: A bug in replacing %AddonInstaller% variables that was adding a extra parameter space, which was causing 
+     _SetupS to fail. Also, changed _SetupS to trim those extra spaces (just in case).
+FIX: A minor bug where if no BuildType.cmd/.reg already present then any other .cmd or .reg present would get 
+     copied to BuildType.cmd/.reg -- which would cause a problem if those files were supposed to be "auxillary" 
+     files and not a part of the regular SetupS install.
+FIX: Another minor adjustment to the special %USERNAME% case when CurrentUser is "User".
+
+---------------------------------------------
+v8.10.11.15 (November 15, 2010)
+---------------------------------------------
+[SetupS Editor]
+ADD: Icon extaction tool (F10)
+ADD: A very incomplete draft of the new Help Contents (F1). But it's a rough preview of what it'll entail.
+CHANGE: Some minor cosmetics and facelifts.
+CHANGE: Optimized deleting files during archive creation.
+
+---------------------------------------------
+v8.10.11.12 (November 12, 2010)
+---------------------------------------------
+[SetupS Editor]
+ADD: SetupS Variable %ProcessKill% (or %TaskKill%) to close a given process/task from a given filename. For example:
+        <Install>
+            %ProcessKill% "Notepad.exe"
+ADD: Enabled build option LZMA2 compression method. Note: only the most up-to-date archive utilities (and of course 
+     the latest ssTek) can work with archives created with this method. 
+CHANGE: Converts any existing "PsKill.exe" or "TASKKILL.EXE /F /IM" to the new variable(s) %ProcessKill%/%TaskKill%.
+CHANGE: Converts any existing "AddonInstaller.exe" to the (already existing) variable %AddonInstaller%.
+CHANGE: Information about machine/OS architecture (x86/x64) that was in the <Flags> section is now in its own 
+        section called <Architecture>.
+
+---------------------------------------------
+v8.10.10.25 (October 25, 2010)
+---------------------------------------------
+[SetupS Editor]
+ADD: New switches for Build automation:
+    -Build :Tells ssEditor to build based on the current options/settings. Can be overridden with the following 
+            (optional) switches:
+            -MakeExpressInstaller=off|on :"On" makes the .apz/pgz packages. "Off" forces building of ssWPI type 
+                packages instead.
+            -ppCompress=off|on :Whether or not you want to use archives for ppApps or ppGames.
+            -CalcMD5=off|on :Create MD5 checksums for the packages.
+            -CompressionLevel=0|1|3|5|7|9 : 0=Store/Copy mode, 1=Fastest, 3=Fast, 5=Normal/Default, 7=Maximum, 
+                9=Ultra.
+            -UseLZMA2=off|on :Toggle the use of the LZMA2 compression method.
+            -UseOutputDir="{path}" :Specifies a destination folder for the builds (Note the quotes). Use an empty 
+                string "" to specify the source/input path for destination folder instead.
+
+CHANGE: Menu bar overhaul.
+
+---------------------------------------------
+v8.10.10.10 (October 10, 2010)
+---------------------------------------------
+
+[SetupS Core/ALL]
+ADD: An include library of common functions and declarations used by 'SetupS', 'SetupS Control Panel', 'SetupS 
+     Shortcuts Generator', and 'SetupS Editor'. This will improve performance, maintenance, scope, and overall 
+     readability. For example, it will improve the performance of the 'Shortcuts Generator' because it will no 
+     longer need to call the SetupS executable -- it calls the SetupS functions directly now.
+
+ADD: New switch: 
+    -Verbose: Normally ON by default, this switch will force the reporting mode to use both Splash-text and 
+         Tray-Balloon tips. 
+
+ADD: Dual architecture capability for a universal ppApp environment, i.e., 32-bit ssTek will launch the 64-bit 
+     ssTek if it is present and the OS/Architecture warrants it.  Also extra switches related to launchers and/or 
+     ssWPI (which are only useful if operating in this mode):
+         -Wait|NoWait: Depends whether or not you need to hold onto the 32-bit(x86) process and return to it after 
+             the 64-bit(x64) is finished. (Default is 'Wait').
+         -KillLauncher={NameOfLauncher}|KillProcess={NameOfProcess}: If you need to close a launcher or process. 
+             Especially useful if using the 'NoWait' switch above.
+
+ADD: x64 versions of SetupS, SetupS Control Panel, SetupS Shortcuts Generator, and 7-Zip.
+
+ADD: <Version> section and a new function that tries to obtain the version from the <Title> -- not perfectly but it 
+     makes a pretty good guess most of the time.
+
+CHANGE: Related to above... if <Version> section doesn't exit then it only gets created during ssEditor reads. 
+        Though the routine has been improved, there are still far too many exceptions to have to account for, so 
+        SetupS will leave <Title> alone when it makes a copy to the install path. 
+
+CHANGE: Related to above... <Version> tag is completed ignored for ppGames. (Not needed)
+
+CHANGE: Now using 7-Zip exclusively for the distribution packages and Advanced StartMenus. Including the SFX ones.
+
+CHANGE: Reverted ppApps/ppGames to using legacy section-names and keys as before so that the older Shortcut 
+        Generators and Launchers will work again. Now only ssApps/SetupS use <ShortcutS> with the new keys. And 
+        because only a few keys were renamed all the new features of SetupS are still retained.
+
+CHANGE: Appending of the legacy <StartMenuDestPath> for advanced menu creation. As above, this is so that the older 
+        Shortcut Generators and Launchers will work again. Current ssTek will continue to use <Catalog> and it's 
+        features.
+
+CHANGE: The optional SetupS.ini file is now also the default settings for all the SetupS project: 'SetupS', 'SetupS 
+        Control Panel', & 'SetupS Shortcuts Generator'. Note, as before, any switches/parameters passed will 
+        override this. Currently the only settings are the default notification/reporting mode for SetupS alone -- 
+        such as for SendTo operations, etc.
+
+FIX: x64-related folders are now taken into account for all path-related operations such as creating shortcuts and 
+     icons, locating installation paths, cleaning folders and files, etc.
+
+FIX: The various handling of path information for the shortcut definitions in the saving of .app/.ppg files. Such 
+     as target & shortcut-name paths relative to the <AppPath> and/or the various %Variables% used like %ppApps%, 
+     etc.
+
+[SetupS]
+ADD: New SetupS switch -MenuCleaning=off|on. Updated Shortcuts.Generator to utilize this. This should slightly 
+     speed up the process of switching between (or resorting of) advanced menus. 
+
+ADD: SetupS can scan through folders for SetupS recognized files or folders. For example, right-click Sendto on 
+     one's "D:\ppApps" folder generates shortcuts; or on one's "E:\SetupSApps" will install all the apps in that 
+     folder.
+
+CHANGE: For standard/default StartMenus, ppGames shortcuts now get placed into 'Programs\Games' (under their 
+        respective Category).
+
+[SetupS Shortcuts Generator]
+ADD: New switch: 
+    -AllDrives: To search all available drives for ppApps/ppGames folders. Otherwise, the default behavor is to 
+        just generate shortcuts only for known ppDrives set by SetupS Control Panel or ssWPI.
+
+CHANGE: Shortcuts Generator now takes advantage of SetupS's ability to scan folders for .app's or .ppg's. This is 
+        likely a temporary change in the hopes of narrowing the possible conduits for bugs as the brunt of the work 
+        gets delegated to SetupS. [SetupS Shortcuts Generator]
+ 
+[SetupS Control Panel]
+ADD: Optical-drive (DVD/CD) selection. 
+
+ADD: Removal of .url files and shortcuts with .url targets.
+
+ADD: A few extra default StartMenu shortcuts from the Windows 7 x64 edition.
+
+FIX: Tamed LLCleaner to be less draconian in file removal. Now, in addition to dud link removal, it looks for 
+     .app/.ppg files for the installed-to path in which to delete (which means only SetupS apps & games will get 
+     deleted), then failing that only SetupS-related files get deleted, and finally any empty folders. [SetupS 
+     Control Panel/SuperLLClean]
+
+[SetupS Editor]
+ADD: Integrated ssEditor into the SetupS package. Can be used as the de facto editor for .app/.ppg files by a 
+     simple right-click "Edit" on those files. (Use of one’s favorite text-editor is retained through the use of 
+     "Open-with...")
+
+ADD: A slightly modified MakeLists under Tools. 
+
+ADD: Optional Destination/Output folder for Builds (and Saving .app/.ppg files)
+
+ADD: A screen-capture utility for SetupS Editor under Tools.
+
+ADD: A 7-Zip progress bar with <Esc> to abort.
+
+ADD: .reg/.cmd viewer buttons.
+
+CHANGE: Optional compressing or creating the archive ssWPI 'install' package for ppApps or ppGames (the 
+        'ppApp.7z/ppGame.7z' files). Might be useful for LiveCD's for example. 
+
+CHANGE: 7-Zip archives are no longer solid which means individual files can be immediately be accessed or opened 
+        (without having to wait for any of the rest of the archive to extract).
+
+---------------------------------------------
+v8.10.6.0 (June 2010)
+---------------------------------------------
+ADD: Archives with the following extensions can be simply double-clicked on to install: 
+         .apz: SetupS apps, ssApps, or ppApps in zip, 7z, rar or any 7z recognized archive.
+         .pgz: ppGames in zip, 7z, rar or any 7z recognized archive.
+ADD: A fourth notification/reporting mode called SplashOnly (no tray/icon) with its corresponding switch: 
+     '--SplashOnly'.
+ADD: Default settings for SetupS.exe by modifying the optional SetupS.ini file. Note, any switches/parameters 
+     passed will override this. Currently the only settings are the default notification/reporting mode for SetupS 
+     alone -- such as for SendTo operations, etc.
+ADD: Preferences tab to 'SetupS Control Panel'. Currently the only settings are the default notification/reporting 
+     mode for SetupS alone -- such as for SendTo operations, etc.
+FIX: 'Open With ...' text now references 'SetupS' (instead of description)
+CHANGE: Improved location detection for use with Gnome desktops in Linux.
+
+---------------------------------------------
+v8.10.5.17 (17-May-2010) RC4
+---------------------------------------------
+FIX: ppApp/ppGame "installs" from any location (similarly as is done from a "ppAppsLive" folder).
+FIX: 'LinuxSendTo' mod now allows spaces in paths.
+CHANGE: Dropped 'SuperLLClean' from the install pack, as it was no longer needed.
+FIX: Autosize ComboBox height so that 'SetupS Control Panel' works in Windows 2000 now.
+
+---------------------------------------------
+v8.10.5.15 (15-May-2010) RC3
+---------------------------------------------
+[SetupS Shortcuts Generator]
+FIX: Shortcut Generator not finding Apps installed in system folders.
+
+[SetupS Control Panel]
+FIX: Copy, rather than move, 'Administrative Tools' shortcuts to their advanced StartMenu locations. Fixes a weird 
+     Vista/7 problem where other shortcuts, such as from context menus,  refererence those shortcuts instead of the 
+     App's or msc's themselves. Those with this problem, can recover their lost shortcuts simply by cycling through 
+     once an 'Uninstall Advanced StartMenu' and then back to their Advanced one. Note, on the Advanced StartMenus, 
+     that even though the 'Administrative Tools' shortcuts are hidden, they are still present.
+
+---------------------------------------------
+v8.10.5.14 (14-May-2010) RC2
+---------------------------------------------
+FIX: Removed splash "Initializing..." when help is displayed.
+FIX: Miscellaneous Linux issues such as files getting deleted before Wine has had a chance to process them.
+ADD: Implemented two methods of registry importing/merging in case one fails for any reason.
+ADD: Slightly more informative error message boxes (instead of simply displaying the help text).
+
+---------------------------------------------
+v8.10.5.12 (12-May-2010) RC1
+---------------------------------------------
+CHANGE: Mostly cosmetics and some odds and ends; ie, the splashtext design(s), updated the help files, etc.
+
+[SetupS]
+CHANGE: Sets ppApps/ppGames drive if not already. Will speed up SetupS a little if it doesn't have to scan drives 
+        everytime it's used.
+
+[SetupS Control Panel]
+CHANGE: Swapped positions of "Okay" & "Cancel" buttons.
+
+---------------------------------------------
+v8.10.5.7 (8-May-2010)
+---------------------------------------------
+CHANGE: Standard/non-sorting menus reverts to (behaves as) the original system StartMenu "theme".
+
+CHANGE: Separated the advanced menu creation & sorting from SetupS so that it returns to its original 
+        addon/extension/daemon capability. Besides being less bloated, all dependencies are now removed; this means 
+        SetupS can be once again be used by itself -- for example, in self-extracting (SFX) install packages.
+
+ADD: 'SetupS Control Panel' is now at it's own application layer using SetupS as only one of its components. It 
+     also uses the 'SetupS Shortcut Generator' and 'Super LL Clean' as its other components. Evoking without 
+     switches will bring up the GUI for StartMenu preferences and ppDrive selections. For unattended installs, use 
+     these switches:
+         -Mute (for totally silent installs)
+         -Trayonly (show progress only as balloon tips from the tray)
+         -[MenuName] (so far it's just the two to choose from:  ssTek or Kazz)
+         -NoMenu (uninstalls the current advanced StartMenu)
+         -MenuInstallOnly (for no sorting of Apps/ppGames shortcuts)
+         -ReSort (Using the current StartMenu preference)
+         -ppAppsDrive=[x]: (Sets desired ppApps Drive. Over-rides any current setting)
+         -ppGamesDrive=[y]: (Sets desired ppGames Drive. Over-rides any current setting)
+     Usage example: SetupSCP.exe --ssTek --Mute --ppGamesDrive=D:
+
+ADD: 'LinuxSendTo' mod to the installer.  
+
+---------------------------------------------
+v8.10.5.3 (3-May-2010)
+---------------------------------------------
+ADD: Multiple menu placements for shortcuts. Use "|" as delimiters between each location. For example:
+    <StartMenuDestPath>
+        3 Security\3 Firewall | 1 Internet\2 Network Tools
+        - Security\- Firewall, Virus & Adware | - Internet\- Network and Bandwidth Software
+
+ADD: Introducing "Menu Cataloging" that if used supersedes StartMenuDestPath for shortcut destinations. These will be detailed menu descriptions that are independent of the Advanced menu currently in use (if any). For example, the following will do the same thing as above:
+    <Catalog>
+        Security Firewall
+        Network    
+
+The Menu descriptions are defined in the file "Definition.ini" in the respective Tools\Menu folder of choice. Using Kazz as an example:
+    Security Firewall = 3 Security\3 Firewall
+    Network = 1 Internet\2 Network Tools
+
+ADD: Default shortcuts (Accessories, Administrator Tools, etc.) are better handled and sorted now. This includes shortcut moving from one Advanced menu to another (or no sorting/turned off). These are defined in the file "MenuDefaults.ini" located in the Tools folder and make use of the new "Menu Cataloging" (see above).
+
+ADD: Tweaks can now be handled as ppApps. Previously they were SetupS/ssApp install types. Now they can be "activated" simply by running the ppApps shortcut generator. This is especially useful after a fresh OS install.
+
+FIX: Script & registry handling where nothing would happen if no paths are provided except the source path that gets passed to SetupS anyway -- such as you would find in Tweaks and the like.
+
+---------------------------------------------
+v8.10.4.19 (19-Apr-2010)
+---------------------------------------------
+ADD: Replacement of single-slashes with double-slashes of system variables such as %SystemRoot% or %ProgramFiles%.
+FIX: ppApp/ppGame "installs" from a backup location (similarly as is done from a "ppAppsLive" folder)
+CHANGE: Reintroduced Shortcut Definitions method of handling of SetupS/ssApp shortcuts.
+CHANGE: Handling of shortcut creation (for compatibility with Linux via Wine)
+
+---------------------------------------------
+v8.10.4.11 (11-Apr-2010)
+---------------------------------------------
+FIX: Standard (Non-Advanced menu) sorting especially unnecessary App folders.
+FIX: Shortcut moving from one Advanced menu to another (or turning off).
+FIX: Folder Icon creating for new or changed menu layouts.
+
+---------------------------------------------
+v8.10.4.9 (9-Apr-2010)
+---------------------------------------------
+FIX: Shortcut creating on Vista/7. 
+CHANGE: Updated SuperLLClean to handle Vista/7 shortcuts properly.
+CHANGE: Miscellaneous advanced menus updating.
+CHANGE: More selective and not so draconian in what gets deleted – such as shortcuts that were manually moved, etc.
+CHANGE: Default shortcuts (Accessories, Administrator Tools, etc.) are remaining in their respective folders, for now – until there is better handling in place.
+
+---------------------------------------------
+v8.10.4.3 (3-Apr-2010)
+---------------------------------------------
+CHANGE: Menu structures returned to archived files to retain the file streams that were being lost via the InnoSetup installer.
+CHANGE: Temporarily disabled SuperLLClean (as it's function is not need at this time anyway) to isolate some of the issues being experienced.
+
+---------------------------------------------
+v8.10.4.2 (2-Apr-2010)
+---------------------------------------------
+CHANGE: Method of handling of SetupS/ssApp shortcuts. Some shortcuts could not be created using the Shortcuts definition method. New method makes copies in the App's install folder. With a few exceptions, most Apps installed with v8.2.2.1 or later should still work with this version -- those that do NOT will need to be uninstalled then reinstalled with this version.
+ADD: SuperLLClean to the mix for cleaning dud shortcuts from the StartMenu.
+CHANGE: More improvements to the advanced menu handling.
+
+---------------------------------------------
+v8.10.4.1 (1-Apr-2010)
+---------------------------------------------
+ADD: SetupS/ssApp Shortcut Generator, and therefore, more active menu changes between Standard & Advanced menus. This means changing between menus (or even turning sorting off) also moves shortcuts as well.
+NOTE: The above is only possible with (SetupS/ssApp) apps installed with SetupS v8.2.2.1 or higher -- and of course, any ppApps or ppGames installed with any version SetupS. Also, mainly XP focused (for now) -- Vista/7 refinements coming soon.
+CHANGE: Version numbering scheme to reflect build-dates.
+FIX: More bugs and tightening various nuts & bolts.
+
+---------------------------------------------
+v8.2.2.1 (30-Mar-2010)
+---------------------------------------------
+ADD: Shortcut creation from an already installed SetupS app (just like ppApps & ppGames). This should allow better re-placement of shortcuts to new or changed StartMenus for both standard and advanced menus. Also, SetupS/ssApp shortcut generators are now possible! NOTE: Only works for apps installed with SetupS v8.2.2.1 or higher.
+CHANGE: New flags defs in the <Flags> section of .app/.ini files:
+* MakeStartup/KeepInStartup -- create shortcut in Startup.
+* NeverSort/NoMenuShortcuts/NoSorting -- do not do anything (extra) with the shortcuts. Essentially makes SetupS as standard Silent Installer. Note: This over-rides the AlwaysSort flag.
+* KeepAllShortcuts -- retain all available shortcuts installed from App (not necessarily in original folder; see below).
+* KeepInFolder -- selected shortcuts (from the <ShortcutsKeep> section) are kept in original folder. But only if combined with the KeepAllShortcuts flag -- otherwise, maintains the original default behavior of all shortcuts are kept in the original folder (the new equivalent of KeepAllShortcuts=1 AND KeepInFolder=1). These two flags used together will allow better control over shortcut placements.
+FIX: Now correctly recognizes the program files "Nonething" app install path. Has the same effect as the NeverSort/NoMenuShortcuts flag (above). So be careful and watch out which apps are using this.
+FIX: Better fail-safes and error-proofing, such as if an App has no actual installed-path then it won't try to move the user's "Programs" folder!
+
+---------------------------------------------
+v8.2.1.9 (20-Mar-2010)
+---------------------------------------------
+ADD: If an App (or Game) has its own StartMenu folder then it also gets an icon -- using the same corresponding .ico as in the App's (or Game's) installed folder.
+
+---------------------------------------------
+v8.2.1.8 (17-Mar-2010)
+---------------------------------------------
+FIX: Bug in the handling & sorting of standard (non-ssTek/Kazz) Start Menus -- incorrect destination variable used.
+FIX: Bug in the handling of .app/.ini Sections with nothing between each section. For example:
+    <FileTypes>
+    <End>
+
+---------------------------------------------
+v8.2.1.7 (14-Mar-2010)
+---------------------------------------------
+ADD: Filetype association by filename extension for each app specified in the '<ppApp>' section; ie, Extension = .doc .txt .nfo... (Separate each extension with a space)
+ADD: Comment lines in .app/.ini files. First character is ";"
+FIX: Handling & sorting of standard (non-ssTek/Kazz) Start Menus and shortcuts for specialized locations: Desktop, QuickLaunch, SendTo, and Startmenu root("Programs").
+
+---------------------------------------------
+v8.2.1.5 (09-Mar-2010)
+---------------------------------------------
+CHANGE: Environment (ie, %SystemRoot%) and SetupS (ie, %ppApps%) variable substitutions are now handled within the separate file .cmd/.reg just like is done internally in the <Script>/<RegEntries> sections of the .app/.ini file.
+ADD: Application path seek (for SetupS apps) whether or not it is incomplete in the <AppPath> section of the .app/.ini file.
+ADD: Folder icon creation for SetupS/ssApp is included if a SetupS.ico is present.
+FIX: Filetype association is now working (for SetupS apps).
+FIX: Quickstart & Desktop shortcut creation is now working (for SetupS apps).
+
+---------------------------------------------
+v8.2.1.3 (08-Mar-2010)
+---------------------------------------------
+ADD: specify icon file for shortcuts (batch/.cmd files etc have no icons), file must be in app folder, icon must be '0' (first one), can be a dll, exe, icl or ico file. The line is added under the '<ppApp>' section with the other shortcut specs; ShortcutIcon = "FileWithIcon.ico". [AnneAadrvark]
+FIX: Shortcut created in the SendTo folder had an invalid Arguments spec.
+
+---------------------------------------------
+v8.2.1.2 (27-Feb-2010)
+---------------------------------------------
+ADD: Folder icon creation for the installed folder if a corresponding .ico is present (SetupS.ico, ppApp.ico, ppGame.ico).
+ADD: Switches "Kazz" and "ssTek" to force desired SetupS Start Menu sorting system. These can be used alone or with other parameters. Usage: "-KAZZ" or "-ssTek", etc.
+ADD: Switch "-NoMenu" or "-NoSetupSMenu" to turn off SetupS Start Menu Sorting.
+ADD: Switch "Help" or "?". Also displays help on improper SetupS usage.
+CHANGE: Removed the recursive calling of SetupS with archived apps/games. Should make it more stable, easier to debug and maintain, and slightly faster since it won't need to reiterate everything all over again.
+CHANGE: Reorganized/tightened-up some of the coding (for easier debugging and maintenance).
+
+---------------------------------------------
+v8.2.0.1 (21-Feb-2010)
+---------------------------------------------
+FIX: Archive handling was asynchronous -- created a problem if an application (or even via SendTo) sent archives to SetupS before the previous one(s) were finished.
+CHANGE: Increased the traytip timeouts from 3 minutes to 5 minutes.
+
+---------------------------------------------
+v8.2.0.0 (19-Feb-2010)
+---------------------------------------------
+Using RON's SetupS v8.1.0.6 as the initial code base:
+FIX: Installer will now first automatically uninstall previous (and current) versions of SetupS. 
+ADD: Optional "Arguments=" or "Parameters=" to ppApp/ppGame Shortcuts in the <ppApp> section of the ".app/.ini/.ppg" SetupS files.
+FIX: Installs the appropriate and required menu structure (Kazz or ssTek), if the "systemfolder" structure is not present -- otherwise the StartMenu folder icon(s) creation fails without it.
+ADD: The self-extracting files: "ssTekMenu.exe" & "KazzMenu.exe" To the "Tools" folder as per above.
+FIX: Re-worked some of the "Desktop.ini" handling in the shortcut creation sections
+ADD: A subroutine to extract the various archives SetupS might be asked to handle. Also, to maintain a v7 behavior where all the files in the archive did NOT need to be contained inside a subfolder.
+CHANGE: Renamed some variables to more job-descriptive/specific; ie, "$Path" to "$SrcPath"
+ADD: $CLIparameter array because $CMDLine is a constant and cannot be changed. Helpful for debugging, etc.
+ADD: A Function to handle parameters/switches passed to SetupS
+ADD: A command line switch for "-Mute" (or "-Quiet" or "-Silent") to make it totally silent including the system tray
+FIX: Closed a file handle left open. Was preventing temp directory from being deleted till the next "run".
+CHANGE: Slightly modified the various drive and path searches.
+CHANGE: Slightly modified the recursive archive extraction section.
+CHANGE: Slightly modified the "After Installer" section for a more thorough cleanup.
+CHANGE: Added "@SW_HIDE" to the archive extraction command box

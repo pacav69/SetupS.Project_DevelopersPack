@@ -1,0 +1,6 @@
+The following is a list of the utilities used in the "bin" folder:
+   iconsext.exe --> IconsExtract v1.47 (http://www.nirsoft.net)
+   innounp.exe --> Inno Setup Unpacker. Version 0.37
+   PEiD.exe --> PEiD v0.95 (www.peid.info)
+   pic2file.exe --> Pic2File by Jim Lawless (www.mailsend-online.com/freebies.php)
+   unzip.exe --> UnZip 6.00 by Info-ZIP.  Maintained by C. Spieler. (www.info-zip.org)
