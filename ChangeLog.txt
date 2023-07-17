@@ -6,6 +6,10 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
 July 18, 2023
 ---------------------------------------------
 added License
+reloacted files generated to files sub directory
+added remarks for informationo of version numbering in !!Make.SetupS-Project.cmd
+added third mirror to html file
+
 ---------------------------------------------
 v23.07.17.0 (July 17, 2023)
 ---------------------------------------------

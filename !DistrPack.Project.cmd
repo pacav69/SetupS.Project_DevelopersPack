@@ -654,10 +654,38 @@ call UploadMe.cmd SetupS-title.png files/ .\ LastOS.org
 call UploadMe.cmd update.ini files/ .\ LastOS.org
 echo.
 
+
+:Movefiles
+echo Begin ... SetupS Project (version: %ProjectVersion%)
+echo Moving files to files directory
+set completedfiles=files
+set EditorPath=ssEditor
+set ssPIPath=ssPreinstaller
+set path=%path%;%~dp0bin;%~dp0%completedfiles%\Tools;%~dp0%completedfiles%\Tools\_x86
+cd "%~dp0"
+if exist "%completedfiles%\default.ini" xcopy "%completedfiles%\default.ini\*.*" "%completedfiles%\*.*" /y/e/s >nul:
+if exist "%completedfiles%\%EditorPath%\default.ini" xcopy "%completedfiles%\%EditorPath%\default.ini\*.*" "%completedfiles%\%EditorPath%\*.*" /y/e/s >nul:
+
+:move files to files directory
+echo oving files to files directory..
+cd "%~dp0"
+if exist "%completedfiles%\files" goto exit
+md "%completedfiles%\files\%EditorPath%"
+md "%completedfiles%\files\%ssPIPath%"
+copy "%completedfiles%\*.au3" "%completedfiles%\files" /y >nul:
+copy "%completedfiles%\*.iss" "%completedfiles%\files" /y >nul:
+copy "%completedfiles%\*.app" "%completedfiles%\files" /y >nul:
+copy "%completedfiles%\%EditorPath%\*.au3" "%completedfiles%\files\%EditorPath%" /y >nul:
+copy "%completedfiles%\%EditorPath%\*.app" "%completedfiles%\files\%EditorPath%" /y >nul:
+copy "%completedfiles%\%ssPIPath%\*.au3" "%completedfiles%\files\%ssPIPath%" /y >nul:
+copy "%completedfiles%\%ssPIPath%\*.ini" "%completedfiles%\files\%ssPIPath%" /y >nul:
+copy "%completedfiles%\SetupS-*.htm" "%completedfiles%\files" /y >nul:
+
+
 :Exit
 echo Cleaning up...
 cd "%~dp0"
-%AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "Kill"
+%AutoIt3% /ErrorStdOut /AutoIt3Executecompletedfilesript "bin\GetAccountInfo.au3" "Kill"
 if exist "%ssApp%" rd /s /q "%ssApp%" >nul:
 if exist "%ppApp%" rd /s /q "%ppApp%" >nul:
 if exist "%scp%" rd /s /q "%scp%" >nul:
