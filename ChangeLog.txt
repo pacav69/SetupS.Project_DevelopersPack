@@ -12,7 +12,7 @@ Add:	updated helpfile created more examples in ssEditor-->process order
 Change:	corrected spelling and grammer errors
 add: link to github repo
 add: store files on altenative location on github
-
+add: on Automatic Variable Substitution Chart added Win10/11 in headers
 -0--------------------------------------------
 v20.03.17.0 (March 17, 2020)
 ---------------------------------------------
