@@ -1,7 +1,7 @@
 @echo off
 
 :Set parameters
-set ProjectVersion=23.07.18.0
+set ProjectVersion=23.07.18.1
 set ProjectDate=2023-07-18
 set Upload=No
 
