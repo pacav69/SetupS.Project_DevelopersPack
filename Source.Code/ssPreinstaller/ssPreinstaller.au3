@@ -5,13 +5,12 @@
 #AutoIt3Wrapper_Compression=4
 #AutoIt3Wrapper_Res_Description=Kludge to pre-install/uninstall SetupS (experimental)
 #AutoIt3Wrapper_Res_Fileversion=#ProjectVersion#
-#AutoIt3Wrapper_Res_LegalCopyright=ï¿½ #cYear# #cHolder#
+#AutoIt3Wrapper_Res_LegalCopyright=© #cYear# #cHolder#
 #AutoIt3Wrapper_Res_Language=1033
 #AutoIt3Wrapper_Res_Field=Release Date|#ProjectDate#
 #AutoIt3Wrapper_Res_Field=ssTek Forum|http://#WebLink1#
 #AutoIt3Wrapper_Res_Field=ssTek Development|http://#WebLink2#
 #AutoIt3Wrapper_Res_Field=LastOS Team|http://#WebLink3#
-#AutoIt3Wrapper_Res_Field=Github Development|http://#WebLink6#
 #AutoIt3Wrapper_Au3Check_Stop_OnWarning=y
 #AutoIt3Wrapper_Run_Tidy=y
 #Tidy_Parameters=/pr=1 /uv=3 /tc=0 /sf /reel /refc /rerc /kv=10
@@ -19,16 +18,16 @@
 #endregion
 
 #cs ##################################################################################
-
+	
 	ssPreinstaller v#ProjectVersion#
-	Copyright ï¿½ #cYear#, #cHolder#
+	Copyright © #cYear#, #cHolder#
 	All rights reserved.
-
+	
 	ssPreinstaller is open-source software: you can redistribute it and/or
 	modify it under the terms of the GNU General Public License as published
 	by the Free Software Foundation, either version 3 of the License, or
 	(at your option) any later version of the License.
-
+	
 	DISCLAIMER:
 	ssPreinstaller is distributed in the hope that it will be useful, but
 	is provided by #cHolder# "AS IS", without warranty of any kind,
@@ -43,17 +42,17 @@
 	arising from, out of or in connection with the software or the use or
 	other dealings in the software, even if advised of the possibility of
 	such damage.
-
+	
 	See the GNU General Public License for more details. You should have
 	received a copy of the GNU General Public License along with ssPreinstaller.
 	If not, see <http://www.gnu.org/licenses/>.
-
+	
 #ce ##################################################################################
 #cs ##################################################################################
-
+	
 	Script Function:
 	Kludge to pre-uninstall SetupS (experimental)
-
+	
 #ce ##################################################################################
 #include <..\SetupS.Core.au3>
 

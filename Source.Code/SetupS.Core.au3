@@ -6,7 +6,7 @@
 #cs ##################################################################################
 
 	SetupS Project Core (Common Declarations & Functions) v#CoreVersion#
-	Copyright ï¿½ #cYear#, #cHolder#
+	Copyright © #cYear#, #cHolder#
 	All rights reserved.
 
 	This file is part of the SetupS SendTo Suite.
@@ -80,7 +80,7 @@ Global $ProgramFilesDir32 = Not Not FileExists(EnvGet('ProgramFiles(x86)')) ;32-
 ;Global $SystemDir = @SystemDir ;@WindowsDir & '\System32'
 Global $SystemDir32 = Not Not FileExists(@WindowsDir & '\SYSWOW64') ;32-bit System directory
 Global $SetupS_CoreVer = '#CoreVersion#', $AbortDL, $AltDistr[1][2], $AltDistrOrder
-Global $AboutLink1 = 'http://#WebLink1#', $AboutLink2 = 'http://#WebLink2#', $AboutLink3 = 'http://#WebLink3#', $AboutLink6 = 'http://#WebLink6#'
+Global $AboutLink1 = 'http://#WebLink1#', $AboutLink2 = 'http://#WebLink2#', $AboutLink3 = 'http://#WebLink3#'
 Global $CopyFromLive, $ppInstall, $AllUsersProfile = EnvGet('ALLUSERSPROFILE')
 Global $LinuxHome = 'z:\home\' & @UserName, $OS_Linux = Not Not FileExists($LinuxHome), $WINEVersion = _GetWINEVersion() ; Linux via Wine handling
 ;~ Global $App_Title_SetupS, $App_BuildType_SetupS, $App_Version_SetupS, $App_InstallPath_SetupS
@@ -260,7 +260,7 @@ EndFunc
 ;                  Machine      - [optional] Sets the variable in the machine environment.
 ; Return values .: Success      - None
 ;                  Failure      - Sets @error to 1.
-; Author ........: Joï¿½o Carlos (jscript)
+; Author ........: João Carlos (jscript)
 ; Support .......: trancexx, PsaltyDS, KaFu
 ; Modified.......:
 ; Remarks .......: Replaces built-in EnvUpdate()
@@ -1404,7 +1404,7 @@ Func FileGetShortcutEx($link)
 	If Not @error Then
 		$Details[0] = $msitest
 	Else
-		If $Debug Then _ConsoleWriteDebug('@@ Debug(1386) SetupS.Core.au3|FileGetShortcutEx(): $link=' & $link & @CRLF & '>Error code: ' & @error & @CRLF)
+		If $Debug Then _ConsoleWriteDebug('@@ Debug(1400) SetupS.Core.au3|FileGetShortcutEx(): $link=' & $link & @CRLF & '>Error code: ' & @error & @CRLF)
 	EndIf
 	Return $Details
 EndFunc
@@ -2160,8 +2160,9 @@ Func GetSetupSOptions($Defaults)
 		$AutoUpdate = IniRead_Binary($Defaults, 'Options', 'AutoUpdate', 'No')
 		$SkipOSArch = IniRead_Binary($Defaults, 'Options', 'SkipOSArch', 'Yes')
 		$KeepStartMenuFolders = IniRead_Binary($Defaults, 'Options', 'KeepStartMenuFolders', 'No')
-		$KeepStartMenuDefaults = IniRead_Binary($Defaults, 'Options', 'KeepStartMenuDefaults', '')
-		If $KeepStartMenuDefaults = '' Or $KeepStartMenuDefaults = 'Default' Then $KeepStartMenuDefaults = $MetroPresent
+		$KeepStartMenuDefaults = IniRead_Binary($Defaults, 'Options', 'KeepStartMenuDefaults', 'No')
+		;Glenn 2022
+		;If $KeepStartMenuDefaults = '' Or $KeepStartMenuDefaults = 'Default' Then $KeepStartMenuDefaults = $MetroPresent
 		Switch IniRead($Defaults, 'Options', 'DualArchInstalls', 'b')
 			Case 'b', 'Type 2b', 'Type2b', '2b'
 				$DualArchInstalls = 'b'
@@ -3405,6 +3406,17 @@ EndFunc
 Func ScanForExpressInstall($Where, $ExcludeXI = False, $BType = 'Any', $ScanMethod = 'Old')
 	If $Debug Then _ConsoleWriteDebug('@@ Debug(Trace) SetupS.Core|ScanForExpressInstall(): $Where=' & $Where & ' : $ExcludeXI=' & $ExcludeXI & ' : $BType=' & $BType & ' : $ScanMethod=' & $ScanMethod & @CRLF)
 	If StringInStr($Where, $ssTekResources) Then Return
+	If StringInStr($Where, "winSxS") Then Return ;Skip This folder as it's huge and never used
+	If StringInStr($Where, "Windows\assembly") Then Return ;Skip This folder as it's never used for ssApps
+	If StringInStr($Where, "Windows\Microsoft.NET") Then Return ;Skip This folder as it's never used for ssApps
+	If StringInStr($Where, "Windows\rescache") Then Return ;Skip This folder as it's never used for ssApps
+	If StringInStr($Where, "Windows\ServiceProfiles") Then Return ;Skip This folder as it's never used for ssApps
+	If StringInStr($Where, "Windows\SoftwareDistribution") Then Return ;Skip This folder as it's never used for ssApps
+	If StringInStr($Where, "System32\DriverStore") Then Return ;Skip This folder as it's never used for ssApps
+	If StringInStr($Where, "System32\WindowsPowerShell") Then Return ;Skip This folder as it's never used for ssApps
+	If StringInStr($Where, "Windows\SystemApps") Then Return ;Skip This folder as it's never used for ssApps
+	If StringInStr($Where, "Windows\SystemResources") Then Return ;Skip This folder as it's never used for ssApps
+	If StringInStr($Where, "Windows\SysWOW64") Then Return ;Skip This folder as it's never used for ssApps
 	; recursively scan for SetupS files from $Where and
 	; create a batch list of folders/files for SetupS to process
 	If $ScanMethod = 'Old' Then ;old method using FileListToArray
@@ -6254,13 +6266,12 @@ EndFunc
 	#AutoIt3Wrapper_Outfile=Tools\SetupS.Core.exe
 	#AutoIt3Wrapper_Res_Description=SetupS Project Core (Common Declarations & Functions)
 	#AutoIt3Wrapper_Res_Fileversion=#ProjectVersion#
-	#AutoIt3Wrapper_Res_LegalCopyright=ï¿½ #cYear# #cHolder#
+	#AutoIt3Wrapper_Res_LegalCopyright=© #cYear# #cHolder#
 	#AutoIt3Wrapper_Res_Language=1033
 	#AutoIt3Wrapper_Res_Field=Release Date|#ProjectDate#
 	#AutoIt3Wrapper_Res_Field=#WebSite1#|http://#WebLink1#
 	#AutoIt3Wrapper_Res_Field=#WebSite2#|http://#WebLink2#
 	#AutoIt3Wrapper_Res_Field=#WebSite3#|http://#WebLink3#
-		#AutoIt3Wrapper_Res_Field=#WebSite6#|http://#WebLink6#
 	#AutoIt3Wrapper_Res_Field=Original Concept|Glenn L. Chugg (ReturnOfNights)
 	#AutoIt3Wrapper_Compression=4
 	#AutoIt3Wrapper_AU3Check_Stop_OnWarning=y

@@ -12,9 +12,6 @@ set ProjectVersion=%1
 goto getDate
 
 :setVer
-@REM ProjectVersion= YY.MM.DD.0 ONLY numbers
-@REM seperated with periods in the form XX.XX.XX.XX
-@REM use the date of compilatation YY.MM.DD.Incremental number usually 0
 set ProjectVersion=13.11.23.0
 goto getDate
 
@@ -24,10 +21,7 @@ set ProjectDate=%2
 goto getDoUploads
 
 :setDate
-@REM ProjectDate=YY-MM-DD ONLY numbers
-@REM use the date of compilatation YY-MM-DD
-@REM use the date of compilatation YY-MM-DD seperated by a '-'
-set ProjectDate=23-07-17
+set ProjectDate=2013-11-23
 goto getDoUploads
 
 :getDoUploads
@@ -40,20 +34,18 @@ set DoUploads=No
 goto setText
 
 :setText
-set cYear=2017-2023
+set cYear=2020
 set cHolder=Vergitek Solutions
 set WebSite1=ssTek Forum
 set WebLink1=sstek.vergitek.com
+set WebSite5=LastOS Forum
+set WebLink5=lastos.vergitek.com
 set WebSite2=LastOS Team
 set WebLink2=www.lastos.org
 set WebSite3=ssTek Distribution
 set WebLink3=dl.bintray.com/sstek
 set WebSite4=ssTek Development
 set WebLink4=sstek.vergitek.com
-set WebSite5=LastOS Forum
-set WebLink5=lastos.vergitek.com
-set WebSite6=github files
-set WebLink6=github.com/pacav69/SetupS.Project_DevelopersPack
 set NewTagLine=%Website1%: Tools for custom Operating Systems!
 set CoreVersion=%ProjectVersion%
 set ssEditorVersion=%ProjectVersion%
@@ -166,6 +158,26 @@ fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebLink1#" "%WebLink1%" >nul:
 fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebLink1#" "%WebLink1%" >nul:
 fart -q -i "%sc%\SetupS-*.htm" "#WebLink1#" "%WebLink1%" >nul:
 
+::WebSite4
+fart -q -i "%sc%\*.au3" "#WebSite4#" "%WebSite4%" >nul:
+fart -q -i "%sc%\*.iss" "#WebSite4#" "%WebSite4%" >nul:
+fart -q -i "%sc%\*.app" "#WebSite4#" "%WebSite4%" >nul:
+fart -q -i "%sc%\%EditorPath%\*.au3" "#WebSite4#" "%WebSite4%" >nul:
+fart -q -i "%sc%\%EditorPath%\*.app" "#WebSite4#" "%WebSite4%" >nul:
+fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebSite4#" "%WebSite4%" >nul:
+fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebSite4#" "%WebSite4%" >nul:
+fart -q -i "%sc%\SetupS-*.htm" "#WebSite4#" "%WebSite4%" >nul:
+
+::WebLink4
+fart -q -i "%sc%\*.au3" "#WebLink4#" "%WebLink4%" >nul:
+fart -q -i "%sc%\*.iss" "#WebLink4#" "%WebLink4%" >nul:
+fart -q -i "%sc%\*.app" "#WebLink4#" "%WebLink4%" >nul:
+fart -q -i "%sc%\%EditorPath%\*.au3" "#WebLink4#" "%WebLink4%" >nul:
+fart -q -i "%sc%\%EditorPath%\*.app" "#WebLink4#" "%WebLink4%" >nul:
+fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebLink4#" "%WebLink4%" >nul:
+fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebLink4#" "%WebLink4%" >nul:
+fart -q -i "%sc%\SetupS-*.htm" "#WebLink4#" "%WebLink4%" >nul:
+
 ::WebSite2
 fart -q -i "%sc%\*.au3" "#WebSite2#" "%WebSite2%" >nul:
 fart -q -i "%sc%\*.iss" "#WebSite2#" "%WebSite2%" >nul:
@@ -205,50 +217,6 @@ fart -q -i "%sc%\%EditorPath%\*.app" "#WebLink3#" "%WebLink3%" >nul:
 fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebLink3#" "%WebLink3%" >nul:
 fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebLink3#" "%WebLink3%" >nul:
 fart -q -i "%sc%\SetupS-*.htm" "#WebLink3#" "%WebLink3%" >nul:
-
-
-::WebSite4
-fart -q -i "%sc%\*.au3" "#WebSite4#" "%WebSite4%" >nul:
-fart -q -i "%sc%\*.iss" "#WebSite4#" "%WebSite4%" >nul:
-fart -q -i "%sc%\*.app" "#WebSite4#" "%WebSite4%" >nul:
-fart -q -i "%sc%\%EditorPath%\*.au3" "#WebSite4#" "%WebSite4%" >nul:
-fart -q -i "%sc%\%EditorPath%\*.app" "#WebSite4#" "%WebSite4%" >nul:
-fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebSite4#" "%WebSite4%" >nul:
-fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebSite4#" "%WebSite4%" >nul:
-fart -q -i "%sc%\SetupS-*.htm" "#WebSite4#" "%WebSite4%" >nul:
-
-::WebLink4
-fart -q -i "%sc%\*.au3" "#WebLink4#" "%WebLink4%" >nul:
-fart -q -i "%sc%\*.iss" "#WebLink4#" "%WebLink4%" >nul:
-fart -q -i "%sc%\*.app" "#WebLink4#" "%WebLink4%" >nul:
-fart -q -i "%sc%\%EditorPath%\*.au3" "#WebLink4#" "%WebLink4%" >nul:
-fart -q -i "%sc%\%EditorPath%\*.app" "#WebLink4#" "%WebLink4%" >nul:
-fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebLink4#" "%WebLink4%" >nul:
-fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebLink4#" "%WebLink4%" >nul:
-fart -q -i "%sc%\SetupS-*.htm" "#WebLink4#" "%WebLink4%" >nul:
-
-:: WebSite6 github
-::WebSite6
-fart -q -i "%sc%\*.au3" "#WebSite6#" "%WebSite6%" >nul:
-fart -q -i "%sc%\*.iss" "#WebSite6#" "%WebSite6%" >nul:
-fart -q -i "%sc%\*.app" "#WebSite6#" "%WebSite6%" >nul:
-fart -q -i "%sc%\%EditorPath%\*.au3" "#WebSite6#" "%WebSite6%" >nul:
-fart -q -i "%sc%\%EditorPath%\*.app" "#WebSite6#" "%WebSite6%" >nul:
-fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebSite6#" "%WebSite6%" >nul:
-fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebSite6#" "%WebSite6%" >nul:
-fart -q -i "%sc%\SetupS-*.htm" "#WebSite6#" "%WebSite6%" >nul:
-
-:: weblink6 github
-::WebLink6
-fart -q -i "%sc%\*.au3" "#WebLink6#" "%WebLink6%" >nul:
-fart -q -i "%sc%\*.iss" "#WebLink6#" "%WebLink6%" >nul:
-fart -q -i "%sc%\*.app" "#WebLink6#" "%WebLink6%" >nul:
-fart -q -i "%sc%\%EditorPath%\*.au3" "#WebLink6#" "%WebLink6%" >nul:
-fart -q -i "%sc%\%EditorPath%\*.app" "#WebLink6#" "%WebLink6%" >nul:
-fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebLink6#" "%WebLink6%" >nul:
-fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebLink6#" "%WebLink6%" >nul:
-fart -q -i "%sc%\SetupS-*.htm" "#WebLink6#" "%WebLink6%" >nul:
-
 
 :CompileEXE's (requires: AutoIt3 plus SciTE)
 cd "%~dp0%sc%"
@@ -297,16 +265,13 @@ fart -q -i -r ".\*.html" "#ssEditorVersion#" "%ssEditorVersion%" >nul:
 fart -q -i -r ".\*.html" "#cYear#" "%cYear%" >nul:
 fart -q -i -r ".\*.html" "#cHolder#" "%cHolder%" >nul:
 fart -q -i -r ".\*.html" "#WebSite1#" "%WebSite1%" >nul:
+fart -q -i -r ".\*.html" "#WebSite4#" "%WebSite4%" >nul:
 fart -q -i -r ".\*.html" "#WebSite2#" "%WebSite2%" >nul:
 fart -q -i -r ".\*.html" "#WebSite3#" "%WebSite3%" >nul:
-fart -q -i -r ".\*.html" "#WebSite4#" "%WebSite4%" >nul:
-fart -q -i -r ".\*.html" "#WebSite6#" "%WebSite6%" >nul:
 fart -q -i -r ".\*.html" "#WebLink1#" "%WebLink1%" >nul:
+fart -q -i -r ".\*.html" "#WebLink4#" "%WebLink4%" >nul:
 fart -q -i -r ".\*.html" "#WebLink2#" "%WebLink2%" >nul:
 fart -q -i -r ".\*.html" "#WebLink3#" "%WebLink3%" >nul:
-fart -q -i -r ".\*.html" "#WebLink4#" "%WebLink4%" >nul:
-fart -q -i -r ".\*.html" "#WebLink5#" "%WebLink5%" >nul:
-fart -q -i -r ".\*.html" "#WebLink6#" "%WebLink6%" >nul:
 ::Modify adverts
 fart -q -i -r ".\*.html" ">Created with the Freeware Edition of HelpNDoc: </span>" "></span>"
 fart -q -i -r ".\*.html" "http://www.helpndoc.com" "http://%WebLink1%"
@@ -579,7 +544,7 @@ copy "checksums.md5" "checksums_v%ProjectVersion%.md5" /y >nul:
 if exist "checksums.md5" del /F /Q "checksums.md5" >nul:
 
 :UploadProject
-echo Upload project? %DoUploads%
+echo Upload project? %DoUploads% 
 echo.
 if [%DoUploads%]==[No] goto Exit
 cd "%~dp0"
@@ -654,38 +619,10 @@ call UploadMe.cmd SetupS-title.png files/ .\ LastOS.org
 call UploadMe.cmd update.ini files/ .\ LastOS.org
 echo.
 
-
-:Movefiles
-echo Begin ... SetupS Project (version: %ProjectVersion%)
-echo Moving files to files directory
-set completedfiles=files
-set EditorPath=ssEditor
-set ssPIPath=ssPreinstaller
-set path=%path%;%~dp0bin;%~dp0%completedfiles%\Tools;%~dp0%completedfiles%\Tools\_x86
-cd "%~dp0"
-if exist "%completedfiles%\default.ini" xcopy "%completedfiles%\default.ini\*.*" "%completedfiles%\*.*" /y/e/s >nul:
-if exist "%completedfiles%\%EditorPath%\default.ini" xcopy "%completedfiles%\%EditorPath%\default.ini\*.*" "%completedfiles%\%EditorPath%\*.*" /y/e/s >nul:
-
-:move files to files directory
-echo oving files to files directory..
-cd "%~dp0"
-if exist "%completedfiles%\files" goto exit
-md "%completedfiles%\files\%EditorPath%"
-md "%completedfiles%\files\%ssPIPath%"
-copy "%completedfiles%\*.au3" "%completedfiles%\files" /y >nul:
-copy "%completedfiles%\*.iss" "%completedfiles%\files" /y >nul:
-copy "%completedfiles%\*.app" "%completedfiles%\files" /y >nul:
-copy "%completedfiles%\%EditorPath%\*.au3" "%completedfiles%\files\%EditorPath%" /y >nul:
-copy "%completedfiles%\%EditorPath%\*.app" "%completedfiles%\files\%EditorPath%" /y >nul:
-copy "%completedfiles%\%ssPIPath%\*.au3" "%completedfiles%\files\%ssPIPath%" /y >nul:
-copy "%completedfiles%\%ssPIPath%\*.ini" "%completedfiles%\files\%ssPIPath%" /y >nul:
-copy "%completedfiles%\SetupS-*.htm" "%completedfiles%\files" /y >nul:
-
-
 :Exit
 echo Cleaning up...
 cd "%~dp0"
-%AutoIt3% /ErrorStdOut /AutoIt3Executecompletedfilesript "bin\GetAccountInfo.au3" "Kill"
+%AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "Kill"
 if exist "%ssApp%" rd /s /q "%ssApp%" >nul:
 if exist "%ppApp%" rd /s /q "%ppApp%" >nul:
 if exist "%scp%" rd /s /q "%scp%" >nul:

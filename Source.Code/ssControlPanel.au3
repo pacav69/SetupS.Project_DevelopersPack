@@ -59,6 +59,11 @@
 ;------------------------------------------------------ Debug & Testing -----------------------------------------------------------
 If Not @Compiled And Not GetParameter('Test') Then
 	If $CLIparameters[0] = 0 Then
+		;$Debug = True
+		;$CLIparameters[0] += 1
+		;ReDim $CLIparameters[$CLIparameters[0] + 1]
+		;$CLIparameters[$CLIparameters[0]] = '';'-LastOS -SortDefaults'
+
 		;Some examples of how to use this:
 
 ;~ 		$CLIparameters[0] += 1
@@ -1724,6 +1729,9 @@ Func GetParameterInfo()
 	Local $n, $File, $Found, $i, $j, $k, $test, $kList, $jList, $oldpath, $newpath, $value, $key
 	If GetParameter('Help') Or GetParameter('?') Or GetParameter('About') Then EndGame('Help requested', 'See displayed', True)
 	GetReportingMode($ssConfigINI)
+	If GetParameter('SortDefaults') Then
+		$KeepStartMenuDefaults = False
+	EndIf
 	If GetParameter('ppDriveRegen') Or GetParameter('ppDrivesRegen') Then
 		$ppDrivesRunRegen = True
 	EndIf

@@ -2703,6 +2703,7 @@ Func Button_GetppExtractedSizeClick()
 				$ppAuxSize += FileGetSize($ppSub & '\folder.gif')
 				$ppAuxSize += FileGetSize($ppSub & '\folder.jpg')
 				$ppAuxSize += FileGetSize($ppSub & '\' & $type & '.ico')
+				$ppAuxSize += FileGetSize($ppSub & '\' & $type & '.mp4')
 				$ppAuxSize += FileGetSize($ppSub & '\' & $type & '.jpg')
 				$ppAuxSize += FileGetSize($ppSub & '\' & $type & '.png')
 				$ppAuxSize += FileGetSize($ppSub & '\' & $type & '.cmd')
@@ -5140,6 +5141,7 @@ Func MenuItem_OpenClick($PathIn = '')
 				Case '.apz', '.pgz'
 					If $ArchiveEditMode = '' And $ToolsPath <> '' Then
 						If GetFileFromArchive('*' & StringLeft(StringLower(StringRight($PathIn, 4)), 2) & 'p' & StringMid(StringLower(StringRight($PathIn, 4)), 3, 1), $PathIn) Then
+							GetFileFromArchive('*.mp4', $PathIn)
 							GetFileFromArchive('*.jpg', $PathIn)
 							GetFileFromArchive('*.png', $PathIn)
 							GetFileFromArchive('*.ico', $PathIn)
@@ -5808,6 +5810,8 @@ Func MenuItem_SaveClick()
 					$App_File = 'ppApp.app'
 			EndSwitch
 	EndSwitch
+	ChangeFilenameScheme('.mp4', $App_File_Path)
+	
 	ChangeFilenameScheme('.jpg', $App_File_Path)
 ;~ 	DeleteDuplicates($App_File_Path, GetAppTypeBase($App_Type) & '.jpg', '.jpg')
 	If FileExists(GetAppTypeBase($App_Type) & '.jpg') Then
@@ -5880,6 +5884,7 @@ Func MenuItem_SaveClick()
 		ControlSetText('', '', $StatusBar_ssEditor, 'Updating archive file. Please wait ...')
 		_Crypt_Startup()
 		UpdateArchive(GetFilename($App_File), $ArchiveEditMode)
+		UpdateArchive(GetAppTypeBase($App_Type) & '.mp4', $ArchiveEditMode)
 		UpdateArchive(GetAppTypeBase($App_Type) & '.jpg', $ArchiveEditMode)
 		UpdateArchive(GetAppTypeBase($App_Type) & '.png', $ArchiveEditMode)
 		UpdateArchive(GetAppTypeBase($App_Type) & '.ico', $ArchiveEditMode)
