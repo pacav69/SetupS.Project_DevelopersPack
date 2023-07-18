@@ -4,13 +4,13 @@
 #AutoIt3Wrapper_Outfile=Tools\ssControlPanel.exe
 #AutoIt3Wrapper_Compression=4
 #AutoIt3Wrapper_Res_Description=SetupS Control Panel. An applet to select an Advanced StartMenu/Sorting Style, ppDrives, etc.
-#AutoIt3Wrapper_Res_Fileversion=23.07.17.0
-#AutoIt3Wrapper_Res_LegalCopyright=©2017-2023, Vergitek Solutions
+#AutoIt3Wrapper_Res_Fileversion=#ProjectVersion#
+#AutoIt3Wrapper_Res_LegalCopyright=©#cYear#, #cHolder#
 #AutoIt3Wrapper_Res_Language=1033
-#AutoIt3Wrapper_Res_Field=Release Date|2023-07-17
-#AutoIt3Wrapper_Res_Field=ssTek Forum|http://sstek.vergitek.com
-#AutoIt3Wrapper_Res_Field=LastOS Team|http://www.lastos.org
-#AutoIt3Wrapper_Res_Field=ssTek Distribution|http://dl.bintray.com/sstek
+#AutoIt3Wrapper_Res_Field=Release Date|#ProjectDate#
+#AutoIt3Wrapper_Res_Field=#WebSite1#|http://#WebLink1#
+#AutoIt3Wrapper_Res_Field=#WebSite2#|http://#WebLink2#
+#AutoIt3Wrapper_Res_Field=#WebSite3#|http://#WebLink3#
 #AutoIt3Wrapper_Au3Check_Stop_OnWarning=y
 #AutoIt3Wrapper_Run_Tidy=y
 #Tidy_Parameters=/pr=1 /uv=3 /tc=0 /sf /reel /refc /rerc /kv=100
@@ -19,8 +19,8 @@
 
 #cs ##################################################################################
 	
-	SetupS Control Panel v23.07.17.0
-	Copyright © 2017-2023, Vergitek Solutions
+	SetupS Control Panel v#ProjectVersion#
+	Copyright © #cYear#, #cHolder#
 	All rights reserved.
 	
 	This file is part of the SetupS SendTo Suite.
@@ -32,10 +32,10 @@
 	
 	DISCLAIMER:
 	The SetupS SendTo Suite is distributed in the hope that it will be useful, but is
-	provided by Vergitek Solutions "AS IS", without warranty of any kind, express or
+	provided by #cHolder# "AS IS", without warranty of any kind, express or
 	implied, including but not limited to the warranties of MERCHANTABILITY,
 	FITNESS FOR A PARTICULAR PURPOSE, TITLE and NON-INFRINGEMENT. In no event shall
-	the authors or Vergitek Solutions be liable for any direct, indirect, incidental, special,
+	the authors or #cHolder# be liable for any direct, indirect, incidental, special,
 	exemplary, or consequential damages (including, but not limited to, procurement of
 	substitute goods or services; loss of use, data, or profits; or business
 	interruption) however caused and on any theory of liability, whether in an action
@@ -539,7 +539,7 @@ If $UseGUI Then
 	Global $About_Copyright = GUICtrlCreateLabel("(c)2012, Team ssTek", 96, 62, 130, 20)
 	GUICtrlSetFont($About_Copyright, 11, 400, 0, "MS Sans Serif")
 	GUICtrlSetOnEvent($About_Copyright, "About_CopyrightClick")
-	Global $About_URL = GUICtrlCreateLabel("ssTek Forum", 129, 84, 75, 17)
+	Global $About_URL = GUICtrlCreateLabel("#WebSite1#", 129, 84, 75, 17)
 	GUICtrlSetFont($About_URL, 9, 800, 4, "MS Sans Serif")
 	GUICtrlSetColor($About_URL, 0x0000FF)
 	GUICtrlSetOnEvent($About_URL, "About_URLClick")
@@ -555,11 +555,11 @@ If $UseGUI Then
 	GUICtrlSetFont($Label_CLIswitches, 9, 800, 4, "MS Sans Serif")
 	GUICtrlSetColor($Label_CLIswitches, 0x0000FF)
 	GUICtrlSetOnEvent($Label_CLIswitches, "Label_CLIswitchesClick")
-	Global $About_URL2 = GUICtrlCreateLabel("LastOS Team", 129, 102, 75, 17)
+	Global $About_URL2 = GUICtrlCreateLabel("#WebSite2#", 129, 102, 75, 17)
 	GUICtrlSetFont($About_URL2, 9, 800, 4, "MS Sans Serif")
 	GUICtrlSetColor($About_URL2, 0x0000FF)
 	GUICtrlSetOnEvent($About_URL2, "About_URL2Click")
-	Global $About_URL3 = GUICtrlCreateLabel("ssTek Distribution", 129, 120, 75, 17)
+	Global $About_URL3 = GUICtrlCreateLabel("#WebSite3#", 129, 120, 75, 17)
 	GUICtrlSetFont($About_URL3, 9, 800, 4, "MS Sans Serif")
 	GUICtrlSetColor($About_URL3, 0x0000FF)
 	GUICtrlSetOnEvent($About_URL3, "About_URL3Click")
@@ -585,10 +585,10 @@ If $UseGUI Then
 	;Detail ssControlPanel form
 	;GetSetupSOptions($ssConfigINI)
 	GUICtrlSetData($About_Version, 'Version ' & $ThisAppVersion)
-	GUICtrlSetData($About_Copyright, '© 2017-2023, Vergitek Solutions')
-	GUICtrlSetData($About_URL, 'ssTek Forum')
-	GUICtrlSetData($About_URL2, 'LastOS Team')
-	GUICtrlSetData($About_URL3, 'ssTek Distribution')
+	GUICtrlSetData($About_Copyright, '© #cYear#, #cHolder#')
+	GUICtrlSetData($About_URL, '#WebSite1#')
+	GUICtrlSetData($About_URL2, '#WebSite2#')
+	GUICtrlSetData($About_URL3, '#WebSite3#')
 	$aPos = ControlGetPos('', '', $ssControlPanel)
 	Local $ssControlPanel_Width = $aPos[2], $ssControlPanel_Height = $aPos[3], $CtrlOffset
 	CenterMe($ssControlPanel, $TabMenu, $ssControlPanel_Width, 0)

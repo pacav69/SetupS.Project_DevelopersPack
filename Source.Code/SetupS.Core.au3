@@ -5,8 +5,8 @@
 #include-once
 #cs ##################################################################################
 
-	SetupS Project Core (Common Declarations & Functions) v23.07.17.0
-	Copyright � 2017-2023, Vergitek Solutions
+	SetupS Project Core (Common Declarations & Functions) v#CoreVersion#
+	Copyright � #cYear#, #cHolder#
 	All rights reserved.
 
 	This file is part of the SetupS SendTo Suite.
@@ -18,10 +18,10 @@
 
 	DISCLAIMER:
 	The SetupS SendTo Suite is distributed in the hope that it will be useful, but is
-	provided by Vergitek Solutions "AS IS", without warranty of any kind, express or
+	provided by #cHolder# "AS IS", without warranty of any kind, express or
 	implied, including but not limited to the warranties of MERCHANTABILITY,
 	FITNESS FOR A PARTICULAR PURPOSE, TITLE and NON-INFRINGEMENT. In no event shall
-	the authors or Vergitek Solutions be liable for any direct, indirect, incidental, special,
+	the authors or #cHolder# be liable for any direct, indirect, incidental, special,
 	exemplary, or consequential damages (including, but not limited to, procurement of
 	substitute goods or services; loss of use, data, or profits; or business
 	interruption) however caused and on any theory of liability, whether in an action
@@ -79,8 +79,8 @@ Global $KeepStartMenuFolders = False, $KeepStartMenuDefaults = False
 Global $ProgramFilesDir32 = Not Not FileExists(EnvGet('ProgramFiles(x86)')) ;32-bit ProgramFiles directory
 ;Global $SystemDir = @SystemDir ;@WindowsDir & '\System32'
 Global $SystemDir32 = Not Not FileExists(@WindowsDir & '\SYSWOW64') ;32-bit System directory
-Global $SetupS_CoreVer = '23.07.17.0', $AbortDL, $AltDistr[1][2], $AltDistrOrder
-Global $AboutLink1 = 'http://sstek.vergitek.com', $AboutLink2 = 'http://www.lastos.org', $AboutLink3 = 'http://dl.bintray.com/sstek', $AboutLink6 = 'http://github.com/pacav69/SetupS.Project_DevelopersPack'
+Global $SetupS_CoreVer = '#CoreVersion#', $AbortDL, $AltDistr[1][2], $AltDistrOrder
+Global $AboutLink1 = 'http://#WebLink1#', $AboutLink2 = 'http://#WebLink2#', $AboutLink3 = 'http://#WebLink3#', $AboutLink6 = 'http://#WebLink6#'
 Global $CopyFromLive, $ppInstall, $AllUsersProfile = EnvGet('ALLUSERSPROFILE')
 Global $LinuxHome = 'z:\home\' & @UserName, $OS_Linux = Not Not FileExists($LinuxHome), $WINEVersion = _GetWINEVersion() ; Linux via Wine handling
 ;~ Global $App_Title_SetupS, $App_BuildType_SetupS, $App_Version_SetupS, $App_InstallPath_SetupS
@@ -162,8 +162,8 @@ Else
 			EndIf
 		EndIf
 	EndIf
-	;$SetupS_CoreVer = '8.13.3.29' ;And StringInStr($SetupS_CoreVer, '23.07.17.0') ;Use to test v8
-	;$SetupS_CoreVer = '13.3.7.29' ;And StringInStr($SetupS_CoreVer, '23.07.17.0') ;Use to test v13
+	;$SetupS_CoreVer = '8.13.3.29' ;And StringInStr($SetupS_CoreVer, '#CoreVersion#') ;Use to test v8
+	;$SetupS_CoreVer = '13.3.7.29' ;And StringInStr($SetupS_CoreVer, '#CoreVersion#') ;Use to test v13
 EndIf
 $SetupSFolder = FileGetShortName(ConvertFromVars("%ProgramFiles%\SetupS.SendTo"))
 
@@ -5727,7 +5727,7 @@ Func UpdateMe($UpdateLink, $SetupSInfo, $Attend = False, $UseGUI = True)
 	$App_File = _AppRead($SetupSInfo, False, True)
 	If (StringLeft($App_Title, 1) = '#' And StringRight($App_Title, 1) = '#') Then $App_Title = $ThisAppFilename
 	;$App_BuildType = {given}
-	If StringInStr($App_Version, '23.07.17.0') Then $App_Version = 'v' & $ThisAppVersion
+	If StringInStr($App_Version, '#ProjectVersion#') Then $App_Version = 'v' & $ThisAppVersion
 	$App_Version = StringReplace($App_Version, 'v', '')
 	$App_InstallPath = ConvertFromVars($App_InstallPath)
 
@@ -6253,14 +6253,14 @@ EndFunc
 	#AutoIt3Wrapper_Icon=SetupS.ico
 	#AutoIt3Wrapper_Outfile=Tools\SetupS.Core.exe
 	#AutoIt3Wrapper_Res_Description=SetupS Project Core (Common Declarations & Functions)
-	#AutoIt3Wrapper_Res_Fileversion=23.07.17.0
-	#AutoIt3Wrapper_Res_LegalCopyright=� 2017-2023 Vergitek Solutions
+	#AutoIt3Wrapper_Res_Fileversion=#ProjectVersion#
+	#AutoIt3Wrapper_Res_LegalCopyright=� #cYear# #cHolder#
 	#AutoIt3Wrapper_Res_Language=1033
-	#AutoIt3Wrapper_Res_Field=Release Date|2023-07-17
-	#AutoIt3Wrapper_Res_Field=ssTek Forum|http://sstek.vergitek.com
-	#AutoIt3Wrapper_Res_Field=LastOS Team|http://www.lastos.org
-	#AutoIt3Wrapper_Res_Field=ssTek Distribution|http://dl.bintray.com/sstek
-		#AutoIt3Wrapper_Res_Field=github files|http://github.com/pacav69/SetupS.Project_DevelopersPack
+	#AutoIt3Wrapper_Res_Field=Release Date|#ProjectDate#
+	#AutoIt3Wrapper_Res_Field=#WebSite1#|http://#WebLink1#
+	#AutoIt3Wrapper_Res_Field=#WebSite2#|http://#WebLink2#
+	#AutoIt3Wrapper_Res_Field=#WebSite3#|http://#WebLink3#
+		#AutoIt3Wrapper_Res_Field=#WebSite6#|http://#WebLink6#
 	#AutoIt3Wrapper_Res_Field=Original Concept|Glenn L. Chugg (ReturnOfNights)
 	#AutoIt3Wrapper_Compression=4
 	#AutoIt3Wrapper_AU3Check_Stop_OnWarning=y

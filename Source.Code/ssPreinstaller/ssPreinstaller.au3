@@ -4,14 +4,14 @@
 #AutoIt3Wrapper_Outfile=ssPreinstaller.exe
 #AutoIt3Wrapper_Compression=4
 #AutoIt3Wrapper_Res_Description=Kludge to pre-install/uninstall SetupS (experimental)
-#AutoIt3Wrapper_Res_Fileversion=23.07.17.0
-#AutoIt3Wrapper_Res_LegalCopyright=� 2017-2023 Vergitek Solutions
+#AutoIt3Wrapper_Res_Fileversion=#ProjectVersion#
+#AutoIt3Wrapper_Res_LegalCopyright=� #cYear# #cHolder#
 #AutoIt3Wrapper_Res_Language=1033
-#AutoIt3Wrapper_Res_Field=Release Date|2023-07-17
-#AutoIt3Wrapper_Res_Field=ssTek Forum|http://sstek.vergitek.com
-#AutoIt3Wrapper_Res_Field=ssTek Development|http://www.lastos.org
-#AutoIt3Wrapper_Res_Field=LastOS Team|http://dl.bintray.com/sstek
-#AutoIt3Wrapper_Res_Field=Github Development|http://github.com/pacav69/SetupS.Project_DevelopersPack
+#AutoIt3Wrapper_Res_Field=Release Date|#ProjectDate#
+#AutoIt3Wrapper_Res_Field=ssTek Forum|http://#WebLink1#
+#AutoIt3Wrapper_Res_Field=ssTek Development|http://#WebLink2#
+#AutoIt3Wrapper_Res_Field=LastOS Team|http://#WebLink3#
+#AutoIt3Wrapper_Res_Field=Github Development|http://#WebLink6#
 #AutoIt3Wrapper_Au3Check_Stop_OnWarning=y
 #AutoIt3Wrapper_Run_Tidy=y
 #Tidy_Parameters=/pr=1 /uv=3 /tc=0 /sf /reel /refc /rerc /kv=10
@@ -20,8 +20,8 @@
 
 #cs ##################################################################################
 
-	ssPreinstaller v23.07.17.0
-	Copyright � 2017-2023, Vergitek Solutions
+	ssPreinstaller v#ProjectVersion#
+	Copyright � #cYear#, #cHolder#
 	All rights reserved.
 
 	ssPreinstaller is open-source software: you can redistribute it and/or
@@ -31,10 +31,10 @@
 
 	DISCLAIMER:
 	ssPreinstaller is distributed in the hope that it will be useful, but
-	is provided by Vergitek Solutions "AS IS", without warranty of any kind,
+	is provided by #cHolder# "AS IS", without warranty of any kind,
 	express or implied, including but not limited to the warranties of
 	MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE and NON-INFRINGEMENT.
-	In no event shall the authors or Vergitek Solutions be liable for any direct,
+	In no event shall the authors or #cHolder# be liable for any direct,
 	indirect, incidental, special, exemplary, or consequential damages
 	(including, but not limited to, procurement of substitute goods or
 	services; loss of use, data, or profits; or business interruption)
