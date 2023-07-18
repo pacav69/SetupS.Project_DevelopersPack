@@ -6,6 +6,48 @@
 @echo off
 call !RestoreOriginals.cmd
 
+goto :getVer
+
+@REM @echo off
+@REM SET /A a = 5
+@REM SET /A b = 10
+@REM SET /A c = %a% + %b%
+@REM if %c%==15 (echo "The value of variable c is 15") else (echo "Unknown value")
+@REM if %c%==10 (echo "The value of variable c is 10") else (echo "Unknown value")
+
+::ask set Upload=No
+@REM If (condition) (do_something) ELSE (do_something_else)
+@REM pause
+echo Upload = %Upload%
+pause
+@REM if [%DoUploads%]==[No] goto RestoreOriginals
+@REM goto
+if  [%Upload%]==[No](echo.
+echo  Upload parameter is set to 'No'
+choice /C:YN /N /M "Are you sure you want to continue? ['Y'es/'N'o] : "
+if errorlevel 2 goto :somewhere_else
+if errorlevel 1 goto :somewhere
+
+:somewhere
+@REM echo "I am here because you typed Y"
+echo continuing ...
+goto :getVer
+
+
+:somewhere_else
+rem echo "I am here because you typed N"
+echo
+  echo.===============================================================================
+echo.
+echo. aborting creating distribution packages
+echo. change parameter to Upload=Yes in file !!Make.SetupS-Project.cmd
+echo then rerun
+echo.
+  echo.===============================================================================
+pause
+goto :Quit
+)else(goto :getVer)
+
 :getVer
 if [%1]==[] goto setVer
 set ProjectVersion=%1
@@ -46,6 +88,10 @@ set WebSite3=ssTek Distribution
 set WebLink3=dl.bintray.com/sstek
 set WebSite4=ssTek Development
 set WebLink4=sstek.vergitek.com
+set WebSite5=LastOS Forum
+set WebLink5=lastos.vergitek.com
+set WebSite6=github files
+set WebLink6=github.com/pacav69/SetupS.Project_DevelopersPack
 set NewTagLine=%Website1%: Tools for custom Operating Systems!
 set CoreVersion=%ProjectVersion%
 set ssEditorVersion=%ProjectVersion%
@@ -652,16 +698,20 @@ echo.
 @REM #######################################################
 :Movefiles
 echo Begin ... SetupS Project (version: %ProjectVersion%)
-echo Moving files to files directory
+echo Moving files to files directory ...
 set completedfiles=files
 
 :move files to files directory
-echo moving files to files directory..
+@REM echo moving files to files directory..
 if exist "%completedfiles%" rd /s /q "%completedfiles%" >nul:
 md "%completedfiles%"
 echo copying setups files to files directory..
+@REM set Upload=Yes
+if NOT exist "SetupS-*.htm" echo File not found Change in Make.SetupS-Project.cmd to 'set Upload=Yes'&pause&goto exit
 echo copying htm files to files directory..
 copy "SetupS-*.htm" "%completedfiles%\" /y >nul:
+echo copying SetupS-*.png files to files directory..
+copy "%~dp0SetupS-*.png" "%~dp0\%completedfiles%" /y >nul
 echo copying .7z files to files directory..
 @REM SetupS.Project_v23.07.18.1_DevelopersPack.7z
 copy "*.7z" "%completedfiles%\" /y >nul:
@@ -674,6 +724,8 @@ copy "*.exe" "%completedfiles%\" /y >nul:
 echo copying UploadMe.cmd files to files directory..
 @REM UploadMe.cmd
 copy "UploadMe.cmd" "%completedfiles%\" /y >nul:
+@REM update.ini
+copy "update.ini" "%completedfiles%\" /y >nul:
 echo copying Uchecksums files to files directory..
 @REM checksums_v23.07.18.1.md5
 copy "checksums*.md5" "%completedfiles%\" /y >nul:
@@ -681,6 +733,8 @@ copy "checksums*.md5" "%completedfiles%\" /y >nul:
 :Deleting files
 echo deleting SetupS-*.htm
 if exist "SetupS-*.htm" del /F /Q "SetupS-*.htm" >nul:
+echo deleting SetupS-*.png
+if exist "SetupS-*.png" del /F /Q "SetupS-*.png" >nul:
 echo deleting 7z
 if exist "*.7z" del /F /Q "*.7z" >nul:
 echo deleting apz
@@ -689,10 +743,12 @@ echo deleting exe
 if exist "*.exe" del /F /Q "*.exe" >nul:
 echo deleting UploadMe.cmd
 if exist "UploadMe.cmd" del /F /Q "UploadMe.cmd" >nul:
+echo deleting update.ini
+if exist "update.ini" del /F /Q "update.ini" >nul:
 echo deleting checksums
 if exist "checksums*.md5" del /F /Q "checksums*.md5" >nul:
 
-@REM pause
+pause
 
 :Exit
 echo Cleaning up...
@@ -713,3 +769,4 @@ if exist "%sc%\originals" echo Originals already exists!
 echo.
 echo SetupS Project v%ProjectVersion% ... Done!
 echo.
+:Quit

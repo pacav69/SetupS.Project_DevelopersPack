@@ -9,7 +9,7 @@ set ProjectVersion=23.07.18.1
 @REM use the date of compilatation YY-MM-DD
 @REM use the date of compilatation YY-MM-DD seperated by a '-'
 set ProjectDate=2023-07-18
-set Upload=No
+set Upload=Yes
 
 :Begin
 call !DistrPack.Project.cmd %ProjectVersion% %ProjectDate% %Upload%

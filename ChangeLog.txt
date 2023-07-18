@@ -1,6 +1,12 @@
 Note: The goal is to have any additions/changes/options to NOT affect the original default
       behavior if not used or implemented (for backwards compatibility); but sometimes this is
       not always possible especially when adding new features.
+
+---------------------------------------------
+July 19, 2023
+---------------------------------------------
+removed dl.bintray.com/sstek from SetupS-files.htm as it is not longer functioning
+added WebSite6=github files and WebLink6 to !DistrPack.Project.cmd file and htm
 ---------------------------------------------
 July 18, 2023
 ---------------------------------------------
