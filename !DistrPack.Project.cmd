@@ -288,7 +288,7 @@ fart -q -i -r ".\*.html" "#CoreVersion#" "%CoreVersion%" >nul:
 fart -q -i -r ".\*.html" "#ssEditorVersion#" "%ssEditorVersion%" >nul:
 fart -q -i -r ".\*.html" "#cYear#" "%cYear%" >nul:
 fart -q -i -r ".\*.html" "#cHolder#" "%cHolder%" >nul:
-ffart -q -i -r ".\*.html" "#WebSite1#" "%WebSite1%" >nul:
+fart -q -i -r ".\*.html" "#WebSite1#" "%WebSite1%" >nul:
 fart -q -i -r ".\*.html" "#WebSite2#" "%WebSite2%" >nul:
 fart -q -i -r ".\*.html" "#WebSite3#" "%WebSite3%" >nul:
 fart -q -i -r ".\*.html" "#WebSite4#" "%WebSite4%" >nul:
@@ -573,7 +573,8 @@ if exist "checksums.md5" del /F /Q "checksums.md5" >nul:
 :UploadProject
 echo Upload project? %DoUploads%
 echo.
-if [%DoUploads%]==[No] goto Exit
+@REM if [%DoUploads%]==[No] goto Exit
+if [%DoUploads%]==[No] goto Movefiles
 cd "%~dp0"
 if exist "upload-help.cmd" call upload-help.cmd %sc% ssTek
 
@@ -646,32 +647,58 @@ call UploadMe.cmd SetupS-title.png files/ .\ LastOS.org
 call UploadMe.cmd update.ini files/ .\ LastOS.org
 echo.
 
+@REM #######################################################
+@REM ### Movefiles
+@REM #######################################################
 :Movefiles
 echo Begin ... SetupS Project (version: %ProjectVersion%)
 echo Moving files to files directory
 set completedfiles=files
-set EditorPath=ssEditor
-set ssPIPath=ssPreinstaller
-set path=%path%;%~dp0bin;%~dp0%completedfiles%\Tools;%~dp0%completedfiles%\Tools\_x86
-cd "%~dp0"
-if exist "%completedfiles%\default.ini" xcopy "%completedfiles%\default.ini\*.*" "%completedfiles%\*.*" /y/e/s >nul:
-if exist "%completedfiles%\%EditorPath%\default.ini" xcopy "%completedfiles%\%EditorPath%\default.ini\*.*" "%completedfiles%\%EditorPath%\*.*" /y/e/s >nul:
+@REM set EditorPath=ssEditor
+@REM set ssPIPath=ssPreinstaller
+@REM set path=%path%;%~dp0bin;%~dp0%completedfiles%\Tools;%~dp0%completedfiles%\Tools\_x86
+@REM cd "%~dp0"
+@REM if exist "%completedfiles%\default.ini" xcopy "%completedfiles%\default.ini\*.*" "%completedfiles%\*.*" /y/e/s >nul:
+@REM if exist "%completedfiles%\%EditorPath%\default.ini" xcopy "%completedfiles%\%EditorPath%\default.ini\*.*" "%completedfiles%\%EditorPath%\*.*" /y/e/s >nul:
 
 :move files to files directory
 echo moving files to files directory..
-cd "%~dp0"
-:: if exist "%completedfiles%\files" goto exit
-md "%completedfiles%\files\%EditorPath%"
-md "%completedfiles%\files\%ssPIPath%"
-copy "%completedfiles%\*.au3" "%completedfiles%\files" /y >nul:
-copy "%completedfiles%\*.iss" "%completedfiles%\files" /y >nul:
-copy "%completedfiles%\*.app" "%completedfiles%\files" /y >nul:
-copy "%completedfiles%\%EditorPath%\*.au3" "%completedfiles%\files\%EditorPath%" /y >nul:
-copy "%completedfiles%\%EditorPath%\*.app" "%completedfiles%\files\%EditorPath%" /y >nul:
-copy "%completedfiles%\%ssPIPath%\*.au3" "%completedfiles%\files\%ssPIPath%" /y >nul:
-copy "%completedfiles%\%ssPIPath%\*.ini" "%completedfiles%\files\%ssPIPath%" /y >nul:
-copy "%completedfiles%\SetupS-*.htm" "%completedfiles%\files" /y >nul:
+if exist "%completedfiles%" rd /s /q "%completedfiles%" >nul:
+md "%completedfiles%"
+echo copying setups files to files directory..
+echo copying htm files to files directory..
+copy "SetupS-*.htm" "%completedfiles%\" /y >nul:
+echo copying .7z files to files directory..
+@REM SetupS.Project_v23.07.18.1_DevelopersPack.7z
+copy "*.7z" "%completedfiles%\" /y >nul:
+echo copying apz files to files directory..
+@REM SetupS.SendTo.Suite_v23.07.18.1_ssApp.apz
+copy "*.apz" "%completedfiles%\" /y >nul:
+echo copying exe files to files directory..
+@REM SetupS.SendTo.Suite_v23.07.18.1_ssApp.exe
+copy "*.exe" "%completedfiles%\" /y >nul:
+echo copying UploadMe.cmd files to files directory..
+@REM UploadMe.cmd
+copy "UploadMe.cmd" "%completedfiles%\" /y >nul:
+echo copying Uchecksums files to files directory..
+@REM checksums_v23.07.18.1.md5
+copy "checksums*.md5" "%completedfiles%\" /y >nul:
+@REM pause
+:Deleting files
+echo deleting SetupS-*.htm
+if exist "SetupS-*.htm" del /F /Q "SetupS-*.htm" >nul:
+echo deleting 7z
+if exist "*.7z" del /F /Q "*.7z" >nul:
+echo deleting apz
+if exist "*.apz" del /F /Q "*.apz" >nul:
+echo deleting exe
+if exist "*.exe" del /F /Q "*.exe" >nul:
+echo deleting UploadMe.cmd
+if exist "UploadMe.cmd" del /F /Q "UploadMe.cmd" >nul:
+echo deleting checksums
+if exist "checksums*.md5" del /F /Q "checksums*.md5" >nul:
 
+@REM pause
 
 :Exit
 echo Cleaning up...

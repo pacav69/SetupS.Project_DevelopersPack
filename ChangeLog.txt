@@ -12,6 +12,9 @@ merged Glenn's changes to files
 updated version to 23.07.18.1
 added Archives directory to store original SourceCode
      SetupS.Project_v20.03.17.0_SourceCode.7z
+
+added Movefiles to files subdirectory routine to !DistrPack.Project.CMD file
+
 ---------------------------------------------
 v23.07.17.0 (July 17, 2023)
 ---------------------------------------------
