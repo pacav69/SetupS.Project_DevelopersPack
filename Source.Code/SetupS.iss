@@ -91,6 +91,15 @@ Name: {group}\ssTek Help; Filename: {app}\ssTek.chm; Comment: General help-file 
 Name: {sendto}\SetupS; Filename: {app}\SetupS.exe
 Name: {sendto}\SetupS Editor; Filename: {app}\ssEditor\ssEditor.exe
 
+Name: {sendto}\ssEditor(Autobuild Archive); Filename: {app}\ssEditor\ssEditor.exe; Parameters: -autobuild -MakeExpressInstaller=on
+Name: {sendto}\ssEditor(Autobuild Folder); Filename: {app}\ssEditor\ssEditor.exe; Parameters: -autobuild -MakeExpressInstaller=off
+
+Name: C:\Users\Default\AppData\Roaming\Microsoft\Windows\SendTo\SetupS; Filename: {app}\SetupS.exe
+Name: C:\Users\Default\AppData\Roaming\Microsoft\Windows\SendTo\ssEditor(Autobuild Archive); Filename: {app}\ssEditor\ssEditor.exe; Parameters: -autobuild -MakeExpressInstaller=on
+Name: C:\Users\Default\AppData\Roaming\Microsoft\Windows\SendTo\ssEditor(Autobuild Folder); Filename: {app}\ssEditor\ssEditor.exe; Parameters: -autobuild -MakeExpressInstaller=off
+
+
+
 [Registry]
 Root: HKCR; Subkey: .app; ValueType: string; ValueName: ; ValueData: SetupS.SendTo; Flags: uninsdeletevalue
 Root: HKCR; Subkey: .ppg; ValueType: string; ValueName: ; ValueData: SetupS.SendTo; Flags: uninsdeletevalue

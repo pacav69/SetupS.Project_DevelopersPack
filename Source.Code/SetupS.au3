@@ -5,13 +5,12 @@
 #AutoIt3Wrapper_Compression=4
 #AutoIt3Wrapper_Res_Description=SetupS(ilently) Installer
 #AutoIt3Wrapper_Res_Fileversion=#ProjectVersion#
-#AutoIt3Wrapper_Res_LegalCopyright=ï¿½#cYear#, #cHolder#
+#AutoIt3Wrapper_Res_LegalCopyright=©#cYear#, #cHolder#
 #AutoIt3Wrapper_Res_Language=1033
 #AutoIt3Wrapper_Res_Field=Release Date|#ProjectDate#
 #AutoIt3Wrapper_Res_Field=#WebSite1#|http://#WebLink1#
 #AutoIt3Wrapper_Res_Field=#WebSite2#|http://#WebLink2#
 #AutoIt3Wrapper_Res_Field=#WebSite3#|http://#WebLink3#
-#AutoIt3Wrapper_Res_Field=#WebSite6#|http://#WebLink6#
 #AutoIt3Wrapper_Res_Field=Original Concept|Glenn L. Chugg (ReturnOfNights)
 #AutoIt3Wrapper_AU3Check_Stop_OnWarning=y
 #AutoIt3Wrapper_Run_Tidy=y
@@ -22,7 +21,7 @@
 #cs ##################################################################################
 
 	SetupS SendTo Extension v#ProjectVersion#
-	Copyright ï¿½ #cYear#, #cHolder#
+	Copyright © #cYear#, #cHolder#
 	All rights reserved.
 
 	This file is part of the SetupS SendTo Suite.
@@ -102,6 +101,7 @@ Global $ProcessShortcutS, $AppPathFolderIcon, $ProcessScript, $ProcessRegistry, 
 Local $OSArchGate_App, $OSVersionGate_App, $ScanMethod = '', $TempCMD = 'SetupS~.cmd', $TempREG = 'SetupS~.reg'
 Local $InitUninstallReg, $App_Uninstall_Diff
 Global $UserAccounts[1], $ApplyPatch, $ssConfigINI = CheckINI('ssConfig.ini')
+Global $NoArch=False
 ;~ If $MakeDefaultINI Then SetSetupSOptions($ssConfigINI)
 $UserAccounts[0] = 0
 Opt('GUIOnEventMode', 1)
@@ -234,7 +234,9 @@ For $xi = 1 To $ExpressInstall[0]
 						If $SkipOSArch Then $OSVersionGate_App = BitAND($App_OS, 8) = 8
 				EndSelect
 			EndIf
-			If $OSArchGate_App And $OSVersionGate_App Then
+			;Glenn 2023 Bypass Gates
+			;If $OSArchGate_App And $OSVersionGate_App Then
+			If $OSVersionGate_App Then
 				If $BalloonTips Then _TrayTip('Processing', $App_Title, 30, 17)
 				If $SplashTips Then SplashThis('Processing', $SplashTemp)
 				If $Log Or $Debug Then _ConsoleWrite($ThisAppTitle & ': ' & 'Processing --> ' & $SplashTemp & @CRLF)
@@ -427,6 +429,8 @@ Func _SetupS($SrcPath)
 	;_ArrayDisplay($App_Uninstall, @ScriptLineNumber)
 
 	;------------------- Check Architecture --------------------
+	$NoArch=False
+	If $App_Architecture = 0 Then $NoArch=True
 	If $App_Architecture = 0 Then ; affects ssApps only
 		If @AutoItX64 Then
 			Select
@@ -505,6 +509,7 @@ Func _SetupS($SrcPath)
 				DeleteDuplicates(GetFolderPath($TempINI), GetAppTypeBase($App_Type) & '.cmd', '.bat')
 				DeleteDuplicates(GetFolderPath($TempINI), GetAppTypeBase($App_Type) & '.reg', '.reg')
 				DeleteDuplicates(GetFolderPath($TempINI), GetAppTypeBase($App_Type) & '.jpg', '.jpg')
+				DeleteDuplicates(GetFolderPath($TempINI), GetAppTypeBase($App_Type) & '.mp4', '.mp4')
 				DeleteDuplicates(GetFolderPath($TempINI), GetAppTypeBase($App_Type) & '.png', '.png')
 				DeleteDuplicates(GetFolderPath($TempINI), GetAppTypeBase($App_Type) & '.ico', '.ico')
 			#ce
@@ -1658,7 +1663,8 @@ Func ProcessShortcutS()
 				;	$scFlagsParsed[$j]=StringStripWS(StringReplace($scFlagsParsed[$j], '#', ''), 3)
 				;Next
 				SetGates($App_scFlags[$i], $OSArchGate, $OSVersionGate, False)
-				If $OSArchGate And $OSVersionGate Then
+				;If $OSArchGate And $OSVersionGate Then
+				If 1 = 1 Then ; Glenn 2023 - turn off the gates and make ALL shortcuts
 					$App_scEXE[$i] = ConvertFromVars(ConvertToVars($App_scEXE[$i]))
 					If $App_scEXE[$i] <> '' And StringInStr($App_scEXE[$i], ':') = 0 Then $App_scEXE[$i] = $App_InstallPath & '\' & $App_scEXE[$i]
 					If FileExists($App_scEXE[$i]) Then
@@ -2319,12 +2325,14 @@ Func ssInstall()
 	EndIf
 	If $App_NoneThing Then ; cleanup in case the archives contained these files anyway
 		FileDelete($App_InstallPath & '\' & GetAppTypeBase($App_Type) & '.md5')
+		FileDelete($App_InstallPath & '\' & GetAppTypeBase($App_Type) & '*.mp4')
 		FileDelete($App_InstallPath & '\' & GetAppTypeBase($App_Type) & '*.jpg')
 		FileDelete($App_InstallPath & '\' & GetAppTypeBase($App_Type) & '.png')
 		FileDelete($App_InstallPath & '\' & GetAppTypeBase($App_Type) & '.ico')
 		FileDelete($App_InstallPath & '\folder.gif')
 		FileDelete($App_InstallPath & '\folder.jpg')
 	Else ; Copy aux files:
+		CopyExt('*.mp4'); videos
 		CopyExt('*.jpg'); screen-shots
 		CopyExt('.png'); faders
 		CopyExt('.ico'); icons

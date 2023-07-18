@@ -14,6 +14,7 @@ SetupS.cab
 ssApp.app
 ssApp.ico
 ssApp.jpg
+ssApp.mp4
 ssApp.png
 ssApp.cmd
 ssApp.bat
@@ -26,6 +27,7 @@ ssApp.cab
 ppApp.app
 ppApp.ico
 ppApp.jpg
+ppApp.mp4
 ppApp.png
 ppApp.cmd
 ppApp.bat
@@ -38,6 +40,7 @@ ppApp.cab
 ppGame.ppg
 ppGame.ico
 ppGame.jpg
+ppGame.mp4
 ppGame.png
 ppGame.cmd
 ppGame.bat
@@ -61,3 +64,6 @@ Patch\
 ssApp*.jpg
 ppApp*.jpg
 ppGame*.jpg
+ssApp*.mp4
+ppApp*.mp4
+ppGame*.mp4

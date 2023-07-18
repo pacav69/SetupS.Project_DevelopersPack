@@ -64,7 +64,7 @@ If Not @Compiled Then
 
 		$CLIparameters[0] += 1
 		ReDim $CLIparameters[$CLIparameters[0] + 1]
-		$CLIparameters[$CLIparameters[0]] = '-ppGames' ;'--ppApps' ;'--ppGames' ;'--ssApps' ; AppType
+		$CLIparameters[$CLIparameters[0]] = '-AllDrives=Yes';'-ssApps' ;'--ppApps' ;'--ppGames' ;'--ssApps' ; AppType
 
 ;~ 		$CLIparameters[0] += 1
 ;~ 		ReDim $CLIparameters[$CLIparameters[0] + 1]
@@ -228,6 +228,7 @@ EndFunc
 
 Func Process_ssDir($ssDir) ; External SetupS.exe method
 	If $Debug Then _ConsoleWriteDebug('@@ Debug(Trace) ' & @ScriptName & '|Process_ssDir(): $ssDir = ' & $ssDir & @CRLF)
+	;_ConsoleWriteDebug('@@ Debug(Trace) ' & @ScriptName & '|Process_ssDir(): $ssDir = ' & $ssDir & @CRLF)
 	Local $i, $Found
 	;ErrorProtection('off')
 	$Found = FileExists($ssDir)
