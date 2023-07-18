@@ -16,22 +16,22 @@
 #AutoIt3Wrapper_AU3Check_Stop_OnWarning=y
 #AutoIt3Wrapper_Run_Tidy=y
 #Tidy_Parameters=/pr=1 /uv=3 /tc=0 /sf /reel /refc /rerc /kv=100
-#AutoIt3Wrapper_UseX64=y
+#AutoIt3Wrapper_UseX64=n
 #endregion
 
 #cs ##################################################################################
-
+	
 	SetupS SendTo Extension v23.07.17.0
 	Copyright � 2017-2023, Vergitek Solutions
 	All rights reserved.
-
+	
 	This file is part of the SetupS SendTo Suite.
-
+	
 	The SetupS SendTo Suite is open-source software: you can redistribute it and/or
 	modify it under the terms of the GNU General Public License as published by the
 	Free Software Foundation, either version 3 of the License, or (at your option)
 	any later version of the License.
-
+	
 	DISCLAIMER:
 	The SetupS SendTo Suite is distributed in the hope that it will be useful, but is
 	provided by Vergitek Solutions "AS IS", without warranty of any kind, express or
@@ -44,20 +44,20 @@
 	of contract, strict liability, or tort (including negligence or otherwise) arising
 	from, out of or in connection with the software or the use or other dealings in the
 	software, even if advised of the possibility of such damage.
-
+	
 	See the GNU General Public License for more details. You should have received a
 	copy of the GNU General Public License along with the SetupS SendTo Suite. If not,
 	see <http://www.gnu.org/licenses/>.
-
+	
 #ce ##################################################################################
 #cs ##################################################################################
-
+	
 	Script Function:
 	Allows for easy and automated installing of SetupS apps such as ssApp's, ppApp's,
 	or ppGame's. Simply right-click on an archive or the entire folder and SendTo
 	'SetupS' or double-click on the '.app' or '.ppg' file (or, right-click
 	'Open with' SetupS)
-
+	
 #ce ##################################################################################
 #include <SetupS.Core.au3>
 
@@ -406,7 +406,7 @@ Func _SetupS($SrcPath)
 	EndIf
 
 	;------------------------- Check for InstallPath -------------------------
-	If Not (GetInstallPath($App_InstallPath) Or StringInStr($App_InstallPath, 'nonething')) Then
+	If Not(GetInstallPath($App_InstallPath) Or StringInStr($App_InstallPath, 'nonething')) Then
 		; unlikely installer created an Install-path so need to derive one instead:
 		If NormalizeInstallPath($App_InstallPath) = '' Then
 			; First check if original supplied <AppPath> from source is okay to use
@@ -558,7 +558,7 @@ Func AddToHosts($CL)
 				$EOF = (@error = -1)
 				If $EOF Then
 					$FilePos = FileGetPos($hFile)
-				ElseIf (HostsLine($Line) = $Test) Then
+				ElseIf(HostsLine($Line) = $Test) Then
 					$Found = True
 				EndIf
 			Until $EOF Or $Found
@@ -572,7 +572,7 @@ Func AddToHosts($CL)
 				FileSetAttrib($File, '-RH')
 				$hFile = FileOpen($File, 1)
 				If $hFile <> -1 Then
-					If Not ($LastChar = 10 Or $LastChar = 13) Then FileWriteLine($hFile, '')
+					If Not($LastChar = 10 Or $LastChar = 13) Then FileWriteLine($hFile, '')
 					FileWriteLine($hFile, $CL)
 					FileClose($hFile)
 				EndIf
@@ -672,7 +672,7 @@ Func ExtractArc($ArchiveExt, ByRef $ArchiveFolder)
 	If $Debug Then _ConsoleWriteDebug('@@ Debug(Trace) ' & @ScriptName & '|ExtractArc(): $ArchiveExt=' & $ArchiveExt & ' : $ArchiveFolder=' & $ArchiveFolder & @CRLF)
 	Local $i, $FileList
 	Local $subtext = '... "' & GetFilename($i) & '"' ;& @CRLF & @CRLF & 'Press <ESC> to abort'
-	If $ToolsPath <> '' And (StringLower(StringRight($SrcPath, StringLen($ArchiveExt))) = StringLower($ArchiveExt)) Then
+	If $ToolsPath <> '' And(StringLower(StringRight($SrcPath, StringLen($ArchiveExt))) = StringLower($ArchiveExt)) Then
 		;DirRemove($TempDir, 1)
 		$i = FileGetLongName($SrcPath)
 		If $BalloonTips Then _TrayTip('Extracting archive', GetFilename($i), 30, 17)
@@ -959,7 +959,7 @@ Func ImportReg($What, $where) ; .reg file
 					FileWriteLine($File, '')
 					For $i = 1 To $Temp_RegEntries[0]
 						$Line = StringStripWS(ConvertFromVars(ConvertToVars($Temp_RegEntries[$i], True), True), 3)
-						If ($Line = 'Windows Registry Editor Version 5.00') Or ($Line = 'REGEDIT4') Then
+						If($Line = 'Windows Registry Editor Version 5.00') Or($Line = 'REGEDIT4') Then
 							$HeaderInUse = True
 						Else
 							If $HeaderInUse And $Line <> '' Then $HeaderInUse = False
@@ -972,7 +972,7 @@ Func ImportReg($What, $where) ; .reg file
 				String2File(ConvertFromVars(ConvertToVars($Temp_RegFile, True), True), @TempDir & '\' & $TempREG)
 			EndIf
 			If FileExists(@TempDir & '\' & $TempREG) Then
-				If $Temp_OSArchGated Or Not (@AutoItX64 And $App_Architecture < 2) Then ;Arch dependent (Is_x86 or Is_x64, or dual-arch)
+				If $Temp_OSArchGated Or Not(@AutoItX64 And $App_Architecture < 2) Then ;Arch dependent (Is_x86 or Is_x64, or dual-arch)
 					RunWait($CLIprefix & 'reg import ' & @TempDir & '\' & $TempREG, '.', @SW_HIDE)
 					RunWait('regedit /s ' & @TempDir & '\' & $TempREG, '.', @SW_HIDE)
 					;ShellExecuteWait('regedit', ' /s ' & @TempDir & '\' & $TempREG, '.', 'Open', @SW_HIDE); Alternative
@@ -998,7 +998,7 @@ EndFunc
 Func InstallArchive($What)
 	If $Debug Then _ConsoleWriteDebug('@@ Debug(Trace) ' & @ScriptName & '|InstallArchive(): $What=' & $What & @CRLF)
 	If FileExists($SrcPath & '\' & $What) Then
-		If $App_Type > 2 And ($App_Architecture = 0 Or ($App_Architecture = 3 And $DualArchInstalls = 'a')) Then
+		If $App_Type > 2 And($App_Architecture = 0 Or($App_Architecture = 3 And $DualArchInstalls = 'a')) Then
 			If $OSArch64 Then
 				RunWait($CLIprefix & '7z x -y -aoa "' & $SrcPath & '\' & $What & '" -o"' & $App_InstallPath & '" -x!_x86\*', $SrcPath, @SW_HIDE)
 				If FileExists($App_InstallPath & '\_x86') Then DirRemove($App_InstallPath & '\_x86')
@@ -1006,7 +1006,7 @@ Func InstallArchive($What)
 				RunWait($CLIprefix & '7z x -y -aoa "' & $SrcPath & '\' & $What & '" -o"' & $App_InstallPath & '" -x!_x64\*', $SrcPath, @SW_HIDE)
 				If FileExists($App_InstallPath & '\_x64') Then DirRemove($App_InstallPath & '\_x64')
 			EndIf
-			If Not (FileExists($App_InstallPath & '\_x86') Or FileExists($App_InstallPath & '\_x64')) Then
+			If Not(FileExists($App_InstallPath & '\_x86') Or FileExists($App_InstallPath & '\_x64')) Then
 				RunWait($CLIprefix & '7z x -y -aoa "' & $SrcPath & '\' & $What & '" -o"' & $App_InstallPath & '"', $SrcPath, @SW_HIDE)
 			EndIf
 		Else
@@ -1109,7 +1109,7 @@ Func IsRegenMode($SrcPath)
 	If $Debug Then _ConsoleWriteDebug('@@ Debug(Trace) ' & @ScriptName & '|IsRegenMode(): $SrcPath=' & $SrcPath & @CRLF)
 	Local $RegenMode = False, $AIP = ConvertFromVars(ConvertToVars($App_InstallPath))
 	$RegenMode = ($SrcPath = $AIP)
-	$RegenMode = $RegenMode Or (($SrcPath = StringReplace($AIP, @ProgramFilesDir, EnvGet('ProgramFiles(x86)'))) And $OSArch64)
+	$RegenMode = $RegenMode Or(($SrcPath = StringReplace($AIP, @ProgramFilesDir, EnvGet('ProgramFiles(x86)'))) And $OSArch64)
 	Return $RegenMode
 EndFunc
 
@@ -1127,14 +1127,14 @@ Func MakeSpecials($What)
 				EnumAllUserAccounts()
 				For $i = 1 To $UserAccounts[0]
 					$temp = StringReplace($QuickLaunch, '\' & @UserName & '\', '\' & $UserAccounts[$i] & '\')
-					If FileExists($temp) Or ($UserAccounts[$i] = 'Default User') Then NeoFileCopy($KeepMe, $temp & '\' & $fnWhat & '.lnk', True)
+					If FileExists($temp) Or($UserAccounts[$i] = 'Default User') Then NeoFileCopy($KeepMe, $temp & '\' & $fnWhat & '.lnk', True)
 				Next
 			EndIf
 			If $App_MakeSendTo Then
 				EnumAllUserAccounts()
 				For $i = 1 To $UserAccounts[0]
 					$temp = StringReplace($SendToPath, '\' & @UserName & '\', '\' & $UserAccounts[$i] & '\')
-					If FileExists($temp) Or ($UserAccounts[$i] = 'Default User') Then NeoFileCopy($KeepMe, $temp & '\' & $fnWhat & '.lnk', True)
+					If FileExists($temp) Or($UserAccounts[$i] = 'Default User') Then NeoFileCopy($KeepMe, $temp & '\' & $fnWhat & '.lnk', True)
 				Next
 			EndIf
 		Else
@@ -1263,10 +1263,10 @@ Func ProcessAssembly($InstallFromAppPath = False)
 		$CopyFromLive = True
 		If $RegenOnly = True Then $CopyFromLive = False ;Glenn_v20.02.13
 		Select ;The following keeps CopyFromLive TRUE if:
-			Case StringInStr($SrcPath, '\ppAppsLive\') > 0 And ($App_Type = 3 Or $App_Type = 4)
+			Case StringInStr($SrcPath, '\ppAppsLive\') > 0 And($App_Type = 3 Or $App_Type = 4)
 			Case StringInStr($SrcPath, '\ppGamesLive\') > 0 And $App_Type = 5
-			Case (StringInStr($SrcPath, $ppAppsDrive & '\ppApps\') = 0 And ($App_Type = 3 Or $App_Type = 4)) Or (StringInStr($SrcPath, $ppGamesDrive & '\ppGames\') = 0 And $App_Type = 5)
-				If $App_Type = 5 And $App_Legacy And (FileExists($SrcPath & '\*.7z') Or FileExists($SrcPath & '\*.rar') Or FileExists($SrcPath & '\*.zip') Or FileExists($SrcPath & '\*.cab')) Then
+			Case(StringInStr($SrcPath, $ppAppsDrive & '\ppApps\') = 0 And($App_Type = 3 Or $App_Type = 4)) Or(StringInStr($SrcPath, $ppGamesDrive & '\ppGames\') = 0 And $App_Type = 5)
+				If $App_Type = 5 And $App_Legacy And(FileExists($SrcPath & '\*.7z') Or FileExists($SrcPath & '\*.rar') Or FileExists($SrcPath & '\*.zip') Or FileExists($SrcPath & '\*.cab')) Then
 					$CopyFromLive = False
 				Else
 					Select
@@ -1283,7 +1283,7 @@ Func ProcessAssembly($InstallFromAppPath = False)
 							$ppInstall = True
 					EndSelect
 				EndIf
-			Case $ppDriveOld And (StringInStr($SrcPath, '\ppApps\') = 3 Or StringInStr($SrcPath, '\ppGames\') = 3)
+			Case $ppDriveOld And(StringInStr($SrcPath, '\ppApps\') = 3 Or StringInStr($SrcPath, '\ppGames\') = 3)
 			Case Else ; don't CopyFromLive
 				$CopyFromLive = False
 		EndSelect
@@ -1455,7 +1455,7 @@ Func ProcessAssembly($InstallFromAppPath = False)
 		EndIf
 	Next
 	If Not $InstallFromAppPath Then ; Install-mode
-		If $App_smSource = '' Or Not (FileExists(@StartMenuCommonDir & '\' & $App_smSource) Or FileExists(@StartMenuDir & '\' & $App_smSource) Or FileExists(@ProgramsCommonDir & '\' & $App_smSource) Or FileExists(@ProgramsDir & '\' & $App_smSource)) Then
+		If $App_smSource = '' Or Not(FileExists(@StartMenuCommonDir & '\' & $App_smSource) Or FileExists(@StartMenuDir & '\' & $App_smSource) Or FileExists(@ProgramsCommonDir & '\' & $App_smSource) Or FileExists(@ProgramsDir & '\' & $App_smSource)) Then
 			; this needs refined to use recursion for more thorough scanning...
 			Local $App_smSource_Original = $App_smSource
 			NeoDirCopy(@StartMenuCommonDir, $TempDir & '\sm2')
@@ -1543,7 +1543,7 @@ Func ProcessRegistry() ; <Registry>
 				FileWriteLine($File, '')
 				For $i = 1 To $App_RegEntries[0]
 					$Line = StringStripWS(ConvertFromVars(ConvertToVars($App_RegEntries[$i], True), True), 3)
-					If ($Line = 'Windows Registry Editor Version 5.00') Or ($Line = 'REGEDIT4') Then
+					If($Line = 'Windows Registry Editor Version 5.00') Or($Line = 'REGEDIT4') Then
 						$HeaderInUse = True
 					Else
 						If $HeaderInUse And $Line <> '' Then $HeaderInUse = False
@@ -1556,7 +1556,7 @@ Func ProcessRegistry() ; <Registry>
 			String2File(ConvertFromVars(ConvertToVars($App_RegFile, True), True), @TempDir & '\' & $TempREG)
 		EndIf
 		If FileExists(@TempDir & '\' & $TempREG) Then
-			If $App_OSArchGated Or Not (@AutoItX64 And $App_Architecture < 2) Then ;Arch dependent (Is_x86 or Is_x64, or dual-arch)
+			If $App_OSArchGated Or Not(@AutoItX64 And $App_Architecture < 2) Then ;Arch dependent (Is_x86 or Is_x64, or dual-arch)
 				RunWait($CLIprefix & 'reg import ' & @TempDir & '\' & $TempREG, '.', @SW_HIDE)
 				RunWait('regedit /s ' & @TempDir & '\' & $TempREG, '.', @SW_HIDE)
 				;ShellExecuteWait('regedit', ' /s ' & @TempDir & '\' & $TempREG, '.', 'Open', @SW_HIDE); Alternative
@@ -1650,7 +1650,7 @@ Func ProcessShortcutS()
 	Next
 
 	;------------------------- Shortcut Creating -------------------------
-	If Not ($ppGamesShortcutsSkip And $App_Type = 5) Then
+	If Not($ppGamesShortcutsSkip And $App_Type = 5) Then
 		If FileExists($App_InstallPath) Then ; create shortcuts for ppApp/ppGame and extra shortcuts for SetupS/ssApp
 			For $i = 1 To $App_scCount
 				;$scFlagsParsed = StringSplit($App_scFlags[$i], '|')
@@ -1703,7 +1703,7 @@ Func ProcessShortcutS()
 				$App_KeepAll = True
 				$App_NoIcons = True
 			EndIf
-			If $MetroPresent And $App_MetroFriendly And ($App_scKeep[0] > 0 Or $App_scCount > 0) Then
+			If $MetroPresent And $App_MetroFriendly And($App_scKeep[0] > 0 Or $App_scCount > 0) Then
 				;If $MetroPresent And $App_MetroFriendly And $App_scKeep[0] > 0 Then
 				$App_KeepInFolder = False
 				$App_KeepAll = False
@@ -1719,7 +1719,7 @@ Func ProcessShortcutS()
 						For $i = 1 To $App_StartMenu[0]
 							For $j = 1 To $WholeCatalog[0][0]
 								;MsgBox(4096, '', 'Key: ' & $WholeCatalog[$i][0] & @CRLF & 'Value: ' & $WholeCatalog[$i][1])
-								If ($WholeCatalog[$j][1] = $App_StartMenu[$i]) Then
+								If($WholeCatalog[$j][1] = $App_StartMenu[$i]) Then
 									$MenuCatalog[0] += 1
 									ReDim $MenuCatalog[$MenuCatalog[0] + 1]
 									$MenuCatalog[$MenuCatalog[0]] = $WholeCatalog[$j][0]
@@ -1730,10 +1730,10 @@ Func ProcessShortcutS()
 					If FileExists($ToolsPath) Then ; remove any found shortcuts from other menu styles
 						For $i = 1 To $MenuStyles[0][0]
 							For $j = 1 To $MenuCatalog[0]
-								If ($MenuStyle <> $MenuStyles[$i][0]) Or (Not $App_MakeStartMenu) Or ($App_MakeStartMenu And $App_AllUsers) Then
+								If($MenuStyle <> $MenuStyles[$i][0]) Or(Not $App_MakeStartMenu) Or($App_MakeStartMenu And $App_AllUsers) Then
 									If RemoveShortcutS(@ProgramsDir & '\' & IniRead($ToolsPath & '\Menus\' & $MenuStyles[$i][1] & 'Menu\Definitions.ini', 'Catalog', $MenuCatalog[$j], '')) Then $RemovedMenuItem = True
 								EndIf
-								If ($MenuStyle <> $MenuStyles[$i][0]) Or (Not $App_MakeStartMenu) Or ($App_MakeStartMenu And Not $App_AllUsers) Then
+								If($MenuStyle <> $MenuStyles[$i][0]) Or(Not $App_MakeStartMenu) Or($App_MakeStartMenu And Not $App_AllUsers) Then
 									If RemoveShortcutS(@ProgramsCommonDir & '\' & IniRead($ToolsPath & '\Menus\' & $MenuStyles[$i][1] & 'Menu\Definitions.ini', 'Catalog', $MenuCatalog[$j], '')) Then $RemovedMenuItem = True
 								EndIf
 							Next
@@ -1758,10 +1758,10 @@ Func ProcessShortcutS()
 						If RemoveShortcutS(@ProgramsCommonDir & '\' & $App_smLegacySecondary[$i]) Then $RemovedMenuItem = True
 					Next
 					For $i = 1 To $App_smLegacyPrimary[0]
-						If (Not $App_MakeStartMenu) Or ($App_MakeStartMenu And $App_AllUsers) Then
+						If(Not $App_MakeStartMenu) Or($App_MakeStartMenu And $App_AllUsers) Then
 							If RemoveShortcutS(@ProgramsDir & '\' & $App_smLegacyPrimary[$i]) Then $RemovedMenuItem = True
 						EndIf
-						If (Not $App_MakeStartMenu) Or ($App_MakeStartMenu And Not $App_AllUsers) Then
+						If(Not $App_MakeStartMenu) Or($App_MakeStartMenu And Not $App_AllUsers) Then
 							If RemoveShortcutS(@ProgramsCommonDir & '\' & $App_smLegacyPrimary[$i]) Then $RemovedMenuItem = True
 						EndIf
 					Next
@@ -1778,10 +1778,10 @@ Func ProcessShortcutS()
 						If RemoveShortcutS(@ProgramsCommonDir & '\' & $App_smLegacyPrimary[$i]) Then $RemovedMenuItem = True
 					Next
 					For $i = 1 To $App_smLegacySecondary[0]
-						If (Not $App_MakeStartMenu) Or ($App_MakeStartMenu And $App_AllUsers) Then
+						If(Not $App_MakeStartMenu) Or($App_MakeStartMenu And $App_AllUsers) Then
 							If RemoveShortcutS(@ProgramsDir & '\' & $App_smLegacySecondary[$i]) Then $RemovedMenuItem = True
 						EndIf
-						If (Not $App_MakeStartMenu) Or ($App_MakeStartMenu And Not $App_AllUsers) Then
+						If(Not $App_MakeStartMenu) Or($App_MakeStartMenu And Not $App_AllUsers) Then
 							If RemoveShortcutS(@ProgramsCommonDir & '\' & $App_smLegacySecondary[$i]) Then $RemovedMenuItem = True
 						EndIf
 					Next
@@ -1974,7 +1974,7 @@ Func ProcessUninstall()
 			Local $App_InstallPath_new = ''
 			If $App_Title <> '' Then $App_InstallPath_new = GetAppPathFromUninstall($App_Uninstall, $App_Title)
 			If Not FileExists($App_InstallPath_new) Or NormalizeInstallPath($App_InstallPath_new) = '' Then $App_InstallPath_new = GetAppPathFromUninstall($App_Uninstall)
-			If $App_InstallPath_new <> '' And $App_InstallPath_new <> $App_InstallPath And Not (GetInstallPath($App_InstallPath) Or StringInStr($App_InstallPath, 'nonething')) Then $App_InstallPath = $App_InstallPath_new
+			If $App_InstallPath_new <> '' And $App_InstallPath_new <> $App_InstallPath And Not(GetInstallPath($App_InstallPath) Or StringInStr($App_InstallPath, 'nonething')) Then $App_InstallPath = $App_InstallPath_new
 			;Uses the Uninstall section of the Registry to determine Architecture (if needed):
 			If $App_Architecture = 0 Then
 				;_ArrayDisplay($App_Uninstall, @ScriptLineNumber)
@@ -2034,7 +2034,7 @@ Func RemoveShortcutS($from)
 					If FileExists($TempDir & '\' & $scFolder) Then
 						scFolderListToArray($TempDir & '\' & $scFolder, $scFileList)
 						For $j = 1 To $scFileList[0]
-							If ($FileList[$i] = $scFileList[$j]) Then
+							If($FileList[$i] = $scFileList[$j]) Then
 								FileRecycle($from & '\' & $FileList[$i])
 ;~ 								If $FileList[$i] <> '' Then
 ;~ 									If $OS_Linux Then
@@ -2048,7 +2048,7 @@ Func RemoveShortcutS($from)
 					EndIf
 				Else ; ppApp/ppGame
 					For $j = 1 To $App_scCount ;$App_scKeep[0]
-						If ($FileList[$i] = $App_scLNK[$j] & '.lnk') Then
+						If($FileList[$i] = $App_scLNK[$j] & '.lnk') Then
 							FileRecycle($from & '\' & $FileList[$i])
 ;~ 							If $FileList[$i] <> '' Then
 ;~ 								If $OS_Linux Then
@@ -2122,18 +2122,18 @@ EndFunc
 
 Func RunWait86()
 	If $Debug Then _ConsoleWriteDebug('@@ Debug(Trace) ' & @ScriptName & '|RunWait86(): @AutoItX64=' & @AutoItX64 & @CRLF)
-	;#x86_only##cs
-	If Not FileExists(@TempDir & '\RunWait86.exe') Then
+	#cs
+		If Not FileExists(@TempDir & '\RunWait86.exe') Then
 		Local $CurrentWorkingDir = @WorkingDir
 		FileChangeDir(@ScriptDir)
 		FileInstall('.\bin\RunWait86.exe', @TempDir & '\RunWait86.exe', 1)
 		Do
-			Sleep(10)
+		Sleep(10)
 		Until FileExists(@TempDir & '\RunWait86.exe')
 		FileChangeDir($CurrentWorkingDir)
-	EndIf
-	Return @TempDir & '\RunWait86.exe '
-	;#x86_only##ce
+		EndIf
+		Return @TempDir & '\RunWait86.exe '
+	#ce
 EndFunc
 
 Func scFolderListToArray($from, ByRef $scFileList)
@@ -2291,7 +2291,7 @@ Func ssInstall()
 	Select ;Check if App has a valid InstallPath... if not, use the temp folder
 		Case Not FileExists($App_InstallPath)
 		Case NormalizeInstallPath($App_InstallPath) = '' ; And $SafeInstall
-		Case (NormalizeInstallPath($App_InstallPath) = 'nonething')
+		Case(NormalizeInstallPath($App_InstallPath) = 'nonething')
 		Case Else
 			$UseTempDir = False
 	EndSelect

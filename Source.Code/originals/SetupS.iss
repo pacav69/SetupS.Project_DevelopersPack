@@ -3,20 +3,20 @@
 
 [Setup]
 AppName=SetupS
-AppVerName=SetupS SendTo Suite v23.07.17.0
-VersionInfoVersion=23.07.17.0
-AppVersion=23.07.17.0
-AppPublisher=Vergitek Solutions 
-AppPublisherURL=sstek.vergitek.com
-AppSupportURL=sstek.vergitek.com
-AppUpdatesURL=ssTek Forum
+AppVerName=SetupS SendTo Suite v#ProjectVersion#
+VersionInfoVersion=#ProjectVersion#
+AppVersion=#ProjectVersion#
+AppPublisher=#cHolder# 
+AppPublisherURL=#WebLink1#
+AppSupportURL=#WebLink1#
+AppUpdatesURL=#WebSite1#
 DefaultDirName={pf}\SetupS.SendTo
 DisableDirPage=true
 DefaultGroupName=SetupS SendTo
 UsePreviousAppDir=No
 DisableProgramGroupPage=yes
 ChangesAssociations=yes
-OutputBaseFilename=Install.SetupS_v23.07.17.0
+OutputBaseFilename=Install.SetupS_v#ProjectVersion#
 Compression=lzma2/ultra64
 SolidCompression=true
 InternalCompressLevel=ultra64

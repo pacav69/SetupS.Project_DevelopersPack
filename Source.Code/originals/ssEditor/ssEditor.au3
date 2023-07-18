@@ -4,13 +4,13 @@
 #AutoIt3Wrapper_Outfile=ssEditor.exe
 #AutoIt3Wrapper_Compression=4
 #AutoIt3Wrapper_Res_Description=SetupS Editor. Edit or build the files used to create ssApps, ppApps, or ppGames
-#AutoIt3Wrapper_Res_Fileversion=23.07.17.0
-#AutoIt3Wrapper_Res_LegalCopyright=©2017-2023, Vergitek Solutions
+#AutoIt3Wrapper_Res_Fileversion=#ProjectVersion#
+#AutoIt3Wrapper_Res_LegalCopyright=©#cYear#, #cHolder#
 #AutoIt3Wrapper_Res_Language=1033
-#AutoIt3Wrapper_Res_Field=Release Date|2023-07-17
-#AutoIt3Wrapper_Res_Field=ssTek Forum|http://sstek.vergitek.com
-#AutoIt3Wrapper_Res_Field=ssTek Development|http://www.lastos.org
-#AutoIt3Wrapper_Res_Field=LastOS Team|http://dl.bintray.com/sstek
+#AutoIt3Wrapper_Res_Field=Release Date|#ProjectDate#
+#AutoIt3Wrapper_Res_Field=ssTek Forum|http://#WebLink1#
+#AutoIt3Wrapper_Res_Field=ssTek Development|http://#WebLink2#
+#AutoIt3Wrapper_Res_Field=LastOS Team|http://#WebLink3#
 #AutoIt3Wrapper_Run_Tidy=y
 #Tidy_Parameters=/pr=1 /uv=3 /tc=0 /sf /reel /refc /rerc /kv=100
 #AutoIt3Wrapper_UseX64=n
@@ -18,8 +18,8 @@
 
 #cs ##################################################################################
 	
-	SetupS Editor v23.07.17.0
-	Copyright © 2017-2023, Vergitek Solutions
+	SetupS Editor v#ProjectVersion#
+	Copyright © #cYear#, #cHolder#
 	All rights reserved.
 	
 	This file is part of the SetupS SendTo Suite.
@@ -31,10 +31,10 @@
 	
 	DISCLAIMER:
 	The SetupS SendTo Suite is distributed in the hope that it will be useful, but is
-	provided by Vergitek Solutions "AS IS", without warranty of any kind, express or
+	provided by #cHolder# "AS IS", without warranty of any kind, express or
 	implied, including but not limited to the warranties of MERCHANTABILITY,
 	FITNESS FOR A PARTICULAR PURPOSE, TITLE and NON-INFRINGEMENT. In no event shall
-	the authors or Vergitek Solutions be liable for any direct, indirect, incidental, special,
+	the authors or #cHolder# be liable for any direct, indirect, incidental, special,
 	exemplary, or consequential damages (including, but not limited to, procurement of
 	substitute goods or services; loss of use, data, or profits; or business
 	interruption) however caused and on any theory of liability, whether in an action
@@ -1266,15 +1266,15 @@ Global $About_Comment = GUICtrlCreateLabel("Built on LXP Technology", 48, 119, 1
 GUICtrlSetFont($About_Comment, 8, 800, 0, "MS Sans Serif")
 GUICtrlSetColor($About_Comment, 0x008000)
 GUICtrlSetOnEvent($About_Comment, "About_CommentClick")
-Global $About_URL = GUICtrlCreateLabel("ssTek Forum", 266, 60, 75, 17)
+Global $About_URL = GUICtrlCreateLabel("#WebSite1#", 266, 60, 75, 17)
 GUICtrlSetFont($About_URL, 8, 800, 4, "MS Sans Serif")
 GUICtrlSetColor($About_URL, 0x0000FF)
 GUICtrlSetOnEvent($About_URL, "About_URLClick")
-Global $About_URL2 = GUICtrlCreateLabel("LastOS Team", 266, 75, 75, 17)
+Global $About_URL2 = GUICtrlCreateLabel("#WebSite2#", 266, 75, 75, 17)
 GUICtrlSetFont($About_URL2, 8, 800, 4, "MS Sans Serif")
 GUICtrlSetColor($About_URL2, 0x0000FF)
 GUICtrlSetOnEvent($About_URL2, "About_URL2Click")
-Global $About_URL3 = GUICtrlCreateLabel("ssTek Distribution", 266, 90, 75, 17)
+Global $About_URL3 = GUICtrlCreateLabel("#WebSite3#", 266, 90, 75, 17)
 GUICtrlSetFont($About_URL3, 8, 800, 4, "MS Sans Serif")
 GUICtrlSetColor($About_URL3, 0x0000FF)
 GUICtrlSetOnEvent($About_URL3, "About_URL3Click")
@@ -1920,10 +1920,10 @@ GUICtrlSetImage($Button_GrabClipboardPic, $TempPixDir & '\' & $ThisAppFilename &
 ;Detail the About box
 ControlSetText('', '', $Form_About, 'About: ')
 GUICtrlSetData($About_Version, 'Version ' & $ThisAppVersion)
-GUICtrlSetData($About_Copyright, '© 2017-2023, Vergitek Solutions')
-GUICtrlSetData($About_URL, 'ssTek Forum')
-GUICtrlSetData($About_URL2, 'LastOS Team')
-GUICtrlSetData($About_URL3, 'ssTek Distribution')
+GUICtrlSetData($About_Copyright, '© #cYear#, #cHolder#')
+GUICtrlSetData($About_URL, '#WebSite1#')
+GUICtrlSetData($About_URL2, '#WebSite2#')
+GUICtrlSetData($About_URL3, '#WebSite3#')
 Local $aForm_About = ControlGetPos('', '', $Form_About)
 Global $Form_About_Left = $aForm_About[0], $Form_About_Top = $aForm_About[1], $Form_About_Width = $aForm_About[2], $Form_About_Height = $aForm_About[3]
 Local $aAbout_Logo = ControlGetPos($Form_About, '', $About_Logo)

@@ -4,14 +4,14 @@
 #AutoIt3Wrapper_Outfile=Tools\SetupS.exe
 #AutoIt3Wrapper_Compression=4
 #AutoIt3Wrapper_Res_Description=SetupS(ilently) Installer
-#AutoIt3Wrapper_Res_Fileversion=23.07.17.0
-#AutoIt3Wrapper_Res_LegalCopyright=�2017-2023, Vergitek Solutions
+#AutoIt3Wrapper_Res_Fileversion=#ProjectVersion#
+#AutoIt3Wrapper_Res_LegalCopyright=�#cYear#, #cHolder#
 #AutoIt3Wrapper_Res_Language=1033
-#AutoIt3Wrapper_Res_Field=Release Date|2023-07-17
-#AutoIt3Wrapper_Res_Field=ssTek Forum|http://sstek.vergitek.com
-#AutoIt3Wrapper_Res_Field=LastOS Team|http://www.lastos.org
-#AutoIt3Wrapper_Res_Field=ssTek Distribution|http://dl.bintray.com/sstek
-#AutoIt3Wrapper_Res_Field=github files|http://github.com/pacav69/SetupS.Project_DevelopersPack
+#AutoIt3Wrapper_Res_Field=Release Date|#ProjectDate#
+#AutoIt3Wrapper_Res_Field=#WebSite1#|http://#WebLink1#
+#AutoIt3Wrapper_Res_Field=#WebSite2#|http://#WebLink2#
+#AutoIt3Wrapper_Res_Field=#WebSite3#|http://#WebLink3#
+#AutoIt3Wrapper_Res_Field=#WebSite6#|http://#WebLink6#
 #AutoIt3Wrapper_Res_Field=Original Concept|Glenn L. Chugg (ReturnOfNights)
 #AutoIt3Wrapper_AU3Check_Stop_OnWarning=y
 #AutoIt3Wrapper_Run_Tidy=y
@@ -21,8 +21,8 @@
 
 #cs ##################################################################################
 
-	SetupS SendTo Extension v23.07.17.0
-	Copyright � 2017-2023, Vergitek Solutions
+	SetupS SendTo Extension v#ProjectVersion#
+	Copyright � #cYear#, #cHolder#
 	All rights reserved.
 
 	This file is part of the SetupS SendTo Suite.
@@ -34,10 +34,10 @@
 
 	DISCLAIMER:
 	The SetupS SendTo Suite is distributed in the hope that it will be useful, but is
-	provided by Vergitek Solutions "AS IS", without warranty of any kind, express or
+	provided by #cHolder# "AS IS", without warranty of any kind, express or
 	implied, including but not limited to the warranties of MERCHANTABILITY,
 	FITNESS FOR A PARTICULAR PURPOSE, TITLE and NON-INFRINGEMENT. In no event shall
-	the authors or Vergitek Solutions be liable for any direct, indirect, incidental, special,
+	the authors or #cHolder# be liable for any direct, indirect, incidental, special,
 	exemplary, or consequential damages (including, but not limited to, procurement of
 	substitute goods or services; loss of use, data, or profits; or business
 	interruption) however caused and on any theory of liability, whether in an action

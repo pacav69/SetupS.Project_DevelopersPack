@@ -16,7 +16,7 @@
 #AutoIt3Wrapper_AU3Check_Stop_OnWarning=y
 #AutoIt3Wrapper_Run_Tidy=y
 #Tidy_Parameters=/pr=1 /uv=3 /tc=0 /sf /reel /refc /rerc /kv=100
-#AutoIt3Wrapper_UseX64=y
+#AutoIt3Wrapper_UseX64=n
 #endregion
 
 #cs ##################################################################################
@@ -2122,7 +2122,7 @@ EndFunc
 
 Func RunWait86()
 	If $Debug Then _ConsoleWriteDebug('@@ Debug(Trace) ' & @ScriptName & '|RunWait86(): @AutoItX64=' & @AutoItX64 & @CRLF)
-	;#x86_only##cs
+	 #cs
 	If Not FileExists(@TempDir & '\RunWait86.exe') Then
 		Local $CurrentWorkingDir = @WorkingDir
 		FileChangeDir(@ScriptDir)
@@ -2133,7 +2133,7 @@ Func RunWait86()
 		FileChangeDir($CurrentWorkingDir)
 	EndIf
 	Return @TempDir & '\RunWait86.exe '
-	;#x86_only##ce
+	 #ce
 EndFunc
 
 Func scFolderListToArray($from, ByRef $scFileList)
