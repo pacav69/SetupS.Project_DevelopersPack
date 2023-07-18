@@ -654,12 +654,6 @@ echo.
 echo Begin ... SetupS Project (version: %ProjectVersion%)
 echo Moving files to files directory
 set completedfiles=files
-@REM set EditorPath=ssEditor
-@REM set ssPIPath=ssPreinstaller
-@REM set path=%path%;%~dp0bin;%~dp0%completedfiles%\Tools;%~dp0%completedfiles%\Tools\_x86
-@REM cd "%~dp0"
-@REM if exist "%completedfiles%\default.ini" xcopy "%completedfiles%\default.ini\*.*" "%completedfiles%\*.*" /y/e/s >nul:
-@REM if exist "%completedfiles%\%EditorPath%\default.ini" xcopy "%completedfiles%\%EditorPath%\default.ini\*.*" "%completedfiles%\%EditorPath%\*.*" /y/e/s >nul:
 
 :move files to files directory
 echo moving files to files directory..
