@@ -748,7 +748,7 @@ if exist "update.ini" del /F /Q "update.ini" >nul:
 echo deleting checksums
 if exist "checksums*.md5" del /F /Q "checksums*.md5" >nul:
 
-pause
+@REM pause
 
 :Exit
 echo Cleaning up...

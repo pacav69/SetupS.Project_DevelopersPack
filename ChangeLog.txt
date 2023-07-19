@@ -6,7 +6,9 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
 July 19, 2023
 ---------------------------------------------
 removed dl.bintray.com/sstek from SetupS-files.htm as it is no longer functioning
+tweaked the SetupS-files.htm file for better display
 added WebSite6=github files and WebLink6 to !DistrPack.Project.cmd file and htm
+
 ---------------------------------------------
 July 18, 2023
 ---------------------------------------------
