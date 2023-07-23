@@ -3,6 +3,11 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
       not always possible especially when adding new features.
 
 ---------------------------------------------
+July 23, 2023
+---------------------------------------------
+Updated 7z to v23.01
+
+---------------------------------------------
 July 19, 2023
 ---------------------------------------------
 added instructions.md
