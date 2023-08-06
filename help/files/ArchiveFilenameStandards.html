@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Archive Filename Standard</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 10pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+span.rvts1 /* Heading */
+{
+ font-weight: bold;
+ color: #0000ff;
+}
+span.rvts2 /* Subheading */
+{
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts3 /* Keywords */
+{
+ font-style: italic;
+ color: #800000;
+}
+a.rvts4, span.rvts4 /* Jump 1 */
+{
+ color: #008000;
+ text-decoration: underline;
+}
+a.rvts5, span.rvts5 /* Jump 2 */
+{
+ color: #008000;
+ text-decoration: underline;
+}
+span.rvts6
+{
+ font-size: 11pt;
+ color: #000000;
+}
+span.rvts7
+{
+ font-size: 11pt;
+ font-style: italic;
+ color: #000000;
+}
+span.rvts8
+{
+ font-size: 16pt;
+ color: #ffffff;
+}
+span.rvts9
+{
+ font-size: 5pt;
+ color: #ffffff;
+}
+span.rvts10
+{
+ font-size: 11pt;
+ color: #000000;
+}
+span.rvts11
+{
+ font-size: 9pt;
+ font-weight: bold;
+ vertical-align: super;
+}
+span.rvts12
+{
+ font-size: 11pt;
+ font-style: italic;
+ color: #000000;
+}
+span.rvts13 /* Font Style */
+{
+ font-family: 'MS Sans Serif', 'Geneva', sans-serif;
+ color: #808080;
+}
+span.rvts14 /* Font Style */
+{
+ font-family: 'Verdana', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #c0c0c0;
+}
+a.rvts15, span.rvts15 /* Font Style */
+{
+ font-family: 'Verdana', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #6666ff;
+ text-decoration: underline;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ text-align: right;
+ text-indent: 0px;
+ background: #a5a5a5;
+ padding: 5px 5px 2px 5px;
+ margin: -5px 0px 8px -5px;
+}
+.rvps3
+{
+ text-align: center;
+ background: #ffffff;
+}
+.rvps4
+{
+ margin: 0px 0px 0px 10px;
+}
+.rvps5
+{
+ margin: 7px 0px 0px 10px;
+}
+.rvps6
+{
+ margin: 0px 0px 14px 10px;
+}
+.rvps7 /* Paragraph Style */
+{
+ text-align: center;
+ background: #e4e4e4;
+ margin: 20px 0px 0px 0px;
+}
+.rvps8 /* Paragraph Style */
+{
+ border-color: #c0c0c0;
+ border-style: solid;
+ border-width: 1px;
+ border-right: none;
+ border-bottom: none;
+ border-left: none;
+ background: #ffffff;
+ padding: 3px 0px 0px 0px;
+ margin: 27px 0px 0px 0px;
+}
+--></style>
+<link rel="StyleSheet" href="hnd.css" type="text/css"/>
+<script type="text/javascript">if(top.frames.length == 0) { sTopic = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length); top.location.href="../ssTek.html?" + sTopic; }</script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.cookie.js"></script>
+<script type="text/javascript" src="hnd.js"></script>
+<meta name="generator" content="HelpNDoc Freeware Edition"></head>
+<body>
+<h1 class=rvps2><span class=rvts0><span class=rvts8>Archive Filename Standards</span></span><span class=rvts0><span class=rvts8> &nbsp; &nbsp; &nbsp; &nbsp;</span></span><a href="DualArchInstallers.html"><img align=absmiddle border=0 width=16 height=16 alt="Previous page" src="img_258.png"></a><a href="References.html"><img align=absmiddle border=0 alt="Return to chapter overview" src="img_259.png"></a><a href="Directives.html"><img align=absmiddle border=0 width=16 height=16 alt="Next page" src="img_260.png"></a></h1>
+<p class=rvps3><span class=rvts9><br></span></p>
+<p class=rvps4><span class=rvts6>These days, many apps and games utilize archives as part of the software (for example, a data store) and during Install-mode it would be undesirable to extract those archives. The problem is that those integral archives can be named </span><span class=rvts7>anything</span><span class=rvts6> -- and therefore, unpredictable. As a consequence, SetupS cannot determine which are the install-archives and which are the integral archives.</span><br><span class=rvts6></span><br><span class=rvts6>We cannot control the filenames of those integral archives but we can control the filenames of the "install" ones. The solution has been to limit the install-archive filenames to a filenaming "standard" -- similarly to how the faders and screenshots are handled, like so:</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside;">
+<li class=rvps5 style="margin-left: 0"><span class=rvts6>{BuildType}.7z|.rar|.zip|.cab (ie, ssApp.7z, ppApp.rar, etc.)</span></li>
+<li class=rvps5 style="margin-left: 0"><span class=rvts6>{SourceFolderName}.7z|.rar|.zip|.cab (ie, CCleaner_ppApp.7z, CCleaner_ppApp.rar, etc.)</span></li>
+<li class=rvps5 style="margin-left: 0"><span class=rvts6>{InstallPath}.7z|.rar|.zip|.cab (ie, CCleaner.7z, CCleaner.rar, etc.)</span></li>
+<li class=rvps5 style="margin-left: 0"><span class=rvts6>SetupS.7z|.rar|.zip|.cab</span></li>
+<li class=rvps5 style="margin-left: 0"><span class=rvts6>Patch.7z|.rar|.zip|.cab</span></li>
+</ul></ul>
+<p class=rvps4><span class=rvts6><br></span></p>
+<p class=rvps6><span class=rvts11>&#926;</span><span class=rvts10> </span><span class=rvts12>S</span><span class=rvts7>ome Notes</span><span class=rvts6>: </span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside;">
+<li value=1 class=rvps6 style="margin-left: 0"><span class=rvts6>{BuildType} can be one of the following 'ssApp', 'ppApp', or 'ppGame'. </span></li>
+<li value=2 class=rvps6 style="margin-left: 0"><span class=rvts6>{SourceFolderName} is the same as %SourcePath% which is the full path (drive + folder) to the {BuildType}.app|.ppg file. </span></li>
+<li value=3 class=rvps6 style="margin-left: 0"><span class=rvts6>{InstallPath} is the same as %AppPath% which is the full path (drive + folder) to the App's or Game's actual installed-to folder.</span></li>
+<li value=4 class=rvps4 style="margin-left: 0"><span class=rvts6>The exception to this standard will be with "legacy" ppGames which are detected by their lack of both the &lt;BuildType&gt; and &lt;Catalog&gt; keys in the .app-file.</span></li>
+</ol></ol>
+<p class=rvps7><span class=rvts13>Copyright © #cYear#, #cHolder#</span></p>
+<p class=rvps8><span class=rvts14>Created with the Freeware Edition of HelpNDoc: </span><a class=rvts15 href="http://www.helpndoc.com" target="_blank">Easily create PDF Help documents</a></p>
+</body></html>

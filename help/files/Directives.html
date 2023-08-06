@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Directives</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 10pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+span.rvts1 /* Heading */
+{
+ font-weight: bold;
+ color: #0000ff;
+}
+span.rvts2 /* Subheading */
+{
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts3 /* Keywords */
+{
+ font-style: italic;
+ color: #800000;
+}
+a.rvts4, span.rvts4 /* Jump 1 */
+{
+ color: #008000;
+ text-decoration: underline;
+}
+a.rvts5, span.rvts5 /* Jump 2 */
+{
+ color: #008000;
+ text-decoration: underline;
+}
+span.rvts6
+{
+ font-size: 11pt;
+ color: #000000;
+}
+span.rvts7
+{
+ font-size: 11pt;
+}
+span.rvts8
+{
+ font-size: 11pt;
+ color: #000000;
+ text-decoration: underline;
+}
+span.rvts9
+{
+ font-size: 11pt;
+ font-style: italic;
+ color: #000000;
+ text-decoration: underline;
+}
+span.rvts10
+{
+ font-size: 11pt;
+ text-decoration: underline;
+}
+span.rvts11
+{
+ font-size: 11pt;
+ font-style: italic;
+}
+span.rvts12
+{
+ font-size: 11pt;
+}
+span.rvts13
+{
+ font-size: 11pt;
+ font-style: italic;
+ text-decoration: underline;
+}
+span.rvts14
+{
+ font-size: 11pt;
+ font-style: italic;
+ color: #000000;
+}
+span.rvts15
+{
+ font-size: 16pt;
+ color: #ffffff;
+}
+span.rvts16
+{
+ font-size: 11pt;
+ color: #000000;
+}
+span.rvts17
+{
+ font-size: 9pt;
+ font-weight: bold;
+ vertical-align: super;
+}
+span.rvts18
+{
+ font-size: 11pt;
+ font-style: italic;
+ color: #000000;
+ text-decoration: underline;
+}
+span.rvts19
+{
+ font-size: 11pt;
+ font-style: italic;
+ text-decoration: underline;
+}
+a.rvts20, span.rvts20
+{
+ font-size: 11pt;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts20:hover { color: #0000ff; }
+span.rvts21 /* Font Style */
+{
+ font-family: 'MS Sans Serif', 'Geneva', sans-serif;
+ color: #808080;
+}
+span.rvts22 /* Font Style */
+{
+ font-family: 'Verdana', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #c0c0c0;
+}
+a.rvts23, span.rvts23 /* Font Style */
+{
+ font-family: 'Verdana', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #6666ff;
+ text-decoration: underline;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ margin: 0px 0px 0px 24px;
+}
+.rvps3
+{
+ margin: 0px 0px 0px 30px;
+}
+.rvps4
+{
+ margin: 6px 0px 0px 24px;
+}
+.rvps5
+{
+ margin: 6px 0px 0px 0px;
+}
+.rvps6
+{
+ text-indent: -24px;
+ margin: 6px 0px 0px 96px;
+}
+.rvps7
+{
+ margin: 5px 0px 0px 72px;
+}
+.rvps8
+{
+ margin: 18px 0px 0px 48px;
+}
+.rvps9
+{
+ margin: 5px 0px 0px 96px;
+}
+.rvps10
+{
+ text-align: right;
+ text-indent: 0px;
+ background: #a5a5a5;
+ padding: 5px 5px 2px 5px;
+ margin: -5px 0px 8px -5px;
+}
+.rvps11
+{
+ margin: 5px 0px 0px 48px;
+}
+.rvps12
+{
+ margin: 5px 0px 0px 24px;
+}
+.rvps13
+{
+ margin: 5px 0px 0px 120px;
+}
+.rvps14
+{
+ margin: 6px 0px 0px 96px;
+}
+.rvps15
+{
+ margin: 6px 0px 0px 120px;
+}
+.rvps16
+{
+ margin: 6px 0px 0px 144px;
+}
+.rvps17 /* Paragraph Style */
+{
+ text-align: center;
+ background: #e4e4e4;
+ margin: 20px 0px 0px 0px;
+}
+.rvps18 /* Paragraph Style */
+{
+ border-color: #c0c0c0;
+ border-style: solid;
+ border-width: 1px;
+ border-right: none;
+ border-bottom: none;
+ border-left: none;
+ background: #ffffff;
+ padding: 3px 0px 0px 0px;
+ margin: 27px 0px 0px 0px;
+}
+--></style>
+<link rel="StyleSheet" href="hnd.css" type="text/css"/>
+<script type="text/javascript">if(top.frames.length == 0) { sTopic = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length); top.location.href="../ssTek.html?" + sTopic; }</script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.cookie.js"></script>
+<script type="text/javascript" src="hnd.js"></script>
+<meta name="generator" content="HelpNDoc Freeware Edition"></head>
+<body>
+<h1 class=rvps10><span class=rvts0><span class=rvts15>Directives</span></span><span class=rvts0><span class=rvts15> &nbsp; &nbsp; &nbsp; &nbsp;</span></span><a href="ArchiveFilenameStandards.html"><img align=absmiddle border=0 width=16 height=16 alt="Previous page" src="img_261.png"></a><a href="References.html"><img align=absmiddle border=0 alt="Return to chapter overview" src="img_262.png"></a><a href="Components.html"><img align=absmiddle border=0 width=16 height=16 alt="Next page" src="img_263.png"></a></h1>
+<p class=rvps2><span class=rvts13>Process-order Directives</span><span class=rvts10>.</span><span class=rvts7> Use these to alter the "mainline" install/assembly sequence. The following are listed in the order of the default post-assembly sequence:</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside;">
+<li class=rvps6 style="margin-left: 0; text-indent: 0px"><span class=rvts7>#ApplyPatch# : Apply patch archives/folders.</span></li>
+<li class=rvps6 style="margin-left: 0; text-indent: 0px"><span class=rvts7>#ShortcutS# : Process the &lt;ShortcutS&gt; section... all shortcut/startmenu related tasks (w/ StartMenu Folder icons) AND File Association(s). Skips it during Post-processing.</span></li>
+<li class=rvps6 style="margin-left: 0; text-indent: 0px"><span class=rvts7>#AppPathFolderIcon# : Install-path Folder Icon</span></li>
+<li class=rvps6 style="margin-left: 0; text-indent: 0px"><span class=rvts7>#RunScript# : Run the &lt;Script&gt; section and skip it during Post-processing. Uses the Source folder as the 'Start In' or working folder.</span></li>
+<li class=rvps6 style="margin-left: 0; text-indent: 0px"><span class=rvts7>#ApplyRegistry# : Apply the &lt;Registry&gt; section and skip it during Post-processing.</span></li>
+<li class=rvps6 style="margin-left: 0; text-indent: 0px"><span class=rvts7>#InstallFonts# : Process the &lt;InstallFonts&gt; section. Skips it during Post-processing.</span></li>
+<li class=rvps6 style="margin-left: 0; text-indent: 0px"><span class=rvts7>#RegisterDLL# : Process the &lt;RegisterDLL&gt; section. Skips it during Post-processing.</span></li>
+</ul></ul>
+<p class=rvps8><span class=rvts17>&#926;</span><span class=rvts16> </span><span class=rvts18>S</span><span class=rvts13>ome Notes: </span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside;">
+<li value=1 class=rvps9 style="margin-left: 0"><span class=rvts12>These are for the &lt;Assembly&gt; section ONLY.</span></li>
+<li value=2 class=rvps7 style="margin-left: 0"><span class=rvts7>For ssApp's it is NOT recommended to place post-install #directives# *before* its installer or setup program since the install-to path (or &lt;AppPath&gt;) is often not created nor determined until after it has been run. So if need be, make use instead of .cmd/.bat and/or .reg files and of any of the </span><span class=rvts11>Component</span><span class=rvts7> %variables%.</span></li>
+</ol></ol>
+<p class=rvps5><span class=rvts6><br></span></p>
+<p class=rvps3><span class=rvts9>CLI Directives</span><span class=rvts8>:</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside;">
+<li class=rvps4 style="margin-left: 0"><span class=rvts6>#CMD# : Process this line as a command-line using the DOS console (aka, the Command-line Interpreter).</span></li>
+<li class=rvps5><span class=rvts6>#DOS# : Same as #CMD#, above.</span></li>
+</ul></ul>
+<p class=rvps8><span class=rvts17>&#926;</span><span class=rvts16> </span><span class=rvts18>S</span><span class=rvts13>ome Notes: </span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside;">
+<li value=1 class=rvps9 style="margin-left: 0"><span class=rvts12>These are for the &lt;Assembly&gt; section ONLY.</span></li>
+<li value=2 class=rvps9 style="margin-left: 0"><span class=rvts6>These can be at the beginning or at the end of </span><span class=rvts14>each</span><span class=rvts6> line.</span></li>
+</ol></ol>
+<p class=rvps5><span class=rvts6><br></span></p>
+<p class=rvps12><span class=rvts9>Gate Directives</span><span class=rvts8>:</span><span class=rvts6> Use these filter a line by its OS and/or Architecture.</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside;">
+<li class=rvps4 style="margin-left: 0"><span class=rvts6>#Is_x86# : Process this line for 32-bit OS-Architectures (x86) only.</span></li>
+<li class=rvps4 style="margin-left: 0"><span class=rvts6>#Is_x64# : Process this line for 64-bit OS-Architectures (x64) only.</span></li>
+<li class=rvps5><span class=rvts6>#Is_NT5# : Process this line for NT5.x OS's only. E.g., Windows 2000, XP, Server 2003.</span></li>
+<li class=rvps5><span class=rvts6>#Is_NT6# : Process this line for NT6.x OS's only. E.g., Windows Vista, 7, Server 2008, 8, 8.1, Phone 8.</span></li>
+<li class=rvps5><span class=rvts6>#Is_Metro#: Process this line for Windows versions using the StartScreen (Metro). E.g., Windows&nbsp; 8, 8.1, Server 2012, Phone 8.</span></li>
+<li class=rvps5><span class=rvts6>Comparative Gates: These gates allow more specific line processing. The syntax is as follows:</span></li>
+</ul></ul>
+<p class=rvps14><span class=rvts6>#Is_OS&lt;|=|&gt;|&lt;&gt;|&lt;=|&gt;=V[.v[.bbbb]]#</span></p>
+<p class=rvps15><span class=rvts6>with:</span></p>
+<p class=rvps16><span class=rvts6>&lt; : "less than"</span></p>
+<p class=rvps16><span class=rvts6>= : "equal to"</span></p>
+<p class=rvps16><span class=rvts6>&gt; : "greater than"</span></p>
+<p class=rvps16><span class=rvts6>&lt;&gt; : "not equal to"</span></p>
+<p class=rvps16><span class=rvts6>&gt;&lt; : "not equal to"</span></p>
+<p class=rvps16><span class=rvts6>&lt;= : "less than or equal to"</span></p>
+<p class=rvps16><span class=rvts6>&gt;= : "greater than or equal to"</span></p>
+<p class=rvps16><span class=rvts6>=&lt; : "equal to or less than"</span></p>
+<p class=rvps16><span class=rvts6>=&gt; : "equal to or greater than"</span></p>
+<p class=rvps15><span class=rvts6>where:</span></p>
+<p class=rvps16><span class=rvts6>V.v.bbbb : The </span><a class=rvts20 href="http://en.wikipedia.org/wiki/Windows_nt#Releases">Windows NT version</a><span class=rvts6>. This can be just the Major, the Major.minor, or Major.minor.build.</span></p>
+<p class=rvps8><span class=rvts17>&#926;</span><span class=rvts16> </span><span class=rvts18>S</span><span class=rvts13>ome Notes: </span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside;">
+<li value=1 class=rvps7 style="margin-left: 0"><span class=rvts6>These can be at the beginning or at the end of </span><span class=rvts14>each</span><span class=rvts6> line.</span></li>
+<li value=2 class=rvps7 style="margin-left: 0"><span class=rvts7>Gate directives m</span><span class=rvts12>ay also be used in the following: Script-files (.cmd/.bat), Registry-files(.reg), and in the .app/.ppg-file under the keys "FileTypes", "RegisterDLLs", "InstallFonts", and the ShortcutS definitions. With ShortcutS definitions, placement of the gate(s) is via the "Flags" key (with or without "#" delimiters).</span></li>
+<li value=3 class=rvps7 style="margin-left: 0"><span class=rvts12>Two or more gates used together will have a logical "AND" effect. This will allow one to specify OS ranges and OSArch combinations.</span></li>
+</ol></ol>
+<p class=rvps7><span class=rvts12><br></span></p>
+<p class=rvps11><span class=rvts19>Some examples:</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside;">
+<li class=rvps13 style="margin-left: 0"><span class=rvts12>#Is_OS=5.1# : Windows XP</span></li>
+<li class=rvps13 style="margin-left: 0"><span class=rvts12>#Is_OS=5.2##Is_x64# : Windows XP Professional x64 Edition</span></li>
+<li class=rvps13 style="margin-left: 0"><span class=rvts12>#Is_OS=5# : Same as #Is_NT5#</span></li>
+<li class=rvps13 style="margin-left: 0"><span class=rvts12>#Is_NT6##Is_OS&lt;6.2# : Windows Vista &amp; 7 (also Server 2008)</span></li>
+<li class=rvps13 style="margin-left: 0"><span class=rvts12>#Is_x86##Is_NT6# : The x86 editions of Vista/7/8</span></li>
+<li class=rvps13 style="margin-left: 0"><span class=rvts12>#Is_OS&gt;=6.2# : Same as #Is_Metro# </span></li>
+</ul></ul></ul>
+<p class=rvps17><span class=rvts21>Copyright © #cYear#, #cHolder#</span></p>
+<p class=rvps18><span class=rvts22>Created with the Freeware Edition of HelpNDoc: </span><a class=rvts23 href="http://www.helpndoc.com" target="_blank">Full featured multi-format Help generator</a></p>
+</body></html>

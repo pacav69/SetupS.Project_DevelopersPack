@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Command Line Usage</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 10pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+span.rvts1 /* Heading */
+{
+ font-weight: bold;
+ color: #0000ff;
+}
+span.rvts2 /* Subheading */
+{
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts3 /* Keywords */
+{
+ font-style: italic;
+ color: #800000;
+}
+a.rvts4, span.rvts4 /* Jump 1 */
+{
+ color: #008000;
+ text-decoration: underline;
+}
+a.rvts5, span.rvts5 /* Jump 2 */
+{
+ color: #008000;
+ text-decoration: underline;
+}
+span.rvts6
+{
+ font-size: 16pt;
+ color: #ffffff;
+}
+span.rvts7
+{
+ font-family: 'Courier New', 'Courier', monospace;
+}
+span.rvts8
+{
+ font-size: 9pt;
+ font-family: 'Courier New', 'Courier', monospace;
+}
+a.rvts9, span.rvts9
+{
+ font-size: 9pt;
+ font-family: 'Courier New', 'Courier', monospace;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts9:hover { color: #0000ff; }
+span.rvts10
+{
+ font-size: 11pt;
+}
+span.rvts11
+{
+ font-style: italic;
+}
+span.rvts12 /* Font Style */
+{
+ font-family: 'MS Sans Serif', 'Geneva', sans-serif;
+ color: #808080;
+}
+span.rvts13 /* Font Style */
+{
+ font-family: 'Verdana', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #c0c0c0;
+}
+a.rvts14, span.rvts14 /* Font Style */
+{
+ font-family: 'Verdana', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #6666ff;
+ text-decoration: underline;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ background: #ffffff;
+ margin: 7px 0px 7px 24px;
+}
+.rvps3
+{
+ margin: 0px 0px 0px 24px;
+}
+.rvps4
+{
+ margin: 0px 0px 0px 48px;
+}
+.rvps5
+{
+ text-indent: -30px;
+ margin: 0px 0px 0px 55px;
+}
+.rvps6
+{
+ text-indent: -50px;
+ margin: 0px 0px 0px 75px;
+}
+.rvps7
+{
+ text-indent: -51px;
+ margin: 0px 0px 0px 75px;
+}
+.rvps8
+{
+ text-align: right;
+ text-indent: 0px;
+ background: #a5a5a5;
+ padding: 5px 5px 2px 5px;
+ margin: -5px 0px 8px -5px;
+}
+.rvps9 /* Paragraph Style */
+{
+ text-align: center;
+ background: #e4e4e4;
+ margin: 20px 0px 0px 0px;
+}
+.rvps10 /* Paragraph Style */
+{
+ border-color: #c0c0c0;
+ border-style: solid;
+ border-width: 1px;
+ border-right: none;
+ border-bottom: none;
+ border-left: none;
+ background: #ffffff;
+ padding: 3px 0px 0px 0px;
+ margin: 27px 0px 0px 0px;
+}
+--></style>
+<link rel="StyleSheet" href="hnd.css" type="text/css"/>
+<script type="text/javascript">if(top.frames.length == 0) { sTopic = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length); top.location.href="../ssTek.html?" + sTopic; }</script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.cookie.js"></script>
+<script type="text/javascript" src="hnd.js"></script>
+<meta name="generator" content="HelpNDoc Freeware Edition"></head>
+<body>
+<h1 class=rvps8><span class=rvts0><span class=rvts6>ssEditor Command Line Usage</span></span><span class=rvts0><span class=rvts6> &nbsp; &nbsp; &nbsp; &nbsp;</span></span><img align=absmiddle border=0 width=16 height=16 alt="Previous page" src="img_48.png"><a href="ssEditor.html"><img align=absmiddle border=0 alt="Return to chapter overview" src="img_49.png"></a><a href="General.html"><img align=absmiddle border=0 width=16 height=16 alt="Next page" src="img_50.png"></a></h1>
+<p class=rvps2><span class=rvts10>ssEditor can also be invoked via the command line as follows:</span></p>
+<p class=rvps5><span class=rvts11><br></span></p>
+<p class=rvps6><span class=rvts8>Usage: ssEditor [Input] [&lt;Switches&gt;...]</span></p>
+<p class=rvps6><span class=rvts8><br></span></p>
+<p class=rvps7><span class=rvts8>Input: &lt;path&gt;|&lt;file_name&gt;|&lt;archive_name&gt;</span></p>
+<p class=rvps7><span class=rvts8>&nbsp; &lt;path&gt;: folder containing a SetupS recognized file via a command-line, shortcut, or with SendTo.</span></p>
+<p class=rvps7><span class=rvts8>&nbsp; &lt;file_name&gt;: a SetupS recognized file via a command-line, shortcut, or with "SendTo", or "Open With", or by a double-click.</span></p>
+<p class=rvps7><span class=rvts8>&nbsp; &lt;archive_name&gt;: an archive containing a SetupS recognized file via a command-line, shortcut, or with SendTo.</span></p>
+<p class=rvps7><span class=rvts8><br></span></p>
+<p class=rvps7><span class=rvts8>&lt;Switches&gt;</span></p>
+<p class=rvps7><span class=rvts8>&nbsp; -SaveFormat=Legacy|INI|Dual|UpdateOnly : Which app-file format to save to. Over-rides the default.</span></p>
+<p class=rvps7><span class=rvts8>&nbsp; -Save|SaveAs|SaveTo[=Legacy|INI|Dual|UpdateOnly] : Only perform a save operation. If no value is specified then it will use the default or the SaveFormat switch to determine the file format.</span></p>
+<p class=rvps7><span class=rvts8>&nbsp; -Build|Autobuild : Tells ssEditor to automatically build based on the current options/settings. Can be overridden with the following (optional) switches:</span></p>
+<p class=rvps7><span class=rvts8>&nbsp;&nbsp;&nbsp; -MakeExpressInstaller=off|on : "On" makes the .apz/pgz archive packages. "Off" forces building of ssWPI type packages instead (folder packages).</span></p>
+<p class=rvps7><span class=rvts8>&nbsp;&nbsp;&nbsp; -ppCompress=off|on : Whether or not you want to use archives for ppApps or ppGames.</span></p>
+<p class=rvps7><span class=rvts8>&nbsp;&nbsp;&nbsp; -PatchCompress=off|on : Whether or not you want to use archives for the Patch-folders.</span></p>
+<p class=rvps7><span class=rvts8>&nbsp;&nbsp;&nbsp; -CalcMD5=off|on : Create MD5 checksums for the packages.</span></p>
+<p class=rvps7><span class=rvts8>&nbsp;&nbsp;&nbsp; -CompressionLevel=0|1|3|5|7|9 : 0=Store/Copy mode, 1=Fastest, 3=Fast, 5=Normal/Default, 7=Maximum, 9=Ultra.</span></p>
+<p class=rvps7><span class=rvts8>&nbsp;&nbsp;&nbsp; -7zProcessPriority=0|1|2|3|4|5 : 0=Idle/Low, 1=Below Normal, 2=Normal, 3=Above Normal, 4=High, 5=Realtime.</span></p>
+<p class=rvps7><span class=rvts8>&nbsp;&nbsp;&nbsp; -UseLZMA2=off|on : Toggle the use of the LZMA2 compression method.</span></p>
+<p class=rvps7><span class=rvts8>&nbsp;&nbsp;&nbsp; -DeleteSource=off|on : Whether or not you want to keep source files/folders.</span></p>
+<p class=rvps7><span class=rvts8>&nbsp;&nbsp;&nbsp; -UseRAR=off|on : Create archives and files using RAR instead of 7z. See </span><span class=rvts9>Options Menu</span><span class=rvts8> for details.</span></p>
+<p class=rvps7><span class=rvts8>&nbsp; -Help|About|?: This help file.</span></p>
+<p class=rvps3><span class=rvts7><br></span></p>
+<p class=rvps3><span class=rvts10>A valid recognized SetupS file is one of the following: SetupS.app, ssApp.app, ppApp.app, or ppGame.ppg. Also, any type of archive with the extension '.apz' or '.pgz' containing a recognized SetupS file as listed above.</span></p>
+<p class=rvps3><span class=rvts10><br></span></p>
+<p class=rvps3><span class=rvts10>Usage example: </span></p>
+<p class=rvps4><span class=rvts8>ssEditor "C:\Temp\My_ppGame.pgz" -Build -MakeExpressInstaller=on -UseOutputDir="C:\ppGamesInstalls"</span></p>
+<p class=rvps9><span class=rvts12>Copyright © #cYear#, #cHolder#</span></p>
+<p class=rvps10><span class=rvts13>Created with the Freeware Edition of HelpNDoc: </span><a class=rvts14 href="http://www.helpndoc.com" target="_blank">Easily create Help documents</a></p>
+</body></html>

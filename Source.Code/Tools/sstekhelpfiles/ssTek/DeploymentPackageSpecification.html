@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Deployment Package Specifications</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 10pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+span.rvts1 /* Heading */
+{
+ font-weight: bold;
+ color: #0000ff;
+}
+span.rvts2 /* Subheading */
+{
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts3 /* Keywords */
+{
+ font-style: italic;
+ color: #800000;
+}
+a.rvts4, span.rvts4 /* Jump 1 */
+{
+ color: #008000;
+ text-decoration: underline;
+}
+a.rvts5, span.rvts5 /* Jump 2 */
+{
+ color: #008000;
+ text-decoration: underline;
+}
+span.rvts6
+{
+ font-size: 11pt;
+ color: #000000;
+}
+a.rvts7, span.rvts7
+{
+ font-size: 11pt;
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts8
+{
+ font-size: 11pt;
+ font-style: italic;
+ color: #000000;
+}
+span.rvts9
+{
+ font-size: 16pt;
+ color: #ffffff;
+}
+span.rvts10
+{
+ font-size: 11pt;
+ color: #000000;
+}
+span.rvts11
+{
+ font-size: 9pt;
+ font-weight: bold;
+ vertical-align: super;
+}
+span.rvts12 /* Font Style */
+{
+ font-family: 'MS Sans Serif', 'Geneva', sans-serif;
+ color: #808080;
+}
+span.rvts13 /* Font Style */
+{
+ font-family: 'Verdana', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #c0c0c0;
+}
+a.rvts14, span.rvts14 /* Font Style */
+{
+ font-family: 'Verdana', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #6666ff;
+ text-decoration: underline;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ margin: 0px 0px 14px 24px;
+}
+.rvps3
+{
+ margin: 14px 0px 0px 24px;
+}
+.rvps4
+{
+ margin: 0px 0px 0px 48px;
+}
+.rvps5
+{
+ margin: 0px 0px 0px 78px;
+}
+.rvps6
+{
+ text-align: right;
+ text-indent: 0px;
+ background: #a5a5a5;
+ padding: 5px 5px 2px 5px;
+ margin: -5px 0px 8px -5px;
+}
+.rvps7 /* Paragraph Style */
+{
+ text-align: center;
+ background: #e4e4e4;
+ margin: 20px 0px 0px 0px;
+}
+.rvps8 /* Paragraph Style */
+{
+ border-color: #c0c0c0;
+ border-style: solid;
+ border-width: 1px;
+ border-right: none;
+ border-bottom: none;
+ border-left: none;
+ background: #ffffff;
+ padding: 3px 0px 0px 0px;
+ margin: 27px 0px 0px 0px;
+}
+--></style>
+<script language="javascript" src="jsRelative.js"></script>
+<meta name="generator" content="HelpNDoc Freeware Edition"></head>
+<body>
+<h1 class=rvps6><span class=rvts0><span class=rvts9>Deployment Package Specifications</span></span><span class=rvts0><span class=rvts9> &nbsp; &nbsp; &nbsp; &nbsp;</span></span><img align=absmiddle border=0 width=16 height=16 alt="Previous page" src="img_237.png"><a href="References.html"><img align=absmiddle border=0 alt="Return to chapter overview" src="img_238.png"></a><a href="SetupSFileSpecificationappppg.html"><img align=absmiddle border=0 width=16 height=16 alt="Next page" src="img_239.png"></a></h1>
+<p class=rvps2><span class=rvts6>The deployment packages can be in either of two forms. One is as a 'folder' package. The other is an archive package (usually with an extension of .apz or .pgz). Both can be utilized by ssWPI or SetupS. Both have their relative merits and downsides. None the less, their contents will remain the same.</span></p>
+<p class=rvps2><span class=rvts6>In addition to the following, an ssApp will of course have to include all of its setup/install files in order to complete its install; whereas, ppApp's/ppGames would only need the following.</span></p>
+<p class=rvps2><span class=rvts11>&#926;</span><span class=rvts10> </span><span class=rvts8>Note</span><span class=rvts6>: 'BuildType' can be one of the following 'ssApp', 'ppApp', or 'ppGame'.</span></p>
+<p class=rvps4><span class=rvts6>BuildType.app|ppg</span></p>
+<p class=rvps5><span class=rvts6>This is the heart of the deployment package. Resembling an .ini file, this file tells SetupS and ssWPI exactly what to do. See </span><a class=rvts7 href="SetupSFileSpecificationappppg.html">SetupS File Specification (.app/.ppg)</a><span class=rvts6>.</span></p>
+<p class=rvps5><span class=rvts6>(Required)</span></p>
+<p class=rvps4><span class=rvts6></span><br><span class=rvts6>BuildType.jpg</span></p>
+<p class=rvps5><span class=rvts6>Screen-shot for ssWPI. Though there is no limit on resolutions, for practical reasons it's recommended to go no higher than 600x480.</span></p>
+<p class=rvps5><span class=rvts6>(Optional)</span></p>
+<p class=rvps4><span class=rvts6></span><br><span class=rvts6>BuildType.png</span></p>
+<p class=rvps5><span class=rvts6>Fader (graphic) for ssWPI.</span></p>
+<p class=rvps5><span class=rvts6>(Optional)</span></p>
+<p class=rvps4><span class=rvts6></span><br><span class=rvts6>BuildType.ico</span></p>
+<p class=rvps5><span class=rvts6>Folder icon for both the install-to folder and the Startmenu. Up to 256px for Vista/7 icons.</span></p>
+<p class=rvps5><span class=rvts6>(Optional)</span></p>
+<p class=rvps4><span class=rvts6></span><br><span class=rvts6>BuildType.md5</span></p>
+<p class=rvps5><span class=rvts6>Allows for an integrity check since 7-Zip uses no recovery records. But better than nothing.</span></p>
+<p class=rvps5><span class=rvts6>(Optional)</span></p>
+<p class=rvps4><span class=rvts6></span><br><span class=rvts6>BuildType.7z|rar|zip|cab</span></p>
+<p class=rvps5><span class=rvts6>Only used if the BuildType is ppApp or ppGame. The equivalent of an ssApp's "Installer" or "Setup". See </span><a class=rvts7 href="Recommended7ziparchivesettings.html">Recommended 7zip archive settings</a><span class=rvts6>.</span></p>
+<p class=rvps5><span class=rvts6>(Required unless using a "ppApps Live" folder)</span></p>
+<p class=rvps4><span class=rvts6></span><br><span class=rvts6>\BuildType\</span></p>
+<p class=rvps5><span class=rvts6>A folder that gets copied to the installed-to folder during post-processing. Handy for patches or update files outside the standard install/setup files.</span></p>
+<p class=rvps5><span class=rvts6>(Optional)</span></p>
+<p class=rvps4><span class=rvts6></span><br><span class=rvts6>Patch.7z|rar|zip|cab</span></p>
+<p class=rvps5><span class=rvts6>An archive that gets extracted to the installed-to folder during post-processing. Handy for patches or update files outside the standard install/setup files.</span></p>
+<p class=rvps5><span class=rvts6>(Optional)</span></p>
+<p class=rvps4><span class=rvts6></span><br><span class=rvts6>BuildType.cmd|bat</span></p>
+<p class=rvps5><span class=rvts6>Run during post-processing, now depreciated (but still supported) as the file can simply be copy &amp; pasted into the BuildType.app file.</span></p>
+<p class=rvps5><span class=rvts6>(Optional)</span></p>
+<p class=rvps4><span class=rvts6></span><br><span class=rvts6>BuildType.reg</span></p>
+<p class=rvps5><span class=rvts6>Applied during post-processing, now depreciated (but still supported) as the file can simply be copy &amp; pasted into the BuildType.app file.</span></p>
+<p class=rvps5><span class=rvts6>(Optional)</span></p>
+<p class=rvps4><span class=rvts6></span><br><span class=rvts6>Folder.jpg|gif</span></p>
+<p class=rvps5><span class=rvts6>An image for thumbnail views of the installed-to folder.</span></p>
+<p class=rvps5><span class=rvts6>(Optional)</span></p>
+<p class=rvps3><span class=rvts6>As one can see, except for the 'BuildType.app|ppg' file, none are required. The others are only in how the packager wishes their packages to be deployed. But if all are available, then the package is not as limited otherwise.</span></p>
+<p class=rvps7><span class=rvts12>Copyright © 2020, Vergitek Solutions</span></p>
+<p class=rvps8><span class=rvts13></span><a class=rvts14 href="http://sstek.vergitek.com" target="_blank">ssTek Forum: Tools for custom Operating Systems!</a></p>
+</body></html>
