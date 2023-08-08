@@ -3,6 +3,13 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
       not always possible especially when adding new features.
 
 ---------------------------------------------
+9Aug, 2023
+---------------------------------------------
+added procedures.md
+updated !!Make.SetupS-Project.cmd file remarks
+
+
+---------------------------------------------
 July 23, 2023
 ---------------------------------------------
 Updated 7z to v23.01

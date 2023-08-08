@@ -7,5 +7,5 @@ add  navigation in help file- Previous | Contents | Next
 
 add contributers instructions
 add pull request instructions
-upload files to Lastos website
+~~upload files to Lastos website~~
 setup upload script using winscp
