@@ -7,6 +7,10 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
 ---------------------------------------------
 updated !!Make.SetupS-Project.cmd file remarks
 updated  Instructions.md
+cocorrected the year in rem of  !!Make.SetupS-Project.cmd file to read
+      @REM where YYYY is the four digit year, MM the two digit month, DD two digit day
+bintray were removed from sstek.html
+the !DistrPack.Project.cmd file still has the  the bintray weblink3 as place ho;ders for future bintray replacements
 
 ---------------------------------------------
 July 23, 2023
