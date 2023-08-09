@@ -5,9 +5,8 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
 ---------------------------------------------
 9Aug, 2023
 ---------------------------------------------
-added procedures.md
 updated !!Make.SetupS-Project.cmd file remarks
-
+updated  Instructions.md
 
 ---------------------------------------------
 July 23, 2023
