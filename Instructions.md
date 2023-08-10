@@ -8,7 +8,7 @@ Make modifications or improvments to files
 ## change ProjectVersion
 
 change the ProjectVersion
-* so that it reads ProjectVersion= YY.MM.DD.0 use ONLY numbers
+so that it reads ProjectVersion= YY.MM.DD.0 use ONLY numbers
 * seperated with periods in the form YY.MM.DD.0
 * use the date of compilatation YY.MM.DD.Incremental number usually 0
   where
