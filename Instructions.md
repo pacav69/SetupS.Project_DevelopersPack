@@ -36,7 +36,7 @@ eg
     set ProjectDate=2023-07-23
 ## Generating SetupS-files.htm file
 This file stores the download links for the files.
-In order to generate a SetupS-files.htm file make sure the Upload parameter is set to 'Yes':
+In order to generate a SetupS-files.htm file make sure the Upload parameter is set to **'Yes'**:
 
     set Upload=Yes
 
