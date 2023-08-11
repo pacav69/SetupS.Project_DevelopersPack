@@ -35,5 +35,5 @@ this will copy the files to your computer into the created subdirectory.
 
 
 ## Tools used
-Autoit v3.3.8.1
-7z v23.01
+* Autoit v3.3.8.1
+* 7z v23.01
