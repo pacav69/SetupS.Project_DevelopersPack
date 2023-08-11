@@ -57,21 +57,28 @@ record changes made to files in the changelog.txt so other people can see what w
 ## Updating help files on website
 
 help files are located here:
-.\SetupS.Project_DevelopersPack\Source.Code\Tools\sstekhelpfiles\ssTek
+
+     .\SetupS.Project_DevelopersPack\Source.Code\Tools\sstekhelpfiles\ssTek
+
 use all the HTML and images files
 
-upload using ftp
-website ftp.vergitek.com
-login user name: sstek
-password: found on lastos Forums
+## upload using ftp
+* website ftp.vergitek.com
+* login user name: sstek
+* password: found on lastos Forums
 
 onced logged in
 uploaded files to
-root/help/files
+
+  root/help/files
 
 to check goto
-http://sites.vergitek.com/sstek/help/ssTek.html
+
+    http://sites.vergitek.com/sstek/help/ssTek.html
 
 using shift F5 to refresh.
+
+The LastOS Team
+
 
 
