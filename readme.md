@@ -38,3 +38,12 @@ this will copy the files to your computer into the created subdirectory.
 * Autoit v3.3.8.1
 * 7z v23.01
 * Visual Studio Code
+<img src="https://visualstudio.microsoft.com/wp-content/uploads/2019/09/vs-code-responsive-01-1.png" alt="Visual Studio Code logo" style="height: 50px; width:60px;"/>
+
+Visual Studio Code Editor - [found here](https://visualstudio.microsoft.com/)
+
+## Support
+
+<img src="https://vangogh.teespring.com/v3/image/SugZ-DRGZXUTuSzfrFtaOU3TAUQ/800/800.jpg" width="100px"  height="100px">
+
+[Help support by buying some merchandise](https://cavtronics-3.creator-spring.com/)
