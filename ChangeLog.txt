@@ -2,6 +2,10 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
       behavior if not used or implemented (for backwards compatibility); but sometimes this is
       not always possible especially when adding new features.
 
+---------------------------------------------
+25Aug2023
+---------------------------------------------
+updated contributing.md
 
 ---------------------------------------------
 13Aug2023
