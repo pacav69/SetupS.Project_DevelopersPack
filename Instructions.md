@@ -1,6 +1,11 @@
 <!-- Instructions.md -->
 # Instructions
 
+## AutoIT3
+Before starting
+Ensure that AutoIT3 is version 3.3.8.1 dated 30/01/2012 is installed without modifications otherwise compiling will fail.
+
+
 ## Make changes to files
 
 Make modifications or improvments to files
