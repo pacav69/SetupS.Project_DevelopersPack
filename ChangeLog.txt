@@ -7,6 +7,7 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
 ---------------------------------------------
 added meta data for SEO in SetupS-files.htm
 updated for submission to fosshub.com file hosting
+added using AutoIT3 version 3.3.8.1 to instructions.md
 
 ---------------------------------------------
 25Aug2023
