@@ -3,9 +3,10 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
       not always possible especially when adding new features.
 
 ---------------------------------------------
-04Sepg2023
+04Sep2023
 ---------------------------------------------
 added meta data for SEO in SetupS-files.htm
+dded description in SetupS-files.htm
 updated for submission to fosshub.com file hosting
 added using AutoIT3 version 3.3.8.1 to instructions.md
 
