@@ -1422,6 +1422,12 @@ Func ProcessAssembly($InstallFromAppPath = False)
 								EndIf
 							Case StringInStr($CTV, '%AddToHosts%')
 								AddToHosts(StringStripWS(ConvertFromVars(StringReplace(StringReplace($CTV, '"', ''), '%AddToHosts% ', '')), 3))
+							Case StringInStr($CTV, '%SetUserFTA%')
+								If $NoWait Then
+									Run(ConvertFromVars($CTV), $SrcPath, @SW_HIDE)
+								Else
+									RunWait(ConvertFromVars($CTV), $SrcPath, @SW_HIDE)
+								EndIf
 							Case StringInStr($CTV, '%Extract%')
 								If $NoWait Then
 									Run(ConvertFromVars($CTV), $SrcPath, @SW_HIDE)
@@ -1619,6 +1625,7 @@ Func ProcessScript() ; <Script> section
 			EndIf
 		EndIf
 		If FileExists($TempFile) Then
+			;MsgBox(0,"Tst","Wait") ;Pauses running modified script For Debugging (%AppPath%\~SetupS.cmd)
 			RunWait($TempFile, '.', @SW_HIDE)
 			If Not DeleteMe($TempFile) Then $AppWriteProtected = True
 		EndIf

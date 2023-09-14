@@ -571,6 +571,7 @@ xcopy "..\%sc%\Tools\Default\*.*" "%sc%\Tools\Default\*.*" /y/e/s >nul:
 xcopy "..\%sc%\Tools\Menus\*.*" "%sc%\Tools\Menus\*.*" /y/e/s >nul:
 xcopy "..\%sc%\Tools\FaderModules\*.*" "%sc%\Tools\FaderModules\*.*" /y/e/s >nul:
 if exist "%sc%\Tools\FaderModules\*.exe" del /F /Q "%sc%\Tools\FaderModules\*.exe" >nul:
+xcopy "..\%sc%\Tools\SetUserFTA\*.*" "%sc%\Tools\SetUserFTA\*.*" /y/e/s >nul:
 copy "..\%sc%\Tools\*.*" "%sc%\Tools\*.*" /y >nul:
 if exist "%sc%\Tools\*.exe" del /F /Q "%sc%\Tools\*.exe" >nul:
 if exist "%sc%\Tools\*.chm" del /F /Q "%sc%\Tools\*.chm" >nul:

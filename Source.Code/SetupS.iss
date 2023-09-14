@@ -68,6 +68,7 @@ Source: Tools\_x64\*.*; DestDir: {app}\Tools; Flags: ignoreversion recursesubdir
 Source: Tools\Tools.ico; DestDir: {app}\Tools; Flags: ignoreversion
 Source: Tools\Menus\*.*; DestDir: {app}\Tools\Menus; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: Tools\FaderModules\*.*; DestDir: {app}\Tools\FaderModules; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: Tools\SetUserFTA\*.*; DestDir: {app}\Tools\SetUserFTA; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: Tools\Default\*.*; DestDir: {app}\Tools\Default; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: Licenses\*.*; DestDir: {app}\Licenses; Flags: ignoreversion recursesubdirs createallsubdirs
 
