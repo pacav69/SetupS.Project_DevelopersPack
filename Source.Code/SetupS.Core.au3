@@ -886,6 +886,11 @@ Func ConvertFromVars($In, $RegPath = False) ; Replace Varibles sent in with Abso
 	$Out = StringReplace($Out, '%AddToHosts%', RegPathConvert('AddToHosts.exe', $RegPath))
 	$Out = StringReplace($Out, '#Extract#', RegPathConvert('7z.exe x -y -aoa', $RegPath))
 	$Out = StringReplace($Out, '%Extract%', RegPathConvert('7z.exe x -y -aoa', $RegPath))
+
+	;Extra Tools
+	$Out = StringReplace($Out, '%SetUserFTA%', RegPathConvert(chr(34)&$ToolsDrive&$ToolsDir&"\SetUserFTA\SetUserFTA.exe"&Chr(34), $RegPath))
+
+	;CD Drive Variables
 	If StringInStr($Out, '%OpticalDrive%') Or StringInStr($Out, '%cdrom%') Or StringInStr($Out, '%cddrive%') Then
 		If $CDDrive = '' Then GetOpticalDrive()
 		$Out = StringReplace($Out, '%OpticalDrive%', RegPathConvert($CDDrive, $RegPath)) ; drive only
@@ -1032,6 +1037,10 @@ Func ConvertToVars($In, $RegPath = False) ; Replace Varibles sent in with Absolu
 	$Out = StringReplace($Out, RegPathConvert('7z x -aoa -y', $RegPath), '%Extract%')
 	$Out = StringReplace($Out, RegPathConvert('#Extract#', $RegPath), '%Extract%')
 	$Out = StringReplace($Out, RegPathConvert('%Tools%\%Extract%', $RegPath), '%Extract%')
+
+	;Extra Tools
+	$Out = StringReplace($Out, RegPathConvert('SetUserFTA.exe', $RegPath), '%SetUserFTA%')
+	$Out = StringReplace($Out, RegPathConvert('%Tools%\%SetUserFTA%', $RegPath), '%SetUserFTA%')
 
 	;%ComputerName% @ComputerName
 	If @ComputerName <> '' Then

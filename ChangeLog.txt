@@ -1,12 +1,16 @@
 Note: The goal is to have any additions/changes/options to NOT affect the original default
       behavior if not used or implemented (for backwards compatibility); but sometimes this is
       not always possible especially when adding new features.
+---------------------------------------------
+13Sep2023
+---------------------------------------------
+added SetUserFTA to tools, Usage: scripts: "%SetUserFTA% .jpg IrfanView.jpg" {filetype} {Class Key Name from Registry}
 
 ---------------------------------------------
 04Sep2023
 ---------------------------------------------
 added meta data for SEO in SetupS-files.htm
-dded description in SetupS-files.htm
+added description in SetupS-files.htm
 updated for submission to fosshub.com file hosting
 added using AutoIT3 version 3.3.8.1 to instructions.md
 
