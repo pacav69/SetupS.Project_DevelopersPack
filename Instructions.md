@@ -83,6 +83,54 @@ to check goto
 
 using shift F5 to refresh.
 
+# Uploading files
+
+## Github files
+
+Use visual studio code with intergrated git
+
+## Lastos.org site
+FTP details
+
+ftp-lastos
+  Host: ftp.lastos.org
+  Port: 21
+  Username: LastOS@vergitek.com
+  Password:  found on lastos Forums
+
+  ### Procedure
+*   first move old setups files to the following directory:
+
+  \<root>/files/SetupSoldfies
+*   upload files on host site to here:
+
+    \<root>/files
+
+* check files here https://www.lastos.org/files/SetupS-files.htm
+
+## veritek.com site
+
+FTP LastOS (on Vergitek); backup for the Bluehost site, plus the LastOS release archive:
+  Host: ftp.vergitek.com
+  Port: 21
+  Username: LastOS
+  Password: found on lastos Forums
+
+  ### Procedure
+*   first move old setups files to the following directory:
+
+  \<root>/files/SetupSoldfies
+*   upload files on host site to here:
+
+    \<root>/files
+
+* check files here
+
+    http://sites.vergitek.com/sstek/files/SetupS-files.htm
+
+
+
+
 The LastOS Team
 
 
