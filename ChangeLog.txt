@@ -5,6 +5,8 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
 15Sep2023
 ---------------------------------------------
 corrected formatting error in SetupS-files.htm file
+updated instructions
+
 ---------------------------------------------
 13Sep2023
 ---------------------------------------------
