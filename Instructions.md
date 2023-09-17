@@ -88,6 +88,7 @@ using shift F5 to refresh.
 ## Github files
 
 Use visual studio code with intergrated git
+use github desktop
 
 ## Lastos.org site
 FTP details
