@@ -1,6 +1,14 @@
 Note: The goal is to have any additions/changes/options to NOT affect the original default
       behavior if not used or implemented (for backwards compatibility); but sometimes this is
       not always possible especially when adding new features.
+
+---------------------------------------------
+17Sep2023
+---------------------------------------------
+added .gitignore file
+added blank_Accounts.ini file for use with upload files
+
+
 ---------------------------------------------
 15Sep2023
 ---------------------------------------------
