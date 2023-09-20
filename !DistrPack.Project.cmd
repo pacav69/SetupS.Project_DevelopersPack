@@ -88,6 +88,7 @@ set WebSite4=ssTek Development
 set WebLink4=sstek.vergitek.com
 set WebSite5=LastOS Forum
 set WebLink5=lastos.vergitek.com
+set Webfolder5=files/
 set WebSite6=github files
 set WebLink6=github.com/pacav69/SetupS.Project_DevelopersPack
 set NewTagLine=%Website1%: Tools for custom Operating Systems!
@@ -624,16 +625,16 @@ cd "%~dp0"
 if exist "upload-help.cmd" call upload-help.cmd %sc% ssTek
 
 :Bintray (requires cURL)
-%AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink3%"
-call UploadMe.cmd %ssApp%.exe files SetupS %ProjectVersion%
-call UploadMe.cmd %ssApp%.apz files SetupS %ProjectVersion%
-call UploadMe.cmd %ppApp%.7z files SetupS %ProjectVersion%
-call UploadMe.cmd %ssUI%.exe files SetupS %ProjectVersion%
-call UploadMe.cmd %scp%.7z files SetupS %ProjectVersion%
-call UploadMe.cmd %devpack%.7z files SetupS %ProjectVersion%
-call UploadMe.cmd %ssII%.exe files SetupS %ProjectVersion%
-call UploadMe.cmd checksums_v%ProjectVersion%.md5 files SetupS %ProjectVersion%
-echo.
+@REM %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink3%"
+@REM call UploadMe.cmd %ssApp%.exe files SetupS %ProjectVersion%
+@REM call UploadMe.cmd %ssApp%.apz files SetupS %ProjectVersion%
+@REM call UploadMe.cmd %ppApp%.7z files SetupS %ProjectVersion%
+@REM call UploadMe.cmd %ssUI%.exe files SetupS %ProjectVersion%
+@REM call UploadMe.cmd %scp%.7z files SetupS %ProjectVersion%
+@REM call UploadMe.cmd %devpack%.7z files SetupS %ProjectVersion%
+@REM call UploadMe.cmd %ssII%.exe files SetupS %ProjectVersion%
+@REM call UploadMe.cmd checksums_v%ProjectVersion%.md5 files SetupS %ProjectVersion%
+@REM echo.
 
 :GoogleCode (requires python)
 rem %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink4%"
@@ -646,6 +647,7 @@ rem call UploadMe.cmd %devpack%.7z "Full Developers Package" Type-Source
 rem call UploadMe.cmd checksums_v%ProjectVersion%.md5 "MD5 checksums"
 
 :sstek.vergitek.com (requires cURL)
+echo uploading files
 %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink1%"
 call UploadMe.cmd update.ini files/ .\ sstek.vergitek.com
 call UploadMe.cmd %ssApp%.exe files/ .\ sstek.vergitek.com
@@ -661,21 +663,21 @@ call UploadMe.cmd SetupS-files.htm files/ .\ sstek.vergitek.com
 call UploadMe.cmd SetupS-title.png files/ .\ sstek.vergitek.com
 echo.
 
-:lastos.vergitek.com (requires cURL)
-%AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink5%"
-call UploadMe.cmd update.ini files/ .\ lastos.vergitek.com
-call UploadMe.cmd %ssApp%.exe files/ .\ lastos.vergitek.com
-call UploadMe.cmd %ssApp%.apz files/ .\ lastos.vergitek.com
-call UploadMe.cmd %ppApp%.7z files/ .\ lastos.vergitek.com
-call UploadMe.cmd %ssUI%.exe files/ .\ lastos.vergitek.com
-call UploadMe.cmd %scp%.7z files/ .\ lastos.vergitek.com
-call UploadMe.cmd %devpack%.7z files/ .\ lastos.vergitek.com
-call UploadMe.cmd %ssII%.exe files/ .\ lastos.vergitek.com
-call UploadMe.cmd checksums_v%ProjectVersion%.md5 files/ .\ lastos.vergitek.com
-call UploadMe.cmd ChangeLog.txt files/ .\ lastos.vergitek.com
-call UploadMe.cmd SetupS-files.htm files/ .\ lastos.vergitek.com
-call UploadMe.cmd SetupS-title.png files/ .\ lastos.vergitek.com
-echo.
+@REM :lastos.vergitek.com (requires cURL)
+@REM %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink5%"
+@REM call UploadMe.cmd update.ini files/ .\ lastos.vergitek.com
+@REM call UploadMe.cmd %ssApp%.exe files/ .\ lastos.vergitek.com
+@REM call UploadMe.cmd %ssApp%.apz files/ .\ lastos.vergitek.com
+@REM call UploadMe.cmd %ppApp%.7z files/ .\ lastos.vergitek.com
+@REM call UploadMe.cmd %ssUI%.exe files/ .\ lastos.vergitek.com
+@REM call UploadMe.cmd %scp%.7z files/ .\ lastos.vergitek.com
+@REM call UploadMe.cmd %devpack%.7z files/ .\ lastos.vergitek.com
+@REM call UploadMe.cmd %ssII%.exe files/ .\ lastos.vergitek.com
+@REM call UploadMe.cmd checksums_v%ProjectVersion%.md5 files/ .\ lastos.vergitek.com
+@REM call UploadMe.cmd ChangeLog.txt files/ .\ lastos.vergitek.com
+@REM call UploadMe.cmd SetupS-files.htm files/ .\ lastos.vergitek.com
+@REM call UploadMe.cmd SetupS-title.png files/ .\ lastos.vergitek.com
+@REM echo.
 
 :LastOSForum (requires cURL)
 %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink2%"
@@ -692,11 +694,37 @@ call UploadMe.cmd SetupS-title.png files/ .\ LastOS.org
 call UploadMe.cmd update.ini files/ .\ LastOS.org
 echo.
 
+:lastos.vergitek.com
+echo creating fileslastos.ini...
+cd "%~dp0"
+@REM get account details
+%AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfowinscp.au3" "%WebLink2%"
+@REM create files to upload script for winscp useage
+if exist "fileslastos.ini" del /F /Q "fileslastos.ini" >nul:
+@REM echo rem lastos.vergitek.com >>fileslastos.ini
+@REM echo rem fileslastos.ini >>fileslastos.ini
+echo open ftp://LastOS%%40vergitek.com:#Password#@ftp.lastos.org/%Webfolder5%>>fileslastos.ini
+@REM add files for upload
+echo put .\files\pdate.ini>>fileslastos.ini
+echo put .\files\ssApp%.exe>>fileslastos.ini
+echo put .\files\%ssApp%.apz>>fileslastos.ini
+echo put .\files\%ppApp%.7z>>fileslastos.ini
+echo put .\files\%ssUI%.exe>>fileslastos.ini
+echo put .\files\%scp%.7z>>fileslastos.ini
+echo put .\files\%devpack%.7z>>fileslastos.ini
+echo put .\files\%ssII%.exe>>fileslastos.ini
+echo put .\files\checksums_v%ProjectVersion%.md5>>fileslastos.ini
+echo put .\files\ChangeLog.txt>>fileslastos.ini
+echo put .\files\SetupS-files.htm>>fileslastos.ini
+echo put .\files\SetupS-title.png>>fileslastos.ini
+echo exit >>fileslastos.ini
+
+
 @REM #######################################################
 @REM ### Movefiles
 @REM #######################################################
 :Movefiles
-echo Begin ... SetupS Project (version: %ProjectVersion%)
+echo put Begin ... SetupS Project (version: %ProjectVersion%)
 echo Moving files to files directory ...
 set completedfiles=files
 
@@ -728,6 +756,9 @@ copy "update.ini" "%completedfiles%\" /y >nul:
 echo copying Uchecksums files to files directory..
 @REM checksums_v23.07.18.1.md5
 copy "checksums*.md5" "%completedfiles%\" /y >nul:
+@REM ChangeLog.txt
+copy "ChangeLog.txt" "%completedfiles%\" /y >nul:
+
 @REM pause
 :Deleting files
 echo deleting SetupS-*.htm

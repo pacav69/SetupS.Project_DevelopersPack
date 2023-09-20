@@ -5,8 +5,10 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
 ---------------------------------------------
 17Sep2023
 ---------------------------------------------
-added .gitignore file
+added .gitignore file and added Accounts.ini to ignore list
 added blank_Accounts.ini file for use with upload files
+added ChangeLog.txt to list of files to copy
+
 
 
 ---------------------------------------------
