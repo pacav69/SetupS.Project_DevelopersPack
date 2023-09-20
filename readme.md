@@ -14,7 +14,7 @@
 # Introduction
 These are the files for SetupS.SendTo.Suite for builder.
 
-current version v23.09.13.0
+current version v23.09.23.0
 
 ##  Changelog
 check the changelog.txt for history and list of changes
