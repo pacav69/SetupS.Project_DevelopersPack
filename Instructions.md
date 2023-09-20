@@ -158,8 +158,8 @@ change the contents with this file structure
     Type=ftp
     Domain=ftp.lastos.org
     Port=21
-    Username=
-    Password=
+    Username=myUsername
+    Password=myPassword
 
 ensure that in file !!Make.SetupS-Project.cmd has the parameter is
 

@@ -10,6 +10,8 @@ added uploadlastos.cmd file to upload files to lastos Forum
 added color and error capture to uploadlastos.cmd
 added updfiles.cmd for update of #password# parameter in fileslastos.ini
 added updfiles.cmd to gitignore to prevent upload to github
+added 'Uploading using curl' for use with accounts.ini file in instructions.md
+added fle structure in  blank_Accounts.ini file
 
 ---------------------------------------------
 17Sep2023
