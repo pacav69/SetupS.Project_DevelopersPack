@@ -445,7 +445,7 @@ cd "%~dp0%sc%"
 if exist "ssTek.chm" copy "ssTek.chm" "Tools\ssTek.chm" /y >nul:
 
 @REM #######################################################
-@REM ### reate ssEditorppApp
+@REM ### create ssEditorppApp
 @REM #######################################################
 :CreatessEditorppApp
 cd "%~dp0%sc%\%EditorPath%"
@@ -772,29 +772,27 @@ echo.
 @REM call UploadMe.cmd SetupS-title.png files/ .\ lastos.vergitek.com
 @REM echo.
 
-:LastOSForum (requires cURL)
-%AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink2%"
-rem call UploadMe.cmd %ssApp%.exe files/ .\ LastOS.org
-rem call UploadMe.cmd %ssApp%.apz files/ .\ LastOS.org
-rem call UploadMe.cmd %ppApp%.7z files/ .\ LastOS.org
-rem call UploadMe.cmd %ssUI%.exe files/ .\ LastOS.org
-rem call UploadMe.cmd %scp%.7z files/ .\ LastOS.org
-rem call UploadMe.cmd %devpack%.7z files/ .\ LastOS.org
-call UploadMe.cmd checksums_v%ProjectVersion%.md5 files/ .\ LastOS.org
-call UploadMe.cmd ChangeLog.txt files/ .\ LastOS.org
-call UploadMe.cmd SetupS-files.htm files/ .\ LastOS.org
-call UploadMe.cmd SetupS-title.png files/ .\ LastOS.org
-call UploadMe.cmd update.ini files/ .\ LastOS.org
-echo.
+@REM :LastOSForum (requires cURL)
+@REM %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink2%"
+@REM rem call UploadMe.cmd %ssApp%.exe files/ .\ LastOS.org
+@REM rem call UploadMe.cmd %ssApp%.apz files/ .\ LastOS.org
+@REM rem call UploadMe.cmd %ppApp%.7z files/ .\ LastOS.org
+@REM rem call UploadMe.cmd %ssUI%.exe files/ .\ LastOS.org
+@REM rem call UploadMe.cmd %scp%.7z files/ .\ LastOS.org
+@REM rem call UploadMe.cmd %devpack%.7z files/ .\ LastOS.org
+@REM call UploadMe.cmd checksums_v%ProjectVersion%.md5 files/ .\ LastOS.org
+@REM call UploadMe.cmd ChangeLog.txt files/ .\ LastOS.org
+@REM call UploadMe.cmd SetupS-files.htm files/ .\ LastOS.org
+@REM call UploadMe.cmd SetupS-title.png files/ .\ LastOS.org
+@REM call UploadMe.cmd update.ini files/ .\ LastOS.org
+@REM echo.
 
 @REM #######################################################
-@REM ### LastOS Forum upload create list
+@REM ### LastOS ftp upload create list
 @REM #######################################################
-:LastOS Forum
+:LastOS ftp
 echo creating fileslastos.ini for upload...
 cd "%~dp0"
-@REM get account details
-@REM %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfowinscp.au3" "%WebLink2%"
 @REM create files to upload script for winscp useage
 @REM ref: https://winscp.net/eng/docs/commandline
 if exist "fileslastos.ini" del /F /Q "fileslastos.ini" >nul:
