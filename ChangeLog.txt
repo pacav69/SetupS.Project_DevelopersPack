@@ -12,6 +12,7 @@ added updfiles.cmd for update of #password# parameter in fileslastos.ini
 added updfiles.cmd to gitignore to prevent upload to github
 added 'Uploading using curl' for use with accounts.ini file in instructions.md
 added fle structure in  blank_Accounts.ini file
+modified:   Source.Code/SetupS-files.htm
 
 ---------------------------------------------
 17Sep2023
