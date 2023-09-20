@@ -54,7 +54,7 @@ set ProjectVersion=%1
 goto getDate
 
 :setVer
-set ProjectVersion=13.11.23.0
+set ProjectVersion=23.09.23.0
 goto getDate
 
 :getDate
@@ -63,7 +63,7 @@ set ProjectDate=%2
 goto getDoUploads
 
 :setDate
-set ProjectDate=2013-11-23
+set ProjectDate=2023-09-23
 goto getDoUploads
 
 :getDoUploads
@@ -75,8 +75,11 @@ goto setText
 set DoUploads=No
 goto setText
 
+@REM #######################################################
+@REM ###  setText
+@REM #######################################################
 :setText
-set cYear=2020
+set cYear=2023
 set cHolder=Vergitek Solutions
 set WebSite1=ssTek Forum
 set WebLink1=sstek.vergitek.com
@@ -98,6 +101,9 @@ set CoreVersion=%ProjectVersion%
 set ssEditorVersion=%ProjectVersion%
 goto Begin
 
+@REM #######################################################
+@REM ###  Begin
+@REM #######################################################
 :Begin
 echo Begin ... SetupS Project (version: %ProjectVersion%)
 set sc=Source.Code
@@ -136,6 +142,10 @@ copy "%sc%\SetupS-*.htm" "%sc%\originals" /y >nul:
 :Find And Replace Text for the following (requires: bin\fart.exe)
 echo Updating file resource info ...
 cd "%~dp0"
+
+@REM #######################################################
+@REM ###  versioning
+@REM #######################################################
 ::versioning
 fart -q -i "%sc%\*.au3" "#ProjectVersion#" "%ProjectVersion%" >nul:
 fart -q -i "%sc%\*.iss" "#ProjectVersion#" "%ProjectVersion%" >nul:
@@ -155,6 +165,9 @@ fart -q -i "%sc%\%ssPIPath%\*.au3" "#CoreVersion#" "%CoreVersion%" >nul:
 fart -q -i "%sc%\%ssPIPath%\*.ini" "#CoreVersion#" "%CoreVersion%" >nul:
 fart -q -i "%sc%\SetupS-*.htm" "#ProjectVersion#" "%ProjectVersion%" >nul:
 
+@REM #######################################################
+@REM ###  ProjectDate
+@REM #######################################################
 ::ProjectDate
 fart -q -i "%sc%\*.au3" "#ProjectDate#" "%ProjectDate%" >nul:
 fart -q -i "%sc%\*.iss" "#ProjectDate#" "%ProjectDate%" >nul:
@@ -165,6 +178,9 @@ fart -q -i "%sc%\%ssPIPath%\*.au3" "#ProjectDate#" "%ProjectDate%" >nul:
 fart -q -i "%sc%\%ssPIPath%\*.ini" "#ProjectDate#" "%ProjectDate%" >nul:
 fart -q -i "%sc%\SetupS-*.htm" "#ProjectDate#" "%ProjectDate%" >nul:
 
+@REM #######################################################
+@REM ###  cYear
+@REM #######################################################
 ::cYear
 fart -q -i "%sc%\*.au3" "#cYear#" "%cYear%" >nul:
 fart -q -i "%sc%\*.iss" "#cYear#" "%cYear%" >nul:
@@ -175,6 +191,9 @@ fart -q -i "%sc%\%ssPIPath%\*.au3" "#cYear#" "%cYear%" >nul:
 fart -q -i "%sc%\%ssPIPath%\*.ini" "#cYear#" "%cYear%" >nul:
 fart -q -i "%sc%\SetupS-*.htm" "#cYear#" "%cYear%" >nul:
 
+@REM #######################################################
+@REM ###  cHolder
+@REM #######################################################
 ::cHolder
 fart -q -i "%sc%\*.au3" "#cHolder#" "%cHolder%" >nul:
 fart -q -i "%sc%\*.iss" "#cHolder#" "%cHolder%" >nul:
@@ -185,6 +204,9 @@ fart -q -i "%sc%\%ssPIPath%\*.au3" "#cHolder#" "%cHolder%" >nul:
 fart -q -i "%sc%\%ssPIPath%\*.ini" "#cHolder#" "%cHolder%" >nul:
 fart -q -i "%sc%\SetupS-*.htm" "#cHolder#" "%cHolder%" >nul:
 
+@REM #######################################################
+@REM ###  ::WebSite1
+@REM #######################################################
 ::WebSite1
 fart -q -i "%sc%\*.au3" "#WebSite1#" "%WebSite1%" >nul:
 fart -q -i "%sc%\*.iss" "#WebSite1#" "%WebSite1%" >nul:
@@ -195,6 +217,9 @@ fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebSite1#" "%WebSite1%" >nul:
 fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebSite1#" "%WebSite1%" >nul:
 fart -q -i "%sc%\SetupS-*.htm" "#WebSite1#" "%WebSite1%" >nul:
 
+@REM #######################################################
+@REM ###  ::WebLink1
+@REM #######################################################
 ::WebLink1
 fart -q -i "%sc%\*.au3" "#WebLink1#" "%WebLink1%" >nul:
 fart -q -i "%sc%\*.iss" "#WebLink1#" "%WebLink1%" >nul:
@@ -205,6 +230,9 @@ fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebLink1#" "%WebLink1%" >nul:
 fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebLink1#" "%WebLink1%" >nul:
 fart -q -i "%sc%\SetupS-*.htm" "#WebLink1#" "%WebLink1%" >nul:
 
+@REM #######################################################
+@REM ###  WebSite2
+@REM #######################################################
 ::WebSite2
 fart -q -i "%sc%\*.au3" "#WebSite2#" "%WebSite2%" >nul:
 fart -q -i "%sc%\*.iss" "#WebSite2#" "%WebSite2%" >nul:
@@ -215,6 +243,9 @@ fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebSite2#" "%WebSite2%" >nul:
 fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebSite2#" "%WebSite2%" >nul:
 fart -q -i "%sc%\SetupS-*.htm" "#WebSite2#" "%WebSite2%" >nul:
 
+@REM #######################################################
+@REM ###  WebLink2
+@REM #######################################################
 ::WebLink2
 fart -q -i "%sc%\*.au3" "#WebLink2#" "%WebLink2%" >nul:
 fart -q -i "%sc%\*.iss" "#WebLink2#" "%WebLink2%" >nul:
@@ -225,6 +256,9 @@ fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebLink2#" "%WebLink2%" >nul:
 fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebLink2#" "%WebLink2%" >nul:
 fart -q -i "%sc%\SetupS-*.htm" "#WebLink2#" "%WebLink2%" >nul:
 
+@REM #######################################################
+@REM ###  WebSite3
+@REM #######################################################
 ::WebSite3
 fart -q -i "%sc%\*.au3" "#WebSite3#" "%WebSite3%" >nul:
 fart -q -i "%sc%\*.iss" "#WebSite3#" "%WebSite3%" >nul:
@@ -235,6 +269,9 @@ fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebSite3#" "%WebSite3%" >nul:
 fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebSite3#" "%WebSite3%" >nul:
 fart -q -i "%sc%\SetupS-*.htm" "#WebSite3#" "%WebSite3%" >nul:
 
+@REM #######################################################
+@REM ###  WebLink3
+@REM #######################################################
 ::WebLink3
 fart -q -i "%sc%\*.au3" "#WebLink3#" "%WebLink3%" >nul:
 fart -q -i "%sc%\*.iss" "#WebLink3#" "%WebLink3%" >nul:
@@ -245,7 +282,9 @@ fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebLink3#" "%WebLink3%" >nul:
 fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebLink3#" "%WebLink3%" >nul:
 fart -q -i "%sc%\SetupS-*.htm" "#WebLink3#" "%WebLink3%" >nul:
 
-
+@REM #######################################################
+@REM ###  WebSite4
+@REM #######################################################
 ::WebSite4
 fart -q -i "%sc%\*.au3" "#WebSite4#" "%WebSite4%" >nul:
 fart -q -i "%sc%\*.iss" "#WebSite4#" "%WebSite4%" >nul:
@@ -256,6 +295,9 @@ fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebSite4#" "%WebSite4%" >nul:
 fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebSite4#" "%WebSite4%" >nul:
 fart -q -i "%sc%\SetupS-*.htm" "#WebSite4#" "%WebSite4%" >nul:
 
+@REM #######################################################
+@REM ###  WebLink4
+@REM #######################################################
 ::WebLink4
 fart -q -i "%sc%\*.au3" "#WebLink4#" "%WebLink4%" >nul:
 fart -q -i "%sc%\*.iss" "#WebLink4#" "%WebLink4%" >nul:
@@ -266,6 +308,10 @@ fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebLink4#" "%WebLink4%" >nul:
 fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebLink4#" "%WebLink4%" >nul:
 fart -q -i "%sc%\SetupS-*.htm" "#WebLink4#" "%WebLink4%" >nul:
 
+
+@REM #######################################################
+@REM ###  WebSite6 github
+@REM #######################################################
 :: WebSite6 github
 ::WebSite6
 fart -q -i "%sc%\*.au3" "#WebSite6#" "%WebSite6%" >nul:
@@ -277,6 +323,9 @@ fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebSite6#" "%WebSite6%" >nul:
 fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebSite6#" "%WebSite6%" >nul:
 fart -q -i "%sc%\SetupS-*.htm" "#WebSite6#" "%WebSite6%" >nul:
 
+@REM #######################################################
+@REM ### weblink6 github
+@REM #######################################################
 :: weblink6 github
 ::WebLink6
 fart -q -i "%sc%\*.au3" "#WebLink6#" "%WebLink6%" >nul:
@@ -288,7 +337,9 @@ fart -q -i "%sc%\%ssPIPath%\*.au3" "#WebLink6#" "%WebLink6%" >nul:
 fart -q -i "%sc%\%ssPIPath%\*.ini" "#WebLink6#" "%WebLink6%" >nul:
 fart -q -i "%sc%\SetupS-*.htm" "#WebLink6#" "%WebLink6%" >nul:
 
-
+@REM #######################################################
+@REM ### :CompileEXE's (requires: AutoIt3 plus SciTE)
+@REM #######################################################
 :CompileEXE's (requires: AutoIt3 plus SciTE)
 cd "%~dp0%sc%"
 call Compile.AutoIt.Script.cmd SetupS
@@ -305,19 +356,31 @@ rem call Compile.AutoIt.Script.cmd LinuxSendTo x86Only
 copy "tools\SetupScp.exe" "tools\ssCP.exe" /y >nul:
 copy "tools\Regenerator.exe" "tools\ssRegen.exe" /y >nul:
 
+@REM #######################################################
+@REM ### Create ssPreinstaller
+@REM #######################################################
 :ssPreinstaller
 cd "%ssPIPath%"
 call Compile.AutoIt.Script.cmd ssPreinstaller
 cd ".."
 
+@REM #######################################################
+@REM ### Create ssEditor
+@REM #######################################################
 :ssEditor
 cd "%EditorPath%"
 call Compile.AutoIt.Script.cmd %EditorPath%
 
+@REM #######################################################
+@REM ### MakeHelpFiles
+@REM #######################################################
 :MakeHelpFiles
 set UpdateHelpPath=%~dp0%sc%
 set UpdateHelpFile=ssTek
 
+@REM #######################################################
+@REM ### UpdateHelpFile
+@REM #######################################################
 :UpdateHelpFile
 echo Updating the help-file for %UpdateHelpFile%...
 cd "%UpdateHelpPath%"
@@ -373,10 +436,16 @@ if exist "help\%UpdateHelpFile%.hhp" %HHCompiler% "help\%UpdateHelpFile%.hhp" >n
 if exist "help\%UpdateHelpFile%.chm" copy "help\%UpdateHelpFile%.chm" /y >nul:
 if exist "help" rd /s /q "help" >nul:
 
+@REM #######################################################
+@REM ### CopyHelpFiles
+@REM #######################################################
 :CopyHelpFiles
 cd "%~dp0%sc%"
 if exist "ssTek.chm" copy "ssTek.chm" "Tools\ssTek.chm" /y >nul:
 
+@REM #######################################################
+@REM ### reate ssEditorppApp
+@REM #######################################################
 :CreatessEditorppApp
 cd "%~dp0%sc%\%EditorPath%"
 call "Create.ppApp.package.cmd" %EditorPath%
@@ -410,6 +479,9 @@ echo ;!@InstallEnd@!>>"..\sfx\Config.txt"
 7z a "%ssUI%.7z" -ms=on -mx=9 -m0=lzma2 >nul:
 copy /b "..\sfx\7zSD.sfx" + "..\sfx\Config.txt" + "%ssUI%.7z" "..\%ssUI%.exe" /y >nul:
 
+@REM #######################################################
+@REM ### Create SetupS.SendTo.Suite_ssApp.APZ
+@REM #######################################################
 :Create SetupS.SendTo.Suite_ssApp.APZ (requires: 7zip)
 echo Constructing the ssWPI deployment package (as APZ)...
 cd "%~dp0"
@@ -429,6 +501,9 @@ copy "..\%sc%\folder.jpg" /y >nul:
 7z a "%ssApp%.apz" -ms=off -mx=9 -m0=lzma2 >nul:
 copy "%ssApp%.apz" "..\%ssApp%.apz" /y >nul:
 
+@REM #######################################################
+@REM ### Create SetupS.SendTo.Suite_ssApp.EXE
+@REM #######################################################
 :Create SetupS.SendTo.Suite_ssApp.EXE (requires: 7zip and sfx)
 echo Constructing the ssApp deployment package (as EXE)...
 cd "%~dp0"
@@ -449,6 +524,9 @@ echo ;!@InstallEnd@!>>"..\sfx\Config.txt"
 7z a "%ssApp%.7z" -ms=on -mx=9 -m0=lzma2 >nul:
 copy /b "..\sfx\7zSD.sfx" + "..\sfx\Config.txt" + "%ssApp%.7z" "..\%ssApp%.exe" /y >nul:
 
+@REM #######################################################
+@REM ### Create ssWPI update package
+@REM #######################################################
 :Create ssWPI update package (requires: 7zip)
 echo Constructing the ssWPI update package (as 7z)...
 cd "%~dp0"
@@ -470,6 +548,9 @@ if exist "Tools\update.ini" del /F /Q "Tools\update.ini" >nul:
 7z a "%ppApp%.7z" -ms=on -mx=9 -m0=lzma2 >nul:
 copy "%ppApp%.7z" "..\%ppApp%.7z" /y >nul:
 
+@REM #######################################################
+@REM ### Create SourceCodePack
+@REM #######################################################
 :Create SourceCodePack (requires: 7zip)
 echo Constructing the GPLv3-friendly Source Code package (as 7z)...
 cd "%~dp0"
@@ -515,6 +596,9 @@ copy "..\%sc%\%ssPIPath%\ppApp.*" "%sc%\%ssPIPath%" /y >nul:
 7z a "%scp%.7z" -ms=on -mx=9 -m0=lzma2 >nul:
 copy "%scp%.7z" "..\*.*" /y >nul:
 
+@REM #######################################################
+@REM ### UpdateINI
+@REM #######################################################
 :UpdateINI
 if [%DoUploads%]==[No] goto RestoreOriginals
 echo Refresh the "Update.ini" file...
@@ -528,6 +612,9 @@ echo Restoring originals...
 cd "%~dp0" >nul:
 call !RestoreOriginals.cmd
 
+@REM #######################################################
+@REM ### Create DevelopersPack
+@REM #######################################################
 :Create DevelopersPack (requires: 7zip)
 echo Constructing the Developers package (as 7z)...
 cd "%~dp0" >nul:
@@ -604,6 +691,9 @@ copy "..\%sc%\SetupS-*.png" "%sc%" /y >nul:
 7z a "%devpack%.7z" -ms=on -mx=9 -m0=lzma2 >nul:
 copy "%devpack%.7z" "..\*.*" /y >nul:
 
+@REM #######################################################
+@REM ### Create Checksums
+@REM #######################################################
 :Create Checksums (requires: md5sum.exe)
 echo Calculating md5 checksums...
 cd "%~dp0"
@@ -696,6 +786,9 @@ call UploadMe.cmd SetupS-title.png files/ .\ LastOS.org
 call UploadMe.cmd update.ini files/ .\ LastOS.org
 echo.
 
+@REM #######################################################
+@REM ### LastOS Forum upload create list
+@REM #######################################################
 :LastOS Forum
 echo creating fileslastos.ini for upload...
 cd "%~dp0"
@@ -705,6 +798,7 @@ cd "%~dp0"
 if exist "fileslastos.ini" del /F /Q "fileslastos.ini" >nul:
 @REM echo rem lastos.vergitek.com >>fileslastos.ini
 @REM echo rem fileslastos.ini >>fileslastos.ini
+echo ; files to upload >>fileslastos.ini
 echo open ftp://%domain5%:#Password#@%ftp5%/%Webfolder5%>>fileslastos.ini
 @REM add files for upload
 echo put .\files\pdate.ini>>fileslastos.ini
@@ -721,14 +815,12 @@ echo put .\files\SetupS-files.htm>>fileslastos.ini
 echo put .\files\SetupS-title.png>>fileslastos.ini
 echo exit >>fileslastos.ini
 
-
-
+@REM  upload of files after cleanup
 
 @REM #######################################################
 @REM ### Movefiles
 @REM #######################################################
 :Movefiles
-echo put Begin ... SetupS Project (version: %ProjectVersion%)
 echo Moving files to files directory ...
 set completedfiles=files
 
@@ -764,6 +856,9 @@ copy "checksums*.md5" "%completedfiles%\" /y >nul:
 copy "ChangeLog.txt" "%completedfiles%\" /y >nul:
 
 @REM pause
+@REM #######################################################
+@REM ### Deleting files
+@REM #######################################################
 :Deleting files
 echo deleting SetupS-*.htm
 if exist "SetupS-*.htm" del /F /Q "SetupS-*.htm" >nul:
@@ -784,6 +879,9 @@ if exist "checksums*.md5" del /F /Q "checksums*.md5" >nul:
 
 @REM pause
 
+@REM #######################################################
+@REM ### Exit
+@REM #######################################################
 :Exit
 echo Cleaning up...
 cd "%~dp0"
@@ -800,8 +898,16 @@ if exist "%~dp0%sc%\files" rd /s /q "%~dp0%sc%\files" >nul:
 if exist "%~dp0%sc%\%EditorPath%\ssEditor.html" del /F /Q "%~dp0%sc%\%EditorPath%\ssEditor.html" >nul:
 if exist "%~dp0%sc%\%EditorPath%\files" rd /s /q "%~dp0%sc%\%EditorPath%\files" >nul:
 if exist "%sc%\originals" echo Originals already exists!\\
+
+@REM #######################################################
+@REM ### Upload files to LastOSForum
+@REM #######################################################
+:upload files to LastOSForum
+if [%DoUploads%]==[No] goto Finish
 echo.
+  echo.===============================================================================
 echo Uploading SetupS Project v%ProjectVersion% to LastOS
+  echo.===============================================================================
 echo.
 @REM this will update the fileslastos.ini with the password for ftp
 call updfiles.cmd
@@ -809,6 +915,10 @@ call updfiles.cmd
 @REM log file .\WinSCP\winscp.log
 call uploadlastos.cmd
 
+@REM #######################################################
+@REM ### Finish
+@REM #######################################################
+:Finish
 echo.
 echo SetupS Project v%ProjectVersion% ... Done!
 echo.

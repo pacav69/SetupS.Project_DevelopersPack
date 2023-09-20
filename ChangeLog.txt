@@ -1,6 +1,14 @@
 Note: The goal is to have any additions/changes/options to NOT affect the original default
       behavior if not used or implemented (for backwards compatibility); but sometimes this is
       not always possible especially when adding new features.
+---------------------------------------------
+20Sep2023
+---------------------------------------------
+added :LastOS Forum code to !DistrPack.Project.cmd for creating script file dor use with winscp
+added code to !DistrPack.Project.cmd for auto upload to LastOSForum
+added uploadlastos.cmd file to upload files to lastos Forum
+added updfiles.cmd for update of #password# parameter in fileslastos.ini
+added updfiles.cmd to gitignore to prevent upload to github
 
 ---------------------------------------------
 17Sep2023

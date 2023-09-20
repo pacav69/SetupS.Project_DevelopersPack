@@ -45,6 +45,14 @@ In order to generate a SetupS-files.htm file make sure the Upload parameter is s
 
     set Upload=Yes
 
+## Upload files
+To add auto upload files
+copy \bin\templates\blank_updfiles.cmd to root
+rename file to updfiles.cmd
+change the setting of pw=mypass to pw=[correct password]
+save the file
+
+
 run the cmd file
 
      !!Make.SetupS-Project.cmd
@@ -53,6 +61,7 @@ this will generate the files with the new version numbers
 
 The files will be moved to the files directory for later upload to the respective websites for distrubution.
 
+this will also upload to LastOS Forum at the end of cleanup
 
 ## Update changelog
 
@@ -128,15 +137,6 @@ FTP LastOS (on Vergitek); backup for the Bluehost site, plus the LastOS release 
 * check files here
 
     http://sites.vergitek.com/sstek/files/SetupS-files.htm
-
-
-## Upload files
-to upload files
-copy \bin\templates\blank_updfiles.cmd to root
-rename file to updfiles.cmd
-change the setting of pw=mypass to pw=[correct pass]
-save the file
-
 
 
 The LastOS Team
