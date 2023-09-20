@@ -139,6 +139,35 @@ FTP LastOS (on Vergitek); backup for the Bluehost site, plus the LastOS release 
     http://sites.vergitek.com/sstek/files/SetupS-files.htm
 
 
+## Uploading using curl
+To upload using curl and accounts.ini
+copy bin\templates\blank_Accounts.ini to root directory
+rename blank_Accounts.ini to Accounts.ini
+change the contents with this file structure
+
+    [www.domain.ext]
+    Type=ftp [cmd files that are located inbin\templates\ such as ftp]
+    Domain=ftp.domain.ext
+    Port=21
+    Username=[as defined by the admin]
+    Password=[as defined by the admin]
+
+:example of domain www.lastos.org]
+
+    [www.lastos.org]
+    Type=ftp
+    Domain=ftp.lastos.org
+    Port=21
+    Username=
+    Password=
+
+ensure that in file !!Make.SetupS-Project.cmd has the parameter is
+
+   set Upload=Yes
+
+
+
+
 The LastOS Team
 
 
