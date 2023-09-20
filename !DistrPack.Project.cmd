@@ -796,6 +796,7 @@ cd "%~dp0"
 @REM get account details
 @REM %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfowinscp.au3" "%WebLink2%"
 @REM create files to upload script for winscp useage
+@REM ref: https://winscp.net/eng/docs/commandline
 if exist "fileslastos.ini" del /F /Q "fileslastos.ini" >nul:
 @REM echo rem lastos.vergitek.com >>fileslastos.ini
 @REM echo rem fileslastos.ini >>fileslastos.ini

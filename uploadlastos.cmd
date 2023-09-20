@@ -8,6 +8,7 @@ color 02
 
 set WINSCP_RESULT=%ERRORLEVEL%
 if %WINSCP_RESULT% equ 0 (
+    echo.
     echo #######################################################
 echo ### Successfully uploaded files
 echo #######################################################
