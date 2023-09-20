@@ -905,6 +905,24 @@ if exist "%sc%\originals" echo Originals already exists!\\
 @REM #######################################################
 :upload files to LastOSForum
 if [%DoUploads%]==[No] goto Finish
+
+
+
+choice /C:YN /N /T 5 /D N  /M "Do you want to continue with uploading files, default is No ['Y'es/'N'o] : "
+if errorlevel 2 goto :somewhere_else
+if errorlevel 1 goto :somewhere
+
+:somewhere
+@REM echo "I am here because you typed Y"
+goto uploadfiles
+
+:somewhere_else
+@REM echo "I am here because you typed N"
+goto Finish
+
+:uploadfiles
+
+
 echo.
   echo.===============================================================================
 echo Uploading SetupS Project v%ProjectVersion% to LastOS
