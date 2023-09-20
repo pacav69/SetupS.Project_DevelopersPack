@@ -7,6 +7,7 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
 added :LastOS Forum code to !DistrPack.Project.cmd for creating script file dor use with winscp
 added code to !DistrPack.Project.cmd for auto upload to LastOSForum
 added uploadlastos.cmd file to upload files to lastos Forum
+added color and error capture to uploadlastos.cmd
 added updfiles.cmd for update of #password# parameter in fileslastos.ini
 added updfiles.cmd to gitignore to prevent upload to github
 

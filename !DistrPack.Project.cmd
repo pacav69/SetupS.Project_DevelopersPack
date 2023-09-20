@@ -4,6 +4,7 @@
 :7zip.exe will be required but is already included in the Tools folder.
 
 @echo off
+color 02
 call !RestoreOriginals.cmd
 
 goto :getVer
@@ -91,7 +92,7 @@ set WebSite4=ssTek Development
 set WebLink4=sstek.vergitek.com
 set WebSite5=LastOS Forum
 set WebLink5=lastos.vergitek.com
-set Webfolder5=files/
+set Webfolder5=
 set domain5=setups@lastos.org
 set ftp5=ftp.lastos.org
 set WebSite6=github files
@@ -801,8 +802,8 @@ if exist "fileslastos.ini" del /F /Q "fileslastos.ini" >nul:
 echo ; files to upload >>fileslastos.ini
 echo open ftp://%domain5%:#Password#@%ftp5%/%Webfolder5%>>fileslastos.ini
 @REM add files for upload
-echo put .\files\pdate.ini>>fileslastos.ini
-echo put .\files\ssApp%.exe>>fileslastos.ini
+echo put .\files\update.ini>>fileslastos.ini
+echo put .\files\%ssApp%.exe>>fileslastos.ini
 echo put .\files\%ssApp%.apz>>fileslastos.ini
 echo put .\files\%ppApp%.7z>>fileslastos.ini
 echo put .\files\%ssUI%.exe>>fileslastos.ini
