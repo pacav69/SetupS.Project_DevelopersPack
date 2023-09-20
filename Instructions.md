@@ -130,6 +130,13 @@ FTP LastOS (on Vergitek); backup for the Bluehost site, plus the LastOS release 
     http://sites.vergitek.com/sstek/files/SetupS-files.htm
 
 
+## Upload files
+to upload files
+copy \bin\templates\blank_updfiles.cmd to root
+rename file to updfiles.cmd
+change the setting of pw=mypass to pw=[correct pass]
+save the file
+
 
 
 The LastOS Team

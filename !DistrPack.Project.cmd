@@ -89,6 +89,8 @@ set WebLink4=sstek.vergitek.com
 set WebSite5=LastOS Forum
 set WebLink5=lastos.vergitek.com
 set Webfolder5=files/
+set domain5=setups@lastos.org
+set ftp5=ftp.lastos.org
 set WebSite6=github files
 set WebLink6=github.com/pacav69/SetupS.Project_DevelopersPack
 set NewTagLine=%Website1%: Tools for custom Operating Systems!
@@ -694,16 +696,16 @@ call UploadMe.cmd SetupS-title.png files/ .\ LastOS.org
 call UploadMe.cmd update.ini files/ .\ LastOS.org
 echo.
 
-:lastos.vergitek.com
-echo creating fileslastos.ini...
+:LastOS Forum
+echo creating fileslastos.ini for upload...
 cd "%~dp0"
 @REM get account details
-%AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfowinscp.au3" "%WebLink2%"
+@REM %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfowinscp.au3" "%WebLink2%"
 @REM create files to upload script for winscp useage
 if exist "fileslastos.ini" del /F /Q "fileslastos.ini" >nul:
 @REM echo rem lastos.vergitek.com >>fileslastos.ini
 @REM echo rem fileslastos.ini >>fileslastos.ini
-echo open ftp://LastOS%%40vergitek.com:#Password#@ftp.lastos.org/%Webfolder5%>>fileslastos.ini
+echo open ftp://%domain5%:#Password#@%ftp5%/%Webfolder5%>>fileslastos.ini
 @REM add files for upload
 echo put .\files\pdate.ini>>fileslastos.ini
 echo put .\files\ssApp%.exe>>fileslastos.ini
@@ -718,6 +720,8 @@ echo put .\files\ChangeLog.txt>>fileslastos.ini
 echo put .\files\SetupS-files.htm>>fileslastos.ini
 echo put .\files\SetupS-title.png>>fileslastos.ini
 echo exit >>fileslastos.ini
+
+
 
 
 @REM #######################################################
@@ -795,7 +799,16 @@ if exist "%~dp0%sc%\ssTek.html" del /F /Q "%~dp0%sc%\ssTek.html" >nul:
 if exist "%~dp0%sc%\files" rd /s /q "%~dp0%sc%\files" >nul:
 if exist "%~dp0%sc%\%EditorPath%\ssEditor.html" del /F /Q "%~dp0%sc%\%EditorPath%\ssEditor.html" >nul:
 if exist "%~dp0%sc%\%EditorPath%\files" rd /s /q "%~dp0%sc%\%EditorPath%\files" >nul:
-if exist "%sc%\originals" echo Originals already exists!
+if exist "%sc%\originals" echo Originals already exists!\\
+echo.
+echo Uploading SetupS Project v%ProjectVersion% to LastOS
+echo.
+@REM this will update the fileslastos.ini with the password for ftp
+call updfiles.cmd
+@REM this will upload the files using winscp
+@REM log file .\WinSCP\winscp.log
+call uploadlastos.cmd
+
 echo.
 echo SetupS Project v%ProjectVersion% ... Done!
 echo.
