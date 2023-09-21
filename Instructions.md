@@ -170,6 +170,7 @@ ensure that in file !!Make.SetupS-Project.cmd has the parameter is
 ### Winscp
 [Winscp Home page](https://winscp.net/)
 [Winscp put](https://winscp.net/eng/docs/scriptcommand_put)
+[Winscp open](https://winscp.net/eng/docs/scriptcommand_open)
 
 The LastOS Team
 
