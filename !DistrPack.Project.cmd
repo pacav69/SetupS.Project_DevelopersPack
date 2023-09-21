@@ -921,7 +921,8 @@ goto Finish
 
 :uploadfiles
 
-
+echo start  time
+echo  %date%-%time%
 echo.
   echo.===============================================================================
 echo Uploading SetupS Project v%ProjectVersion% to LastOS
@@ -932,7 +933,10 @@ call updfiles.cmd
 @REM this will upload the files using winscp
 @REM log file .\WinSCP\winscp.log
 call uploadlastos.cmd
-
+echo.
+echo end time
+echo  %date%-%time%
+echo.
 @REM #######################################################
 @REM ### Finish
 @REM #######################################################
