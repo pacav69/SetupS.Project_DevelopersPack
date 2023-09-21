@@ -84,17 +84,30 @@ set cYear=2023
 set cHolder=Vergitek Solutions
 set WebSite1=ssTek Forum
 set WebLink1=sstek.vergitek.com
-set WebSite2=LastOS Team
+@REM #######################################################
+@REM ###  WebLink2=www.lastos.org
+@REM #######################################################
+set WebSite2=LastOS Forum
 set WebLink2=www.lastos.org
+et domain2=setups@lastos.org
+set ftp2=ftp.lastos.org
+@REM set Webfolder2=Setupsfiles/
+set Webfolder2=
+set WebSite5=LastOS Forum
+@REM #######################################################
+@REM ###  Alternate login
+@REM #######################################################
+set WebLink5=lastos.vergitek.com
+
+
+@REM #######################################################
+@REM ###  WebLink3=dl.bintray.com/sstek
+@REM #######################################################
 set WebSite3=ssTek Distribution
 set WebLink3=dl.bintray.com/sstek
 set WebSite4=ssTek Development
 set WebLink4=sstek.vergitek.com
-set WebSite5=LastOS Forum
-set WebLink5=lastos.vergitek.com
-set Webfolder5=
-set domain5=setups@lastos.org
-set ftp5=ftp.lastos.org
+
 set WebSite6=github files
 set WebLink6=github.com/pacav69/SetupS.Project_DevelopersPack
 set NewTagLine=%Website1%: Tools for custom Operating Systems!
@@ -799,7 +812,7 @@ if exist "fileslastos.ini" del /F /Q "fileslastos.ini" >nul:
 @REM echo rem lastos.vergitek.com >>fileslastos.ini
 @REM echo rem fileslastos.ini >>fileslastos.ini
 echo ; files to upload >>fileslastos.ini
-echo open ftp://%domain5%:#Password#@%ftp5%/%Webfolder5%>>fileslastos.ini
+echo open -timeout=10 ftp://%domain2%:#Password#@%ftp2%/%Webfolder2%>>fileslastos.ini
 @REM add files for upload
 echo put .\files\update.ini>>fileslastos.ini
 echo put .\files\%ssApp%.exe>>fileslastos.ini
