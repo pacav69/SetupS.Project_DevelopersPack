@@ -166,7 +166,10 @@ ensure that in file !!Make.SetupS-Project.cmd has the parameter is
    set Upload=Yes
 
 
-
+## References
+### Winscp
+[Winscp Home page](https://winscp.net/)
+[Winscp put](https://winscp.net/eng/docs/scriptcommand_put)
 
 The LastOS Team
 
