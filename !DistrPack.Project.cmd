@@ -970,7 +970,10 @@ echo.
 echo #######################################################
 echo #######################################################
 echo Start  time
-echo  %date%-%time%
+FOR %%A IN (%Date%) DO SET Today=%%A
+SET Now=%Time%
+ECHO It's %Today%  %Now%
+@REM echo  %date%-%time%
 echo #######################################################
 echo.
 echo uploading files to vergitek
@@ -991,7 +994,10 @@ call UploadMe.cmd SetupS-title.png files/ .\ sstek.vergitek.com
 echo.
 echo #######################################################
 echo End time
-echo  %date%-%time%
+FOR %%A IN (%Date%) DO SET Today=%%A
+SET Now=%Time%
+ECHO It's %Today%  %Now%
+@REM echo  %date%-%time%
 echo #######################################################
 echo.
 
@@ -1009,7 +1015,11 @@ echo #######################################################
 echo.
 echo =======================================================
 echo Start  time
-echo  %date%-%time%
+FOR /F %%A IN ('TIME/T') DO SET Now=%%A
+FOR %%A IN (%Date%) DO SET Today=%%A
+SET Now=%Time%
+ECHO It's %Today%  %Now%
+@REM echo  %date%-%time%
 echo =======================================================
 echo.
   echo.===============================================================================
@@ -1025,7 +1035,10 @@ call uploadlastos.cmd
 echo.
 echo =======================================================
 echo End time
-echo  %date%-%time%
+FOR %%A IN (%Date%) DO SET Today=%%A
+SET Now=%Time%
+ECHO It's %Today%  %Now%
+@REM echo  %date%-%time%
 echo =======================================================
 echo.
 @REM #######################################################
