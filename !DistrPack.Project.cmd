@@ -4,7 +4,13 @@
 :7zip.exe will be required but is already included in the Tools folder.
 
 @echo off
-color 02
+@REM ref https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/color
+@REM black / green color 02
+@REM color 02
+@REM blue / white color 17
+@REM color 17
+  @REM black / Light Green color 0A
+color 0A
 cls
 call !RestoreOriginals.cmd
 
@@ -21,7 +27,7 @@ goto :getVer
 @REM If (condition) (do_something) ELSE (do_something_else)
 @REM pause
 echo Upload = %Upload%
-pause
+@REM pause
 @REM if [%DoUploads%]==[No] goto RestoreOriginals
 @REM goto
 if  [%Upload%]==[No](echo.
@@ -123,12 +129,12 @@ goto Begin
 @REM ###  Begin
 @REM #######################################################
 :Begin
-echo #######################################################
+echo ###########################################################
 echo.
-echo Welcome to  the LastOS SetupS Project Developers Pack
-echo This will compile and upload the SetupS Suite
+echo #### Welcome to  the LastOS SetupS Project Developers Pack
+echo #### This will compile and upload the SetupS Suite
 echo.
-echo #######################################################
+echo ###########################################################
 echo.
 
 choice /C:YN /N /T 5 /D N  /M "Do you want to upload files with Winscp at the end, default is No ['Y'es/'N'o] : "
@@ -951,16 +957,24 @@ if [%DoUploads%]==[No] goto Finish
 if [%vergitekUploads%]==[No] goto uploadlastosfiles
 
 echo vergitekUploads = %vergitekUploads%
-pause
+echo.
+@REM pause
 
+
+:uploadvergitekfiles
+:sstek.vergitek.com (requires cURL)
 echo #######################################################
 echo.
 echo Upload Vergitek files
 echo.
-echo #######################################################\
-:uploadvergitekfiles
-:sstek.vergitek.com (requires cURL)
+echo #######################################################
+echo #######################################################
+echo Start  time
+echo  %date%-%time%
+echo #######################################################
+echo.
 echo uploading files to vergitek
+echo.
 %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink1%"
 call UploadMe.cmd update.ini files/ .\ sstek.vergitek.com
 call UploadMe.cmd %ssApp%.exe files/ .\ sstek.vergitek.com
@@ -978,13 +992,19 @@ echo.
 
 
 @REM vergitekUploads=Yes
-
+echo.
+echo #######################################################
+echo End time
+echo  %date%-%time%
+echo #######################################################
+echo.
 @REM #######################################################
-@REM ### Upload LastOS files
+@REM ### Upload files to LastOS
 @REM #######################################################
 :uploadlastosfiles
 if [%LastosUploads%]==[No] goto Finish
 @REM  LastosUploads=No
+
 echo #######################################################
 echo.
 echo Upload LastOS files
@@ -1021,31 +1041,35 @@ echo.
 @REM ### Cleaning
 @REM #######################################################
 :Cleaning
+echo #######################################################
 echo Cleaning up...
+echo #######################################################
 cd "%~dp0"
 
-@REM #######################################################
-@REM ### Deleting files
-@REM #######################################################
+echo #######################################################
+echo  ### Deleting files
+echo #######################################################
 :Deleting files
-echo deleting SetupS-*.htm
+@REM echo deleting SetupS-*.htm
 if exist "SetupS-*.htm" del /F /Q "SetupS-*.htm" >nul:
-echo deleting SetupS-*.png
+@REM echo deleting SetupS-*.png
 if exist "SetupS-*.png" del /F /Q "SetupS-*.png" >nul:
-echo deleting 7z
+@REM echo deleting 7z
 if exist "*.7z" del /F /Q "*.7z" >nul:
-echo deleting apz
+@REM echo deleting apz
 if exist "*.apz" del /F /Q "*.apz" >nul:
-echo deleting exe
+@REM echo deleting exe
 if exist "*.exe" del /F /Q "*.exe" >nul:
-echo deleting UploadMe.cmd
+@REM echo deleting UploadMe.cmd
 if exist "UploadMe.cmd" del /F /Q "UploadMe.cmd" >nul:
-echo deleting update.ini
+@REM echo deleting update.ini
 if exist "update.ini" del /F /Q "update.ini" >nul:
-echo deleting checksums
+@REM echo deleting checksums
 if exist "checksums*.md5" del /F /Q "checksums*.md5" >nul:
 
-
+echo  #######################################################
+echo   ### Final cleanup
+echo #######################################################
 %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "Kill"
 if exist "%ssApp%" rd /s /q "%ssApp%" >nul:
 if exist "%ppApp%" rd /s /q "%ppApp%" >nul:
@@ -1060,6 +1084,10 @@ if exist "%~dp0%sc%\%EditorPath%\ssEditor.html" del /F /Q "%~dp0%sc%\%EditorPath
 if exist "%~dp0%sc%\%EditorPath%\files" rd /s /q "%~dp0%sc%\%EditorPath%\files" >nul:
 if exist "%sc%\originals" echo Originals already exists!\\
 echo.
+echo #######################################################
+echo.
 echo SetupS Project v%ProjectVersion% ... Done!
 echo.
+echo #######################################################
+
 :Quit
