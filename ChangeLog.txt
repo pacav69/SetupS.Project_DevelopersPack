@@ -5,6 +5,12 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
 ---------------------------------------------
 21Sep2023
 ---------------------------------------------
+added move old files to SetupSoldfies/folder on ftp site to script
+added to !DistrPack.Project.cmd a prompt "Do you want to upload files with winscp at the end ..."
+updated instructions for manually uploading of files
+---------------------------------------------
+21Sep2023
+---------------------------------------------
 updated Instructions.md with References
 
 ---------------------------------------------

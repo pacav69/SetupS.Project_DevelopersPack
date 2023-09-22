@@ -10,7 +10,7 @@ set WINSCP_RESULT=%ERRORLEVEL%
 if %WINSCP_RESULT% equ 0 (
     echo.
     echo #######################################################
-echo ### Successfully uploaded files
+echo ### Successfully moved old and uploaded files
 echo #######################################################
   echo.
 ) else (

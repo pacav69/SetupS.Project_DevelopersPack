@@ -5,6 +5,7 @@
 
 @echo off
 color 02
+cls
 call !RestoreOriginals.cmd
 
 goto :getVer
@@ -89,7 +90,7 @@ set WebLink1=sstek.vergitek.com
 @REM #######################################################
 set WebSite2=LastOS Forum
 set WebLink2=www.lastos.org
-et domain2=setups@lastos.org
+set domain2=setups@lastos.org
 set ftp2=ftp.lastos.org
 @REM set Webfolder2=Setupsfiles/
 set Webfolder2=
@@ -108,6 +109,9 @@ set WebLink3=dl.bintray.com/sstek
 set WebSite4=ssTek Development
 set WebLink4=sstek.vergitek.com
 
+@REM #######################################################
+set LastosUploads=No
+
 set WebSite6=github files
 set WebLink6=github.com/pacav69/SetupS.Project_DevelopersPack
 set NewTagLine=%Website1%: Tools for custom Operating Systems!
@@ -119,6 +123,68 @@ goto Begin
 @REM ###  Begin
 @REM #######################################################
 :Begin
+echo #######################################################
+echo.
+echo Welcome to  the LastOS SetupS Project Developers Pack
+echo This will compile and upload the SetupS Suite
+echo.
+echo #######################################################
+echo.
+
+choice /C:YN /N /T 5 /D N  /M "Do you want to upload files with Winscp at the end, default is No ['Y'es/'N'o] : "
+if errorlevel 2 goto :somewhere_else
+if errorlevel 1 goto :somewhere
+echo.
+:somewhere
+@REM echo "I am here because you typed Y"
+set LastosUploads=Yes
+echo.
+echo #######################################################
+echo Files will be uploaded at end of compilation
+echo.
+timeout /T 5
+goto check2
+
+:somewhere_else
+@REM echo "I am here because you typed N"
+set LastosUploads=No
+
+@REM goto starttest
+
+@REM :starttest
+@REM echo.
+@REM echo LastosUploads = %LastosUploads%
+@REM echo.
+@REM pause
+
+@REM sstek.vergitek.com check2
+
+:check2
+echo.
+choice /C:YN /N /T 5 /D N  /M "Do you want to upload files with curl to Vergitek at the end, default is No ['Y'es/'N'o] : "
+if errorlevel 2 goto :somewhere_else2
+if errorlevel 1 goto :somewhere2
+echo.
+:somewhere2
+@REM echo "I am here because you typed Y"
+set vergitekUploads=Yes
+echo.
+echo #######################################################
+echo Files will be uploaded at end of compilation
+echo.
+timeout /T 5
+goto start
+
+:somewhere_else2
+@REM echo "I am here because you typed N"
+set vergitekUploads=No
+echo.
+@REM goto starttest
+
+
+:start
+echo.
+echo *********************************************************
 echo Begin ... SetupS Project (version: %ProjectVersion%)
 set sc=Source.Code
 set EditorPath=ssEditor
@@ -141,7 +207,7 @@ FOR %%i IN (C D E F G H I J K L M N O P Q R S T U V W X Y Z) DO IF EXIST "%%i:\p
 :MakeBackups of originals
 echo Backing up originals...
 cd "%~dp0"
-if exist "%sc%\originals" goto exit
+if exist "%sc%\originals" goto Cleaning
 md "%sc%\originals\%EditorPath%"
 md "%sc%\originals\%ssPIPath%"
 copy "%sc%\*.au3" "%sc%\originals" /y >nul:
@@ -723,51 +789,44 @@ copy "checksums.md5" "checksums_v%ProjectVersion%.md5" /y >nul:
 if exist "checksums.md5" del /F /Q "checksums.md5" >nul:
 
 :UploadProject
-echo Upload project? %DoUploads%
-echo.
-@REM if [%DoUploads%]==[No] goto Exit
-if [%DoUploads%]==[No] goto Movefiles
-cd "%~dp0"
-if exist "upload-help.cmd" call upload-help.cmd %sc% ssTek
+@REM  now going to lastosftp for new process
+goto :LastOSftp
 
+
+@REM echo Upload project? %DoUploads%
+@REM echo.
+@REM @REM if [%DoUploads%]==[No] goto Cleaning
+@REM if [%DoUploads%]==[No] goto Movefiles
+@REM cd "%~dp0"
+@REM if exist "upload-help.cmd" call upload-help.cmd %sc% ssTek
+
+@REM bintray no longer exists
+@REM example of using Bintray and curl
 :Bintray (requires cURL)
 @REM %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink3%"
 @REM call UploadMe.cmd %ssApp%.exe files SetupS %ProjectVersion%
 @REM call UploadMe.cmd %ssApp%.apz files SetupS %ProjectVersion%
 @REM call UploadMe.cmd %ppApp%.7z files SetupS %ProjectVersion%
-@REM call UploadMe.cmd %ssUI%.exe files SetupS %ProjectVersion%
-@REM call UploadMe.cmd %scp%.7z files SetupS %ProjectVersion%
+@REM call UploadMe.cmd %ssUI%.exe files SetupS %uploadvergitekfilesProjectVersion%
+@@REM call UploadMe.cmd %scp%.7z files SetupS %ProjectVersion%
 @REM call UploadMe.cmd %devpack%.7z files SetupS %ProjectVersion%
 @REM call UploadMe.cmd %ssII%.exe files SetupS %ProjectVersion%
 @REM call UploadMe.cmd checksums_v%ProjectVersion%.md5 files SetupS %ProjectVersion%
 @REM echo.
 
+@REM GoogleCode no longer exists
+@REM example of using GoogleCode and python
 :GoogleCode (requires python)
-rem %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink4%"
-rem call UploadMe.cmd %ssApp%.exe "SetupS Installer (as a ssApp-EXE package)" Type-Installer,OpSys-Windows
-rem call UploadMe.cmd %ssApp%.apz "SetupS Installer (as an ssApp-APZ package)" Type-Package
-rem call UploadMe.cmd %ppApp%.7z "ssWPI update package" Type-Archive
-rem call UploadMe.cmd %ssUI%.exe "SetupS Uninstaller" Type-Executable,OpSys-Windows
-rem call UploadMe.cmd %scp%.7z "GPLv3 Source Code" Type-Source
-rem call UploadMe.cmd %devpack%.7z "Full Developers Package" Type-Source
-rem call UploadMe.cmd checksums_v%ProjectVersion%.md5 "MD5 checksums"
+@REM %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink4%"
+@REM call UploadMe.cmd %ssApp%.exe "SetupS Installer (as a ssApp-EXE package)" Type-Installer,OpSys-Windows
+@REM call UploadMe.cmd %ssApp%.apz "SetupS Installer (as an ssApp-APZ package)" Type-Package
+@REM call UploadMe.cmd %ppApp%.7z "ssWPI update package" Type-Archive
+@REM call UploadMe.cmd %ssUI%.exe "SetupS Uninstaller" Type-Executable,OpSys-Windows
+@REM call UploadMe.cmd %scp%.7z "GPLv3 Source Code" Type-Source
+@REM call UploadMe.cmd %devpack%.7z "Full Developers Package" Type-Source
+@REM call UploadMe.cmd checksums_v%ProjectVersion%.md5 "MD5 checksums"
 
-:sstek.vergitek.com (requires cURL)
-echo uploading files
-%AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink1%"
-call UploadMe.cmd update.ini files/ .\ sstek.vergitek.com
-call UploadMe.cmd %ssApp%.exe files/ .\ sstek.vergitek.com
-call UploadMe.cmd %ssApp%.apz files/ .\ sstek.vergitek.com
-call UploadMe.cmd %ppApp%.7z files/ .\ sstek.vergitek.com
-call UploadMe.cmd %ssUI%.exe files/ .\ sstek.vergitek.com
-call UploadMe.cmd %scp%.7z files/ .\ sstek.vergitek.com
-call UploadMe.cmd %devpack%.7z files/ .\ sstek.vergitek.com
-call UploadMe.cmd %ssII%.exe files/ .\ sstek.vergitek.com
-call UploadMe.cmd checksums_v%ProjectVersion%.md5 files/ .\ sstek.vergitek.com
-call UploadMe.cmd ChangeLog.txt files/ .\ sstek.vergitek.com
-call UploadMe.cmd SetupS-files.htm files/ .\ sstek.vergitek.com
-call UploadMe.cmd SetupS-title.png files/ .\ sstek.vergitek.com
-echo.
+
 
 @REM :lastos.vergitek.com (requires cURL)
 @REM %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink5%"
@@ -803,7 +862,7 @@ echo.
 @REM #######################################################
 @REM ### LastOS ftp upload create list
 @REM #######################################################
-:LastOS ftp
+:LastOSftp
 echo creating fileslastos.ini for upload...
 cd "%~dp0"
 @REM create files to upload script for winscp useage
@@ -811,9 +870,17 @@ cd "%~dp0"
 if exist "fileslastos.ini" del /F /Q "fileslastos.ini" >nul:
 @REM echo rem lastos.vergitek.com >>fileslastos.ini
 @REM echo rem fileslastos.ini >>fileslastos.ini
-echo ; files to upload >>fileslastos.ini
-echo open -timeout=10 ftp://%domain2%:#Password#@%ftp2%/%Webfolder2%>>fileslastos.ini
+echo ; connect to ftp server  >>fileslastos.ini
+echo open ftp://%domain2%:#Password#@%ftp2%/%Webfolder2%>>fileslastos.ini
+echo ; files to move >>fileslastos.ini
+@REM add list of files to move to SetupSoldfies/
+echo mv checksums_*.md5 SetupSoldfies/>>fileslastos.ini
+echo mv update.ini  SetupSoldfies/>>fileslastos.ini
+echo mv SetupS*.*  SetupSoldfies/>>fileslastos.ini
+echo mv ChangeLog.txt  SetupSoldfies/>>fileslastos.ini
+echo mv Install.SetupS*.*  SetupSoldfies/>>fileslastos.ini
 @REM add files for upload
+echo ; files to upload >>fileslastos.ini
 echo put .\files\update.ini>>fileslastos.ini
 echo put .\files\%ssApp%.exe>>fileslastos.ini
 echo put .\files\%ssApp%.apz>>fileslastos.ini
@@ -843,7 +910,7 @@ if exist "%completedfiles%" rd /s /q "%completedfiles%" >nul:
 md "%completedfiles%"
 echo copying setups files to files directory..
 @REM set Upload=Yes
-if NOT exist "SetupS-*.htm" echo File not found Change in Make.SetupS-Project.cmd to 'set Upload=Yes'&pause&goto exit
+if NOT exist "SetupS-*.htm" echo File not found Change in Make.SetupS-Project.cmd to 'set Upload=Yes'&pause&goto Cleaning
 echo copying htm files to files directory..
 copy "SetupS-*.htm" "%completedfiles%\" /y >nul:
 echo copying SetupS-*.png files to files directory..
@@ -869,6 +936,94 @@ copy "checksums*.md5" "%completedfiles%\" /y >nul:
 copy "ChangeLog.txt" "%completedfiles%\" /y >nul:
 
 @REM pause
+@REM pause
+
+@REM #######################################################
+@REM ### Upload files to LastOSForum
+@REM #######################################################
+:upload files to LastOSForum
+if [%DoUploads%]==[No] goto Finish
+
+
+@REM #######################################################
+@REM ### Upload Vergitek files
+@REM #######################################################
+if [%vergitekUploads%]==[No] goto uploadlastosfiles
+
+echo vergitekUploads = %vergitekUploads%
+pause
+
+echo #######################################################
+echo.
+echo Upload Vergitek files
+echo.
+echo #######################################################\
+:uploadvergitekfiles
+:sstek.vergitek.com (requires cURL)
+echo uploading files to vergitek
+%AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink1%"
+call UploadMe.cmd update.ini files/ .\ sstek.vergitek.com
+call UploadMe.cmd %ssApp%.exe files/ .\ sstek.vergitek.com
+call UploadMe.cmd %ssApp%.apz files/ .\ sstek.vergitek.com
+call UploadMe.cmd %ppApp%.7z files/ .\ sstek.vergitek.com
+call UploadMe.cmd %ssUI%.exe files/ .\ sstek.vergitek.com
+call UploadMe.cmd %scp%.7z files/ .\ sstek.vergitek.com
+call UploadMe.cmd %devpack%.7z files/ .\ sstek.vergitek.com
+call UploadMe.cmd %ssII%.exe files/ .\ sstek.vergitek.com
+call UploadMe.cmd checksums_v%ProjectVersion%.md5 files/ .\ sstek.vergitek.com
+call UploadMe.cmd ChangeLog.txt files/ .\ sstek.vergitek.com
+call UploadMe.cmd SetupS-files.htm files/ .\ sstek.vergitek.com
+call UploadMe.cmd SetupS-title.png files/ .\ sstek.vergitek.com
+echo.
+
+
+@REM vergitekUploads=Yes
+
+@REM #######################################################
+@REM ### Upload LastOS files
+@REM #######################################################
+:uploadlastosfiles
+if [%LastosUploads%]==[No] goto Finish
+@REM  LastosUploads=No
+echo #######################################################
+echo.
+echo Upload LastOS files
+echo.
+echo #######################################################
+echo.
+echo #######################################################
+echo Start  time
+echo  %date%-%time%
+echo #######################################################
+echo.
+  echo.===============================================================================
+  echo moving old files  to /SetupSoldfies/ folder on FTP site
+echo Uploading SetupS Project v%ProjectVersion% to LastOS
+  echo.===============================================================================
+echo.
+@REM this will update the fileslastos.ini with the password for ftp
+call updfiles.cmd
+@REM this will move old  files to  /SetupSoldfies/ then upload the new files using winscp
+@REM log file .\WinSCP\winscp.log
+call uploadlastos.cmd
+echo.
+echo #######################################################
+echo End time
+echo  %date%-%time%
+echo #######################################################
+echo.
+@REM #######################################################
+@REM ### Finish
+@REM #######################################################
+:Finish
+
+@REM #######################################################
+@REM ### Cleaning
+@REM #######################################################
+:Cleaning
+echo Cleaning up...
+cd "%~dp0"
+
 @REM #######################################################
 @REM ### Deleting files
 @REM #######################################################
@@ -890,14 +1045,7 @@ if exist "update.ini" del /F /Q "update.ini" >nul:
 echo deleting checksums
 if exist "checksums*.md5" del /F /Q "checksums*.md5" >nul:
 
-@REM pause
 
-@REM #######################################################
-@REM ### Exit
-@REM #######################################################
-:Exit
-echo Cleaning up...
-cd "%~dp0"
 %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "Kill"
 if exist "%ssApp%" rd /s /q "%ssApp%" >nul:
 if exist "%ppApp%" rd /s /q "%ppApp%" >nul:
@@ -911,49 +1059,6 @@ if exist "%~dp0%sc%\files" rd /s /q "%~dp0%sc%\files" >nul:
 if exist "%~dp0%sc%\%EditorPath%\ssEditor.html" del /F /Q "%~dp0%sc%\%EditorPath%\ssEditor.html" >nul:
 if exist "%~dp0%sc%\%EditorPath%\files" rd /s /q "%~dp0%sc%\%EditorPath%\files" >nul:
 if exist "%sc%\originals" echo Originals already exists!\\
-
-@REM #######################################################
-@REM ### Upload files to LastOSForum
-@REM #######################################################
-:upload files to LastOSForum
-if [%DoUploads%]==[No] goto Finish
-
-
-
-choice /C:YN /N /T 5 /D N  /M "Do you want to continue with uploading files, default is No ['Y'es/'N'o] : "
-if errorlevel 2 goto :somewhere_else
-if errorlevel 1 goto :somewhere
-
-:somewhere
-@REM echo "I am here because you typed Y"
-goto uploadfiles
-
-:somewhere_else
-@REM echo "I am here because you typed N"
-goto Finish
-
-:uploadfiles
-
-echo start  time
-echo  %date%-%time%
-echo.
-  echo.===============================================================================
-echo Uploading SetupS Project v%ProjectVersion% to LastOS
-  echo.===============================================================================
-echo.
-@REM this will update the fileslastos.ini with the password for ftp
-call updfiles.cmd
-@REM this will upload the files using winscp
-@REM log file .\WinSCP\winscp.log
-call uploadlastos.cmd
-echo.
-echo end time
-echo  %date%-%time%
-echo.
-@REM #######################################################
-@REM ### Finish
-@REM #######################################################
-:Finish
 echo.
 echo SetupS Project v%ProjectVersion% ... Done!
 echo.

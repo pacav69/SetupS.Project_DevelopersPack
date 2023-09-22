@@ -4,9 +4,9 @@
 :: %3=Local path (needs trailing backslash)
 :: %4=Where
 @echo off
-set Site=ftp.lastos.org
-set UN=
-set PW=
+set Site=ftp.vergitek.com
+set UN=SetupS@LastOS.org
+set PW=$etup$pass
 if not [%4]==[] goto setDesc
 set Desc=Uploading... %1
 goto Begin

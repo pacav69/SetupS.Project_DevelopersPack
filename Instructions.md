@@ -46,6 +46,8 @@ In order to generate a SetupS-files.htm file make sure the Upload parameter is s
     set Upload=Yes
 
 ## Upload files
+
+Uploading using winscp
 To add auto upload files
 copy \bin\templates\blank_updfiles.cmd to root
 rename file to updfiles.cmd
@@ -105,7 +107,7 @@ FTP details
 ftp-lastos
   Host: ftp.lastos.org
   Port: 21
-  Username: LastOS@vergitek.com
+  Username:  found on lastos Forums
   Password:  found on lastos Forums
 
   ### Procedure
@@ -123,7 +125,7 @@ ftp-lastos
 FTP LastOS (on Vergitek); backup for the Bluehost site, plus the LastOS release archive:
   Host: ftp.vergitek.com
   Port: 21
-  Username: LastOS
+  Username: found on lastos Forums
   Password: found on lastos Forums
 
   ### Procedure
@@ -161,9 +163,17 @@ change the contents with this file structure
     Username=myUsername
     Password=myPassword
 
+the accounts.ini information can be found on lastos Forums
+
 ensure that in file !!Make.SetupS-Project.cmd has the parameter is
 
    set Upload=Yes
+
+## Manually upload files using winscp
+When the file !DistrPack.Project.cmd  is run the user will be prompted to upload files, the default is 'No'.
+To manually upload first check that the pw in file updfiles.cmd has been set then run it.
+then run uploadlastos.cmd this will then use the generated fileslastos.ini script to upload files.
+
 
 
 ## References
