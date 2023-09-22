@@ -10,6 +10,7 @@ added to !DistrPack.Project.cmd a prompt "Do you want to upload files with winsc
 updated instructions for manually uploading of files
 modified:   !DistrPack.Project.cmd for uploading files
 modified:   !DistrPack.Project.cmd added time start and finish
+added color messages with ansi
 ---------------------------------------------
 21Sep2023
 ---------------------------------------------

@@ -106,6 +106,26 @@ set WebSite5=LastOS Forum
 @REM #######################################################
 set WebLink5=lastos.vergitek.com
 
+:set ansi colors
+@REM ref: https://ss64.com/nt/syntax-ansi.html
+Set _bBlack=[40m
+Set _fGreen=[32m
+Set _fBGreen=[92m
+Set _fRed=[31m
+Set _fYellow=[33m
+Set _bBlue=[44m
+Set _RESET=[0m
+Set _fBWhite=[97m
+Set _bBWhite=[107m
+
+@REM Echo %_fRed%%_bBlack% error
+@REM Echo %_RESET%
+@REM Echo %_fBGreen%%_bBlack%
+@REM echo working
+@REM Echo %_fYellow%%_bBlue%
+@REM echo finished
+@REM @REM Echo %_RESET%
+Echo %_fBGreen%%_bBlack%
 
 @REM #######################################################
 @REM ###  WebLink3=dl.bintray.com/sstek
@@ -131,8 +151,8 @@ goto Begin
 :Begin
 echo ###########################################################
 echo.
-echo #### Welcome to  the LastOS SetupS Project Developers Pack
-echo #### This will compile and upload the SetupS Suite
+echo #    Welcome to  the LastOS SetupS Project Developers Pack
+echo #    This will compile and upload the SetupS Suite
 echo.
 echo ###########################################################
 echo.
@@ -145,9 +165,11 @@ echo.
 @REM echo "I am here because you typed Y"
 set LastosUploads=Yes
 echo.
-echo #######################################################
+
+Echo %_bBWhite%%_bBlue%####################################################### %_fBGreen%%_bBlack%
 echo Files will be uploaded at end of compilation
 echo.
+
 timeout /T 5
 goto check2
 
@@ -175,7 +197,8 @@ echo.
 @REM echo "I am here because you typed Y"
 set vergitekUploads=Yes
 echo.
-echo #######################################################
+
+Echo %_bBWhite%%_bBlue%####################################################### %_fBGreen%%_bBlack%
 echo Files will be uploaded at end of compilation
 echo.
 timeout /T 5
@@ -884,12 +907,14 @@ echo ; connect to ftp server  >>fileslastos.ini
 echo open ftp://%domain2%:#Password#@%ftp2%/%Webfolder2%>>fileslastos.ini
 echo ; files to move >>fileslastos.ini
 @REM add list of files to move to SetupSoldfies/
+echo echo moving files on ftp server
 echo mv checksums_*.md5 SetupSoldfies/>>fileslastos.ini
 echo mv update.ini  SetupSoldfies/>>fileslastos.ini
 echo mv SetupS*.*  SetupSoldfies/>>fileslastos.ini
 echo mv ChangeLog.txt  SetupSoldfies/>>fileslastos.ini
 echo mv Install.SetupS*.*  SetupSoldfies/>>fileslastos.ini
 @REM add files for upload
+echo echo uploading files
 echo ; files to upload >>fileslastos.ini
 echo put .\files\update.ini>>fileslastos.ini
 echo put .\files\%ssApp%.exe>>fileslastos.ini
@@ -1091,12 +1116,21 @@ if exist "%~dp0%sc%\ssTek.html" del /F /Q "%~dp0%sc%\ssTek.html" >nul:
 if exist "%~dp0%sc%\files" rd /s /q "%~dp0%sc%\files" >nul:
 if exist "%~dp0%sc%\%EditorPath%\ssEditor.html" del /F /Q "%~dp0%sc%\%EditorPath%\ssEditor.html" >nul:
 if exist "%~dp0%sc%\%EditorPath%\files" rd /s /q "%~dp0%sc%\%EditorPath%\files" >nul:
-if exist "%sc%\originals" echo Originals already exists!\\
-echo.
-echo #######################################################
+if exist "%sc%\originals" echo Originals already exists!
+
+@REM Echo %_fRed%%_bBlack% error
+@REM Echo %_RESET%
+@REM Echo %_fBGreen%%_bBlack%
+@REM echo working
+@REM Echo %_fYellow%%_bBlue%
+@REM echo finished
+@REM @REM Echo %_RESET%
+@REM Echo %_fBGreen%%_bBlack%
+Echo %_bBWhite%%_bBlue% ####################################################### %_fBGreen%%_bBlack%
 echo.
 echo SetupS Project v%ProjectVersion% ... Done!
 echo.
-echo #######################################################
-
+Echo %_bBWhite%%_bBlue%#######################################################%_fBGreen%%_bBlack%
+echo.
 :Quit
+Echo %_fBGreen%%_bBlack%
