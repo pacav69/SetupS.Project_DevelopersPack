@@ -536,6 +536,9 @@ if exist "ssTek.chm" copy "ssTek.chm" "Tools\ssTek.chm" /y >nul:
 cd "%~dp0%sc%\%EditorPath%"
 call "Create.ppApp.package.cmd" %EditorPath%
 
+@REM #######################################################
+@REM ### Create Inno Installer (requires: Inno Setup)
+@REM #######################################################
 :Create Inno Installer (requires: Inno Setup)
 echo Compiling the InnoSetup Installer package...
 cd "%~dp0%sc%"
@@ -546,6 +549,9 @@ if exist "%ProgramFiles(x86)%\Inno Setup 5\compil32.exe" set InnoCompiler="%Prog
 copy "Inno.Output\%ssII%.exe" "..\*.*" /y >nul:
 if exist "Inno.Output\%ssII%.exe" del /F /Q "Inno.Output\%ssII%.exe" >nul:
 
+@REM #######################################################
+@REM ### Create dual-arch SetupS.Uninstaller.EXE (requires: 7zip & sfx)
+@REM #######################################################
 :Create dual-arch SetupS.Uninstaller.EXE (requires: 7zip & sfx)
 echo Constructing the dual-arch SetupS.Uninstaller package...
 cd "%~dp0"
@@ -874,8 +880,6 @@ cd "%~dp0"
 @REM create files to upload script for winscp useage
 @REM ref: https://winscp.net/eng/docs/commandline
 if exist "fileslastos.ini" del /F /Q "fileslastos.ini" >nul:
-@REM echo rem lastos.vergitek.com >>fileslastos.ini
-@REM echo rem fileslastos.ini >>fileslastos.ini
 echo ; connect to ftp server  >>fileslastos.ini
 echo open ftp://%domain2%:#Password#@%ftp2%/%Webfolder2%>>fileslastos.ini
 echo ; files to move >>fileslastos.ini
@@ -900,8 +904,6 @@ echo put .\files\ChangeLog.txt>>fileslastos.ini
 echo put .\files\SetupS-files.htm>>fileslastos.ini
 echo put .\files\SetupS-title.png>>fileslastos.ini
 echo exit >>fileslastos.ini
-
-@REM  upload of files after cleanup
 
 @REM #######################################################
 @REM ### Movefiles
@@ -940,12 +942,10 @@ echo copying Uchecksums files to files directory..
 copy "checksums*.md5" "%completedfiles%\" /y >nul:
 @REM ChangeLog.txt
 copy "ChangeLog.txt" "%completedfiles%\" /y >nul:
-
-@REM pause
 @REM pause
 
 @REM #######################################################
-@REM ### Upload files to LastOSForum
+@REM ### Upload files
 @REM #######################################################
 :upload files to LastOSForum
 if [%DoUploads%]==[No] goto Finish
@@ -989,32 +989,28 @@ call UploadMe.cmd ChangeLog.txt files/ .\ sstek.vergitek.com
 call UploadMe.cmd SetupS-files.htm files/ .\ sstek.vergitek.com
 call UploadMe.cmd SetupS-title.png files/ .\ sstek.vergitek.com
 echo.
-
-
-@REM vergitekUploads=Yes
-echo.
 echo #######################################################
 echo End time
 echo  %date%-%time%
 echo #######################################################
 echo.
+
 @REM #######################################################
 @REM ### Upload files to LastOS
 @REM #######################################################
 :uploadlastosfiles
 if [%LastosUploads%]==[No] goto Finish
-@REM  LastosUploads=No
-
+echo.
 echo #######################################################
 echo.
 echo Upload LastOS files
 echo.
 echo #######################################################
 echo.
-echo #######################################################
+echo =======================================================
 echo Start  time
 echo  %date%-%time%
-echo #######################################################
+echo =======================================================
 echo.
   echo.===============================================================================
   echo moving old files  to /SetupSoldfies/ folder on FTP site
@@ -1027,10 +1023,10 @@ call updfiles.cmd
 @REM log file .\WinSCP\winscp.log
 call uploadlastos.cmd
 echo.
-echo #######################################################
+echo =======================================================
 echo End time
 echo  %date%-%time%
-echo #######################################################
+echo =======================================================
 echo.
 @REM #######################################################
 @REM ### Finish
@@ -1047,7 +1043,7 @@ echo #######################################################
 cd "%~dp0"
 
 echo #######################################################
-echo  ### Deleting files
+echo  ### Deleting compilied files after upload
 echo #######################################################
 :Deleting files
 @REM echo deleting SetupS-*.htm
