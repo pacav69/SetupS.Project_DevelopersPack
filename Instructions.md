@@ -53,17 +53,18 @@ copy \bin\templates\blank_updfiles.cmd to root
 rename file to updfiles.cmd
 change the setting of pw=mypass to pw=[correct password]
 save the file
-
+when prompted the script will automagiclly move the old files and upload the new files
 
 run the cmd file
 
      !!Make.SetupS-Project.cmd
 
-this will generate the files with the new version numbers
+this will generate the files based on the new version numbers.
 
-The files will be moved to the files directory for later upload to the respective websites for distrubution.
+The files will be moved to the 'files' sub directory on the host for later upload to the respective ftp websites for distribution.
 
 this will also upload to LastOS Forum at the end of cleanup
+
 
 ## Update changelog
 
@@ -132,6 +133,7 @@ FTP LastOS (on Vergitek); backup for the Bluehost site, plus the LastOS release 
 *   first move old setups files to the following directory:
 
   \<root>/files/SetupSoldfies
+  In winscp it is done as part of the script.
 *   upload files on host site to here:
 
     \<root>/files
@@ -168,6 +170,8 @@ the accounts.ini information can be found on lastos Forums
 ensure that in file !!Make.SetupS-Project.cmd has the parameter is
 
    set Upload=Yes
+
+   This will also upload to veritek  at the end of cleanup script.
 
 ## Manually upload files using winscp
 When the file !DistrPack.Project.cmd  is run the user will be prompted to upload files, the default is 'No'.

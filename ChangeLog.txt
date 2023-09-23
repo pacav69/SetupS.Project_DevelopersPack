@@ -3,6 +3,11 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
       not always possible especially when adding new features.
 
 ---------------------------------------------
+23Sep2023
+---------------------------------------------
+updated Instructions.md
+
+---------------------------------------------
 21Sep2023
 ---------------------------------------------
 added move old files to SetupSoldfies/folder on ftp site to script
