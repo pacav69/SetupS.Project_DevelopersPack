@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="HelpNDoc Personal Edition 8.8.0.547">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.ico"/>
+
+  <title>Creating a ppTweak</title>
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="">
+
+
+
+  
+  
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Creating a ppTweak">
+  <meta name="twitter:description" content="">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Creating a ppTweak" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="ssTek" /> 
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendors/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="vendors/bootstrap-3.4.1/css/ie10-viewport-bug-workaround.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="vendors/html5shiv-3.7.3/html5shiv.min.js"></script>
+      <script src="vendors/respond-1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- JsTree styles -->
+  <link href="vendors/jstree-3.3.10/themes/default/style.min.css" rel="stylesheet"/>
+
+  <!-- Hnd styles -->
+  <link href="css/layout.min.css" rel="stylesheet" />
+  <link href="css/effects.min.css" rel="stylesheet" />
+  <link href="css/theme-light-blue.min.css" rel="stylesheet" />
+  <link href="css/print.min.css" rel="stylesheet" media="print" />
+  <style type="text/css">nav { width: 350px} @media screen and (min-width:769px) { body.md-nav-expanded div#main { margin-left: 350px} body.md-nav-expanded header { padding-left: 364px} }</style>
+  <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
+
+  <!-- Content style -->
+  <link href="css/hnd.content.css" rel="stylesheet" />
+
+  
+
+
+
+</head>
+
+<body class="md-nav-expanded">
+
+
+
+  
+
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible">Skip to main content</a>
+  </div>
+
+  <header class="headroom">
+    <button class="hnd-toggle btn btn-default">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>        
+    </button>
+    <h1>ssTek</h1>
+    
+  </header>
+
+  <nav id="panel-left" class="md-nav-expanded">
+    <!-- Nav tabs -->
+    <ul class="tab-tabs nav nav-tabs" role="tablist">
+      <li id="nav-close" role="presentation"> 
+        <button class="hnd-toggle btn btn-default" aria-label="close">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+      </li>
+      
+	  
+        <li role="presentation" class="tab active">
+            <a href="#contents" id="tab-contents" aria-controls="contents" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-list"></i>
+                Contents
+            </a>
+        </li>
+      
+        <li role="presentation" class="tab">
+            <a href="#index" id="tab-index" aria-controls="index" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-asterisk"></i>
+                Index
+            </a>
+        </li>
+      
+        <li role="presentation" class="tab">
+            <a href="#search" id="tab-search" aria-controls="search" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-search"></i>
+                Search
+            </a>
+        </li>
+      
+    </ul>  <!-- /Nav tabs -->
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+	  
+      <div role="tabpanel" class="tab-pane active" id="contents">
+        <div id="toc" class="tree-container unselectable"
+            data-url="_toc.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /contents-->
+      
+      <div role="tabpanel" class="tab-pane" id="index">
+        <div id="keywords" class="tree-container unselectable"
+            data-url="_keywords.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /index-->
+      
+      <div role="tabpanel" class="tab-pane" id="search">
+        <div class="search-content">
+          <div class="search-input">
+            <form id="search-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="input-search" name="input-search" placeholder="Search..." aria-label="Search..." />
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" aria-label="Search...">
+                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>  <!-- /search-input -->
+          <div class="search-result">
+            <div id="search-info"></div>
+            <div class="tree-container unselectable" id="search-tree"></div>
+          </div>  <!-- /search-result -->
+        </div>  <!-- /search-content -->
+      </div>  <!-- /search-->
+      
+    </div>  <!-- /Tab panes -->
+
+  </nav>
+
+  <div id="main">
+
+    <article>
+        <div id="topic-content" class="container-fluid" 
+		  data-hnd-id="CreatingappTweak"
+		  data-hnd-context="91"
+		  data-hnd-title="Creating a ppTweak"
+		>
+            
+                <div class="navigation">
+                    <ol class="breadcrumb">
+                        <li><a href="ssEditor.html">ssEditor</a></li><li><a href="Tutorials.html">Tutorials</a></li>
+                    </ol>
+                    <div class="nav-arrows">
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="Tutorials.html" title="Tutorials" role="button"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a><a class="btn btn-default" href="CreatingappGame.html" title="Creating a ppGame" role="button"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a><a class="btn btn-default" href="HowtoupdateappApporssApp.html" title="How to update a ppApp or ssApp" role="button"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></div>
+                    </div>
+                </div> 
+            
+
+            <a id="main-content"></a>
+
+            <h2>Creating a ppTweak</h2>
+
+            <div class="main-content">
+                
+<h1 class="rvps8"><span class="rvts0"><span class="rvts15">Creating a ppTweak</span></span><span class="rvts0"><span class="rvts15"> &nbsp; &nbsp; &nbsp; &nbsp;</span></span><a href="CreatingappGame.html"><img width="16" height="16" alt="Previous page" style="vertical-align: middle;" src="lib/NewItem334.png"></a><a href="Tutorials.html"><img alt="Return to chapter overview" style="vertical-align: middle;" src="lib/NewItem333.png"></a><a href="HowtoupdateappApporssApp.html"><img width="16" height="16" alt="Next page" style="vertical-align: middle;" src="lib/NewItem332.png"></a></h1>
+<p class="rvps5"><span class="rvts40"><br/></span></p>
+<p class="rvps2"><span class="rvts101">Creating a ppTweak.&nbsp;</span></p>
+<p class="rvps2"><span class="rvts101"><br/></span></p>
+<p class="rvps2"><span class="rvts101">1. Preparation.</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts11">Create a temporary "build" folder. Such as apzdev in the root of the drive c:\apzdev</span></li>
+ <li class="rvps83"><span class="rvts11">under this directory create a working folder of the app name.</span></li>
+ <li class="rvps83"><span class="rvts11">In this example create a folder tweek C:\apzdev\tweak</span></li>
+ <li class="rvps83"><span class="rvts11">under this folder create commandprompttogreen so the folder structure will be C:\apzdev\tweak\commandprompttogreen</span></li>
+ <li class="rvps83"><span class="rvts11">Right-click the C:\apzdev\tweak\commandprompttogreen folder and Sendto "SetupS Editor" this will open up the ssEditor</span></li>
+</ul>
+<p class="rvps82"><img alt="" style="padding : 1px;" src="lib/NewItem331.jpg"></p>
+<p class="rvps82"><span class="rvts11"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts11">Ensure 'ppTweek' is the "Build Type".</span></li>
+ <li class="rvps83"><span class="rvts11">Enter in the Title of the application in the Example "tweak Command Prompt to Green"</span></li>
+ <li class="rvps83"><span class="rvts11">Enter in the version of the application in the Example "v1.0"</span></li>
+ <li class="rvps83"><span class="rvts11">Enter in the URL of where the application can be located to enable users to find updates in the Example www.lastos.org</span></li>
+ <li class="rvps83"><span class="rvts11">Enter in a description of the application.</span></li>
+</ul>
+<p class="rvps83"><span class="rvts11"><br/></span></p>
+<p class="rvps2"><span class="rvts101">2. &nbsp;Assembly tab</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts11">Check that the "Install-to Path" is correct.</span></li>
+ <li class="rvps83"><span class="rvts11">in this example %ppApps%\tweak has already been entered</span></li>
+</ul>
+<p class="rvps82"><img alt="" style="padding : 1px;" src="lib/NewItem330.jpg"></p>
+<p class="rvps82"><span class="rvts11"><br/></span></p>
+<p class="rvps2"><span class="rvts101">3. &nbsp;Shortcuts tab</span></p>
+<p class="rvps2"><span class="rvts6">No Shortcuts</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts101">4. Graphics tab</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2"><span class="rvts6">Create a screenshot</span></li>
+ <li class="rvps2"><span class="rvts6">Select a fader graphic</span></li>
+</ul>
+<p class="rvps88"><img alt="" style="padding : 1px;" src="lib/NewItem329.jpg"></p>
+<p class="rvps82"><span class="rvts11"><br/></span></p>
+<p class="rvps2"><span class="rvts101">5. &nbsp;Post-processing tab</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2"><span class="rvts6">Enter or copy the Registry Entries in the example:</span></li>
+</ul>
+<p class="rvps48"><span class="rvts6"><br/></span></p>
+<p class="rvps48"><span class="rvts6">Windows Registry Editor Version 5.00</span></p>
+<p class="rvps48"><span class="rvts6"><br/></span></p>
+<p class="rvps48"><span class="rvts6">; Change Command Prompt Colours</span></p>
+<p class="rvps48"><span class="rvts6">; First value is background second is foreground eg. 0000000a = light green on black</span></p>
+<p class="rvps48"><span class="rvts6">;0=black &nbsp; 8=grey</span></p>
+<p class="rvps48"><span class="rvts6">;1=blue &nbsp; &nbsp;9=light blue</span></p>
+<p class="rvps48"><span class="rvts6">;2=green &nbsp; a=light green</span></p>
+<p class="rvps48"><span class="rvts6">;3=aqua &nbsp; &nbsp;b=light aqua</span></p>
+<p class="rvps48"><span class="rvts6">;4=red &nbsp; &nbsp; c=light red</span></p>
+<p class="rvps48"><span class="rvts6">;5=purple &nbsp;d=light purple</span></p>
+<p class="rvps48"><span class="rvts6">;6=yellow &nbsp;e=light yellow</span></p>
+<p class="rvps48"><span class="rvts6">;6=white &nbsp; f=bright white</span></p>
+<p class="rvps48"><span class="rvts6">[HKEY_CURRENT_USER\Software\Microsoft\Command Processor]</span></p>
+<p class="rvps48"><span class="rvts6">"DefaultColor"=dword:0000000a</span></p>
+<p class="rvps48"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2"><span class="rvts6">Tip: Click the "Pop-out editor" button to use notepad to edit instead.</span></li>
+</ul>
+<p class="rvps88"><img alt="" style="padding : 1px;" src="lib/NewItem328.jpg"></p>
+<p class="rvps88"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts101">6. &nbsp;Build</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts11">IMPORTANT NOTE: This step is only available if building archive deployment packages (.apz/.pgz). Otherwise, the "Build" folder is complete for the ssWPI (folder) deployment package and no further action is required.</span></li>
+ <li class="rvps83"><span class="rvts11">Check your Build options. Click Menu "Builds" and select options for how the builds will be done.</span></li>
+ <li class="rvps83"><span class="rvts11">Finally, when ready, click "Tools, Build (F5)" -- or click the "Build" button on the Mini-Toolbar.</span></li>
+</ul>
+<p class="rvps82"><img alt="" style="padding : 1px;" src="lib/NewItem327.jpg"></p>
+<p class="rvps2"><span class="rvts101">7. &nbsp;Test</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts11">To test, simply double click on the .app or .apz file created by ssEditor.</span><span class="rvts6"></span></li>
+</ul>
+<p class="rvps10" style="clear: both;"><span class="rvts17">Created with the Personal Edition of HelpNDoc: </span><a class="rvts18" href="https://www.helpauthoringsoftware.com">Benefits of a Help Authoring Tool</a></p>
+
+            </div>
+            
+            <div id="topic_footer"><div id="topic_footer_content">Copyright &copy; 2023, Vergitek Solutions</div></div>
+        </div>  <!-- /#topic-content -->
+    </article>
+
+    <footer></footer>
+
+  </div>  <!-- /#main -->
+
+  <div class="mask" data-toggle="sm-nav-expanded"></div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="hndModal" tabindex="-1" role="dialog" aria-labelledby="hndModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="hndModalLabel"></h4>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary modal-btn-close" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Splitter -->
+  <div id="hnd-splitter" style="left: 350px"></div>  
+
+  <!-- Scripts -->
+  <script src="vendors/jquery-3.5.1/jquery.min.js"></script>
+  <script src="vendors/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+  <script src="vendors/bootstrap-3.4.1/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="vendors/markjs-8.11.1/jquery.mark.min.js"></script>
+  <script src="vendors/uri-1.19.11/uri.min.js"></script>
+  <script src="vendors/imageMapResizer-1.0.10/imageMapResizer.min.js"></script>
+  <script src="vendors/headroom-0.11.0/headroom.min.js"></script>
+  <script src="vendors/jstree-3.3.10/jstree.min.js"></script>  
+  <script src="vendors/interactjs-1.9.22/interact.min.js"></script>  
+
+  <!-- HelpNDoc scripts -->
+  <script src="js/polyfill.object.min.js"></script>
+  <script src="_translations.js"></script>
+  <script src="js/hndsd.min.js"></script>
+  <script src="js/hndse.min.js"></script>
+  <script src="js/app.min.js"></script>
+
+  <!-- Init script -->
+  <script>
+    $(function() {
+      // Create the app
+      var app = new Hnd.App({
+        searchEngineMinChars: 3
+      });
+      // Update translations
+      hnd_ut(app);
+	  // Instanciate imageMapResizer
+	  imageMapResize();
+	  // Custom JS
+	  
+      // Boot the app
+      app.Boot();
+    });
+  </script>
+
+
+
+</body>
+
+</html>
+

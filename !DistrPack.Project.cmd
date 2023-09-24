@@ -234,6 +234,14 @@ if exist "%ProgramFiles(x86)%\HTML Help Workshop\hhc.exe" set HHCompiler="%Progr
 FOR %%i IN (C D E F G H I J K L M N O P Q R S T U V W X Y Z) DO IF EXIST "%%i:\ppApps\HTML Help Workshop\hhc.exe" (SET HHCompiler="%%i:\ppApps\HTML Help Workshop\hhc.exe"& goto MakeBackups)
 
 :MakeBackups of originals
+
+:SetHelpNDoc8 working variable
+set HelpNDoc8="%ProgramFiles%\HelpNDoc8HelpNDoc8\hnd8.exe"
+if exist "%ProgramFiles(x86)%\HelpNDoc8\hnd8.exe" set HelpNDoc8="%ProgramFiles(x86)%\HelpNDoc8\hnd8.exe"
+FOR %%i IN (C D E F G H I J K L M N O P Q R S T U V W X Y Z) DO IF EXIST "%%i:\ppApps\HelpNDoc8\hnd8.exe" (SET HelpNDoc8="%%i:\ppApps\HelpNDoc8\hnd8.exe"& goto doitnow)
+
+:doitnow
+
 echo Backing up originals...
 cd "%~dp0"
 if exist "%sc%\originals" goto Cleaning
@@ -495,8 +503,32 @@ echo Updating the help-file for %UpdateHelpFile%...
 cd "%UpdateHelpPath%"
 if exist "%UpdateHelpFile%.html" del /F /Q "%UpdateHelpFile%.html" >nul:
 if exist "files" rd /s /q "files" >nul:
-cd "%~dp0%bin"
-%AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript CompileHND.au3 "%UpdateHelpPath%" "%UpdateHelpFile%"
+@REM cd "%~dp0%bin"
+
+@REM #######################################################
+@REM ### build help file using HelpNDoc8
+@REM #######################################################
+:HelpNDoc8
+@REM build help file using HelpNDoc8
+@REM %HelpNDoc8% %UpdateHelpPath%\%UpdateHelpFile%.hnd build -x="Build chm documentation" -o=%UpdateHelpFile% & ".chm:.\"
+set htmlhelp=%UpdateHelpPath%\sstekhelpfiles\files
+if exist "htmlhelp" rd /s /q "htmlhelp" >nul:
+if not exist "htmlhelp"  mkdir "htmlhelp" >nul:
+echo Compiling help
+echo.
+@REM other options change silent to verysilent for no progress display
+@REM verbose
+%HelpNDoc8% %UpdateHelpPath%\%UpdateHelpFile%.hnd build  -silent -x="Build chm documentation" -o=%UpdateHelpFile%.chm"
+@REM %HelpNDoc8% %UpdateHelpPath%\%UpdateHelpFile%.hnd build -silent -x="Build HTML documentation" -o="Build HTML documentation:%~dp0\html\%UpdateHelpFile%.html"
+%HelpNDoc8% %UpdateHelpPath%\%UpdateHelpFile%.hnd build -silent -x="Build HTML documentation" -o="Build HTML documentation:%htmlhelp%\%UpdateHelpFile%.html"
+
+echo finished
+@REM original autoit file
+@REM %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript CompileHND2.au3 "%UpdateHelpPath%" "%UpdateHelpFile%"
+cd "%UpdateHelpPath%"
+@REM echo here after compile
+@REM pause
+@REM %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript CompileHND.au3 "%UpdateHelpPath%" "%UpdateHelpFile%"
 cd "%UpdateHelpPath%"
 if exist "help" rd /s /q "help" >nul:
 hh.exe -decompile help %UpdateHelpFile%.chm

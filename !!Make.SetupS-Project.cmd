@@ -8,13 +8,13 @@
 @REM use the date of compilatation YY.MM.DD.Incremental number usually 0
 @REM where YY is the two digit year, MM the digit month, DD two digit day
 @REM eg set ProjectVersion=23.07.23.0
-set ProjectVersion=23.09.23.0
+set ProjectVersion=23.09.25.0
 @REM ProjectDate=YYYY-MM-DD use ONLY numbers
 @REM use the date of compilatation in the format YYYY-MM-DD
 @REM where YYYY is the four digit year, MM the two digit month, DD two digit day
 @REM use the date of compilatation YYYY-MM-DD seperated by a '-'
 @REM eg set ProjectDate=2023-07-23
-set ProjectDate=2023-09-23
+set ProjectDate=2023-09-25
 @REM Upload=yes will also generate SetupS-files.htm file ready for upload
 set Upload=Yes
 

@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="HelpNDoc Personal Edition 8.8.0.547">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.ico"/>
+
+  <title>Creating an ssApp with Dual Arch</title>
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="">
+
+
+
+  
+  
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Creating an ssApp with Dual Arch">
+  <meta name="twitter:description" content="">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Creating an ssApp with Dual Arch" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="ssTek" /> 
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendors/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="vendors/bootstrap-3.4.1/css/ie10-viewport-bug-workaround.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="vendors/html5shiv-3.7.3/html5shiv.min.js"></script>
+      <script src="vendors/respond-1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- JsTree styles -->
+  <link href="vendors/jstree-3.3.10/themes/default/style.min.css" rel="stylesheet"/>
+
+  <!-- Hnd styles -->
+  <link href="css/layout.min.css" rel="stylesheet" />
+  <link href="css/effects.min.css" rel="stylesheet" />
+  <link href="css/theme-light-blue.min.css" rel="stylesheet" />
+  <link href="css/print.min.css" rel="stylesheet" media="print" />
+  <style type="text/css">nav { width: 350px} @media screen and (min-width:769px) { body.md-nav-expanded div#main { margin-left: 350px} body.md-nav-expanded header { padding-left: 364px} }</style>
+  <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
+
+  <!-- Content style -->
+  <link href="css/hnd.content.css" rel="stylesheet" />
+
+  
+
+
+
+</head>
+
+<body class="md-nav-expanded">
+
+
+
+  
+
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible">Skip to main content</a>
+  </div>
+
+  <header class="headroom">
+    <button class="hnd-toggle btn btn-default">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>        
+    </button>
+    <h1>ssTek</h1>
+    
+  </header>
+
+  <nav id="panel-left" class="md-nav-expanded">
+    <!-- Nav tabs -->
+    <ul class="tab-tabs nav nav-tabs" role="tablist">
+      <li id="nav-close" role="presentation"> 
+        <button class="hnd-toggle btn btn-default" aria-label="close">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+      </li>
+      
+	  
+        <li role="presentation" class="tab active">
+            <a href="#contents" id="tab-contents" aria-controls="contents" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-list"></i>
+                Contents
+            </a>
+        </li>
+      
+        <li role="presentation" class="tab">
+            <a href="#index" id="tab-index" aria-controls="index" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-asterisk"></i>
+                Index
+            </a>
+        </li>
+      
+        <li role="presentation" class="tab">
+            <a href="#search" id="tab-search" aria-controls="search" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-search"></i>
+                Search
+            </a>
+        </li>
+      
+    </ul>  <!-- /Nav tabs -->
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+	  
+      <div role="tabpanel" class="tab-pane active" id="contents">
+        <div id="toc" class="tree-container unselectable"
+            data-url="_toc.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /contents-->
+      
+      <div role="tabpanel" class="tab-pane" id="index">
+        <div id="keywords" class="tree-container unselectable"
+            data-url="_keywords.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /index-->
+      
+      <div role="tabpanel" class="tab-pane" id="search">
+        <div class="search-content">
+          <div class="search-input">
+            <form id="search-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="input-search" name="input-search" placeholder="Search..." aria-label="Search..." />
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" aria-label="Search...">
+                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>  <!-- /search-input -->
+          <div class="search-result">
+            <div id="search-info"></div>
+            <div class="tree-container unselectable" id="search-tree"></div>
+          </div>  <!-- /search-result -->
+        </div>  <!-- /search-content -->
+      </div>  <!-- /search-->
+      
+    </div>  <!-- /Tab panes -->
+
+  </nav>
+
+  <div id="main">
+
+    <article>
+        <div id="topic-content" class="container-fluid" 
+		  data-hnd-id="CreatinganssAppwithDualArch"
+		  data-hnd-context="85"
+		  data-hnd-title="Creating an ssApp with Dual Arch"
+		>
+            
+                <div class="navigation">
+                    <ol class="breadcrumb">
+                        <li><a href="ssEditor.html">ssEditor</a></li><li><a href="Tutorials.html">Tutorials</a></li><li><a href="CreatingassApp.html">Creating an ssApp</a></li>
+                    </ol>
+                    <div class="nav-arrows">
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="CreatingassApp.html" title="Creating an ssApp" role="button"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a><a class="btn btn-default" href="CreatingabasicssApp.html" title="Creating a (basic) ssApp" role="button"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a><a class="btn btn-default" href="CreatingappApp.html" title="Creating a ppApp" role="button"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></div>
+                    </div>
+                </div> 
+            
+
+            <a id="main-content"></a>
+
+            <h2>Creating an ssApp with Dual Arch</h2>
+
+            <div class="main-content">
+                
+<h1 class="rvps8"><span class="rvts0"><span class="rvts15">Creating an ssApp with Dual Arch</span></span><span class="rvts0"><span class="rvts15"> &nbsp; &nbsp; &nbsp; &nbsp;</span></span><a href="CreatingabasicssApp.html"><img width="16" height="16" alt="Previous page" style="vertical-align: middle;" src="lib/NewItem100.png"></a><a href="CreatingassApp.html"><img alt="Return to chapter overview" style="vertical-align: middle;" src="lib/NewItem99.png"></a><img width="16" height="16" alt="Next page" style="vertical-align: middle;" src="lib/NewItem98.png"></h1>
+<p class="rvps5"><span class="rvts40"><br/></span></p>
+<p class="rvps83"><span class="rvts101">Creating an ssApp with dual Architecture.&nbsp;</span></p>
+<p class="rvps2"><span class="rvts101"><br/></span></p>
+<p class="rvps2"><span class="rvts101">1. Preparation.</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts11">Create a temporary "build" folder. Such as apzdev in the root of the drive c:\apzdev</span></li>
+ <li class="rvps83"><span class="rvts11">under this directory create a working folder of the app name.</span></li>
+ <li class="rvps83"><span class="rvts11">In this example create a folder 7-Zip C:\apzdev\7zip</span></li>
+ <li class="rvps83"><span class="rvts11">under this folder create 7-Zip_v9.20DualArch so the folder structure will be C:\apzdev\7zip\7-Zip_v9.20DualArch</span></li>
+ <li class="rvps83"><span class="rvts11">inside this folder add the file 7z920.exe, which is the 32bit file version of 7zip.</span></li>
+ <li class="rvps83"><span class="rvts11">inside this folder add the file 7z920-x64.msi, which is the 64bit file version of 7zip.</span></li>
+ <li class="rvps83"><span class="rvts11">Install the app, this will also create the shortcuts needed.</span></li>
+ <li class="rvps83"><span class="rvts11">Right-click the C:\apzdev\7zip\7-Zip_v9.20DualArch folder and Sendto "SetupS Editor" this will open up the ssEditor.</span></li>
+</ul>
+<p class="rvps82"><img alt="" style="padding : 1px;" src="lib/NewItem97.jpg"></p>
+<p class="rvps82"><span class="rvts11"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts11">Ensure 'ssApp' is the "Build Type".</span></li>
+ <li class="rvps83"><span class="rvts11">Enter in the Title of the application in the Example "7-Zip"</span></li>
+ <li class="rvps83"><span class="rvts11">Enter in the version of the application in the Example "v9.20"</span></li>
+ <li class="rvps83"><span class="rvts11">Enter in the URL of where the application can be located to enable users to find updates in the Example www.7-zip.org</span></li>
+ <li class="rvps83"><span class="rvts11">Enter in a description of the application, this information can be found at the URL or the help file of the application.</span></li>
+ <li class="rvps83"><span class="rvts11">Select the categories for the application, and click the "add" button for each one.</span></li>
+</ul>
+<p class="rvps83"><span class="rvts11"><br/></span></p>
+<p class="rvps2"><span class="rvts101">2. &nbsp;Assembly tab</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts11">Check that the "Install-to Path" is correct.</span></li>
+</ul>
+<p class="rvps82"><img alt="" style="padding : 1px;" src="lib/NewItem96.jpg"></p>
+<p class="rvps82"><span class="rvts11"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts11">Under Assembly details Click browse button and select the installer.&nbsp;</span></li>
+</ul>
+<p class="rvps82"><img alt="" style="padding : 1px;" src="lib/NewItem95.jpg"></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2"><span class="rvts16">This will then search for the silent install switch, after this click on the button and the process will be added to the assembly list in the Example "7z920.exe" /S</span></li>
+ <li class="rvps2"><span class="rvts16">As this has two files one for 32bit and another for 64bit, click the browse button for the second file in the Example "7z920-x64.msi" /qb</span></li>
+ <li class="rvps2"><span class="rvts16">In order for the ssApp to know which file to install according to the Operating System Architecture click on the appropiate </span><span class="rvts38">directives</span><span class="rvts16"> to add to the assembly</span></li>
+ <li class="rvps2"><span class="rvts16">So for 32bit select &nbsp;#Is_x86# so the line will read "7z920.exe" /S #Is_x86#</span></li>
+ <li class="rvps2"><span class="rvts16">So for 64bit select #Is_x64# so the line will read"7z920-x64.msi" /qn #Is_x64#</span></li>
+ <li class="rvps2"><span class="rvts16">At this point save the file either by pressing &nbsp;(Ctrl+S) or clicking the save button on the toolbar.</span></li>
+</ul>
+<p class="rvps24"><span class="rvts11"><br/></span></p>
+<p class="rvps2"><span class="rvts101">3. &nbsp;Shortcuts tab</span></p>
+<p class="rvps82"><img alt="" style="padding : 1px;" src="lib/NewItem94.jpg"></p>
+<p class="rvps82"><span class="rvts11"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts11">Click the "Default Menu" browse button and navigate to the Startmenu folder created by the app you just installed.</span></li>
+</ul>
+<p class="rvps82"><img alt="" style="padding : 1px;" src="lib/NewItem93.jpg"></p>
+<p class="rvps82"><img alt="" style="padding : 1px;" src="lib/NewItem92.jpg"></p>
+<p class="rvps82"><span class="rvts11">In the Example select 7-Zip and then click ok</span></p>
+<p class="rvps83"><span class="rvts11"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts11">From here select the shortcuts locations/options. Don't forget about the "shortcut names keep" box -- this will be used if the 'KeepAll' Option is not enabled.</span></li>
+ <li class="rvps83"><span class="rvts11">Pick at least one "Menu Catalog" item for any advanced startmenu -- even if you don't use them others might.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts101"><br/></span></p>
+<p class="rvps2"><span class="rvts101">4. Graphics tab</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts100">Folder Icon</span><span class="rvts11">: Select from the main menu "Tools - Extract Icons (F10)" and find a file with the icon you'd like to represent the app. You'll get a window opened for the possible ones that has been extracted. Delete any extra files. Click Save button, for the preview to appear. Notice it creates a copy to the "ssApp.ico" -- delete the other file(s) so that they will not be added in the final deployment package.</span></li>
+</ul>
+<p class="rvps82"><img alt="" style="padding : 1px;" src="lib/NewItem91.jpg"></p>
+<p class="rvps82"><span class="rvts11"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts100">ScreenShot</span><span class="rvts11">: Select from the main menu "Tools - Screenshot - Grab Clipboard Picture (F12)". Open your app and when you have a nice picture you want press PrintScreen/Alt+PrintScreen. Return to ssEditor and click "Yes". Notice it automatically creates the necessary "ssApp.jpg".</span></li>
+</ul>
+<p class="rvps82"><img alt="" style="padding : 1px;" src="lib/NewItem90.jpg"></p>
+<p class="rvps82"><span class="rvts11"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts100">Fader</span><span class="rvts11">: You're basically on your own for this one. All you need to do is find (or convert to) a nice picture in .png format and copy that file to the "Build" folder. After copying the .png to the "Build" folder, simply click "Save" for it to appear in the Preview. Notice it creates a copy to the "ssApp.png" -- you'll need to delete the other file if you don't want that in your final deployment package.</span><br/><span class="rvts11">Hint: Places to look are the website, or sometimes from the "Install-to Path".</span></li>
+</ul>
+<p class="rvps82"><span class="rvts11">&nbsp;&nbsp;</span></p>
+<p class="rvps2"><span class="rvts101">5. &nbsp;Post-processing tab</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts11">Examiine this to see if anything needs to be added. With ssApps it is likely that this tab will not be needed as the Installer carries out this process.</span></li>
+</ul>
+<p class="rvps83"><span class="rvts11"><br/></span></p>
+<p class="rvps82"><span class="rvts102"><br/></span></p>
+<p class="rvps2"><span class="rvts101">6. &nbsp;Build</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts11">IMPORTANT NOTE: This step is only available if building archive deployment packages (.apz/.pgz). Otherwise, the "Build" folder is complete for the ssWPI (folder) deployment package and no further action is required.</span></li>
+ <li class="rvps83"><span class="rvts11">Check your Build options. Click Menu "Builds" and select options for how the builds will be done.</span></li>
+ <li class="rvps83"><span class="rvts11">Finally, when ready, click "Tools, Build (F5)" -- or click the "Build" button on the Mini-Toolbar.</span></li>
+ <li class="rvps83"><span class="rvts11"><br/></span></li>
+</ul>
+<p class="rvps82"><span class="rvts11"><br/></span></p>
+<p class="rvps2"><span class="rvts101">7. &nbsp;Uninstall</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts11">Now uninstall the app. Hint: Use CCleaner for this because after uninstalling simply use its built-in Registry cleaner.</span></li>
+</ul>
+<p class="rvps83"><span class="rvts11"><br/></span></p>
+<p class="rvps2"><span class="rvts101">8. &nbsp;Test</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps83"><span class="rvts11">To test, simply double click on the .app or .apz file created by ssEditor.</span><span class="rvts6"></span></li>
+</ul>
+<p class="rvps10" style="clear: both;"><span class="rvts17">Created with the Personal Edition of HelpNDoc: </span><a class="rvts18" href="https://www.helpndoc.com/feature-tour/iphone-website-generation">Free iPhone documentation generator</a></p>
+
+            </div>
+            
+            <div id="topic_footer"><div id="topic_footer_content">Copyright &copy; 2023, Vergitek Solutions</div></div>
+        </div>  <!-- /#topic-content -->
+    </article>
+
+    <footer></footer>
+
+  </div>  <!-- /#main -->
+
+  <div class="mask" data-toggle="sm-nav-expanded"></div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="hndModal" tabindex="-1" role="dialog" aria-labelledby="hndModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="hndModalLabel"></h4>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary modal-btn-close" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Splitter -->
+  <div id="hnd-splitter" style="left: 350px"></div>  
+
+  <!-- Scripts -->
+  <script src="vendors/jquery-3.5.1/jquery.min.js"></script>
+  <script src="vendors/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+  <script src="vendors/bootstrap-3.4.1/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="vendors/markjs-8.11.1/jquery.mark.min.js"></script>
+  <script src="vendors/uri-1.19.11/uri.min.js"></script>
+  <script src="vendors/imageMapResizer-1.0.10/imageMapResizer.min.js"></script>
+  <script src="vendors/headroom-0.11.0/headroom.min.js"></script>
+  <script src="vendors/jstree-3.3.10/jstree.min.js"></script>  
+  <script src="vendors/interactjs-1.9.22/interact.min.js"></script>  
+
+  <!-- HelpNDoc scripts -->
+  <script src="js/polyfill.object.min.js"></script>
+  <script src="_translations.js"></script>
+  <script src="js/hndsd.min.js"></script>
+  <script src="js/hndse.min.js"></script>
+  <script src="js/app.min.js"></script>
+
+  <!-- Init script -->
+  <script>
+    $(function() {
+      // Create the app
+      var app = new Hnd.App({
+        searchEngineMinChars: 3
+      });
+      // Update translations
+      hnd_ut(app);
+	  // Instanciate imageMapResizer
+	  imageMapResize();
+	  // Custom JS
+	  
+      // Boot the app
+      app.Boot();
+    });
+  </script>
+
+
+
+</body>
+
+</html>
+

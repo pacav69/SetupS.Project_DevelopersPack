@@ -3,6 +3,12 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
       not always possible especially when adding new features.
 
 ---------------------------------------------
+25Sep2023
+---------------------------------------------
+changed converted help file to version 8 of helpndoc
+added new code for use of helpndoc8
+updated ProjectVersion=23.09.25.0
+---------------------------------------------
 23Sep2023
 ---------------------------------------------
 updated Instructions.md

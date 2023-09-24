@@ -11,4 +11,5 @@ add  navigation in help file- Previous | Contents | Next
 ~~setup upload script using winscp~~
 ~~determine file structure of accounts.ini~~
 add SetUserFTA usage with examples in help file
-convert help file to version 8
+~~convert help file to version 8~~
+add upload html help files via ftp using winscp

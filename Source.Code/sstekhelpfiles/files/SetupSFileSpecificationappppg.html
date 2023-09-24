@@ -1,0 +1,432 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="HelpNDoc Personal Edition 8.8.0.547">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.ico"/>
+
+  <title>SetupS File Specification (.app/.ppg)</title>
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="">
+
+
+
+  
+  
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SetupS File Specification (.app/.ppg)">
+  <meta name="twitter:description" content="">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="SetupS File Specification (.app/.ppg)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="ssTek" /> 
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendors/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="vendors/bootstrap-3.4.1/css/ie10-viewport-bug-workaround.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="vendors/html5shiv-3.7.3/html5shiv.min.js"></script>
+      <script src="vendors/respond-1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- JsTree styles -->
+  <link href="vendors/jstree-3.3.10/themes/default/style.min.css" rel="stylesheet"/>
+
+  <!-- Hnd styles -->
+  <link href="css/layout.min.css" rel="stylesheet" />
+  <link href="css/effects.min.css" rel="stylesheet" />
+  <link href="css/theme-light-blue.min.css" rel="stylesheet" />
+  <link href="css/print.min.css" rel="stylesheet" media="print" />
+  <style type="text/css">nav { width: 350px} @media screen and (min-width:769px) { body.md-nav-expanded div#main { margin-left: 350px} body.md-nav-expanded header { padding-left: 364px} }</style>
+  <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
+
+  <!-- Content style -->
+  <link href="css/hnd.content.css" rel="stylesheet" />
+
+  
+
+
+
+</head>
+
+<body class="md-nav-expanded">
+
+
+
+  
+
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible">Skip to main content</a>
+  </div>
+
+  <header class="headroom">
+    <button class="hnd-toggle btn btn-default">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>        
+    </button>
+    <h1>ssTek</h1>
+    
+  </header>
+
+  <nav id="panel-left" class="md-nav-expanded">
+    <!-- Nav tabs -->
+    <ul class="tab-tabs nav nav-tabs" role="tablist">
+      <li id="nav-close" role="presentation"> 
+        <button class="hnd-toggle btn btn-default" aria-label="close">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+      </li>
+      
+	  
+        <li role="presentation" class="tab active">
+            <a href="#contents" id="tab-contents" aria-controls="contents" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-list"></i>
+                Contents
+            </a>
+        </li>
+      
+        <li role="presentation" class="tab">
+            <a href="#index" id="tab-index" aria-controls="index" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-asterisk"></i>
+                Index
+            </a>
+        </li>
+      
+        <li role="presentation" class="tab">
+            <a href="#search" id="tab-search" aria-controls="search" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-search"></i>
+                Search
+            </a>
+        </li>
+      
+    </ul>  <!-- /Nav tabs -->
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+	  
+      <div role="tabpanel" class="tab-pane active" id="contents">
+        <div id="toc" class="tree-container unselectable"
+            data-url="_toc.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /contents-->
+      
+      <div role="tabpanel" class="tab-pane" id="index">
+        <div id="keywords" class="tree-container unselectable"
+            data-url="_keywords.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /index-->
+      
+      <div role="tabpanel" class="tab-pane" id="search">
+        <div class="search-content">
+          <div class="search-input">
+            <form id="search-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="input-search" name="input-search" placeholder="Search..." aria-label="Search..." />
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" aria-label="Search...">
+                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>  <!-- /search-input -->
+          <div class="search-result">
+            <div id="search-info"></div>
+            <div class="tree-container unselectable" id="search-tree"></div>
+          </div>  <!-- /search-result -->
+        </div>  <!-- /search-content -->
+      </div>  <!-- /search-->
+      
+    </div>  <!-- /Tab panes -->
+
+  </nav>
+
+  <div id="main">
+
+    <article>
+        <div id="topic-content" class="container-fluid" 
+		  data-hnd-id="SetupSFileSpecificationappppg"
+		  data-hnd-context="40"
+		  data-hnd-title="SetupS File Specification (.app/.ppg)"
+		>
+            
+                <div class="navigation">
+                    <ol class="breadcrumb">
+                        <li><a href="References.html">References</a></li>
+                    </ol>
+                    <div class="nav-arrows">
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="References.html" title="References" role="button"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a><a class="btn btn-default" href="DeploymentPackageSpecification.html" title="Deployment Package Specifications" role="button"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a><a class="btn btn-default" href="LegacySetupSFileSpecificationa.html" title="Legacy SetupS File Specification (.app/.ppg)" role="button"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></div>
+                    </div>
+                </div> 
+            
+
+            <a id="main-content"></a>
+
+            <h2>SetupS File Specification (.app/.ppg)</h2>
+
+            <div class="main-content">
+                
+<h1 class="rvps8"><span class="rvts0"><span class="rvts15">SetupS File Specification (.app/.ppg)</span></span><span class="rvts0"><span class="rvts15"> &nbsp; &nbsp; &nbsp; &nbsp;</span></span><a href="DeploymentPackageSpecification.html"><img width="16" height="16" alt="Previous page" style="vertical-align: middle;" src="lib/NewItem74.png"></a><a href="References.html"><img alt="Return to chapter overview" style="vertical-align: middle;" src="lib/NewItem73.png"></a><a href="LegacySetupSFileSpecificationa.html"><img width="16" height="16" alt="Next page" style="vertical-align: middle;" src="lib/NewItem72.png"></a></h1>
+<p class="rvps13"><span class="rvts53">This is the most important file of the ssTek deployment package. It is an actual (and valid) .INI-file.&nbsp;</span><br/><span class="rvts53"></span><br/><span class="rvts53">Use any text-editor, such as Notepad2, to create or modify one. Or the easiest way is to simply use the SetupS Editor (ssEditor) included with the SetupS package.</span><br/><span class="rvts53"></span><br/><span class="rvts53">Also as in any .ini-file, most system and environmental variables, frequently seen enclosed in %...%, are recognized plus many new ones specific </span><span class="rvts62">only</span><span class="rvts53"> to SetupS (i.e., %ppApps%). See </span><a class="rvts58" href="AutomaticVariableSubstitutionC.html">Automatic Variable Substitutions Chart</a><span class="rvts53"> for more details.</span></p>
+<p class="rvps13"><span class="rvts53"><br/></span></p>
+<p class="rvps13"><span class="rvts53">For details, click on the Section names:</span></p>
+<p class="rvps13"><span class="rvts53"><br/></span></p>
+<hr style="height: 1px; color : #000000;  background-color : #000000; border-width : 0px;">
+<p class="rvps13"><span class="rvts53"><br/></span></p>
+<p class="rvps13"><span class="rvts51">[SetupS] </span><span class="rvts53">(Required)</span></p>
+<p class="rvps17"><span class="rvts51"></span><br/><span class="rvts51">Title=</span></p>
+<p class="rvps48"><span class="rvts53">(Required). Name of Application or Game.</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts51">Version=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Version (for App's) or Copyright (for Games) information, for example:</span></p>
+<p class="rvps91"><span class="rvts53">v1.23|c2009, etc.</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts51">Description=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Currently only used by ssWPI. Enter a description of the application or game. Use "^^" to force line-breaks.</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts51">URL=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Currently only used by ssWPI. Enter websites addresses here. Separate multiple tags with "|". For example: </span><a class="rvts58" href="http://www.xyz.com">http://www.xyz.com</a><span class="rvts53"> | </span><a class="rvts58" href="http://www.example.com">http://www.example.com</a></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts51">Category=</span></p>
+<p class="rvps48"><span class="rvts53">(Recommended). Currently only used by ssWPI. See </span><a class="rvts58" href="CategoryList.html">Category List</a><span class="rvts53"> for a complete list. Separate multiple categories with "|".</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts53">OS=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Used by ssWPI for filtering app/game lists or by SetupS to gate installs. Use:&nbsp;</span></p>
+<p class="rvps93"><span class="rvts53">&nbsp; 0 = None specified or "Any". Effectively the same as 15 ("All"), below.</span></p>
+<p class="rvps93"><span class="rvts53">&nbsp; 1 = NT5: 2000, XP, 2003, etc.</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53">(2</span><span class="rvts104">0</span><span class="rvts53">)</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53">#Is_OS=5#</span></p>
+<p class="rvps93"><span class="rvts53">&nbsp; 2 = NT6 (pre-Metro/Modern): Vista, 7, 2008, 2011, etc.</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53">(2</span><span class="rvts104">1</span><span class="rvts53">)</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53">#Is_OS&gt;=6.0# #Is_OS&lt;=6.1#</span></p>
+<p class="rvps93"><span class="rvts53">&nbsp; 4 = Metro/Modern (pre-Win10): 8, 8.1, 2012</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53">(2</span><span class="rvts104">2</span><span class="rvts53">)</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53">#Is_OS&gt;=6.2# #Is_OS&lt;=6.3#</span></p>
+<p class="rvps93"><span class="rvts53">&nbsp; 8 = NT10: 10, 2016, etc.</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53">(2</span><span class="rvts104">3</span><span class="rvts53">)</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53">#Is_OS&gt;=10.0#</span></p>
+<p class="rvps93"><span class="rvts53">15 = All</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts53">(1+2+4+8)</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts53">Architecture=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Used by ssWPI for filtering app/game lists or by SetupS to gate installs. Use:&nbsp;</span></p>
+<p class="rvps93"><span class="rvts53">1 (x86)</span></p>
+<p class="rvps93"><span class="rvts53">2 (x64)</span></p>
+<p class="rvps93"><span class="rvts53">3 (DualArch)</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts53">BuildType=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Use:&nbsp;</span></p>
+<p class="rvps93"><span class="rvts53">ssApp</span></p>
+<p class="rvps93"><span class="rvts53">ppApp</span></p>
+<p class="rvps93"><span class="rvts53">ppGame</span></p>
+<p class="rvps93"><span class="rvts53">ppTweak</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts53">App-File Version=v9.</span><span class="rvts11">23.09.25.0</span></p>
+<p class="rvps48"><span class="rvts53">Used only by SetupS internally to determine what version level the current file-format was created under. A </span><span class="rvts62">five-number</span><span class="rvts53"> group with the first number always "v9" and rest being the current project core version.</span></p>
+<p class="rvps17"><span class="rvts51"></span><br/><span class="rvts53">App-File Style=1(Dual)|2 (INI)</span></p>
+<p class="rvps48"><span class="rvts53">Used internally by SetupS to determine what style the current file-format was created with. Either dual-format consisting of both the legacy format and the INI-file format; or strictly just the INI-file format.</span></p>
+<p class="rvps17"><span class="rvts51"></span><br/><span class="rvts53">AppPath=</span></p>
+<p class="rvps48"><span class="rvts53">(Recommended but not required). The "Installed-to" path goes here -- the actual physical (final) location of the app or game.</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts51">Assembly=</span></p>
+<p class="rvps48"><span class="rvts53">(Recommended for ssApps. Optional for ppApps/ppGames). </span><span class="rvts62">Ignored during Regen-mode.</span><span class="rvts53"> Place commands, </span><span class="rvts76">components</span><span class="rvts53">, </span><span class="rvts76">directives</span><span class="rvts53"> (see below), setup, or install package(s) here with proper silent install switches or script(s) to automate the install. Mainly for SetupS/ssApps, but can be used with ppApps/ppGames for any post-install or preprocessing commands, script(s), or registry entries. Use "^^" to force line-breaks.</span></p>
+<p class="rvps93"><span class="rvts53"></span><br/><span class="rvts53">See these for useful &nbsp;</span><a class="rvts87" href="Components.html">Components</a><span class="rvts53"> or </span><a class="rvts87" href="Directives.html">Directives</a><span class="rvts53">.</span></p>
+<p class="rvps94"><span class="rvts55"></span><br/><span class="rvts55">Some examples:</span></p>
+<p class="rvps95"><span class="rvts53">setup.msi /qb</span><br/><span class="rvts53">%WaitForIt% "%ProgramsCommon%\TestStartmenu.lnk"</span><br/><span class="rvts53">%ProcessKill% "Notepad.exe"</span><br/><span class="rvts53">%AddonInstaller% "%SourcePath%\Test_addon.7z"</span><br/><span class="rvts53">%AddToHosts% "127.0.0.1 secure.example.com"</span><br/><span class="rvts53">%Extract% "Extras.rar" -o"%SystemRoot%\LastXP"</span><br/><span class="rvts53">md "%ProgramFiles%\Something" #CMD#</span><br/><span class="rvts53">"7z920-x64.msi" /qb #Is_x64#</span><br/><span class="rvts53">ImportTest.reg</span><br/><span class="rvts53">ScriptTest.cmd</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts53">StartMenuSourcePath=</span></p>
+<p class="rvps48"><span class="rvts53">(Required only if shortcuts are to be created). The original shortcut folder name for SetupS/ssApp's or default/non-advanced StartMenu folder for ppApps/ppGames. This is where shortcuts get created if no advanced StartMenu sorting is selected.</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts53">Catalog=</span></p>
+<p class="rvps48"><span class="rvts53">(Recommended) For Advanced StartMenu sorting only, this defines where to create shortcuts. See </span><a class="rvts58" href="StartMenuCatalog.html">StartMenu Catalog</a><span class="rvts53"> for a complete list. Separate each catalog entry with "|".</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts53">ShortCutNamesKeep=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional or Required depending on the KeepAll flag or if BuildType is a ppApp or ppGame). List which shortcuts desired to keep (if KeepAll=No). First one listed here is the most important one as it is the one to be used for creating the Desktop, Startup, Sendto, or QuickLaunch shortcut(s).</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts53">FileTypes=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). List the file extension(s) to associate with the entire Application or Game. The use of </span><a class="rvts87" href="Directives.html">Gate Directives</a><span class="rvts53"> (such as #Is_x64#, #Is_NT6#, etc.) is allowed. Separate each with "|".</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts53">InstallFonts=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). List font-files here to be installed to the Windows Fonts applet. Use of </span><a class="rvts29" href="AutomaticVariableSubstitutionC.html">%Variables%</a><span class="rvts53"> and </span><a class="rvts87" href="Directives.html">Gate Directives</a><span class="rvts53"> (such as #Is_x64#, #Is_NT6#, etc.) is allowed. Separate each with "|".</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts53">RegisterDLL=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). List any files (one per line) here to be installed via the Windows Register Server. Use of </span><a class="rvts29" href="AutomaticVariableSubstitutionC.html">%Variables%</a><span class="rvts53"> and </span><a class="rvts87" href="Directives.html">Gate Directives</a><span class="rvts53"> (such as #Is_x64#, #Is_NT6#, etc.) is allowed.</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts53">PriorityOrder=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Used by ssWPI for determining which get installed before or after others. Default is "5". Use as such:&nbsp;</span></p>
+<p class="rvps93"><span class="rvts53">0 - Installs these before any other apps.</span></p>
+<p class="rvps93"><span class="rvts53">1 - Installs these after the "0" PriortyOrder items.</span></p>
+<p class="rvps93"><span class="rvts53">5 - Default for items without PriorityOrder provided.</span></p>
+<p class="rvps93"><span class="rvts53">9 - Graphics Drivers.</span></p>
+<p class="rvps93"><span class="rvts53">99 - Antivirus (always do these last to stop it interfering with the install and slowing down the process by scanning everything you do during the install).</span></p>
+<p class="rvps93"><span class="rvts53">100+ - Anything else that may cause ssWPI to not be automatic (user interaction).</span></p>
+<p class="rvps93"><span class="rvts53">999 - Maximum PriorityOrder.</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts53">Flags=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Merely list to set these (see list below); separating each with "|".&nbsp;</span></p>
+<p class="rvps48"><span class="rvts53"></span><br/><span class="rvts103">Shortcut Locations</span><span class="rvts62"> (applies to all ShortcutS defs listed):</span><br/><span class="rvts62"><br/></span></p>
+<p class="rvps92"><span class="rvts62">NotInStartmenu</span></p>
+<p class="rvps96"><span class="rvts53">Use this to NOT create Shortcuts in the StartMenu. Over-rides the Shortcut Options flags: </span><span class="rvts62">KeepInFolder</span><span class="rvts53"> and </span><span class="rvts62">KeepAll</span><span class="rvts53">, below.&nbsp;</span></p>
+<p class="rvps92"><span class="rvts62">Root</span></p>
+<p class="rvps97"><span class="rvts53">Create shortcut in "Start Menu" (a.k.a., Root). </span><span class="rvts11">Only the first shortcut listed from "</span><span class="rvts53">ShortCutNamesKeep"</span><span class="rvts11"> or from the ShortcutS defs.</span></p>
+<p class="rvps92"><span class="rvts62">Programs</span></p>
+<p class="rvps97"><span class="rvts53">Create shortcut in "Start Menu\Programs". </span><span class="rvts11">Only the first shortcut listed from "</span><span class="rvts53">ShortCutNamesKeep"</span><span class="rvts11"> or from the ShortcutS defs.</span></p>
+<p class="rvps92"><span class="rvts62">StartUp</span></p>
+<p class="rvps97"><span class="rvts53">Create shortcut in "Start Menu\Programs\Startup". </span><span class="rvts11">Only the first shortcut listed from "</span><span class="rvts53">ShortCutNamesKeep"</span><span class="rvts11"> or from the ShortcutS defs.</span></p>
+<p class="rvps92"><span class="rvts62">SendTo</span></p>
+<p class="rvps97"><span class="rvts53">Create shortcut in "SendTo" context-menu. </span><span class="rvts11">Only the first shortcut listed from "</span><span class="rvts53">ShortCutNamesKeep"</span><span class="rvts11"> or from the ShortcutS defs.</span></p>
+<p class="rvps92"><span class="rvts62">Desktop</span></p>
+<p class="rvps97"><span class="rvts53">Create shortcut on "Desktop". </span><span class="rvts11">Only the first shortcut listed from "</span><span class="rvts53">ShortCutNamesKeep"</span><span class="rvts11"> or from the ShortcutS defs.</span></p>
+<p class="rvps92"><span class="rvts62">QuickLaunch</span></p>
+<p class="rvps97"><span class="rvts53">Create shortcut in "QuickLaunch". </span><span class="rvts11">Only the first shortcut listed from "</span><span class="rvts53">ShortCutNamesKeep"</span><span class="rvts11"> or from the ShortcutS defs.</span></p>
+<p class="rvps92"><span class="rvts62">CurrentUserOnly</span></p>
+<p class="rvps97"><span class="rvts53">Create shortcut(s) for "Current User" instead of "AllUsers" using above listed flags. Default is to create shortcuts for "AllUsers".</span></p>
+<p class="rvps92"><span class="rvts62">TaskbarPin</span></p>
+<p class="rvps97"><span class="rvts53">(Windows 7 only). Pins a shortcut to the Taskbar. </span><span class="rvts11">Only the first shortcut listed from "</span><span class="rvts53">ShortCutNamesKeep"</span><span class="rvts11"> or from the ShortcutS defs.</span></p>
+<p class="rvps92"><span class="rvts103">StartmenuPin</span></p>
+<p class="rvps97"><span class="rvts53">(Windows 7 only). Pins a shortcut to the Startmenu. </span><span class="rvts11">Only the first shortcut listed from "</span><span class="rvts53">ShortCutNamesKeep"</span><span class="rvts11"> or from the ShortcutS defs.</span></p>
+<p class="rvps48"><span class="rvts53"></span><br/><span class="rvts103">Shortcut Options</span><span class="rvts62"> (applies to all ShortcutS defs listed):</span><br/><span class="rvts62"><br/></span></p>
+<p class="rvps93"><span class="rvts62">KeepAll</span></p>
+<p class="rvps95"><span class="rvts53">Keep all the shortcuts available in the ShortcutS defs and ignore ShortCutNamesKeep.</span></p>
+<p class="rvps93"><span class="rvts62">KeepInFolder</span></p>
+<p class="rvps95"><span class="rvts53">Contain the shortcut(s) in the folder specified in "StartMenuSourcePath".</span></p>
+<p class="rvps93"><span class="rvts62">NoShortcuts</span></p>
+<p class="rvps95"><span class="rvts53">Suppress shortcut creation of any kind whatsoever. Over-rides </span><span class="rvts62">AlwaysSort</span><span class="rvts53">, below.</span></p>
+<p class="rvps93"><span class="rvts62">AlwaysSort</span></p>
+<p class="rvps95"><span class="rvts53">Force shortcut creation into an Advanced menu rather than the Standard one</span></p>
+<p class="rvps93"><span class="rvts62">NoMenuIcons</span></p>
+<p class="rvps95"><span class="rvts53">Suppress this App's StartMenu icon folder creation</span></p>
+<p class="rvps93"><span class="rvts62">RefreshDesktop</span></p>
+<p class="rvps95"><span class="rvts53">Force a desktop refresh (without having to cycle thru a logoff then logon). This will also refresh Explorer views as well.</span></p>
+<p class="rvps93"><span class="rvts62">LivePE</span></p>
+<p class="rvps95"><span class="rvts53">Mark this ppApp/ppGame for LivePE's such as ppAppsLive or ppGamesLive (not implemented).&nbsp;</span></p>
+<p class="rvps93"><span class="rvts62">NotMetroFriendly</span></p>
+<p class="rvps95"><span class="rvts53">Over-rides </span><span class="rvts62">KeepInFolder</span><span class="rvts53"> and </span><span class="rvts62">KeepAll</span><span class="rvts53"> (above) to place shortcuts from the 'Shortcut names to keep' list or if empty, then the first ShortcutS def listed. Note: this will </span><span class="rvts62">only</span><span class="rvts53"> affect shortcuts on Windows 8 (NT6.2) or greater.</span></p>
+<p class="rvps48"><span class="rvts53"></span><br/><span class="rvts103">Post-processing Options</span><span class="rvts62">:</span><br/><span class="rvts62"><br/></span></p>
+<p class="rvps93"><span class="rvts62">NoneThing</span></p>
+<p class="rvps95"><span class="rvts53">Suppress SetupS related files. Basically, this prevents creation of the Aux files (screenshot, fader, etc.), advanced startmenu shortcuts, folder icons, and the .app-file. This also means that the app will be rendered invisible or nonexistent to SetupS and ssWPI.</span></p>
+<p class="rvps48"><span class="rvts53"></span><br/><span class="rvts103">ssWPI Options</span><span class="rvts53"> (the following only affect ssWPI):</span><br/><span class="rvts53"><br/></span></p>
+<p class="rvps93"><span class="rvts62">AlwaysShow</span><br/><span class="rvts62">DuringSetupOnly</span><br/><span class="rvts62">InstallT13</span><br/><span class="rvts62">InstallInstant</span></p>
+<p class="rvps13"><span class="rvts53"></span><br/><span class="rvts51">[Meta]&nbsp;</span></p>
+<p class="rvps17"><span class="rvts51">(Optional). Extra application or game information.</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts53">Tags=Basically, a list of sub-categories.</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Currently only used by ssWPI. Separate multiple tags with "|". Unlike "Category", this is a searchable-freeform field where any keyword or phrase is allowed.</span></p>
+<p class="rvps17"><span class="rvts53">Publisher=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Currently only used by ssWPI.</span></p>
+<p class="rvps17"><span class="rvts53">Language=Mainly used only with NON English releases. Multilingual and bilingual are optional.</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Currently only used by ssWPI.</span></p>
+<p class="rvps17"><span class="rvts53">Releaser=The person or group who built or assembled this deployment package.&nbsp;</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Currently only used by ssWPI.</span></p>
+<p class="rvps17"><span class="rvts53">Additional=Any extra information desired.</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Currently only used by ssWPI.</span></p>
+<p class="rvps17"><span class="rvts53">Rating=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Currently only used by ssWPI.</span></p>
+<p class="rvps17"><span class="rvts53">RequiredRuntimes=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Currently only used by ssWPI.</span></p>
+<p class="rvps17"><span class="rvts53">ReleaseVersion=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Currently only used by ssWPI.</span></p>
+<p class="rvps17"><span class="rvts53">ReleaseDate=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Currently only used by ssWPI.</span></p>
+<p class="rvps17"><span class="rvts53">InstalledSize=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Currently only used by ssWPI. This is a numeric value representing the number of </span><span class="rvts62">bytes</span><span class="rvts53"> on a drive an application or game takes-up after an install.</span></p>
+<p class="rvps17"><span class="rvts53">LicenseType=</span></p>
+<p class="rvps48"><span class="rvts53">(Optional). Currently only used by ssWPI. The type of license that applies to the app or game. Used as so:</span></p>
+<p class="rvps93"><span class="rvts53">0 (N/A or Unassigned).&nbsp;</span></p>
+<p class="rvps93"><span class="rvts53">1 (non-gratis). Proprietary and closed-source (commercial). Example: Microsoft Office.</span></p>
+<p class="rvps93"><span class="rvts53">2 (gratis-only). Proprietary and closed-source (non-profit). Example: Kingsoft Office.</span></p>
+<p class="rvps93"><span class="rvts53">3 (libre). Non-proprietary and open-source. Example: LibreOffice.</span></p>
+<p class="rvps13"><span class="rvts53"></span><br/><span class="rvts53">[{</span><span class="rvts62">Shortcut-name}</span><span class="rvts53">.lnk]</span></p>
+<p class="rvps17"><span class="rvts53">(Optional). List ppApp/ppGame or extra ssApp shortcuts in these section(s). {</span><span class="rvts62">Shortcut-name} </span><span class="rvts53">is the link or name of the shortcut as it will appear in the StartMenu, etc. Each Shortcut is defined as follows:</span></p>
+<p class="rvps48"><span class="rvts53"></span><br/><span class="rvts53">Target=</span></p>
+<p class="rvps93"><span class="rvts53">(Required). This is the actual physical filename of app or game; usually the .exe. Do not use parameters or arguments here (see below for that).</span></p>
+<p class="rvps48"><span class="rvts53">WorkingDir=</span></p>
+<p class="rvps93"><span class="rvts53">(Optional). What folder to start in, or work from.</span></p>
+<p class="rvps48"><span class="rvts53">Comment=</span></p>
+<p class="rvps93"><span class="rvts53">(Optional). A short description of this shortcut.</span></p>
+<p class="rvps48"><span class="rvts53">Arguments=</span></p>
+<p class="rvps93"><span class="rvts53">(Optional). Shortcut arguments or parameters, if any</span></p>
+<p class="rvps48"><span class="rvts53">Icon=</span></p>
+<p class="rvps93"><span class="rvts53">(Optional). File name of icon to use.</span></p>
+<p class="rvps48"><span class="rvts53">IconIndex=</span></p>
+<p class="rvps93"><span class="rvts53">(Optional). The icon instance to use (default is 0)</span></p>
+<p class="rvps48"><span class="rvts53">Extension=</span></p>
+<p class="rvps93"><span class="rvts53">(Optional). File extension(s) to associate with this Shortcut/app. Over-rides &lt;Extensions&gt; above.</span></p>
+<p class="rvps48"><span class="rvts53">Windowstate=</span></p>
+<p class="rvps93"><span class="rvts53">(Optional). The state the shortcut is launched in. Use: 1=Normal (default), 2=Minimized, not active, 3=Maximized, 7=Minimized but not active.</span></p>
+<p class="rvps48"><span class="rvts53">Flags=</span></p>
+<p class="rvps93"><span class="rvts53">(Optional). Only gates (such as Is_x64, Is_NT6, etc.) are supported at the moment.</span></p>
+<p class="rvps48"><span class="rvts51">Catalog=</span></p>
+<p class="rvps93"><span class="rvts51">(Optional). Not supported at the moment.</span></p>
+<p class="rvps17"><span class="rvts53"></span><br/><span class="rvts53">Also, unique to DualArch forms is the link names, {</span><span class="rvts62">Shortcut-name}, </span><span class="rvts53">will have appended either {#1} or {#2} for their respective architecture information contained within the definition.</span><span class="rvts6"></span></p>
+<p class="rvps10" style="clear: both;"><span class="rvts17">Created with the Personal Edition of HelpNDoc: </span><a class="rvts18" href="https://www.helpndoc.com/feature-tour/iphone-website-generation">Create iPhone web-based documentation</a></p>
+
+            </div>
+            
+            <div id="topic_footer"><div id="topic_footer_content">Copyright &copy; 2023, Vergitek Solutions</div></div>
+        </div>  <!-- /#topic-content -->
+    </article>
+
+    <footer></footer>
+
+  </div>  <!-- /#main -->
+
+  <div class="mask" data-toggle="sm-nav-expanded"></div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="hndModal" tabindex="-1" role="dialog" aria-labelledby="hndModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="hndModalLabel"></h4>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary modal-btn-close" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Splitter -->
+  <div id="hnd-splitter" style="left: 350px"></div>  
+
+  <!-- Scripts -->
+  <script src="vendors/jquery-3.5.1/jquery.min.js"></script>
+  <script src="vendors/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+  <script src="vendors/bootstrap-3.4.1/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="vendors/markjs-8.11.1/jquery.mark.min.js"></script>
+  <script src="vendors/uri-1.19.11/uri.min.js"></script>
+  <script src="vendors/imageMapResizer-1.0.10/imageMapResizer.min.js"></script>
+  <script src="vendors/headroom-0.11.0/headroom.min.js"></script>
+  <script src="vendors/jstree-3.3.10/jstree.min.js"></script>  
+  <script src="vendors/interactjs-1.9.22/interact.min.js"></script>  
+
+  <!-- HelpNDoc scripts -->
+  <script src="js/polyfill.object.min.js"></script>
+  <script src="_translations.js"></script>
+  <script src="js/hndsd.min.js"></script>
+  <script src="js/hndse.min.js"></script>
+  <script src="js/app.min.js"></script>
+
+  <!-- Init script -->
+  <script>
+    $(function() {
+      // Create the app
+      var app = new Hnd.App({
+        searchEngineMinChars: 3
+      });
+      // Update translations
+      hnd_ut(app);
+	  // Instanciate imageMapResizer
+	  imageMapResize();
+	  // Custom JS
+	  
+      // Boot the app
+      app.Boot();
+    });
+  </script>
+
+
+
+</body>
+
+</html>
+
