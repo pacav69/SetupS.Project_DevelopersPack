@@ -8,6 +8,7 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
 changed converted help file to version 8 of helpndoc
 added new code for use of helpndoc8
 updated ProjectVersion=23.09.25.0
+added details to FAQ sections  ## Winscp, ## helpndoc 8
 ---------------------------------------------
 23Sep2023
 ---------------------------------------------
