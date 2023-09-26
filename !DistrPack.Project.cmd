@@ -1133,6 +1133,15 @@ echo============================================================================
 echo Uploading SetupS Project v%ProjectVersion% to  %WebSite1%
   echo===============================================================================
 echo.
+echo =======================================================
+echo Start  time
+FOR /F %%A IN ('TIME/T') DO SET Now=%%A
+FOR %%A IN (%Date%) DO SET Today=%%A
+SET Now=%Time%
+ECHO It's %Today%  %Now%
+@REM echo  %date%-%time%
+echo =======================================================
+echo.
 @REM this will update the .ini file with the password for ftp
 @REM call updfiles.cmd
 call updfiles.cmd %filesini1%
@@ -1157,12 +1166,12 @@ echo.
 :uploadlastosfiles
 if [%LastosUploads%]==[No] goto Finish
 echo.
-echo #######################################################
-echo.
-echo Upload LastOS files
-echo.
-echo #######################################################
-echo.
+@REM echo #######################################################
+@REM echo.
+@REM echo Upload LastOS files
+@REM echo.
+@REM echo #######################################################
+@REM echo.
 echo =======================================================
 echo Start  time
 FOR /F %%A IN ('TIME/T') DO SET Now=%%A
@@ -1173,7 +1182,7 @@ ECHO It's %Today%  %Now%
 echo =======================================================
 echo.
   echo.===============================================================================
-  echo moving old files  to /SetupSoldfies/ folder on FTP site
+  @REM echo moving old files  to /SetupSoldfies/ folder on FTP site
 echo Uploading SetupS Project v%ProjectVersion% to %WebSite2%
   echo.===============================================================================
 echo.
@@ -1192,6 +1201,7 @@ ECHO It's %Today%  %Now%
 @REM echo  %date%-%time%
 echo =======================================================
 echo.
+
 @REM #######################################################
 @REM ### Finish
 @REM #######################################################
