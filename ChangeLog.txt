@@ -3,6 +3,14 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
       not always possible especially when adding new features.
 
 ---------------------------------------------
+26Sep2023
+---------------------------------------------
+added code for vergitek to use Winscp ftp app
+createduploadfilesftp.cmd file for use by multi ftp sites using Winscp
+added filesvergitek.ini to .gitignore
+updated ProjectVersion=23.09.26.0
+
+---------------------------------------------
 25Sep2023
 ---------------------------------------------
 changed converted help file to version 8 of helpndoc

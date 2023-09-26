@@ -14,3 +14,4 @@ add SetUserFTA usage with examples in help file
 ~~convert help file to version 8~~
 add upload html help files via ftp using winscp
 add  FAQ stands for "Frequently Asked Questions"
+~~add code for vergitek to use winscp~~

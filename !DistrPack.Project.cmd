@@ -52,7 +52,7 @@ echo. change parameter to Upload=Yes in file !!Make.SetupS-Project.cmd
 echo then rerun
 echo.
   echo.===============================================================================
-pause
+@REM pause
 goto :Quit
 )else(goto :getVer)
 
@@ -89,8 +89,19 @@ goto setText
 :setText
 set cYear=2023
 set cHolder=Vergitek Solutions
+
+
+@REM #######################################################
+@REM ###  WebLink1=sstek.vergitek.com
+@REM #######################################################
+
 set WebSite1=ssTek Forum
 set WebLink1=sstek.vergitek.com
+set domain1=setups@lastos.org
+set ftp1=ftp.vergitek.com
+set Webfolder1=
+set filesini1=filesvergitek.ini
+
 @REM #######################################################
 @REM ###  WebLink2=www.lastos.org
 @REM #######################################################
@@ -98,9 +109,10 @@ set WebSite2=LastOS Forum
 set WebLink2=www.lastos.org
 set domain2=setups@lastos.org
 set ftp2=ftp.lastos.org
-@REM set Webfolder2=Setupsfiles/
 set Webfolder2=
-set WebSite5=LastOS Forum
+set filesini2=fileslastos.ini
+
+
 @REM #######################################################
 @REM ###  Alternate login
 @REM #######################################################
@@ -189,7 +201,7 @@ set LastosUploads=No
 
 :check2
 echo.
-choice /C:YN /N /T 5 /D N  /M "Do you want to upload files with curl to Vergitek at the end, default is No ['Y'es/'N'o] : "
+choice /C:YN /N /T 5 /D N  /M "Do you want to upload files with Winscp to Vergitek at the end, default is No ['Y'es/'N'o] : "
 if errorlevel 2 goto :somewhere_else2
 if errorlevel 1 goto :somewhere2
 echo.
@@ -929,38 +941,102 @@ goto :LastOSftp
 @REM #######################################################
 @REM ### LastOS ftp upload create list
 @REM #######################################################
+@REM refer to set filesini2
 :LastOSftp
-echo creating fileslastos.ini for upload...
+@REM set oldfies = SetupSoldfies
+echo creating %filesini2% for upload...
 cd "%~dp0"
 @REM create files to upload script for winscp useage
 @REM ref: https://winscp.net/eng/docs/commandline
-if exist "fileslastos.ini" del /F /Q "fileslastos.ini" >nul:
-echo ; connect to ftp server  >>fileslastos.ini
-echo open ftp://%domain2%:#Password#@%ftp2%/%Webfolder2%>>fileslastos.ini
-echo ; files to move >>fileslastos.ini
-@REM add list of files to move to SetupSoldfies/
-echo echo moving files on ftp server
-echo mv checksums_*.md5 SetupSoldfies/>>fileslastos.ini
-echo mv update.ini  SetupSoldfies/>>fileslastos.ini
-echo mv SetupS*.*  SetupSoldfies/>>fileslastos.ini
-echo mv ChangeLog.txt  SetupSoldfies/>>fileslastos.ini
-echo mv Install.SetupS*.*  SetupSoldfies/>>fileslastos.ini
+@REM https://winscp.net/eng/docs/scripting
+@REM To insert comments into the script file, start the line with # (hash):
+if exist "%filesini2%" del /F /Q "%filesini2%" >nul:
+echo ; connect to ftp server  >>%filesini2%
+echo open ftp://%domain2%:#Password#@%ftp2%/%Webfolder2%>>%filesini2%
+echo # files to move >>%filesini2%
+@REM if file does not exist then mv will fail terminating session
+@REM it can be achieved by using ,net assembly refer to ref
+@REM ref: https://winscp.net/eng/docs/library_session_fileexists
+@REM add list of files to move to oldfies/
+@REM echo echo moving files on ftp server
+@REM if remote directory does not exist then session will fail and terminate
+@REM set oldfies = SetupSoldfies\
+@REM echo mkdir %oldfies%/>>%filesini2%
+@REM echo mv checksums_*.md5 oldfies/>>%filesini2%
+@REM echo mv update.ini  oldfies/>>%filesini2%
+@REM echo mv SetupS*.*  oldfies/>>%filesini2%
+@REM echo mv ChangeLog.txt  oldfies/>>%filesini2%
+@REM echo mv Install.SetupS*.*  oldfies/>>%filesini2%
+@REM add files for upload
+@REM echo echo uploading files
+echo ; files to upload >>%filesini2%
+echo put .\files\update.ini>>%filesini2%
+echo put .\files\%ssApp%.exe>>%filesini2%
+echo put .\files\%ssApp%.apz>>%filesini2%
+echo put .\files\%ppApp%.7z>>%filesini2%
+echo put .\files\%ssUI%.exe>>%filesini2%
+echo put .\files\%scp%.7z>>%filesini2%
+echo put .\files\%devpack%.7z>>%filesini2%
+echo put .\files\%ssII%.exe>>%filesini2%
+echo put .\files\checksums_v%ProjectVersion%.md5>>%filesini2%
+echo put .\files\ChangeLog.txt>>%filesini2%
+echo put .\files\SetupS-files.htm>>%filesini2%
+echo put .\files\SetupS-title.png>>%filesini2%
+echo exit >>%filesini2%
+
+
+
+@REM #######################################################
+@REM ### vergitek ftp upload create list %filesini1%
+@REM #######################################################
+@REM refer to set filesini1
+:LastOSftp
+echo creating %filesini1% for upload...
+cd "%~dp0"
+@REM create files to upload script for winscp useage
+@REM ref: https://winscp.net/eng/docs/commandline
+@REM https://winscp.net/eng/docs/scripting
+@REM To insert comments into the script file, start the line with # (hash):
+if exist "%filesini1%" del /F /Q "%filesini1%" >nul:
+echo ; connect to ftp server  >>%filesini1%
+echo open ftp://%domain1%:#Password#@%ftp1%/%Webfolder1%>>%filesini1%
+echo ; files to move >>%filesini1%
+@REM add list of files to move to oldfies/
+@REM if file does not exist then mv will fail terminating session
+@REM it can be achieved by using ,net assembly refer to ref
+@REM ref: https://winscp.net/eng/docs/library_session_fileexists
+@REM add list of files to move to oldfies/
+@REM echo echo moving files on ftp server
+@REM if remote directory does not exist then session will fail and terminate
+@REM set oldfies = SetupSoldfies\
+@REM echo mkdir %oldfies%/>>%filesini1%
+@REM echo mv checksums_*.md5 %oldfies%/>>%filesini1%
+@REM echo mv update.ini  %oldfies%/>>%filesini1%
+@REM echo mv SetupS*.*  %oldfies%/>>%filesini1%
+@REM echo mv ChangeLog.txt  %oldfies%/>>%filesini1%
+@REM echo mv Install.SetupS*.*  %oldfies%/>>%filesini1%
 @REM add files for upload
 echo echo uploading files
-echo ; files to upload >>fileslastos.ini
-echo put .\files\update.ini>>fileslastos.ini
-echo put .\files\%ssApp%.exe>>fileslastos.ini
-echo put .\files\%ssApp%.apz>>fileslastos.ini
-echo put .\files\%ppApp%.7z>>fileslastos.ini
-echo put .\files\%ssUI%.exe>>fileslastos.ini
-echo put .\files\%scp%.7z>>fileslastos.ini
-echo put .\files\%devpack%.7z>>fileslastos.ini
-echo put .\files\%ssII%.exe>>fileslastos.ini
-echo put .\files\checksums_v%ProjectVersion%.md5>>fileslastos.ini
-echo put .\files\ChangeLog.txt>>fileslastos.ini
-echo put .\files\SetupS-files.htm>>fileslastos.ini
-echo put .\files\SetupS-title.png>>fileslastos.ini
-echo exit >>fileslastos.ini
+echo ; files to upload >>%filesini1%
+echo put .\files\update.ini>>%filesini1%
+echo put .\files\%ssApp%.exe>>%filesini1%
+echo put .\files\%ssApp%.apz>>%filesini1%
+echo put .\files\%ppApp%.7z>>%filesini1%
+echo put .\files\%ssUI%.exe>>%filesini1%
+echo put .\files\%scp%.7z>>%filesini1%
+echo put .\files\%devpack%.7z>>%filesini1%
+echo put .\files\%ssII%.exe>>%filesini1%
+echo put .\files\checksums_v%ProjectVersion%.md5>>%filesini1%
+echo put .\files\ChangeLog.txt>>%filesini1%
+echo put .\files\SetupS-files.htm>>%filesini1%
+echo put .\files\SetupS-title.png>>%filesini1%
+echo exit >>%filesini1%
+
+@REM pause
+@REM call  updfiles.cmd with  %filesini1%
+@REM call updfiles.cmd %filesini1%
+@REM call updfiles.cmd %filesini2%
+
 
 @REM #######################################################
 @REM ### Movefiles
@@ -1019,35 +1095,52 @@ echo.
 
 
 :uploadvergitekfiles
-:sstek.vergitek.com (requires cURL)
-echo #######################################################
+@REM :sstek.vergitek.com (requires cURL)
+@REM echo #######################################################
+@REM echo.
+@REM echo Upload Vergitek files
+@REM echo.
+@REM echo #######################################################
+@REM echo #######################################################
+@REM echo Start  time
+@REM FOR %%A IN (%Date%) DO SET Today=%%A
+@REM SET Now=%Time%
+@REM ECHO It's %Today%  %Now%
+@REM @REM echo  %date%-%time%
+@REM echo #######################################################
+@REM echo.
+@REM echo uploading files to vergitek
+@REM echo.
+@REM %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink1%"
+@REM call UploadMe.cmd update.ini files/ .\ sstek.vergitek.com
+@REM call UploadMe.cmd %ssApp%.exe files/ .\ sstek.vergitek.com
+@REM call UploadMe.cmd %ssApp%.apz files/ .\ sstek.vergitek.com
+@REM call UploadMe.cmd %ppApp%.7z files/ .\ sstek.vergitek.com
+@REM call UploadMe.cmd %ssUI%.exe files/ .\ sstek.vergitek.com
+@REM call UploadMe.cmd %scp%.7z files/ .\ sstek.vergitek.com
+@REM call UploadMe.cmd %devpack%.7z files/ .\ sstek.vergitek.com
+@REM call UploadMe.cmd %ssII%.exe files/ .\ sstek.vergitek.com
+@REM call UploadMe.cmd checksums_v%ProjectVersion%.md5 files/ .\ sstek.vergitek.com
+@REM call UploadMe.cmd ChangeLog.txt files/ .\ sstek.vergitek.com
+@REM call UploadMe.cmd SetupS-files.htm files/ .\ sstek.vergitek.com
+@REM call UploadMe.cmd SetupS-title.png files/ .\ sstek.vergitek.com
+@REM echo.
+
 echo.
-echo Upload Vergitek files
+
+echo===============================================================================
+@REM echo moving old files  to /SetupSoldfies/ folder on FTP site
+echo Uploading SetupS Project v%ProjectVersion% to  %WebSite1%
+  echo===============================================================================
 echo.
-echo #######################################################
-echo #######################################################
-echo Start  time
-FOR %%A IN (%Date%) DO SET Today=%%A
-SET Now=%Time%
-ECHO It's %Today%  %Now%
-@REM echo  %date%-%time%
-echo #######################################################
-echo.
-echo uploading files to vergitek
-echo.
-%AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript "bin\GetAccountInfo.au3" "%WebLink1%"
-call UploadMe.cmd update.ini files/ .\ sstek.vergitek.com
-call UploadMe.cmd %ssApp%.exe files/ .\ sstek.vergitek.com
-call UploadMe.cmd %ssApp%.apz files/ .\ sstek.vergitek.com
-call UploadMe.cmd %ppApp%.7z files/ .\ sstek.vergitek.com
-call UploadMe.cmd %ssUI%.exe files/ .\ sstek.vergitek.com
-call UploadMe.cmd %scp%.7z files/ .\ sstek.vergitek.com
-call UploadMe.cmd %devpack%.7z files/ .\ sstek.vergitek.com
-call UploadMe.cmd %ssII%.exe files/ .\ sstek.vergitek.com
-call UploadMe.cmd checksums_v%ProjectVersion%.md5 files/ .\ sstek.vergitek.com
-call UploadMe.cmd ChangeLog.txt files/ .\ sstek.vergitek.com
-call UploadMe.cmd SetupS-files.htm files/ .\ sstek.vergitek.com
-call UploadMe.cmd SetupS-title.png files/ .\ sstek.vergitek.com
+@REM this will update the .ini file with the password for ftp
+@REM call updfiles.cmd
+call updfiles.cmd %filesini1%
+
+@REM this will move old  files to  /SetupSoldfies/ then upload the new files using winscp
+@REM log file .\WinSCP\winscp.log
+call uploadfilesftp.cmd %filesini1%
+
 echo.
 echo #######################################################
 echo End time
@@ -1081,14 +1174,15 @@ echo =======================================================
 echo.
   echo.===============================================================================
   echo moving old files  to /SetupSoldfies/ folder on FTP site
-echo Uploading SetupS Project v%ProjectVersion% to LastOS
+echo Uploading SetupS Project v%ProjectVersion% to %WebSite2%
   echo.===============================================================================
 echo.
-@REM this will update the fileslastos.ini with the password for ftp
-call updfiles.cmd
+@REM this will update the %filesini2% with the password for ftp
+@REM call updfiles.cmd
+call updfiles.cmd %filesini2%
 @REM this will move old  files to  /SetupSoldfies/ then upload the new files using winscp
 @REM log file .\WinSCP\winscp.log
-call uploadlastos.cmd
+call uploadfilesftp.cmd  %filesini2%
 echo.
 echo =======================================================
 echo End time
@@ -1109,12 +1203,10 @@ echo.
 :Cleaning
 echo #######################################################
 echo Cleaning up...
+echo.
+echo  Deleting compilied files after upload
 echo #######################################################
 cd "%~dp0"
-
-echo #######################################################
-echo  ### Deleting compilied files after upload
-echo #######################################################
 :Deleting files
 @REM echo deleting SetupS-*.htm
 if exist "SetupS-*.htm" del /F /Q "SetupS-*.htm" >nul:
