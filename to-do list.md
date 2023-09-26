@@ -15,3 +15,4 @@ add SetUserFTA usage with examples in help file
 add upload html help files via ftp using winscp
 add  FAQ stands for "Frequently Asked Questions"
 ~~add code for vergitek to use winscp~~
+change  Inno Installer to quiet mode ref: https://jrsoftware.org/ishelp/index.php?topic=compilercmdline
