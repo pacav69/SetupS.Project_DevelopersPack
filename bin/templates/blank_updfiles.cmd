@@ -40,6 +40,7 @@ if NOT EXIST  %1 (
     echo.
    fart -q -i -r ".\%1" "#password#" "%pw%" >nul:
     echo.
+    goto exit
 )
 
 @REM check if file exist
@@ -61,6 +62,7 @@ set pw=mypass2
     echo.
    fart -q -i -r ".\%1" "#password#" "%pw%" >nul:
     echo.
+    goto exit
 )
 
 :exit

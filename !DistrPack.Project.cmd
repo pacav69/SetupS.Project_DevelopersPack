@@ -536,7 +536,7 @@ echo.
 @REM %HelpNDoc8% %UpdateHelpPath%\%UpdateHelpFile%.hnd build -silent -x="Build HTML documentation" -o="Build HTML documentation:%~dp0\html\%UpdateHelpFile%.html"
 %HelpNDoc8% %UpdateHelpPath%\%UpdateHelpFile%.hnd build -silent -x="Build HTML documentation" -o="Build HTML documentation:%htmlhelp%\%UpdateHelpFile%.html"
 
-echo finished
+@REM echo finished
 @REM original autoit file
 @REM %AutoIt3% /ErrorStdOut /AutoIt3ExecuteScript CompileHND2.au3 "%UpdateHelpPath%" "%UpdateHelpFile%"
 cd "%UpdateHelpPath%"
