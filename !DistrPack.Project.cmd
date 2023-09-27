@@ -1,6 +1,6 @@
 :This script creates dual architecture (x86|x64) distribution packages. Does NOT require an x64-machine to run.
 :Assumes the following are installed: "AutoIt3" (plus SciTE), and "Inno Setup". Plus, "HelpNDoc" (v2 only) and "Microsoft's HTML Help Workshop" should be installed in order to update the help-files.
-:The following folders also need to be present: bin, sfx, and curl.
+:The following folders also need to be present: bin, sfx, winscp and curl.
 :7zip.exe will be required but is already included in the Tools folder.
 
 @echo off
@@ -32,7 +32,8 @@ echo Upload = %Upload%
 @REM goto
 if  [%Upload%]==[No](echo.
 echo  Upload parameter is set to 'No'
-choice /C:YN /N /M "Are you sure you want to continue? ['Y'es/'N'o] : "
+@REM https://www.robvanderwoude.com/choice.php
+CHOICE /C:YN /N /M "Are you sure you want to continue? ['Y'es/'N'o] : "
 if errorlevel 2 goto :somewhere_else
 if errorlevel 1 goto :somewhere
 
@@ -168,8 +169,8 @@ echo #    This will compile and upload the SetupS Suite
 echo.
 echo ###########################################################
 echo.
-
-choice /C:YN /N /T 5 /D N  /M "Do you want to upload files with Winscp at the end, default is No ['Y'es/'N'o] : "
+@REM https://www.robvanderwoude.com/choice.php
+CHOICE /C:YN /N /T 5 /D N  /M "Do you want to upload files with Winscp at the end, default is No ['Y'es/'N'o] : "
 if errorlevel 2 goto :somewhere_else
 if errorlevel 1 goto :somewhere
 echo.
@@ -201,6 +202,7 @@ set LastosUploads=No
 
 :check2
 echo.
+@REM https://www.robvanderwoude.com/choice.php
 choice /C:YN /N /T 5 /D N  /M "Do you want to upload files with Winscp to Vergitek at the end, default is No ['Y'es/'N'o] : "
 if errorlevel 2 goto :somewhere_else2
 if errorlevel 1 goto :somewhere2
