@@ -7,6 +7,7 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
 ---------------------------------------------
 updated FAQ
 updated updfiles.cmd
+modified:   !DistrPack.Project.cmd
 
 ---------------------------------------------
 26Sep2023
