@@ -1,5 +1,6 @@
 :This script creates dual architecture (x86|x64) distribution packages. Does NOT require an x64-machine to run.
-:Assumes the following are installed: "AutoIt3" (plus SciTE), and "Inno Setup". Plus, "HelpNDoc" (v2 only) and "Microsoft's HTML Help Workshop" should be installed in order to update the help-files.
+: it also uploads the created files tp ftp sites
+:Assumes the following are installed: "AutoIt3" (plus SciTE), and "Inno Setup". Plus, Winscp, "HelpNDoc" (v8) and "Microsoft's HTML Help Workshop" should be installed in order to update the help-files.
 :The following folders also need to be present: bin, sfx, winscp and curl.
 :7zip.exe will be required but is already included in the Tools folder.
 
@@ -63,7 +64,7 @@ set ProjectVersion=%1
 goto getDate
 
 :setVer
-set ProjectVersion=23.09.23.0
+set ProjectVersion=23.09.26.0
 goto getDate
 
 :getDate
@@ -72,7 +73,7 @@ set ProjectDate=%2
 goto getDoUploads
 
 :setDate
-set ProjectDate=2023-09-23
+set ProjectDate=2023-09-26
 goto getDoUploads
 
 :getDoUploads
@@ -119,7 +120,7 @@ set filesini2=fileslastos.ini
 @REM #######################################################
 set WebLink5=lastos.vergitek.com
 
-:set ansi colors
+:set ANSI colors
 @REM ref: https://ss64.com/nt/syntax-ansi.html
 Set _bBlack=[40m
 Set _fGreen=[32m
@@ -1150,6 +1151,8 @@ call updfiles.cmd %filesini1%
 
 @REM this will move old  files to  /SetupSoldfies/ then upload the new files using winscp
 @REM log file .\WinSCP\winscp.log
+@REM call uploadfilesftp.cmd %filesini1%
+@REM this will upload the files to the value of  %filesini1%
 call uploadfilesftp.cmd %filesini1%
 
 echo.
@@ -1183,16 +1186,18 @@ ECHO It's %Today%  %Now%
 @REM echo  %date%-%time%
 echo =======================================================
 echo.
-  echo.===============================================================================
+  echo ===============================================================================
   @REM echo moving old files  to /SetupSoldfies/ folder on FTP site
 echo Uploading SetupS Project v%ProjectVersion% to %WebSite2%
-  echo.===============================================================================
+  echo ===============================================================================
 echo.
 @REM this will update the %filesini2% with the password for ftp
-@REM call updfiles.cmd
+@REM call updfiles.cmd %filesini2%
 call updfiles.cmd %filesini2%
 @REM this will move old  files to  /SetupSoldfies/ then upload the new files using winscp
 @REM log file .\WinSCP\winscp.log
+@REM call uploadfilesftp.cmd %filesini2%
+@REM this will upload the files to the value of  %filesini2%
 call uploadfilesftp.cmd  %filesini2%
 echo.
 echo =======================================================
