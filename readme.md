@@ -14,7 +14,7 @@
 # Introduction
 These are the files for SetupS.SendTo.Suite for builder.
 
-current version v23.09.23.0
+current version v23.09.26.0
 
 ##  Changelog
 check the changelog.txt for history and list of changes
@@ -43,6 +43,8 @@ this will copy the files to your computer into the created subdirectory.
 Visual Studio Code Editor - [found here](https://visualstudio.microsoft.com/)
 
 * SetUserFTA information - [found here](https://kolbi.cz/blog/2017/10/25/setuserfta-userchoice-hash-defeated-set-file-type-associations-per-user/)
+
+* Winscp ftp application
 
 
 ## Support
