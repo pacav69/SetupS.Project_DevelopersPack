@@ -11,7 +11,7 @@ Set _fYellow=[33m
 Set _bBlue=[44m
 Set _RESET=[0m
 
-set filesini1=filesvergitek
+@REM set filesini1=filesvergitek
 
 @REM additional ANSI codes
 @REM Echo %_fRed%%_bBlack% error

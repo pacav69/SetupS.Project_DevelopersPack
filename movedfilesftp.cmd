@@ -1,7 +1,7 @@
 @echo off
-@REM uploadlastos.cmd
-@REM uploads files to lastos.org site
-@REM echo uploading files...
+@REM movedfilesftp.cmd %1
+@REM moves old files on lastos.org site
+@REM echo moving files...
 @REM ANSI ref https://ss64.com/nt/syntax-ansi.html
 Set _bBlack=[40m
 Set _fGreen=[32m
@@ -23,13 +23,16 @@ Set _RESET=[0m
 @REM color 02
 
 Echo %_fBGreen%%_bBlack%
-.\WinSCP\WinSCP.com  /log=".\WinSCP\winscp.log" /ini=nul /script=fileslastos.ini
+@REM %1 is the filename passed in from the call function of main file
+@REM .\WinSCP\WinSCP.com  /log=".\WinSCP\winscp.log" /ini=nul /script=fileslastos.ini
+.\WinSCP\WinSCP.com  /log=".\WinSCP\winscp.log" /ini=nul /script=%1
+@REM %1
 
 set WINSCP_RESULT=%ERRORLEVEL%
 if %WINSCP_RESULT% equ 0 (
     echo.
 Echo %_fYellow%%_bBlue%#######################################################%_fBGreen%%_bBlack%
-echo ### Successfully moved old and uploaded files
+echo ### Successfully moved old files
 Echo %_fYellow%%_bBlue%#######################################################%_fBGreen%%_bBlack%
   echo.
 ) else (
@@ -38,18 +41,18 @@ echo.
 @REM color 04
 Echo %_fRed%%_bBlack% #######################################################%_fBGreen%%_bBlack%
 echo ### an Error occured
-echo ### displaying fileslastos.ini
+echo ### displaying %1
 echo %_fRed%%_bBlack%####################################################### %_fBGreen%%_bBlack%
   echo.
   @REM pause
 @REM color 02
-    type fileslastos.ini
+    type %1
   goto Finish
 )
 
-@REM delete fileslastos.ini file after sucessfull upload
-echo Deleting fileslastos.ini file
-if exist "fileslastos.ini" del /F /Q "fileslastos.ini" >nul:
+@REM @REM delete fileslastos.ini file after sucessfull upload
+@REM echo Deleting fileslastos.ini file
+@REM if exist "fileslastos.ini" del /F /Q "fileslastos.ini" >nul:
 
 :Finish
 exit /b %WINSCP_RESULT%

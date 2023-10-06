@@ -113,6 +113,7 @@ set domain2=setups@lastos.org
 set ftp2=ftp.lastos.org
 set Webfolder2=
 set filesini2=fileslastos.ini
+set mvfilesini2=mvfiles.ini
 
 
 @REM #######################################################
@@ -872,7 +873,7 @@ if exist "checksums.md5" del /F /Q "checksums.md5" >nul:
 
 :UploadProject
 @REM  now going to lastosftp for new process
-goto :LastOSftp
+goto :LastOSmvftp
 
 
 @REM echo Upload project? %DoUploads%
@@ -942,6 +943,42 @@ goto :LastOSftp
 @REM echo.
 
 @REM #######################################################
+@REM ### LastOS ftp create move list
+@REM #######################################################
+
+:LastOSmvftp
+@REM set oldfies = SetupSoldfies
+echo creating %mvfilesini2% for upload...
+cd "%~dp0"
+@REM create files to upload script for winscp useage
+@REM ref: https://winscp.net/eng/docs/commandline
+@REM https://winscp.net/eng/docs/scripting
+@REM To insert comments into the script file, start the line with # (hash):
+if exist "%mvfilesini2%" del /F /Q "%mvfilesini2%" >nul:
+echo ; connect to ftp server  >>%mvfilesini2%
+echo open ftp://%domain2%:#Password#@%ftp2%/%Webfolder2%>>%mvfilesini2%
+echo # files to move >>%mvfilesini2%
+@REM if file does not exist then mv will fail terminating session
+@REM it can be achieved by using ,net assembly refer to ref
+@REM ref: https://winscp.net/eng/docs/library_session_fileexists
+@REM add list of files to move to oldfies/
+@REM echo echo moving files on ftp server
+@REM if remote directory does not exist then session will fail and terminate
+set oldfies = SetupSoldfies\
+@REM echo mkdir %oldfies%/>>%filesini2%
+echo mv checksums_*.md5 oldfies/>>%mvfilesini2%
+echo mv update.ini  oldfies/>>%mvfilesini2%
+echo mv SetupS*.*  oldfies/>>%mvfilesini2%
+echo mv ChangeLog.txt  oldfies/>>%mvfilesini2%
+echo mv Install.SetupS*.*  oldfies/>>%mvfilesini2%
+echo exit >>%mvfilesini2%
+
+@REM call  updfiles.cmd with  %mvfilesini2%
+call updfiles.cmd %mvfilesini2%
+call movedfilesftp.cmd %mvfilesini2%
+
+
+@REM #######################################################
 @REM ### LastOS ftp upload create list
 @REM #######################################################
 @REM refer to set filesini2
@@ -965,11 +1002,7 @@ echo # files to move >>%filesini2%
 @REM if remote directory does not exist then session will fail and terminate
 @REM set oldfies = SetupSoldfies\
 @REM echo mkdir %oldfies%/>>%filesini2%
-@REM echo mv checksums_*.md5 oldfies/>>%filesini2%
-@REM echo mv update.ini  oldfies/>>%filesini2%
-@REM echo mv SetupS*.*  oldfies/>>%filesini2%
-@REM echo mv ChangeLog.txt  oldfies/>>%filesini2%
-@REM echo mv Install.SetupS*.*  oldfies/>>%filesini2%
+
 @REM add files for upload
 @REM echo echo uploading files
 echo ; files to upload >>%filesini2%

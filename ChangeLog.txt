@@ -1,6 +1,10 @@
 Note: The goal is to have any additions/changes/options to NOT affect the original default
       behavior if not used or implemented (for backwards compatibility); but sometimes this is
       not always possible especially when adding new features.
+---------------------------------------------
+06Oct2023
+---------------------------------------------
+added LastOS ftp create move list to !DistrPack.Project.cmd
 
 ---------------------------------------------
 27Sep2023
