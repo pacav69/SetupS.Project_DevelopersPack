@@ -1228,15 +1228,14 @@ echo.
 @REM call updfiles.cmd %filesini2%
 call updfiles.cmd %filesini2%
 
-@REM call  updfiles.cmd with  %mvfilesini2%
 @REM this will update the %mvfilesini2% with the password for ftp
 call updfiles.cmd %mvfilesini2%
-@REM this will move old  files to  /SetupSoldfies/ using winscp
+@REM this will move old files to  /SetupSoldfies/ using winscp
 @REM move files before uploading new files
 call movedfilesftp.cmd %mvfilesini2%
 
 @REM log file .\WinSCP\winscp.log
-@REM this will upload the files to the value of  %filesini2%
+@REM this will upload the files to the value of %filesini2%
 call uploadfilesftp.cmd  %filesini2%
 echo.
 echo =======================================================
