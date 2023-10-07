@@ -974,8 +974,8 @@ echo mv Install.SetupS*.*  oldfies/>>%mvfilesini2%
 echo exit >>%mvfilesini2%
 
 @REM call  updfiles.cmd with  %mvfilesini2%
-call updfiles.cmd %mvfilesini2%
-call movedfilesftp.cmd %mvfilesini2%
+@REM call updfiles.cmd %mvfilesini2%
+@REM call movedfilesftp.cmd %mvfilesini2%
 
 
 @REM #######################################################
@@ -1227,9 +1227,15 @@ echo.
 @REM this will update the %filesini2% with the password for ftp
 @REM call updfiles.cmd %filesini2%
 call updfiles.cmd %filesini2%
-@REM this will move old  files to  /SetupSoldfies/ then upload the new files using winscp
+
+@REM call  updfiles.cmd with  %mvfilesini2%
+@REM this will update the %mvfilesini2% with the password for ftp
+call updfiles.cmd %mvfilesini2%
+@REM this will move old  files to  /SetupSoldfies/ using winscp
+@REM move files before uploading new files
+call movedfilesftp.cmd %mvfilesini2%
+
 @REM log file .\WinSCP\winscp.log
-@REM call uploadfilesftp.cmd %filesini2%
 @REM this will upload the files to the value of  %filesini2%
 call uploadfilesftp.cmd  %filesini2%
 echo.
