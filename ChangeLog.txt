@@ -1,6 +1,11 @@
 Note: The goal is to have any additions/changes/options to NOT affect the original default
       behavior if not used or implemented (for backwards compatibility); but sometimes this is
       not always possible especially when adding new features.
+
+---------------------------------------------
+10Oct2023
+---------------------------------------------
+updated !DistrPack.Project.cmd for move list sequence for %WebSite2%
 ---------------------------------------------
 06Oct2023
 ---------------------------------------------
