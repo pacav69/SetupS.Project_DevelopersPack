@@ -1,4 +1,5 @@
 @REM this is s test script for moving and deleting files on ftp site
+@REM copy to root and run
 
 @REM code from !DistrPack.Project.cmd
 @REM #######################################################
