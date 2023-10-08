@@ -1239,7 +1239,7 @@ call movedfilesftp.cmd %mvfilesini1%
 call uploadfilesftp.cmd %filesini1%
 
 echo.
-echo #######################################################
+echo ###########################################mvfilesini1############
 echo End time
 FOR %%A IN (%Date%) DO SET Today=%%A
 SET Now=%Time%
