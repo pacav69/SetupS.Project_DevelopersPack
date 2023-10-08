@@ -1,4 +1,6 @@
+@REM this is s test script for moving and deleting files on ftp site
 
+@REM code from !DistrPack.Project.cmd
 @REM #######################################################
 @REM ###  WebLink2=www.lastos.org
 @REM #######################################################
@@ -23,26 +25,28 @@ set filesini1=filesvergitek.ini
 set path=%path%;%~dp0bin;%~dp0%sc%\Tools;%~dp0%sc%\Tools\_x86
 cd "%~dp0"
 
+@REM new code
 set mvfilesini1=mvfiles1.ini
 
 @REM #######################################################
 @REM ###  ftp move list
 @REM #######################################################
-@REM refer to set filesini2
-:LastOSftp
+@REM refer to set filesini1
+:vergitekftp
 @REM set oldfies = SetupSoldfies
 echo creating %mvfilesini1% for upload...
 cd "%~dp0"
-@REM create files to upload script for winscp useage
+@REM create files to move script for winscp useage
 @REM ref: https://winscp.net/eng/docs/commandline
 @REM https://winscp.net/eng/docs/scripting
-@REM To insert comments into the script file, start the line with # (hash):
+@REM To insert comments into the script file, start the line with # (hash) or semicolon ; :
 if exist "%mvfilesini1%" del /F /Q "%mvfilesini1%" >nul:
 echo ; connect to ftp server  >>%mvfilesini1%
 echo open ftp://%domain1%:#Password#@%ftp1%/%Webfolder1%>>%mvfilesini1%
 echo # files to move >>%mvfilesini1%
 echo option confirm on >>%mvfilesini1%
 @REM option batch	off|on|abort|continue
+@REM this continues or skips  if there is error
 echo option batch continue >>%mvfilesini1%
 
 
@@ -50,7 +54,7 @@ echo option batch continue >>%mvfilesini1%
 @REM it can be achieved by using .net assembly refer to ref
 @REM ref: https://winscp.net/eng/docs/library_session_fileexists
 
-@REM add list of files to move to oldfies/
+@REM add list of files to move to SetupSoldfies/
 @REM echo echo moving files on ftp server
 @REM if remote directory does not exist then session will fail and terminate
 @REM set oldfies = SetupSoldfies/
@@ -71,32 +75,14 @@ echo rm ChangeLog.txt  >>%mvfilesini1%
 echo mv update.ini  setupsoldfies/>>%mvfilesini1%
 echo rm update.ini >>%mvfilesini1%
 
-
+@REM  exit the session
 echo exit >>%mvfilesini1%
 
+@REM call updfiles to replace #password# with the xorrect one
 call updfiles.cmd %mvfilesini1%
+@REM call movedfilesftp with filename to run winscp script
+@REM this will also delete the mvfilesini file
 call movedfilesftp.cmd %mvfilesini1%
 
 
 
-@REM add files for upload
-@REM echo echo uploading files
-@REM echo ; files to upload >>%filesini2%
-@REM echo put .\files\update.ini>>%filesini2%
-@REM echo put .\files\%ssApp%.exe>>%filesini2%
-@REM echo put .\files\%ssApp%.apz>>%filesini2%
-@REM echo put .\files\%ppApp%.7z>>%filesini2%
-@REM echo put .\files\%ssUI%.exe>>%filesini2%
-@REM echo put .\files\%scp%.7z>>%filesini2%
-@REM echo put .\files\%devpack%.7z>>%filesini2%
-@REM echo put .\files\%ssII%.exe>>%filesini2%
-@REM echo put .\files\checksums_v%ProjectVersion%.md5>>%filesini2%
-@REM echo put .\files\ChangeLog.txt>>%filesini2%
-@REM echo put .\files\SetupS-files.htm>>%filesini2%
-@REM echo put .\files\SetupS-title.png>>%filesini2%
-@REM echo exit >>%mvfilesini1%
-
-@REM call  updfiles.cmd with  %mvfilesini1%
-@REM call updfiles.cmd %mvfilesini1%
-
-@REM call movedfilesftp.cmd %mvfilesini1%
