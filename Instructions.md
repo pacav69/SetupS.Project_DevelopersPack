@@ -179,6 +179,8 @@ To manually upload first check that the pw in file updfiles.cmd has been set the
 then run uploadlastos.cmd this will then use the generated fileslastos.ini script to upload files.
 
 
+## Timing of compile
+To find out how long it takes to compile and upload run timecompile.cmd
 
 ## References
 ### Winscp
