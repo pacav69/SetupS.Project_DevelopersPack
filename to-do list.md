@@ -19,3 +19,4 @@ add  FAQ stands for "Frequently Asked Questions"
 ~~add code for vergitek to use winscp~~
 change  Inno Installer to quiet mode ref: https://jrsoftware.org/ishelp/index.php?topic=compilercmdline\
 setup !DistrPack.Project.cmd to incorporate log file settings
+add to !DistrPack.Project.cmd code to disable anti-virus app before uploading
