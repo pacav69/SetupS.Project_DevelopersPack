@@ -38,8 +38,8 @@ this will copy the files to your computer into the created subdirectory.
 * Autoit v3.3.8.1
 * 7z.exe/dll v23.01 -[here](http://www.7-zip.org)
 * 7zSD.sfx Modified SFX Module v1.6 -[here](http://7zsfx.info/en/)
-* Anolis Resourcer v0.9 -[here] (http://anolis.codeplex.com/)
-* cURL v7.46.0 -[here](http://curl.haxx.se/)
+* Anolis Resourcer v0.9 -[here](http://anolis.codeplex.com/)
+*  cURL v7.46.0 -[here](http://curl.haxx.se/)
 * Visual Studio Code
 <img src="https://visualstudio.microsoft.com/wp-content/uploads/2019/09/vs-code-responsive-01-1.png" alt="Visual Studio Code logo" style="height: 50px; width:60px;"/>
 
@@ -51,7 +51,7 @@ Visual Studio Code Editor - [found here](https://visualstudio.microsoft.com/)
 
 * FART (Find And Replace Text) v1.99b -[here](http://sourceforge.net/projects/fart-it/)
 * md5sum.exe v1.3.0 -[here](http://code.kliu.org/misc/hashutils/)
-* Ultimate Packer for eXecutables UPX v3.91 -[here(http://upx.sourceforge.net/)
+* Ultimate Packer for eXecutables UPX v3.91 -[here](http://upx.sourceforge.net/)
 
 
 ## Support
