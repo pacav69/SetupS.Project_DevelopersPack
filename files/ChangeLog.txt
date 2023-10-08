@@ -3,9 +3,23 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
       not always possible especially when adding new features.
 
 ---------------------------------------------
+10Oct2023
+---------------------------------------------
+updated in !DistrPack.Project.cmd for move list sequence for %WebSite2%
+added in !DistrPack.Project.cmd setup of move files script using winscp
+
+---------------------------------------------
+06Oct2023
+---------------------------------------------
+added LastOS ftp create move list to !DistrPack.Project.cmd
+
+---------------------------------------------
 27Sep2023
 ---------------------------------------------
 updated FAQ
+updated updfiles.cmd
+modified:   !DistrPack.Project.cmd
+updated readme.md
 
 ---------------------------------------------
 26Sep2023

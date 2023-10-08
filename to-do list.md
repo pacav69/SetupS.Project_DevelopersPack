@@ -9,6 +9,7 @@ add  navigation in help file- Previous | Contents | Next
 ~~add pull request instructions~~
 ~~upload files to Lastos website~~
 ~~setup upload script using winscp~~
+~~setup umove files script using winscp~~
 ~~determine file structure of accounts.ini~~
 add SetUserFTA usage with examples in help file
 ~~convert help file to version 8~~

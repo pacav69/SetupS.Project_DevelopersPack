@@ -41,6 +41,7 @@ echo.
 @REM color 04
 Echo %_fRed%%_bBlack% #######################################################%_fBGreen%%_bBlack%
 echo ### an Error occured
+echo error code %ERRORLEVEL%
 echo ### displaying %1
 echo %_fRed%%_bBlack%####################################################### %_fBGreen%%_bBlack%
   echo.

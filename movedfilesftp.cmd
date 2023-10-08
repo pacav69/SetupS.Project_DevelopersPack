@@ -29,6 +29,7 @@ Echo %_fBGreen%%_bBlack%
 @REM %1
 
 set WINSCP_RESULT=%ERRORLEVEL%
+echo error code %WINSCP_RESULT%
 if %WINSCP_RESULT% equ 0 (
     echo.
 Echo %_fYellow%%_bBlue%#######################################################%_fBGreen%%_bBlack%
@@ -41,6 +42,7 @@ echo.
 @REM color 04
 Echo %_fRed%%_bBlack% #######################################################%_fBGreen%%_bBlack%
 echo ### an Error occured
+echo error code %WINSCP_RESULT%
 echo ### displaying %1
 echo %_fRed%%_bBlack%####################################################### %_fBGreen%%_bBlack%
   echo.
@@ -52,7 +54,7 @@ echo %_fRed%%_bBlack%####################################################### %_f
 
 @REM @REM delete fileslastos.ini file after sucessfull upload
 @REM echo Deleting fileslastos.ini file
-@REM if exist "fileslastos.ini" del /F /Q "fileslastos.ini" >nul:
+if exist "%1" del /F /Q "%1" >nul:
 
 :Finish
 exit /b %WINSCP_RESULT%

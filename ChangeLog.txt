@@ -5,7 +5,9 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
 ---------------------------------------------
 10Oct2023
 ---------------------------------------------
-updated !DistrPack.Project.cmd for move list sequence for %WebSite2%
+updated in !DistrPack.Project.cmd for move list sequence for %WebSite2%
+added in !DistrPack.Project.cmd setup of move files script using winscp
+
 ---------------------------------------------
 06Oct2023
 ---------------------------------------------
