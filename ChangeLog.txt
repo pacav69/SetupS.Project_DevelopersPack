@@ -8,6 +8,7 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
 updated in !DistrPack.Project.cmd for move list sequence for %WebSite2%
 added in !DistrPack.Project.cmd setup of move files script using winscp
 updated readme
+added timecmd.cmd to time compile and upload of files
 
 ---------------------------------------------
 06Oct2023
