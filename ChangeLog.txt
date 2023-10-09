@@ -3,12 +3,15 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
       not always possible especially when adding new features.
 
 ---------------------------------------------
-11Oct2023
+09Oct2023
 ---------------------------------------------
 updated testmv
+added development tools directory (devtools)
+updated instructions to include timecompile.cmd and devtools useage
+
 
 ---------------------------------------------
-10Oct2023
+08Oct2023
 ---------------------------------------------
 updated in !DistrPack.Project.cmd for move list sequence for %WebSite2%
 added in !DistrPack.Project.cmd setup of move files script using winscp

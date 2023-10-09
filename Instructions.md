@@ -1,10 +1,13 @@
 <!-- Instructions.md -->
 # Instructions
 
+## Development tools directory (devtools)
+ install first the Development tools in devtools directory
+ that contains the neccessary app files required for development.
+
 ## AutoIT3
 Before starting
 Ensure that AutoIT3 is version 3.3.8.1 dated 30/01/2012 is installed without modifications otherwise compiling will fail.
-
 
 ## Make changes to files
 
@@ -65,6 +68,11 @@ The files will be moved to the 'files' sub directory on the host for later uploa
 
 this will also upload to LastOS Forum at the end of cleanup
 
+or run
+
+  timecompile.cmd
+
+this will time the compile and upload of files
 
 ## Update changelog
 
