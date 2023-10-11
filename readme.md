@@ -53,6 +53,7 @@ Visual Studio Code Editor - [found here](https://visualstudio.microsoft.com/)
 * FART (Find And Replace Text) v1.99b -[here](http://sourceforge.net/projects/fart-it/)
 * md5sum.exe v1.3.0 -[here](http://code.kliu.org/misc/hashutils/)
 * Ultimate Packer for eXecutables UPX v3.91 -[here](http://upx.sourceforge.net/)
+* SetupS.Project_DevelopersPack_Tools [here](https://github.com/pacav69/SetupS.Project_DevelopersPack_Tools)
 
 
 ## Support

@@ -6,6 +6,7 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
 11Oct2023
 ---------------------------------------------
 added git-large-file-storage (git lfs)
+updated readme with link to SetupS.Project_DevelopersPack_Tools
 
 ---------------------------------------------
 09Oct2023
