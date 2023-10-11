@@ -196,6 +196,31 @@ To find out how long it takes to compile and upload run timecompile.cmd
 [Winscp put](https://winscp.net/eng/docs/scriptcommand_put)
 [Winscp open](https://winscp.net/eng/docs/scriptcommand_open)
 
+## git-large-file-storage (git lfs)
+
+Uploading Large files to github git lfs such as EXE, ISO and apz
+
+more information [here](https://docs.github.com/en/repositories/working-with-files/managing-large-files/)
+
+install git lfs app
+
+open git cmd
+change to github directory
+
+check in git cmd
+git lfs install
+
+add the file extension to track
+eg
+git lfs track "*.psd"
+
+
+git lfs track "*.exe"
+git lfs track "*.iso"
+git lfs track "*.apz"
+
+use shift insert in git cmd
+
 The LastOS Team
 
 
