@@ -148,6 +148,7 @@ Echo %_fBGreen%%_bBlack%
 @REM #######################################################
 set WebSite3=ssTek Distribution
 set WebLink3=dl.bintray.com/sstek
+
 set WebSite4=ssTek Development
 set WebLink4=sstek.vergitek.com
 
@@ -157,8 +158,10 @@ set LastosUploads=No
 set WebSite6=github files
 set WebLink6=github.com/pacav69/SetupS.Project_DevelopersPack
 set NewTagLine=%Website1%: Tools for custom Operating Systems!
+
 set CoreVersion=%ProjectVersion%
 set ssEditorVersion=%ProjectVersion%
+
 goto Begin
 
 @REM #######################################################
@@ -172,6 +175,7 @@ echo #    This will compile and upload the SetupS Suite
 echo.
 echo ###########################################################
 echo.
+
 @REM https://www.robvanderwoude.com/choice.php
 CHOICE /C:YN /N /T 5 /D N  /M "Do you want to upload files with Winscp at the end, default is No ['Y'es/'N'o] : "
 if errorlevel 2 goto :somewhere_else

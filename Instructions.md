@@ -197,29 +197,36 @@ To find out how long it takes to compile and upload run timecompile.cmd
 [Winscp open](https://winscp.net/eng/docs/scriptcommand_open)
 
 ## git-large-file-storage (git lfs)
-
-Uploading Large files to github git lfs such as EXE, ISO and apz
+GitHub limits the size of files you can track in regular Git repositories.
+The git lfs app uploads the actual file to a github lfs and stores a link in the repo.
+Large files such as EXE, ISO and APZ can be uploaded but there are file size limitations check the website for more details.
 
 more information [here](https://docs.github.com/en/repositories/working-with-files/managing-large-files/)
 
-install git lfs app
+### How-to
+install git lfs app or git-lfs-windows apz
 
-open git cmd
+open git bash cmd
 change to github directory
 
-check in git cmd
-git lfs install
+to check the installation in git bash cmd type:
+
+    git lfs install
 
 add the file extension to track
 eg
-git lfs track "*.psd"
+    git lfs track "*.psd"
 
 
-git lfs track "*.exe"
-git lfs track "*.iso"
-git lfs track "*.apz"
+add these in git bash cmd
 
-use shift insert in git cmd
+    git lfs track "*.exe"
+    git lfs track "*.iso"
+    git lfs track "*.apz"
+
+this will add the file extensions to '.gitattributes' file to track.
+
+use shift insert in git bash cmd
 
 The LastOS Team
 

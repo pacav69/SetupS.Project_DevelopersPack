@@ -51,6 +51,8 @@ Visual Studio Code Editor - [found here](https://visualstudio.microsoft.com/)
 * Winscp ftp application
 
 * FART (Find And Replace Text) v1.99b -[here](http://sourceforge.net/projects/fart-it/)
+* git-lfs Git  Large File Storage for handling large files such as exe, ISOs and large apz on github [here](https://git-lfs.com/)
+install instructions [here](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage)
 * md5sum.exe v1.3.0 -[here](http://code.kliu.org/misc/hashutils/)
 * Ultimate Packer for eXecutables UPX v3.91 -[here](http://upx.sourceforge.net/)
 * SetupS.Project_DevelopersPack_Tools [here](https://github.com/pacav69/SetupS.Project_DevelopersPack_Tools)
