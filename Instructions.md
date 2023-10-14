@@ -153,6 +153,7 @@ FTP LastOS (on Vergitek); backup for the Bluehost site, plus the LastOS release 
 
 ## Uploading using curl
 To upload using curl and accounts.ini
+ensure accounts.ini is in the .gitignore file
 copy bin\templates\blank_Accounts.ini to root directory
 rename blank_Accounts.ini to Accounts.ini
 change the contents with this file structure
