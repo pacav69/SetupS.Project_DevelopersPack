@@ -4,6 +4,12 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
 
 
 ---------------------------------------------
+17Oct2023
+---------------------------------------------
+updated .gitignore
+
+
+---------------------------------------------
 13Oct2023
 ---------------------------------------------
 updated Instructions.md for git-large-file-storage (git lfs)
