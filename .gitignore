@@ -155,7 +155,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# *.iso
+*.iso
 Accounts.ini
 updfiles.cmd
 fileslastos.ini
@@ -164,3 +164,17 @@ filesvergitek.ini
 mvfiles.ini
 mvfiles1.ini
 mvfiles2.ini
+
+
+mvfiles1.ini
+mvfiles2.ini
+
+Source.Code/Development.Tools/AutoIt_*.apz
+Source.Code/Development.Tools/Visual.Studio.Code*.apz
+Source.Code/ssGooey/ISO_Template.iso
+
+# *.apz
+*.db
+
+UploadMe.cmd
+winscp/winscp.log
