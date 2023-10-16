@@ -143,22 +143,32 @@ Set _bBWhite=[107m
 @REM @REM Echo %_RESET%
 Echo %_fBGreen%%_bBlack%
 
+@REM bintray no longer exists
 @REM #######################################################
 @REM ###  WebLink3=dl.bintray.com/sstek
 @REM #######################################################
-set WebSite3=ssTek Distribution
-set WebLink3=dl.bintray.com/sstek
+@REM set WebSite3=ssTek Distribution
+@REM set WebLink3=dl.bintray.com/sstek
 
+@REM #######################################################
+@REM ###   WebSite4=ssTek Development
+@REM #######################################################
 set WebSite4=ssTek Development
 set WebLink4=sstek.vergitek.com
 
 @REM #######################################################
 set LastosUploads=No
 
+@REM #######################################################
+@REM ###    WebSite6=github files
+@REM #######################################################
 set WebSite6=github files
 set WebLink6=github.com/pacav69/SetupS.Project_DevelopersPack
 set NewTagLine=%Website1%: Tools for custom Operating Systems!
 
+@REM #######################################################
+@REM ###    versioning
+@REM #######################################################
 set CoreVersion=%ProjectVersion%
 set ssEditorVersion=%ProjectVersion%
 
