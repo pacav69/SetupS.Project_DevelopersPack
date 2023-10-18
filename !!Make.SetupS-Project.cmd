@@ -18,7 +18,7 @@ set ProjectVersion=23.10.08.0
 @REM use the date of compilatation YYYY-MM-DD seperated by a '-'
 @REM eg set ProjectDate=2023-07-23
 set ProjectDate=2023-10-08
-@REM Upload=yes will also generate SetupS-files.htm file ready for upload
+@REM Upload=yes will also create uploadme.cmd file ready for upload via ftp
 set Upload=Yes
 
 :Begin
