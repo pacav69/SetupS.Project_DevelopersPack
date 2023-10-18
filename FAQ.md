@@ -138,8 +138,9 @@ ANSI Colors [here](https://ss64.com/nt/syntax-ansi.html
 
 ## CHOICE
 information [Ref here](https://www.robvanderwoude.com/choice.php)
+[ss64 here](https://ss64.com/nt/choice.html)
 
-CHOICE /C:YN /N /T 5 /D N  /M
+    CHOICE /C:YN /N /T 5 /D N  /M
 
 ### Syntax:
 CHOICE [ /C choices ] [ /N ] [ /CS ] [ /T timeout /D choice ] [ /M text ]
@@ -150,25 +151,32 @@ Parameter List:
 
     	/C choices	    	Specifies the list of choices to be created.
 Default list for English versions is YN
- 	/N	 	Hides the list of choices in the prompt.
+
+    /N	 	Hides the list of choices in the prompt.
 The message before the prompt is displayed and the choices are still enabled.
+
  	/CS	 	Enables case-sensitive choices to be selected.
+
 By default, the utility is case-insensitive.
 
 Note: DOS and NT Resource Kit versions use /S instead
+
  	/T timeout	 	The number of seconds to pause before a default choice is made.
+
 Acceptable values are from 0 to 9999.
 If 0 is specified, there will be no pause and the default choice is selected.
 
 Note: DOS and NT Resource Kit versions use /T:default,timeout instead.
+
  	/D default	 	Specifies the default choice after timeout seconds.
 Character must be in the set of choices specified by /C option and must also specify timeout with /T.
 
 Note: DOS and NT Resource Kit versions use /T:default,timeout instead.
+
  	/M text	 	Specifies the message to be displayed before the prompt.
 If not specified, the utility displays only a prompt.
 
-    	The ERRORLEVEL is set to the offset of the index of the key that was selected from the set of choices.
+The ERRORLEVEL is set to the offset of the index of the key that was selected from the set of choices.
 The first choice listed returns a value of 1, the second a value of 2, and so on.
 If the user presses a key that is not a valid choice, the tool sounds a warning beep.
 If tool detects an error condition, it returns an ERRORLEVEL value of 255.
@@ -187,19 +195,23 @@ Will display the following line:
 If the user presses Y, CHOICE exits with return code ("errorlevel") 1 (1st character in choices), if the user presse N, CHOICE exits with return code 2 (2nd character in choices).
 
     CHOICE /C ABCDN /N /T 10 /D C /M "Format drive A:, B:, C:, D: or None?"
-    IF ERRORLEVEL 1 SET DRIVE=drive A:
-    IF ERRORLEVEL 2 SET DRIVE=drive B:
-    IF ERRORLEVEL 3 SET DRIVE=drive C:
-    IF ERRORLEVEL 4 SET DRIVE=drive D:
     IF ERRORLEVEL 5 SET DRIVE=None
+    IF ERRORLEVEL 4 SET DRIVE=drive D:
+    IF ERRORLEVEL 3 SET DRIVE=drive C:
+    IF ERRORLEVEL 2 SET DRIVE=drive B:
+    IF ERRORLEVEL 1 SET DRIVE=drive A:
     ECHO You chose to format %DRIVE%
+example of using a number of choices.
+
+in this example there are 5 choices with the error levels are set from highest to lowest.
 
 ## Using FOR %%i IN
 this case finds the application in any drive
-:SetHelpNDoc8 working variable
-set HelpNDoc8="%ProgramFiles%\HelpNDoc8HelpNDoc8\hnd8.exe"
-if exist "%ProgramFiles(x86)%\HelpNDoc8\hnd8.exe" set HelpNDoc8="%ProgramFiles(x86)%\HelpNDoc8\hnd8.exe"
-FOR %%i IN (C D E F G H I J K L M N O P Q R S T U V W X Y Z) DO IF EXIST "%%i:\ppApps\HelpNDoc8\hnd8.exe" (SET HelpNDoc8="%%i:\ppApps\HelpNDoc8\hnd8.exe"& goto doitnow)
+
+    :SetHelpNDoc8 working variable
+    set HelpNDoc8="%ProgramFiles%\HelpNDoc8HelpNDoc8\hnd8.exe"
+    if exist "%ProgramFiles(x86)%\HelpNDoc8\hnd8.exe" set HelpNDoc8="%ProgramFiles(x86)%\HelpNDoc8\hnd8.exe"
+    FOR %%i IN (C D E F G H I J K L M N O P Q R S T U V W X Y Z) DO IF EXIST "%%i:\ppApps\HelpNDoc8\hnd8.exe" (SET HelpNDoc8="%%i:\ppApps\HelpNDoc8\hnd8.exe"& goto doitnow)
 
 
 ## using if existS
