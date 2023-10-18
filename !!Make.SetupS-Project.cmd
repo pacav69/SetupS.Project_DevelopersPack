@@ -1,6 +1,9 @@
 @REM !!Make.SetupS-Project.cmd
 @echo off
 
+@REM // !!Make.SetupS-Project
+@REM // Copyright (c) 2023 LastOS Team
+@REM // All rights reserved. License: MIT License
 :Set parameters
 @REM change the ProjectVersion
 @REM so that it reads ProjectVersion= YY.MM.DD.0 use ONLY numbers

@@ -1,3 +1,6 @@
+@REM // SetupS-Project
+@REM // Copyright (c) 2023 LastOS Team
+@REM // All rights reserved. License: MIT License
 :This script creates dual architecture (x86|x64) distribution packages. Does NOT require an x64-machine to run.
 : it also uploads the created files tp ftp sites
 :Assumes the following are installed: "AutoIt3" (plus SciTE), and "Inno Setup". Plus, Winscp, "HelpNDoc" (v8) and "Microsoft's HTML Help Workshop" should be installed in order to update the help-files.

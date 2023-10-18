@@ -3,9 +3,13 @@
 
  ## Winscp
 Where to find infomation on Winscp?
+Winscp command line parameters [here](https://winscp.net/eng/docs/commandline)
 
-pathto\WinSCP.com /log=pathto\filename.log  /ini=nul /script=scriptfile.ini
+using winscp and script
 
+    pathto\WinSCP.com /log=pathto\filename.log  /ini=nul /script=scriptfile.ini
+
+notes:
 /ini=nul is to prevent session being saved
 /script=scriptfile.ini is a list of commands and files
 
@@ -35,16 +39,16 @@ where the variables are set
 
 
 files can be moved on ftp site
-    echo echo moving files on ftp server
+
     echo mv checksums_*.md5 SetupSoldfies/>>fileslastos.ini
 
-files can be uploaded to ftp site
+files can be uploaded to ftp site by using the put command, wildcards are permitted
 
-    echo echo uploading files
     echo ; files to upload >>fileslastos.ini
     echo put .\files\update.ini>>fileslastos.ini
+    echo put .\files\*.exe >>fileslastos.ini
 
-put is used ti upliad the file to the ftp site
+put is used ti upload the file to the ftp site
 
 ### sample script file
 
@@ -54,30 +58,29 @@ put is used ti upliad the file to the ftp site
     mv checksums_*.md5 SetupSoldfies/
     put .\files\update.ini
 
-
 ### using ERRORLEVEL
 to display results either success or errors
 
-set WINSCP_RESULT=%ERRORLEVEL%
-if %WINSCP_RESULT% equ 0 (
+    set WINSCP_RESULT=%ERRORLEVEL%
+    if %WINSCP_RESULT% equ 0 (
+        echo.
+    Echo %_fYellow%%_bBlue%#######################################################%_fBGreen%%_bBlack%
+    echo ### Successfully moved old and uploaded files
+    Echo %_fYellow%%_bBlue%#######################################################%_fBGreen%%_bBlack%
     echo.
-Echo %_fYellow%%_bBlue%#######################################################%_fBGreen%%_bBlack%
-echo ### Successfully moved old and uploaded files
-Echo %_fYellow%%_bBlue%#######################################################%_fBGreen%%_bBlack%
-  echo.
-) else (
-echo.
-Echo %_fRed%%_bBlack% #######################################################%_fBGreen%%_bBlack%
-echo ### an Error occured
-echo %_fRed%%_bBlack%####################################################### %_fBGreen%%_bBlack%
-  echo.
+    ) else (
+    echo.
+    Echo %_fRed%%_bBlack% #######################################################%_fBGreen%%_bBlack%
+    echo ### an Error occured
+    echo %_fRed%%_bBlack%####################################################### %_fBGreen%%_bBlack%
+    echo.
 
-    type fileslastos.ini
-  goto Finish
-)
+        type fileslastos.ini
+    goto Finish
+    )
 
-:Finish
-exit /b %WINSCP_RESULT%
+    :Finish
+    exit /b %WINSCP_RESULT%
 
 
     .\WinSCP\WinSCP.com  /log=".\WinSCP\winscp.log" /ini=nul /script=fileslastos.ini
@@ -119,14 +122,23 @@ the ssTek.hnd is the file used by the helpndoc GUI for creation and modification
     %HelpNDoc8% %UpdateHelpPath%\%UpdateHelpFile%.hnd build -silent -x="Build HTML documentation" -o="Build HTML documentation:%htmlhelp%\%UpdateHelpFile%.html"
 
 ## Autoit
+website [here](https://www.autoitscript.com/site/)
+AutoIt v3 is a freeware BASIC-like scripting language designed for automating the Windows GUI and general scripting. It uses a combination of simulated keystrokes, mouse movement and window/control manipulation in order to automate tasks in a way not possible or reliable with other languages (e.g. VBScript and SendKeys). AutoIt is also very small, self-contained and will run on all versions of Windows out-of-the-box with no annoying “runtimes” required!
 
 ## fart
 Find And Replace Text for the following (requires: bin\fart.exe)
 
 ## ANSI
+ANSI escape codes
+ANSI escape sequences are a standard for in-band signaling to control cursor location, color, font styling, and other options on video text terminals and terminal emulators. Certain sequences of bytes, most starting with an ASCII escape character and a bracket character, are embedded into text. The terminal interprets these sequences as commands, rather than text to display verbatim.
+
+found [here](https://en.wikipedia.org/wiki/ANSI_escape_code)
+[here](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797)
+ANSI Colors [here](https://ss64.com/nt/syntax-ansi.html
 
 ## CHOICE
-Ref:  https://www.robvanderwoude.com/choice.php
+information [Ref here](https://www.robvanderwoude.com/choice.php)
+
 CHOICE /C:YN /N /T 5 /D N  /M
 
 ### Syntax:
@@ -163,26 +175,27 @@ If tool detects an error condition, it returns an ERRORLEVEL value of 255.
 If the user presses CTRL+BREAK or CTRL+C, the tool returns an ERRORLEVEL value of 0.
 When you use ERRORLEVEL parameters in a batch program, list them in decreasing order.
 
-### Examples:
+### Choice Examples:
 The command:
 
-CHOICE /M "Do you really want to quit"
+    CHOICE /M "Do you really want to quit"
 
 Will display the following line:
 
-Do you really want to quit? [YN]
+    Do you really want to quit? [YN]
 
 If the user presses Y, CHOICE exits with return code ("errorlevel") 1 (1st character in choices), if the user presse N, CHOICE exits with return code 2 (2nd character in choices).
 
-CHOICE /C ABCDN /N /T 10 /D C /M "Format drive A:, B:, C:, D: or None?"
-IF ERRORLEVEL 1 SET DRIVE=drive A:
-IF ERRORLEVEL 2 SET DRIVE=drive B:
-IF ERRORLEVEL 3 SET DRIVE=drive C:
-IF ERRORLEVEL 4 SET DRIVE=drive D:
-IF ERRORLEVEL 5 SET DRIVE=None
-ECHO You chose to format %DRIVE%
+    CHOICE /C ABCDN /N /T 10 /D C /M "Format drive A:, B:, C:, D: or None?"
+    IF ERRORLEVEL 1 SET DRIVE=drive A:
+    IF ERRORLEVEL 2 SET DRIVE=drive B:
+    IF ERRORLEVEL 3 SET DRIVE=drive C:
+    IF ERRORLEVEL 4 SET DRIVE=drive D:
+    IF ERRORLEVEL 5 SET DRIVE=None
+    ECHO You chose to format %DRIVE%
 
 ## Using FOR %%i IN
+this case finds the application in any drive
 :SetHelpNDoc8 working variable
 set HelpNDoc8="%ProgramFiles%\HelpNDoc8HelpNDoc8\hnd8.exe"
 if exist "%ProgramFiles(x86)%\HelpNDoc8\hnd8.exe" set HelpNDoc8="%ProgramFiles(x86)%\HelpNDoc8\hnd8.exe"
