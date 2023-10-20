@@ -3,6 +3,18 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
       not always possible especially when adding new features.
 
 ---------------------------------------------
+20Oct2023
+---------------------------------------------
+updated to-do list
+
+---------------------------------------------
+19Oct2023
+---------------------------------------------
+Added upload script for html help files for vergitek
+updated updfiles.cmd to support help file upload
+added  makehelp.cmd for html help file upload
+
+---------------------------------------------
 18Oct2023
 ---------------------------------------------
 modified:   FAQ.md

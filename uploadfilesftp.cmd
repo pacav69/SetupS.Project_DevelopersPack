@@ -53,7 +53,7 @@ echo %_fRed%%_bBlack%####################################################### %_f
 
 @REM delete %1 file after sucessfull upload
 echo Deleting %1 file
-if exist "%1" del /F /Q "%1" >nul:
+@REM if exist "%1" del /F /Q "%1" >nul:
 
 :Finish
 exit /b %WINSCP_RESULT%

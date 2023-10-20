@@ -14,9 +14,9 @@ add  navigation in help file- Previous | Contents | Next
 ~~determine file structure of accounts.ini~~
 add SetUserFTA usage with examples in help file
 ~~convert help file to version 8~~
-add upload html help files via ftp using winscp
+~~add upload html help files via ftp using winscp~~
 add  FAQ stands for "Frequently Asked Questions"
 ~~add code for vergitek to use winscp~~
 change  Inno Installer to quiet mode ref: https://jrsoftware.org/ishelp/index.php?topic=compilercmdline\
 setup !DistrPack.Project.cmd to incorporate log file settings
-add to !DistrPack.Project.cmd code to disable anti-virus app before uploading
+add to !DistrPack.Project.cmd code to disable anti-virus app before uploading or compiling
