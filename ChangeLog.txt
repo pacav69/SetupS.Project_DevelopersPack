@@ -3,6 +3,11 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
       not always possible especially when adding new features.
 
 ---------------------------------------------
+24Oct2023
+---------------------------------------------
+added confirmation to delete html help files
+
+---------------------------------------------
 20Oct2023
 ---------------------------------------------
 updated to-do list
