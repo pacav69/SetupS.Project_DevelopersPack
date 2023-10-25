@@ -13,7 +13,7 @@
 @REM color 02
 @REM blue / white color 17
 @REM color 17
-  @REM black / Light Green color 0A
+@REM black / Light Green color 0A
 color 0A
 cls
 call !RestoreOriginals.cmd
