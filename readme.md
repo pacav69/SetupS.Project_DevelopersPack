@@ -63,3 +63,13 @@ install instructions [here](https://docs.github.com/en/repositories/working-with
 <img src="https://vangogh.teespring.com/v3/image/SugZ-DRGZXUTuSzfrFtaOU3TAUQ/800/800.jpg" width="100px"  height="100px">
 
 [Help support by buying some merchandise](https://cavtronics-3.creator-spring.com/)
+
+# Acknowledgements
+
+The following members are the LastOS Team who have contributed immensely in creating and developing the tools provided for the silent installation of applications making life a little easier in the deployment of Windows.
+
+TheFreezer
+Glenn
+Pacav
+Trouba
+bphlpt
