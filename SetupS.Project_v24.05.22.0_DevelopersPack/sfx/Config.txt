@@ -1,6 +1,0 @@
-;!@Install@!UTF-8!
-MiscFlags="4"
-RunProgram="x86:SetupS.exe -SplashOnly -Fadertainer=Off"
-RunProgram="x64:SetupS_x64.exe -SplashOnly -Fadertainer=Off"
-GUIMode="1"
-;!@InstallEnd@!
