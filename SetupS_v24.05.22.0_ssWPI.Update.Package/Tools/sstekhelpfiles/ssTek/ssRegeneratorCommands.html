@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Command Line Usage</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 10pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+span.rvts1 /* Heading */
+{
+ font-weight: bold;
+ color: #0000ff;
+}
+span.rvts2 /* Subheading */
+{
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts3 /* Keywords */
+{
+ font-style: italic;
+ color: #800000;
+}
+a.rvts4, span.rvts4 /* Jump 1 */
+{
+ color: #008000;
+ text-decoration: underline;
+}
+a.rvts5, span.rvts5 /* Jump 2 */
+{
+ color: #008000;
+ text-decoration: underline;
+}
+span.rvts6
+{
+ font-style: italic;
+}
+span.rvts7
+{
+ font-size: 11pt;
+}
+span.rvts8
+{
+ font-size: 9pt;
+ font-family: 'Courier New', 'Courier', monospace;
+}
+span.rvts9
+{
+ font-size: 9pt;
+ font-family: 'Courier New', 'Courier', monospace;
+ font-style: italic;
+}
+span.rvts10
+{
+ font-size: 16pt;
+ color: #ffffff;
+}
+span.rvts11 /* Font Style */
+{
+ font-family: 'MS Sans Serif', 'Geneva', sans-serif;
+ color: #808080;
+}
+span.rvts12 /* Font Style */
+{
+ font-family: 'Verdana', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #c0c0c0;
+}
+a.rvts13, span.rvts13 /* Font Style */
+{
+ font-family: 'Verdana', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #6666ff;
+ text-decoration: underline;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ text-indent: -30px;
+ background: #ffffff;
+ margin: 7px 0px 7px 55px;
+}
+.rvps3
+{
+ text-indent: -30px;
+ margin: 0px 0px 0px 55px;
+}
+.rvps4
+{
+ text-indent: -30px;
+ margin: 0px 0px 0px 79px;
+}
+.rvps5
+{
+ text-indent: -50px;
+ margin: 0px 0px 0px 75px;
+}
+.rvps6
+{
+ text-align: right;
+ text-indent: 0px;
+ background: #a5a5a5;
+ padding: 5px 5px 2px 5px;
+ margin: -5px 0px 8px -5px;
+}
+.rvps7
+{
+ text-indent: -51px;
+ margin: 0px 0px 0px 75px;
+}
+.rvps8 /* Paragraph Style */
+{
+ text-align: center;
+ background: #e4e4e4;
+ margin: 20px 0px 0px 0px;
+}
+.rvps9 /* Paragraph Style */
+{
+ border-color: #c0c0c0;
+ border-style: solid;
+ border-width: 1px;
+ border-right: none;
+ border-bottom: none;
+ border-left: none;
+ background: #ffffff;
+ padding: 3px 0px 0px 0px;
+ margin: 27px 0px 0px 0px;
+}
+--></style>
+<script language="javascript" src="jsRelative.js"></script>
+<meta name="generator" content="HelpNDoc Freeware Edition"></head>
+<body>
+<h1 class=rvps6><span class=rvts0><span class=rvts10>ssRegenerator Commands</span></span><span class=rvts0><span class=rvts10> &nbsp; &nbsp; &nbsp; &nbsp;</span></span><img align=absmiddle border=0 width=16 height=16 alt="Previous page" src="img_18.png"><a href="ssRegenerator.html"><img align=absmiddle border=0 alt="Return to chapter overview" src="img_19.png"></a><img align=absmiddle border=0 width=16 height=16 alt="Next page" src="img_20.png"></h1>
+<p class=rvps2><span class=rvts7>ssRegenerator can be invoked via the command line as follows:</span></p>
+<p class=rvps3><span class=rvts6><br></span></p>
+<p class=rvps5><span class=rvts9>Usage</span><span class=rvts8>: ssRegenerator [&lt;switches&gt;...]</span></p>
+<p class=rvps5><span class=rvts9>Alias</span><span class=rvts8>: ssRegen</span></p>
+<p class=rvps5><span class=rvts8><br></span></p>
+<p class=rvps5><span class=rvts8>&lt;Switches&gt;</span></p>
+<p class=rvps5><span class=rvts8>&nbsp; -ppApps|ppGames|ssApps|SetupS: Only shortcuts of this type get created. Otherwise, all.</span></p>
+<p class=rvps5><span class=rvts8>&nbsp; -AllDrives=Yes|No : Default is "No". A "Yes" will force searching all available drives for ppApps/ppGames folders.</span></p>
+<p class=rvps5><span class=rvts8>&nbsp; -Verbose: Show progress as both splash text and tray-balloon tips. </span></p>
+<p class=rvps5><span class=rvts8>&nbsp; -Mute|Silent|Quiet: Totally silent install; hides everything including system tray icon and balloon tips.</span></p>
+<p class=rvps5><span class=rvts8>&nbsp; -TrayOnly: Show progress only as balloon tips from the tray. Must have balloon tips enabled!</span></p>
+<p class=rvps5><span class=rvts8>&nbsp; -SplashOnly: Show progress only as splash text/message boxes and hides both the tray icon and any balloon tips from</span></p>
+<p class=rvps5><span class=rvts8>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the tray.</span></p>
+<p class=rvps5><span class=rvts8>&nbsp; -SplashOnTop=Yes|No : "Always On Top" option for Splash Text. Default=No</span></p>
+<p class=rvps5><span class=rvts8>&nbsp; -Fadertainer=On|Off : Default = Off</span></p>
+<p class=rvps5><span class=rvts8>&nbsp; -FaderSpeed={seconds} : Number of seconds to Fade in or fade out. Default=.5. IE, -FaderSpeed=.3</span></p>
+<p class=rvps5><span class=rvts8>&nbsp; -FaderLocation=TL|TC|TR|ML|MC|MR|BL|BC|BR : T=Top, L=Left, R=Right, C=Center, M=Middle, B=Bottom</span></p>
+<p class=rvps5><span class=rvts8>&nbsp; -FaderOnTop=Yes|No : Fadertainer Option for use "Always On Top". Default=Yes&nbsp; </span></p>
+<p class=rvps5><span class=rvts8>&nbsp; -FaderInstallsOnly=Yes|No : Fadertainer during installs only. Default=Yes.</span></p>
+<p class=rvps7><span class=rvts8>&nbsp; -Wait|NoWait: Depends whether or not you need to hold onto the SetupS(x86) process and return to it after SetupS(x64) is finished. Dual-architecture ppApp-mode only. (Default is 'Wait').</span></p>
+<p class=rvps7><span class=rvts8>&nbsp; -KillLauncher={NameOfLauncher}|KillProcess={NameOfProcess}: If you need to close a launcher or process. Especially useful if using the 'NoWait' switch above.</span></p>
+<p class=rvps7><span class=rvts8><br></span></p>
+<p class=rvps7><span class=rvts8>&nbsp; -Help|?: This help file</span></p>
+<p class=rvps5><span class=rvts8><br></span></p>
+<p class=rvps3><span class=rvts7>Usage example: </span></p>
+<p class=rvps4><span class=rvts8>ssRegenerator -ppApps -TrayOnly</span></p>
+<p class=rvps8><span class=rvts11>Copyright © 2020, Vergitek Solutions</span></p>
+<p class=rvps9><span class=rvts12></span><a class=rvts13 href="http://sstek.vergitek.com" target="_blank">ssTek Forum: Tools for custom Operating Systems!</a></p>
+</body></html>

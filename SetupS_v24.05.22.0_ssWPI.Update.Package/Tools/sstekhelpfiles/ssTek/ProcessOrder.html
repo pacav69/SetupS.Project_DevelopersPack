@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Process Order</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 5px 5px 5px 5px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 10pt;
+ font-family: 'Arial', 'Helvetica', sans-serif;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+span.rvts1 /* Heading */
+{
+ font-weight: bold;
+ color: #0000ff;
+}
+span.rvts2 /* Subheading */
+{
+ font-weight: bold;
+ color: #000080;
+}
+span.rvts3 /* Keywords */
+{
+ font-style: italic;
+ color: #800000;
+}
+a.rvts4, span.rvts4 /* Jump 1 */
+{
+ color: #008000;
+ text-decoration: underline;
+}
+a.rvts5, span.rvts5 /* Jump 2 */
+{
+ color: #008000;
+ text-decoration: underline;
+}
+span.rvts6
+{
+ font-size: 11pt;
+ color: #000000;
+}
+span.rvts7
+{
+ font-size: 11pt;
+}
+span.rvts8
+{
+ font-size: 11pt;
+ font-style: italic;
+ color: #000000;
+}
+span.rvts9
+{
+ font-size: 11pt;
+ color: #000000;
+ text-decoration: underline;
+}
+a.rvts10, span.rvts10
+{
+ font-size: 11pt;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts10:hover { color: #0000ff; }
+span.rvts11
+{
+ font-size: 11pt;
+ font-style: italic;
+}
+a.rvts12, span.rvts12
+{
+ font-size: 11pt;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts12:hover { color: #0000ff; }
+span.rvts13
+{
+ font-size: 16pt;
+ color: #ffffff;
+}
+span.rvts14
+{
+ font-size: 5pt;
+ color: #ffffff;
+}
+span.rvts15
+{
+ font-size: 11pt;
+}
+span.rvts16
+{
+ font-size: 11pt;
+ font-style: italic;
+ text-decoration: underline;
+}
+a.rvts17, span.rvts17
+{
+ font-size: 11pt;
+ font-style: italic;
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts18
+{
+ font-size: 11pt;
+ font-style: italic;
+ font-weight: bold;
+ color: #000000;
+}
+span.rvts19
+{
+ font-size: 11pt;
+ font-style: italic;
+ font-weight: bold;
+}
+a.rvts20, span.rvts20
+{
+ font-size: 11pt;
+ font-style: italic;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts21, span.rvts21
+{
+ font-size: 11pt;
+ font-style: italic;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts22
+{
+ font-size: 11pt;
+ color: #800080;
+}
+span.rvts23
+{
+ font-size: 11pt;
+ color: #008000;
+}
+span.rvts24
+{
+ font-size: 11pt;
+ color: #000000;
+}
+span.rvts25
+{
+ font-size: 11pt;
+ font-family: 'wingdings';
+ color: #000000;
+}
+span.rvts26
+{
+ font-size: 9pt;
+ font-weight: bold;
+ vertical-align: super;
+}
+span.rvts27
+{
+ font-family: 'consolas';
+ color: #dcdbd8;
+}
+span.rvts28
+{
+ font-size: 12pt;
+ font-family: 'Times New Roman', 'Times', serif;
+ color: #000000;
+}
+span.rvts29
+{
+ font-family: 'consolas';
+ color: #000000;
+ background-color: #ffff99;
+}
+span.rvts30 /* Font Style */
+{
+ font-family: 'MS Sans Serif', 'Geneva', sans-serif;
+ color: #808080;
+}
+span.rvts31 /* Font Style */
+{
+ font-family: 'Verdana', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #c0c0c0;
+}
+a.rvts32, span.rvts32 /* Font Style */
+{
+ font-family: 'Verdana', 'Geneva', sans-serif;
+ font-style: italic;
+ color: #6666ff;
+ text-decoration: underline;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+.rvps2
+{
+ margin: 0px 0px 0px 30px;
+}
+.rvps3
+{
+ text-align: right;
+ text-indent: 0px;
+ background: #a5a5a5;
+ padding: 5px 5px 2px 5px;
+ margin: -5px 0px 8px -5px;
+}
+.rvps4
+{
+ margin: 6px 0px 0px 54px;
+}
+.rvps5
+{
+ margin: 5px 0px 0px 72px;
+}
+.rvps6
+{
+ margin: 5px 0px 0px 96px;
+}
+.rvps7
+{
+ margin: 0px 0px 0px 35px;
+}
+.rvps8
+{
+ text-align: center;
+ background: #ffffff;
+}
+.rvps9
+{
+ margin: 0px 0px 0px 24px;
+}
+.rvps10
+{
+ background: #ffffff;
+ margin: 7px 0px 7px 24px;
+}
+.rvps11
+{
+ margin: 7px 0px 7px 72px;
+}
+.rvps12
+{
+ margin: 7px 0px 7px 48px;
+}
+.rvps13
+{
+ line-height: 1.07;
+ border-color: #696156;
+ border-style: solid;
+ border-width: 1px;
+ background: #0d0e0e;
+ padding: 10px 10px 10px 10px;
+}
+.rvps14
+{
+ line-height: 1.07;
+ background: #0d0e0e;
+ padding: 10px 10px 10px 10px;
+}
+.rvps15
+{
+ margin: 7px 0px 7px 24px;
+}
+.rvps16 /* Paragraph Style */
+{
+ text-align: center;
+ background: #e4e4e4;
+ margin: 20px 0px 0px 0px;
+}
+.rvps17 /* Paragraph Style */
+{
+ border-color: #c0c0c0;
+ border-style: solid;
+ border-width: 1px;
+ border-right: none;
+ border-bottom: none;
+ border-left: none;
+ background: #ffffff;
+ padding: 3px 0px 0px 0px;
+ margin: 27px 0px 0px 0px;
+}
+--></style>
+<script language="javascript" src="jsRelative.js"></script>
+<meta name="generator" content="HelpNDoc Freeware Edition"></head>
+<body>
+<h1 class=rvps3><span class=rvts0><span class=rvts13>Process Order</span></span><span class=rvts0><span class=rvts13> &nbsp; &nbsp; &nbsp; &nbsp;</span></span><a href="InstallerDetails.html"><img align=absmiddle border=0 width=16 height=16 alt="Previous page" src="img_102.png"></a><a href="Assembly.html"><img align=absmiddle border=0 alt="Return to chapter overview" src="img_103.png"></a><img align=absmiddle border=0 width=16 height=16 alt="Next page" src="img_104.png"></h1>
+<p class=rvps8><span class=rvts14><br></span></p>
+<p class=rvps9><a class=rvts21 href="InstallRegenmodes.html">Install-mode</a><span class=rvts20> only</span><span class=rvts18>.</span><span class=rvts6>&nbsp; Multiline allowed. Place commands, components, directives (see below), setup, or install package(s) here with proper silent install switches or script(s) to automate the install. Mainly for ssApps, but can be used with ppApps/ppGames for any post-install or preprocessing commands, script(s), or registry entries.</span></p>
+<p class=rvps9><span class=rvts6></span><br><span class=rvts9>Status</span><span class=rvts6>: </span><span class=rvts23>Recommended</span><span class=rvts6> for ssApps. </span><span class=rvts22>Optional</span><span class=rvts6> for ppApps/ppGames.</span></p>
+<p class=rvps9><span class=rvts9></span><br><span class=rvts9>Some examples:</span></p>
+<p class=rvps12><span class=rvts6>example1:</span></p>
+<p class=rvps12><span class=rvts6>In this example we using an app that has a silent switch</span></p>
+<p class=rvps12><span class=rvts6>setup.msi /qb</span></p>
+<p class=rvps12><span class=rvts6>use of directives</span></p>
+<p class=rvps12><span class=rvts6></span><br><span class=rvts6>%WaitForIt% "%ProgramsCommon%\TestStartmenu.lnk"</span></p>
+<p class=rvps12><span class=rvts6></span><br><span class=rvts6>%ProcessKill% "Notepad.exe"</span></p>
+<p class=rvps12><span class=rvts6></span><br><span class=rvts6>%AddonInstaller% "%SourcePath%\Test_addon.7z"</span></p>
+<p class=rvps12><span class=rvts6>using %AddToHosts% to block websites </span><br><span class=rvts6>%AddToHosts% "127.0.0.1 secure.example.com"</span></p>
+<p class=rvps12><span class=rvts6>here is extracting files to a specific location</span><br><span class=rvts6>%Extract% "Extras.rar" -o"%SystemRoot%\temp"</span></p>
+<p class=rvps12><span class=rvts6>making a directory and execute a cmd file</span><br><span class=rvts6>md "%ProgramFiles%\Something" #CMD#</span></p>
+<p class=rvps12><span class=rvts6>execute a sile install with parametrs</span><br><span class=rvts6>"7z920-x64.msi" /qb #Is_x64#</span></p>
+<p class=rvps12><span class=rvts6>import a reg file </span><br><span class=rvts6>ImportTest.reg</span></p>
+<p class=rvps12><span class=rvts6>executing a specific script file</span><br><span class=rvts6>ScriptTest.cmd</span></p>
+<p class=rvps12><span class=rvts9>example2</span></p>
+<p class=rvps12><span class=rvts6>in this example the contents of the registry section, using #ApplyRegistry# is applied first before running script #RunScript#</span><br><span class=rvts6>as there maybe an instance when a correction to a path&nbsp; is required before application is installed</span><br><span class=rvts6>#applypatch# could be used to replace an existing file that has been modified </span><br><span class=rvts6>this can be achieved by placing the file in a subdirectory of the working directory named 'patch' </span><br><span class=rvts6>all files in the patch subdirectory will be extracted and placed in the install-to path</span></p>
+<p class=rvps11><span class=rvts6>#ApplyRegistry#</span><br><span class=rvts6>#RunScript#</span><br><span class=rvts6>#ApplyPatch#</span></p>
+<p class=rvps11><span class=rvts6><br></span></p>
+<p class=rvps12><span class=rvts6>example3</span></p>
+<p class=rvps12><span class=rvts6>Normally an Apz will be elevated to Admin in order to install</span><br><span class=rvts6>but you may need to force the app to have Admin privileges</span></p>
+<p class=rvps12><span class=rvts6>if so then by placing the following script in the cmd section</span><br><span class=rvts6>and place your commands after:</span><br><span class=rvts29>REM put here code as you like</span></p>
+<p class=rvps12><span class=rvts9><br></span></p>
+<p class=rvps12><span class=rvts9>code starts here </span></p>
+<p><span class=rvts28>#####################################################################</span></p>
+<p class=rvps13><span class=rvts27>:::::::::::::::::::::::::::::::::::::::::</span><br><span class=rvts27>:: Automatically check &amp; get admin rights</span><br><span class=rvts27>:::::::::::::::::::::::::::::::::::::::::</span><br><span class=rvts27>@echo off</span><br><span class=rvts27>CLS</span><br><span class=rvts27>ECHO.</span><br><span class=rvts27>ECHO =============================</span><br><span class=rvts27>ECHO Running Admin shell</span><br><span class=rvts27>ECHO =============================</span><br><span class=rvts27>:checkPrivileges</span><br><span class=rvts27>NET FILE 1&gt;NUL 2&gt;NUL</span><br><span class=rvts27>if '%errorlevel%' == '0' ( goto gotPrivileges ) else ( goto getPrivileges )</span><br><span class=rvts27>:getPrivileges</span><br><span class=rvts27>if '%1'=='ELEV' (shift &amp; goto gotPrivileges)</span><br><span class=rvts27>ECHO.</span><br><span class=rvts27>ECHO **************************************</span><br><span class=rvts27>ECHO Invoking UAC for Privilege Escalation</span><br><span class=rvts27>ECHO **************************************</span><br><span class=rvts27>setlocal DisableDelayedExpansion</span><br><span class=rvts27>set "batchPath=%~0"</span><br><span class=rvts27>setlocal EnableDelayedExpansion</span><br><span class=rvts27>ECHO Set UAC = CreateObject^("Shell.Application"^) &gt; "%temp%\OEgetPrivileges.vbs"</span><br><span class=rvts27>ECHO UAC.ShellExecute "!batchPath!", "ELEV", "", "runas", 1 &gt;&gt; "%temp%\OEgetPrivileges.vbs"</span><br><span class=rvts27>"%temp%\OEgetPrivileges.vbs"</span><br><span class=rvts27>exit /B</span><br><span class=rvts27>:gotPrivileges</span><br><span class=rvts27>::::::::::::::::::::::::::::</span><br><span class=rvts27>::START</span><br><span class=rvts27>::::::::::::::::::::::::::::</span><br><span class=rvts27>setlocal &amp; pushd .</span><br><span class=rvts27>REM put here code as you like</span></p>
+<p><span class=rvts28>#####################################################################</span></p>
+<p><span class=rvts28>code end here</span></p>
+<p><span class=rvts28><br></span></p>
+<p><span class=rvts28><br></span></p>
+<p><span class=rvts28>or elevate before executing the install by using the registry</span></p>
+<p><span class=rvts28><br></span></p>
+<p class=rvps15><span class=rvts6>code starts here </span></p>
+<p><span class=rvts28>#####################################################################</span></p>
+<p class=rvps14><span class=rvts27>@echo off</span><br><span class=rvts27>reg.exe Add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "%~dp0PlantsVsZombies.exe" /d "~ RUNASADMIN" /f</span></p>
+<p><span class=rvts28>#####################################################################</span></p>
+<p><span class=rvts28>code end here</span></p>
+<p class=rvps12><span class=rvts9><br></span></p>
+<p class=rvps15><span class=rvts6>example4</span></p>
+<p class=rvps15><span class=rvts6>there are applications that after installing they will open a welcome screen </span></p>
+<p class=rvps15><span class=rvts6>in this case GitHubDesktop opens a welcome screen which needs to be closed</span><br><span class=rvts6>this can be achieved by&nbsp; using %ProcessKill% and by using ping as a delay to ensure the process is killed</span><br><span class=rvts6>using it twice should be enough in order for it to work.</span></p>
+<p class=rvps15><span class=rvts6>In order to find out which process to terminate install the application normally and when the welcome screen pops up open the task manager and examine the process name and select end task to test. Then use the name in the script in this case it is GitHubDesktop.exe.</span></p>
+<p class=rvps12><span class=rvts6>rem App name: GitHubDesktop</span></p>
+<p class=rvps12><span class=rvts6>ping 127.0.0.1 -n 4 -w 1000</span></p>
+<p class=rvps12><span class=rvts6>%ProcessKill% "GitHubDesktop.exe"</span></p>
+<p class=rvps12><span class=rvts6>ping 127.0.0.1 -n 4 -w 1000</span></p>
+<p class=rvps12><span class=rvts6>%ProcessKill% "GitHubDesktop.exe"</span></p>
+<p class=rvps12><span class=rvts9><br></span></p>
+<p class=rvps12><span class=rvts9><br></span></p>
+<p class=rvps12><span class=rvts9><br></span></p>
+<p class=rvps11><span class=rvts6><br></span></p>
+<p class=rvps11><span class=rvts6><br></span></p>
+<p class=rvps11><span class=rvts9><br></span></p>
+<p class=rvps11><span class=rvts9><br></span></p>
+<p class=rvps11><span class=rvts6><br></span></p>
+<p class=rvps10><span class=rvts25></span><br><span class=rvts26>&#926;</span><span class=rvts24> </span><span class=rvts16>Some Notes:</span><span class=rvts11> </span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside;">
+<li value=1 class=rvps6 style="margin-left: 0"><span class=rvts15>Use the process-order </span><a class=rvts12 href="Directives.html">#Directives#</a><span class=rvts15> here to control or fine-tune the assembly process.</span></li>
+<li value=2 class=rvps5 style="margin-left: 0"><span class=rvts6>The &lt;Assembly&gt; section is </span><span class=rvts8>ignored in </span><a class=rvts17 href="InstallRegenmodes.html">Regen-mode</a><span class=rvts6>. </span></li>
+<li value=3 class=rvps5 style="margin-left: 0"><span class=rvts15>With the exception of </span><span class=rvts6>%Extract%</span><span class=rvts7>,</span><span class=rvts6> the &lt;Assembly&gt; section uses the </span><a class=rvts10 href="Components.html">%Components%</a><span class=rvts6> in their internal/built-in forms.</span></li>
+</ol></ol>
+<p class=rvps2><span class=rvts6><br></span></p>
+<p class=rvps7><span class=rvts9>See also:</span><span class=rvts6> </span></p>
+<p class=rvps4><a class=rvts10 href="MainlineSequence.html">Assembly Sequence</a></p>
+<p class=rvps4><a class=rvts10 href="InstallRegenmodes.html">Install and Regen modes</a></p>
+<p class=rvps4><a class=rvts10 href="AutomaticVariableSubstitutionC.html">Automatic Variable Substitution Chart</a></p>
+<p class=rvps16><span class=rvts30>Copyright © 2020, Vergitek Solutions</span></p>
+<p class=rvps17><span class=rvts31></span><a class=rvts32 href="http://sstek.vergitek.com" target="_blank">ssTek Forum: Tools for custom Operating Systems!</a></p>
+</body></html>

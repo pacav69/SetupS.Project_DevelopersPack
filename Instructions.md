@@ -3,7 +3,7 @@
 
 ## Development tools directory (devtools)
  install first the Development tools in devtools directory
- that contains the neccessary app files required for development.
+ that contains the necessary app files required for development.
 
 ## AutoIT3
 Before starting
@@ -11,14 +11,14 @@ Ensure that AutoIT3 is version 3.3.8.1 dated 30/01/2012 is installed without mod
 
 ## Make changes to files
 
-Make modifications or improvments to files
+Make modifications or improvements to files
 
-## change ProjectVersion
+## Change ProjectVersion
 
 change the ProjectVersion
 so that it reads ProjectVersion= YY.MM.DD.0 use ONLY numbers
-* seperated with periods in the form YY.MM.DD.0
-* use the date of compilatation YY.MM.DD.Incremental number usually 0
+* separated with periods in the form YY.MM.DD.0
+* use the date of compilation YY.MM.DD.Incremental number usually 0
   where
 * YY is the two digit year,
 * MM the digit month,
@@ -29,15 +29,15 @@ eg.
 
     set ProjectVersion=23.07.18.0
 
-### change ProjectDate
+### Change ProjectDate
 change the ProjectDate
 * ProjectDate=YYYY-MM-DD use ONLY numbers
-* use the date of compilatation in the format YYYY-MM-DD
+* use the date of compilation in the format YYYY-MM-DD
   where
 * YYYY is the four digit year,
 * MM the digit month,
 *  DD two digit day
-* use the date of compilatation YYYY-MM-DD seperated by a '-'
+* use the date of compilation YYYY-MM-DD separated by a '-'
 
 eg
 

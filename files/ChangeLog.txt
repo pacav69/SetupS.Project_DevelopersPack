@@ -2,11 +2,74 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
       behavior if not used or implemented (for backwards compatibility); but sometimes this is
       not always possible especially when adding new features.
 
+
 ---------------------------------------------
-10Oct2023
+22May2024
+---------------------------------------------
+updated 7z to v24.5
+corrected error in SetupS-files.htm to point to Install.SetupS_v#ProjectVersion#.exe
+added check for Autoit existence in !DistrPack.Project.cmd file without Autoit app will fail
+
+
+---------------------------------------------
+25Oct2023
+---------------------------------------------
+added styles Document
+
+---------------------------------------------
+24Oct2023
+---------------------------------------------
+added confirmation to delete html help files
+
+---------------------------------------------
+20Oct2023
+---------------------------------------------
+updated to-do list
+
+---------------------------------------------
+19Oct2023
+---------------------------------------------
+Added upload script for html help files for vergitek
+updated updfiles.cmd to support help file upload
+added  makehelp.cmd for html help file upload
+
+---------------------------------------------
+18Oct2023
+---------------------------------------------
+modified:   FAQ.md
+
+---------------------------------------------
+17Oct2023
+---------------------------------------------
+updated .gitignore
+removed git lfs as it has limitations on number of times for upload of big files
+
+---------------------------------------------
+13Oct2023
+---------------------------------------------
+updated Instructions.md for git-large-file-storage (git lfs)
+
+---------------------------------------------
+11Oct2023
+---------------------------------------------
+added git-large-file-storage (git lfs)
+updated readme with link to SetupS.Project_DevelopersPack_Tools
+
+---------------------------------------------
+09Oct2023
+---------------------------------------------
+updated testmv
+added development tools directory (devtools)
+updated instructions to include timecompile.cmd and devtools useage
+
+
+---------------------------------------------
+08Oct2023
 ---------------------------------------------
 updated in !DistrPack.Project.cmd for move list sequence for %WebSite2%
 added in !DistrPack.Project.cmd setup of move files script using winscp
+updated readme.md
+added timecmd.cmd to time compile and upload of files
 
 ---------------------------------------------
 06Oct2023
