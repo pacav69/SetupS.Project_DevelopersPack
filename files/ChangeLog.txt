@@ -2,6 +2,12 @@ Note: The goal is to have any additions/changes/options to NOT affect the origin
       behavior if not used or implemented (for backwards compatibility); but sometimes this is
       not always possible especially when adding new features.
 
+---------------------------------------------
+31May2024
+---------------------------------------------
+corrected error in SetupS-files.htm to point to SetupS_v#ProjectVersion#_ssWPI.Update.Package.7z 
+under the heading ssWPI update package (.7z)
+
 
 ---------------------------------------------
 22May2024

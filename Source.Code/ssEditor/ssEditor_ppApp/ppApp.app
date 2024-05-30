@@ -1,6 +1,6 @@
 [SetupS]
 Title=SetupS Editor
-Version=v24.05.22.0
+Version=v24.05.31.0
 Description=With more and more people finding uses for SetupS and ppApps, this will allow anyone to make their very own Silent Setup app or game. It will show up on ssWPI or can be used via SendTo SetupS for whenever one is in a rush to put an app (or game) back onto their PC.
 URL=http://sstek.vergitek.com|http://www.lastos.org
 Category=Development
